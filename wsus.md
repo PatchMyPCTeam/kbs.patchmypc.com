@@ -1,0 +1,3 @@
+# WSUS
+
+yaml category = solution

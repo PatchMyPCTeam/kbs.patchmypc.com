@@ -1,5 +1,11 @@
 # Prevent a required Intune app from installing if any version of the app is already installed
 
+yaml global product = Advanced Insights
+
+yaml global solution = Reporting and Analytics
+
+yaml global tech Stack = Intune
+
 In some situations, such as during Autopilot deployments, you may need to mark a Patch My PC **Intune app** as **required** to ensure it installs during the Enrollment Status Page (ESP) phase, when blocking apps are enforced. However, after the app is installed, you might want to prevent that required targeting from pushing newer versions of the app to the device. Instead, you can use Patch My PC **Intune updates** to manage future updates using update rings. This approach lets you control the update cadence, avoiding the immediate updates that would otherwise happen due to the original required targeting.
 
 In this article, we’ll guide you through configuring an extra requirement on Patch My PC **Intune apps** to prevent immediate app updates after the initial installation has occured.

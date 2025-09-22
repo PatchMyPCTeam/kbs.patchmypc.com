@@ -1,5 +1,11 @@
 # Using Patch My PC Publisher with Azure Update Manager
 
+yaml global product = Advanced Insights
+
+yaml global solution = Reporting and Analytics
+
+yaml global tech Stack = ConfigMgr
+
 In this article, we discuss the high-level steps for implementation and key considerations when using Azure Update Manager (AUM) to manage third-party updates.
 
 While Patch My PC does not integrate directly with AUM, this knowledge base article aims to assist customers already using Azure Arc and AUM in incorporating third-party patching into their existing update management workflows.

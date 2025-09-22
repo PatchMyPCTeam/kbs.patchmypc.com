@@ -1,5 +1,11 @@
 # Custom Apps for MSPs using Patch My PC Publisher
 
+yaml global product = Advanced Insights
+
+yaml global solution = Reporting and Analytics
+
+yaml global tech Stack = Intune
+
 In this article, we will learn how Managed Service Providers (MSPs) can create and manage custom apps and updates to be deployed using Patch My PC Publisher.
 
 If you are an MSP using the Publisher and want to take advantage of the Custom Apps feature to add an application not currently supported in the[ Patch My PC Catalog](https://patchmypc.com/supported-products), you can onboard the Patch My PC Cloud portal to add in-house applications and publish them for each tenant configured in the Publisher.

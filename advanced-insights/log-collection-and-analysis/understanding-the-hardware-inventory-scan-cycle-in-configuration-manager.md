@@ -1,5 +1,11 @@
 # Understanding the Hardware Inventory Scan Cycle in Configuration Manager
 
+yaml global product = Advanced Insights
+
+yaml global solution = Endpoint Management
+
+yaml global tech Stack = ConfigMgr
+
 Over a year ago, we published an [article](https://patchtuesday.com/blog/tech-blog/mastering-configmgr-client-actions/?__hstc=159990434.aaa4a06d12041b1ae1a1484764544ffd.1758547479972.1758547479972.1758547479972.1&__hssc=159990434.18.1758547479972&__hsfp=1567712986) on the PatchTuesday tech blog discussing the various  Configuration Manager (or simply ConfigMgr) Client actions, including the one we’ll discuss today – the Hardware Inventory scan cycle. The article detailed what each does, when it’s useful to trigger a specific action, and the relevant logs to monitor on the client side. The article was written because the information was highly relevant to many people at the time.
 
 That article provided a general overview of all the available actions. In this article, we’ll examine one of the most powerful actions: the Hardware Inventory Scan Cycle. We’ll discuss the data it collects, how to configure its automatic execution, and the various methods to trigger it manually.

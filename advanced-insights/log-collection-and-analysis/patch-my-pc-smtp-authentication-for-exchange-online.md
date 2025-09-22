@@ -1,5 +1,11 @@
 # Patch My PC SMTP Authentication for Exchange Online
 
+yaml global product = Advanced Insights
+
+yaml global solution = Endpoint Management
+
+yaml global tech Stack = ConfigMgr
+
 ### Purpose of this article <a href="#h-purpose-of-this-article" id="h-purpose-of-this-article"></a>
 
 Patch My PC’s Publisher, at this time, cannot support Modern authentication and relies online SMTP authentication for sending its email reports.

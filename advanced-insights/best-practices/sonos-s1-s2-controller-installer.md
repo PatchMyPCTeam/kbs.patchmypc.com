@@ -1,5 +1,11 @@
 # Sonos S1/S2 Controller Installer
 
+yaml global product = Advanced Insights
+
+yaml global solution = Reporting and Analytics
+
+yaml global tech Stack = ConfigMgr
+
 In this article, we will detail how to get the MSI required for the Sonos S1/S2 Controller Latest (MSI-x64) product in our catalog.
 
 Sonos S1/S2 Controller provides a compressed install file which is in an EXE format and does not have a silent install option. It is essentially a self-extracting archive that contains an MSI file within it. Currently, we do not directly support these types of installers since the initial extraction phase typically involves interactive steps or temporary directories that are dynamically created and destroyed, making it difficult to automate reliably. The following steps outlined in this article are essential to enable support for Sonos installs.

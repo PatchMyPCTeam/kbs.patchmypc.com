@@ -1,5 +1,11 @@
 # How to install additional Notepad++ display languages with Patch My PC
 
+yaml global product = Advanced Insights
+
+yaml global solution = Endpoint Management
+
+yaml global tech Stack = ConfigMgr
+
 If you want to deploy Notepad++ in your organization on your managed devices,and would like to also install additional Display Languages during the unattended installation, follow this guide.
 
 At the time of writing this article, the Notepad++ installer does not support any parameters that will allow you to install additional languages.

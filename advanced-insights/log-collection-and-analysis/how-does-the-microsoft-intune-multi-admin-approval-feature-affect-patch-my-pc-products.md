@@ -1,6 +1,10 @@
 # How does the Microsoft Intune Multi Admin Approval feature affect Patch My PC products
 
+yaml global product = Advanced Insights
 
+yaml global solution = Endpoint Management
+
+yaml global tech Stack = ConfigMgr
 
 The Microsoft Intune [Multi Admin Approval](https://learn.microsoft.com/en-us/mem/intune/fundamentals/multi-admin-approval) (MAA) feature introduces the option for administrators to add an additional layer of security when creating or modifying scripts and apps in Intune by requiring admin approval before changes become effective.
 

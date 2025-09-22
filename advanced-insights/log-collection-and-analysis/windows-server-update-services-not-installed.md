@@ -1,5 +1,11 @@
 # Windows Server Update Services not installed
 
+yaml global product = Advanced Insights
+
+yaml global solution = Endpoint Management
+
+yaml global tech Stack = ConfigMgr
+
 This article discusses the “Windows Server Update Services is not installed” error message you get when installing the Patch My PC Publisher.
 
 ### [Introduction](https://patchmypc.com/kb/wsus-not-installed/#introduction) <a href="#h-introduction" id="h-introduction"></a>

@@ -1,5 +1,11 @@
 # The Microsoft Software License Terms have not been completely downloaded and cannot be accepted
 
+yaml global product = Advanced Insights
+
+yaml global solution = Endpoint Management
+
+yaml global tech Stack = ConfigMgr
+
 Microsoft Configuration Manager can throw the error in the title when the Software Update Point tries to synchronise new updates from WSUS and the update it is trying to supersede no longer has its End User Licensing Agreement (EULA) available on disk.
 
 EULAs are stored in the WsusContent directory as .txt files for software updates which come with any. For example, the Windows Malicious Software Removal Tool for some older versions of Windows come with EULA .txt files saved in WsusContent.

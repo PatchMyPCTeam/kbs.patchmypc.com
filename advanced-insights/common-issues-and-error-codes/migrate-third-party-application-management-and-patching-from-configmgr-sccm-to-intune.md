@@ -1,5 +1,11 @@
 # Migrate Third-Party Application Management and Patching from ConfigMgr/SCCM to Intune
 
+yaml global product = Advanced Insights
+
+yaml global solution = Patch Management
+
+yaml global tech Stack = ConfigMgr
+
 This article provides a detailed step-by-step guide on how to make this transition, ensuring a seamless and efficient patch management process. &#x20;
 
 ### Pre-requisites <a href="#h-pre-requisites" id="h-pre-requisites"></a>

@@ -1,5 +1,11 @@
 # WSUS Deprecation: What It Means for Patch My PC Customers
 
+yaml global product = Advanced Insights
+
+yaml global solution = Reporting and Analytics
+
+yaml global tech Stack = Intune
+
 On the 20th Septemeber 2024, [Microsoft announced](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/windows-server-update-services-wsus-deprecation/ba-p/4250436) the deprecation of **Windows Server Update Services (WSUS)**, encouraging their customers to explore more modern update management solutions. Despite this announcement, **Patch My PC customers are unaffected**. WSUS will continue to be supported in its current state, and no action is required by our customers. This article explains the deprecation in more detail and reassures customers about its non-impact on their environments.
 
 ### Microsoft Announcement <a href="#h-microsoft-announcement" id="h-microsoft-announcement"></a>

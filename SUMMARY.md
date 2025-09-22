@@ -15,6 +15,7 @@
     * [ConfigApi is not responding. An unhandled exception occurred](advanced-insights/best-practices/configapi-is-not-responding.-an-unhandled-exception-occurred.md)
     * [WSUS Deprecation: What It Means for Patch My PC Customers](advanced-insights/best-practices/wsus-deprecation-what-it-means-for-patch-my-pc-customers.md)
     * [Software Update Point Sync Failure – Request for Principal Permission failed (0x80131500 / 0x8013150](advanced-insights/best-practices/software-update-point-sync-failure-request-for-principal-permission-failed-0x80131500-0x8013150.md)
+    * [Page 1](advanced-insights/best-practices/page-1.md)
   * [Common Issues and Error Codes](advanced-insights/common-issues-and-error-codes/README.md)
     * [Migrate Third-Party Application Management and Patching from ConfigMgr/SCCM to Intune](advanced-insights/common-issues-and-error-codes/migrate-third-party-application-management-and-patching-from-configmgr-sccm-to-intune.md)
   * [Connectivity and Proxy Issues](advanced-insights/connectivity-and-proxy-issues.md)

@@ -69,7 +69,7 @@ Any Flow, upon editing one, which previously used the old URL will have a warnin
 
 If you have multiple Flows with the same name, you may be able to identify the correct Flow editing one and verifying the Team and Channel configuration:
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/09/Flow-identifychannel-1024x546.png" alt="" height="546" width="1024"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Flow-identifychannel-1024x546.jpeg" alt=""><figcaption></figcaption></figure>
 
 If you have multiple Flows all sharing the same channel and perhaps used for different purposes, unless they’re named appropriately, it may be hard to identify the Flow used for Patch My PC. In this circumstance, you may be better off generating a new webhook (new webhooks made after August 2025 will use the new URL).
 

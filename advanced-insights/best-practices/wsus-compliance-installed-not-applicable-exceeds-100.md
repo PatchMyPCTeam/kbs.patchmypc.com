@@ -2,7 +2,7 @@
 
 Windows Server Update Services (WSUS) administrators may occasionally encounter a puzzling scenario where the Installed / Not Applicable column percentages exceed 100%. This anomaly can be confusing and lead to questions about data compliance integrity .
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_01.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_01.png" alt=""><figcaption></figcaption></figure>
 
 ### Determine if You are Affected <a href="#h-determine-if-you-are-affected" id="h-determine-if-you-are-affected"></a>
 
@@ -19,7 +19,7 @@ To analyze update compliance for individual computers, follow these steps:
    * Failed Count – The number of updates that attempted installation but failed.
    * Not Applicable Count – The number of updates that are not applicable.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_02.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_02.webp" alt=""><figcaption></figcaption></figure>
 
 When reviewing these columns, you may notice that in some cases, the Installed/Not Applicable (%) column exceeds 100%. This anomaly can cause confusion regarding update compliance and is typically the result of WSUS miscalculating the percentage based on update applicability rules.
 
@@ -27,7 +27,7 @@ You might expect that the Installed/Not Applicable Percentage value for each com
 
 **Installed + Not Applicable / (Installed + Needed + Not Applicable) \* 100**
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_03.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_03.avif" alt=""><figcaption></figcaption></figure>
 
 In this example, for computer cm2.lab2.local, that would be 5 + 159 / (5 + 2 + 159) \* 100 = 99%\
 But instead of 99% it indicates the Installed/Not Applicable percentage is 110%
@@ -38,15 +38,15 @@ But instead of 99% it indicates the Installed/Not Applicable percentage is 110%
 
 We can see the summarization data that causes the anomoly by viewing data in the **tbComputerSummaryForMicrosoftUpdates** table.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_04.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_04.png" alt=""><figcaption></figcaption></figure>
 
 A negative value in the unknown column is still counted and contributes to the Not Applicable count. Executing the Stored Procedure **dbo.spGetSummariesPerComputer** indicates this further. Specifically, data that has a **SummarizationState** of zero.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_05.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_05.png" alt=""><figcaption></figcaption></figure>
 
 **dbo.spGetSummariesPerComputer** is actually called to display the summary data in the WSUS console. You can see this if you run SQL Profiler and refresh the view in the WSUS console. Here is an example of an XML passed to the Stored Procedure
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_08.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_08.avif" alt=""><figcaption></figcaption></figure>
 
 ```
 <?xml version="1.0" encoding="utf-16"?><UpdateScope ApprovedStates="-1" UpdateTypes="-1" FromArrivalDate="01-01-1753 00:00:00.000" ToArrivalDate="12-31-9999 23:59:59.997" IncludedInstallationStates="-1" ExcludedInstallationStates="0" IsWsusInfrastructureUpdate="0" FromCreationDate="01-01-1753 00:00:00.000" ToCreationDate="12-31-9999 23:59:59.997" UpdateApprovalActions="-1" UpdateSources="-1" ExcludeOptionalUpdates="0" />'
@@ -72,10 +72,10 @@ WSUS includes another Stored Procedure that can reset the summary data in this s
 12. Select “Execute Stored Procedure”
 13. Click “OK”
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_07.png" alt=""><figcaption></figcaption></figure>
 
 The summarization of the data should now reflect accuratly in the WSUS console. Below is a **Before (1)** and **After (2)** when running the Stored Procedure. In this example, 17 counts have been removed from some rows which now results in an accurate compliance calcualtion.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/wsus_06.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_04_wsus_06.avif" alt=""><figcaption></figcaption></figure>
 
 **Note:** Deleting individual computers from the WSUS console will also fix the problem on a per-computer basis. When the computer reports back in, the compliance will be accurately reflected in the Installed / Not Applicable column.

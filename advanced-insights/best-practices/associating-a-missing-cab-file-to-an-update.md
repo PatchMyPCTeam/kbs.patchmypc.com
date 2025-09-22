@@ -6,6 +6,10 @@
 taxonomy:
     products:
         - advanced-insights
+    solution:
+        - reporting-and-analytics
+    tech-stack:
+        - itune
         
 ---
 ```

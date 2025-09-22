@@ -1,3 +1,0 @@
-# ConfigMgr
-
-yaml category = solution

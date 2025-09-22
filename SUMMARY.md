@@ -133,4 +133,3 @@
   * [Workarounds](patch-my-pc-publisher/workarounds.md)
 * [CVE Insights](cve-insights.md)
 * [PSAppDeployToolkit](psappdeploytoolkit.md)
-* [ConfigMgr](configmgr.md)

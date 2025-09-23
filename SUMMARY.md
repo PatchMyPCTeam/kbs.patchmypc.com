@@ -161,11 +161,3 @@
   * [Security and Certificates](reporting-and-analytics/security-and-certificates.md)
   * [Troubleshooting](reporting-and-analytics/troubleshooting.md)
   * [Workarounds](reporting-and-analytics/workarounds.md)
-
-## Products
-
-* [Products](products/products.md)
-
-## Solutions
-
-* [Page 1](solutions/page-1.md)

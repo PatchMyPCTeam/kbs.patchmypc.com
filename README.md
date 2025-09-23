@@ -1,11 +1,2 @@
-# Advanced Insights
-
-```yaml
----
-
-custom_fields:
-    product-solution: product
-
----
-```
+# Advanced Insights (product)
 

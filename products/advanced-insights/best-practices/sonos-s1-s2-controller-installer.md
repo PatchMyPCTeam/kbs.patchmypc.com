@@ -26,7 +26,7 @@ Browse to Download the Sonos Controller you require. The download should start i
 
 [https://www.sonos.com/redir/controller\_software\_pc2](https://www.sonos.com/redir/controller_software_pc2)
 
-<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-11.avif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-11.avif" alt=""><figcaption></figcaption></figure>
 
 ### Extract the Installer to obtrain the MSI <a href="#h-extract-the-installer-to-obtrain-the-msi" id="h-extract-the-installer-to-obtrain-the-msi"></a>
 
@@ -35,7 +35,7 @@ Once you have the online installer downloaded, you will have to extract it. This
 Navigate to the downloaded exe file. You can either extract the MSI manually or silently using the command line.
 
 1. **Manually** – Extract the MSI by double-clicking the downloaded exe. The installer will launch. Leave this open in the background for now.\
-   ![](../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-13.avif)
+   ![](../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-13.avif)
 
 With the installer open, navigate to:-
 
@@ -48,7 +48,7 @@ C:\Users\\\<UserName>\AppData\Local\Downloaded Installations\\{AF00AB56-E4FE-412
 
 You will see the MSI file. (The MST is not needed)
 
-<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-12.png" alt=""><figcaption></figcaption></figure>
 
 2. **Silently** – For a silent extract, open a command prompt, navigate to the download, and run the following command:
 
@@ -58,7 +58,7 @@ Sonos_xx.x-xxxxx.exe /S /x /b"C:\Windows\Temp" /v"/qb"
 
 Navigate to: “C:\Windows\Temp” to obtain the MSI file.
 
-<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-13-1.avif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_07_image-13-1.avif" alt=""><figcaption></figcaption></figure>
 
 ### Copy the MSI to the Local Content Repository <a href="#h-copy-the-msi-to-the-local-content-repository" id="h-copy-the-msi-to-the-local-content-repository"></a>
 

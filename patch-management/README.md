@@ -1,4 +1,4 @@
-# Microsoft WSUS
+# Patch Management
 
 yaml category = product
 

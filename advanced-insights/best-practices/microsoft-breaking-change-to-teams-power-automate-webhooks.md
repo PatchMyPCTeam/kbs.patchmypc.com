@@ -31,7 +31,7 @@ If you’ve received this message, it means you have a flow using an HTTP webhoo
 
 Continue reading to learn how to check whether your Patch My PC alerts are affected and what steps to take.
 
-<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Cloud-Flow-oldurl2-1024x596.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Cloud-Flow-oldurl2-1024x596.jpeg" alt=""><figcaption></figcaption></figure>
 
 #### Patch My PC Publisher <a href="#h-patch-my-pc-publisher" id="h-patch-my-pc-publisher"></a>
 
@@ -41,7 +41,7 @@ To understand whether you need to replace any webhooks within the Patch My PC Pu
 2. **Select each Teams webhook** (where _Message System_ reads _MSTeamsWorkflow_) and click **Edit**
 3. **Observe the URL**; if the URL contains **logic.azure.com,** then you are affected and need to update it with the new webhook
 
-<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Publisher-Flow-oldurl-1024x821.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Publisher-Flow-oldurl-1024x821.png" alt=""><figcaption></figcaption></figure>
 
 #### Patch My PC Cloud <a href="#h-patch-my-pc-cloud" id="h-patch-my-pc-cloud"></a>
 
@@ -52,7 +52,7 @@ To understand whether you need to replace any webhooks within Patch My PC Cloud:
 3. **For each Microsoft Teams webhook**, hover over the **Webhook URL** value
 4. **Observe the URL** within the tooltip; if the URL contains **logic.azure.com**, then you are affected and need to update it with the new webhook
 
-<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Msft-flow-email.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Msft-flow-email.png" alt=""><figcaption></figcaption></figure>
 
 ### Retrieve the new webhook URL <a href="#h-retrieve-the-new-webhook-url" id="h-retrieve-the-new-webhook-url"></a>
 
@@ -67,11 +67,11 @@ Any Flow, upon editing one, which previously used the old URL will have a warnin
 
 > “_Click here to copy the new trigger URL. The old trigger URL \<trigger URL> will stop working on November 30, 2025. Your tools that use this flow WILL break unless you update them with the new URL._“
 >
-> ![](../../../.gitbook/assets/Flow-warning-oldurl-1024x543.png)
+> ![](../../.gitbook/assets/Flow-warning-oldurl-1024x543.png)
 
 If you have multiple Flows with the same name, you may be able to identify the correct Flow editing one and verifying the Team and Channel configuration:
 
-<figure><img src="../../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Flow-identifychannel-1024x546.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/https___patchmypc.com_app_uploads_2025_09_Flow-identifychannel-1024x546.jpeg" alt=""><figcaption></figcaption></figure>
 
 If you have multiple Flows all sharing the same channel and perhaps used for different purposes, unless they’re named appropriately, it may be hard to identify the Flow used for Patch My PC. In this circumstance, you may be better off generating a new webhook (new webhooks made after August 2025 will use the new URL).
 

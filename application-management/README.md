@@ -1,4 +1,4 @@
-# Microsoft ConfigMgr
+# Application Management
 
 yaml category = product
 

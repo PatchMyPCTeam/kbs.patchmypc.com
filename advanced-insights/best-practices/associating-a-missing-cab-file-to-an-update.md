@@ -6,8 +6,8 @@
 taxonomy:
     products:
         - advanced-insights
-    solution:
-        - reporting-and-analytics
+    solutions:
+        - application-management
     tech-stack:
         - itune
         

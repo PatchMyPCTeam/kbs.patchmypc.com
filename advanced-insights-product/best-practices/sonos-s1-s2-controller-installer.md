@@ -1,10 +1,22 @@
 # Sonos S1/S2 Controller Installer
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - configmgr
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 In this article, we will detail how to get the MSI required for the Sonos S1/S2 Controller Latest (MSI-x64) product in our catalog.
 

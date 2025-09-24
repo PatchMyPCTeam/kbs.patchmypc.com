@@ -1,10 +1,23 @@
 # ConfigApi is not responding. An unhandled exception occurred
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - itune
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
-yaml global tech Stack = Intune
 
 In this article we troubleshoot why this error might occur when launching the Patch My PC Publisher UI and how to resolve it.
 

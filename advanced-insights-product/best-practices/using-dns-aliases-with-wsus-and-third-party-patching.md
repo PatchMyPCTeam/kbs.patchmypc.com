@@ -1,10 +1,22 @@
 # Using DNS aliases with WSUS and third-party patching
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - configmgr
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 In this KB we will discuss another scenario which can cause the error “CreateDirectory failed” seen in [PatchMyPC.log and SoftwareDistribution.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-logs) when trying to publish new third-party software updates into WSUS and/or Configuration Manager.
 

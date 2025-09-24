@@ -1,10 +1,22 @@
 # Removal of think-cell from the Patch My PC Catalog
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - configmgr
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 Patch My PC will be removing the think-cell product from its catalog on March 17, 2025.
 

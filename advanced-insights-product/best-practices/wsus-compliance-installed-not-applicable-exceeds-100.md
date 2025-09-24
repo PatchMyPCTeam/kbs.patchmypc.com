@@ -1,10 +1,22 @@
 # WSUS Compliance – Installed / Not Applicable Exceeds 100%
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - itune
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 Windows Server Update Services (WSUS) administrators may occasionally encounter a puzzling scenario where the Installed / Not Applicable column percentages exceed 100%. This anomaly can be confusing and lead to questions about data compliance integrity .
 

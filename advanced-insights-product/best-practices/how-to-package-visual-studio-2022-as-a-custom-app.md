@@ -1,10 +1,22 @@
 # How to package Visual Studio 2022 as a Custom App
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - configmgr
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 In this article, we will show you how you can prepare a package for Visual Studio 2022 and deploy it as a Custom App using Patch My PC Cloud or publish it as a Custom App using Patch My PC Publisher.
 

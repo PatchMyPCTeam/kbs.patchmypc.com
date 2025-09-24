@@ -1,10 +1,22 @@
 # Software Update Point Sync Failure – Request for Principal Permission failed (0x80131500 / 0x8013150
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = Intune
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - itune
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 We recently encountered this error when running a sync on a remote Software Update Point.
 

@@ -1,10 +1,22 @@
 # Using Patch My PC Publisher with Azure Update Manager
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - configmgr
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 In this article, we discuss the high-level steps for implementation and key considerations when using Azure Update Manager (AUM) to manage third-party updates.
 

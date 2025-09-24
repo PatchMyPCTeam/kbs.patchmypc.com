@@ -1,10 +1,22 @@
 # Custom Apps for MSPs using Patch My PC Publisher
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = Intune
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - itune
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 In this article, we will learn how Managed Service Providers (MSPs) can create and manage custom apps and updates to be deployed using Patch My PC Publisher.
 

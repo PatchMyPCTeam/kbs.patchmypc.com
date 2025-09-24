@@ -1,10 +1,22 @@
 # Microsoft Breaking Change to Teams / Power Automate Webhooks
 
-yaml global product = Advanced Insights
+```yaml
+---
 
-yaml global solution = Reporting and Analytics
-
-yaml global tech Stack = ConfigMgr
+taxonomy:
+    products:
+        - advanced-insights
+    solutions:
+        - reporting-and-analytics
+    tech-stack:
+        - configmgr
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
+        
+---
+```
 
 Microsoft has announced a breaking change to the way HTTP or Teams Webhook trigger flows work in Power Automate. This change may affect customers using Patch My PC alerts configured with a Teams webhook URL.
 

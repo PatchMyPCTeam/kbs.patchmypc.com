@@ -69,10 +69,9 @@ Additionally, we will use the **en-US** language locale. For a full list of lang
    * Right-click and select “Compress to ZIP file” or use a tool like 7-Zip
    * Name the archive `localVSlayout.zip`
 3. Delete the original files and folders from `.localVSlayout` after confirming the ZIP file was created successfully.
-4.  The compressed zip file should contain the following files and folders (the exact files and folders will vary depending on the edition you used and the workloads you specified in your layout).\
+4.  The compressed zip file should contain the following files and folders (the exact files and folders will vary depending on the edition you used and the workloads you specified in your layout).\\
 
-
-    ### &#x20;<a href="#heading-0" id="heading-0"></a>
+    #### &#x20;<a href="#heading-0" id="heading-0"></a>
 5.  The localVSlayout folder should now only contain **localVSlayout.zip** and **vs\_setup.exe**
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_3.png" alt="" height="118" width="655"><figcaption></figcaption></figure>
@@ -82,8 +81,7 @@ Additionally, we will use the **en-US** language locale. For a full list of lang
 We now have the necessary files to create the custom app in Patch My PC Cloud.
 
 1. Navigate to [https://portal.patchmypc.com/app-catalog/upload](https://portal.patchmypc.com/app-catalog/upload).
-2. Click **Add Primary Install File** and select **vs\_setup.exe.**\
-
+2. Click **Add Primary Install File** and select **vs\_setup.exe.**\\
 3. Click **Add Files** and select **localVSlayout.zip** (The zip file is quite large so may take a short while to upload, you can still proceed through the wizard during the upload).![](https://patchmypc.com/app/uploads/2025/04/vs2022_5.png)
 4. Click **Next**.
 5.  On the **General Information** tab, enter the following information:-
@@ -106,8 +104,7 @@ We now have the necessary files to create the custom app in Patch My PC Cloud.
     | Apps & Features Name      | Visual Studio Community 2022 |
     | Conflicting processes     | devenv.exe                   |
     | Silent Install Parameters | ––quiet ––wait ––norestart   |
-8.  Click **Create**. (You may not be able to click Create if the localVSlayout.zip has not finsihed uploading yet).\
-
+8.  Click **Create**. (You may not be able to click Create if the localVSlayout.zip has not finsihed uploading yet).\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_8.png" alt="" height="147" width="529"><figcaption></figcaption></figure>
 
@@ -122,16 +119,13 @@ We now have the necessary files to create the custom app in Patch My PC Cloud.
 Once the Custom App has been created, it can be deployed using Patch My PC Cloud to Intune.
 
 1. Navigate to the Patch My PC portal [https://portal.patchmypc.com/app-catalog](https://portal.patchmypc.com/app-catalog).
-2.  Search for **Visual Studio** and select the Custom App that was created for Visual Studio.\
-
+2.  Search for **Visual Studio** and select the Custom App that was created for Visual Studio.\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_11.png" alt="" height="556" width="895"><figcaption></figcaption></figure>
-3.  Click **Deploy**.\
-
+3.  Click **Deploy**.\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_12.png" alt="" height="220" width="730"><figcaption></figcaption></figure>
-4.  On the **Configurations** tab, select **Scripts** and click **Add +** to add a **Pre Install** script.\
-
+4.  On the **Configurations** tab, select **Scripts** and click **Add +** to add a **Pre Install** script.\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_13.png" alt="" height="549" width="885"><figcaption></figcaption></figure>
 5.  The pre-script is going to expand the zip archive so all the required files and folders are accesible for the main installer file **vs\_setup.exe**. Paste the following script block into the script body window, name the script **Expand-Archive** and click **Save**.\
@@ -142,33 +136,28 @@ Once the Custom App has been created, it can be deployed using Patch My PC Cloud
     `} catch {`\
     `exit 1`\
     `}`\
-    \
-
+    \\
 
     ![](https://patchmypc.com/app/uploads/2025/04/vs2022_14.png)
 6. Click **Next** to add your desired **Assignments**.
-7. Click **Deploy**\
-
+7. Click **Deploy**\\
 
 ### Publish Visual Studio 2022 with Patch My PC Publisher <a href="#h-publish-visual-studio-2022-with-patch-my-pc-publisher" id="h-publish-visual-studio-2022-with-patch-my-pc-publisher"></a>
 
 Once the Custom App has been created, it can be Published using Patch My PC Publisher.
 
 1. Open Patch My PC Publishing Settings.
-2.  Select either the **ConfigMgr Apps**, **Intune Apps** or **Intune Updates** tab and find the Custom App (You may need to click the “Refresh the list of products” button indicated below).\
-
+2.  Select either the **ConfigMgr Apps**, **Intune Apps** or **Intune Updates** tab and find the Custom App (You may need to click the “Refresh the list of products” button indicated below).\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_16.png" alt="" height="549" width="708"><figcaption></figcaption></figure>
 3. Select the check-box beside the app to enable it for publishing.
-4.  Right-Click the app and click **Add custom pre/post scripts**.\
-
+4.  Right-Click the app and click **Add custom pre/post scripts**.\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_17.png" alt="" height="714" width="713"><figcaption></figcaption></figure>
 5. A pre-script is required to expand the zip archive so all the required files and folders are accesible for the main installer file **vs\_setup.exe**
 6. Copy the following code into a file and name the file **Expand-Archive.ps1**.\
    `try { Get-ChildItem -Path $PSScriptRoot -Filter "*.zip" | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath $PSScriptRoot -Force -ErrorAction Stop }; } catch { exit 1 }`![](https://patchmypc.com/app/uploads/2025/04/vs2022_18.png)
-7.  Click the **Browse** button for the **Pre Script** and select the **Expand-Archive.ps1** file that we just created. Additionally, select the check box name **Don’t attempt software update if the pre script returns an exit code other than 0 or 3010**.\
-
+7.  Click the **Browse** button for the **Pre Script** and select the **Expand-Archive.ps1** file that we just created. Additionally, select the check box name **Don’t attempt software update if the pre script returns an exit code other than 0 or 3010**.\\
 
     <figure><img src="https://patchmypc.com/app/uploads/2025/04/vs2022_20.png" alt="" height="393" width="629"><figcaption></figcaption></figure>
 8. Click **OK**.

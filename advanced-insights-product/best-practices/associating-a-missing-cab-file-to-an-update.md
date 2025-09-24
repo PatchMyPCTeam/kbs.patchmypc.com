@@ -10,6 +10,10 @@ taxonomy:
         - application-management
     tech-stack:
         - itune
+    post_tag:
+        - guid
+    sub-solutions:
+        - test
         
 ---
 ```

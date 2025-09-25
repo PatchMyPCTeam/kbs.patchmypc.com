@@ -18,7 +18,7 @@ taxonomy:
 ---
 ```
 
-In this article we outline how to associate a missing cab file from the WSUS Content folder with an Update in WSUS/ConfigMgr. Often an ADR will display the error code 0x87D20417 after evaluation and missing content is often the cause. Alternatively, manually trying to download missing update content in ConfigMgr might present the error “Error: Failed to download content id xxxxxx. Error: The cloud file provider exited unexpectedly”.
+In this article we outline how to associate and disassociate a missing cab file from the WSUS Content folder with an Update in WSUS/ConfigMgr. Often an ADR will display the error code 0x87D20417 after evaluation and missing content is often the cause. Alternatively, manually trying to download missing update content in ConfigMgr might present the error “Error: Failed to download content id xxxxxx. Error: The cloud file provider exited unexpectedly”.
 
 It might be a single update that is missing content that will cause the rule engine to throw this error. Identifying the update and declining or re-publishing it is the way to resolve the error. This article will help you identify which update your should decline or re-publish.
 

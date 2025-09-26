@@ -32,13 +32,13 @@ When providing an email address and password for email authentication in the Pub
 
 _An error occurred while sending the test mail: The SMTP server requires a secure connection, or the client was not authenticated. The server response was: 5.7.57 Client not authenticated to send mail. Error: 535 5.7.139 **Authentication unsuccessful**, **SmtpClientAuthentication is disabled for the Mailbox.** Visit https://aka.ms/smtp\_auth\_disabled for more information. HResult: -2146233088._
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture1.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture1.png)
 
 If Authenticated SMTP is already enabled, but your Entra ID Tenant has Security Defaults enabled, Publisher will still be unable to authenticate and show this error instead.
 
 _An error occurred while sending the test mail: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.57 Client not authenticated to send mail. Error: 535 5.7.**139 Authentication unsuccessful, user is locked by your organization’s security defaults policy**. Contact your administrator. HResult: -2146233088. Please see kb: https://patchmypc.com/troubleshooting-smtp-email-sending_
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture2.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture2.png)
 
 ### Resolution <a href="#h-resolution" id="h-resolution"></a>
 
@@ -48,17 +48,17 @@ To allow Publisher to send email reports through Exchange Online, you will need 
 
 In the example below I am using Exchange Online (Plan 2), but there are alternative licences available.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture3.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture3.png)
 
 #### Enable SMTP authentication on your licenced mailbox <a href="#h-enable-smtp-authentication-on-your-licenced-mailbox" id="h-enable-smtp-authentication-on-your-licenced-mailbox"></a>
 
 Navigate to the Microsoft 365 admin center and select Active Users – [Active users – Microsoft 365 admin center](https://admin.microsoft.com/#/users), Then select the mailbox you wish to configure, click on Mail, followed by Manage email apps.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture4.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture4.png)
 
 Check the box for **Authenticated SMTP** and click Save changes.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture5.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture5.png)
 
 #### Disable Security Defaults in Entra ID <a href="#h-disable-security-defaults-in-entra-id" id="h-disable-security-defaults-in-entra-id"></a>
 
@@ -72,10 +72,10 @@ Note: You can read more about security defaults and the impact this change may h
 
 [Security defaults – Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView)
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture6.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture6.png)
 
 #### 1000 years later (When these changes propogate)… <a href="#h-1000-years-later-when-these-changes-propogate" id="h-1000-years-later-when-these-changes-propogate"></a>
 
 Wait a while (It took about an hour for me) for it to take effect, and then retry the test email in Publisher.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/SMTP-Blog-Picture7.png" alt=""><figcaption></figcaption></figure>
+![](/_images/SMTP-Blog-Picture7.png)

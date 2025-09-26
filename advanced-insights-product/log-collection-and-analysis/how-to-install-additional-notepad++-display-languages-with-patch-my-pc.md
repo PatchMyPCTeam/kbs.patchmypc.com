@@ -16,7 +16,7 @@ At the time of writing this article, the Notepad++ installer does not support an
 
 3\. Select the languages you would like to deploy:
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/notepadplusplus1.png" alt="Notepad++ components"><figcaption></figcaption></figure>
+![Notepad++ components](/_images/notepadplusplus1.png "Notepad++ components")
 
 In today’s example, we chose English (included by default), German, and French.
 
@@ -64,7 +64,7 @@ Copy-Item $xmlLangPath $notepadInstallDir
 
 8\. Edit row in the script and give the name of the XLS files you have on your Desktop.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/notepadplusplus3.png" alt=""><figcaption></figcaption></figure>
+![](/_images/notepadplusplus3.png)
 
 9\. Copy the ps1 script as well as the XML files on the server hosting the PMPC Publisher Console and save them in a location they won’t be accidentally deleted.
 
@@ -72,7 +72,7 @@ Copy-Item $xmlLangPath $notepadInstallDir
 
 11\. Specify the ps1 file as a post-install script, as well as your files, as shown in the screenshot:
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/notepadplusplus4.png" alt=""><figcaption></figcaption></figure>
+![](/_images/notepadplusplus4.png)
 
 12\. Run a sync to publish Notepad++ (64-bit). Make sure to test before a global rollout.
 

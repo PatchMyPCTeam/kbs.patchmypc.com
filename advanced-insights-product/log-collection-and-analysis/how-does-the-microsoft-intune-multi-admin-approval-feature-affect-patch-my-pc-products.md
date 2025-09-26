@@ -16,10 +16,10 @@ MAA only affects changes to applications when the delegated authentication flow 
 
 Here is an example of the MAA feature in action within the Intune Admin Center. When an assignment is removed from a Win32 app, the change must be approved.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/MAA-Intune_Admin_Center.jpg" alt="" height="604" width="999"><figcaption></figcaption></figure>
+![](/_images/MAA-Intune_Admin_Center.jpg)
 
 Here is another example of a response when using a delegated authentication flow to make changes to a Win32 app when a MAA access policy has been created.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/MAA.png" alt="Multi Admin Approval prompt" height="379" width="1646"><figcaption></figcaption></figure>
+![Multi Admin Approval prompt](/_images/MAA.png "Multi Admin Approval prompt")
 
 Patch My PC Cloud and Patch My PC Publisher utilises the the application authentication flow, not a delegated authentication flow. This is why our products are unaffected by any MAA access policies.

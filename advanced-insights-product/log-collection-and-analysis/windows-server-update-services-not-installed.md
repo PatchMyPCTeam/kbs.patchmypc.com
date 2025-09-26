@@ -12,7 +12,7 @@ This article discusses the “Windows Server Update Services is not installed”
 
 When you install the Patch My PC Publisher on a Windows 10 / 11 / Windows Server, you get the error message “Windows Server Update Services is not installed”.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/01_WSUS-is-not-installed.png" alt="Windows Server Update Services is not installed error message."><figcaption></figcaption></figure>
+![Windows Server Update Services is not installed error message.](/_images/01_WSUS-is-not-installed.png "Windows Server Update Services is not installed error message.")
 
 Even for the Intune-only integration, the Patch My PC Publisher can only be installed if the WSUS RSAT tools are installed. These tools are needed to be installed to parse the Patch My PC catalog XML.
 
@@ -43,7 +43,7 @@ You can verify if this capability installed successfully by running the followin
 
 You should get a result similar to this:
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/02-Get-WSUSTools-installed.png" alt="Check if WSUS RSAT Tools installed successfully"><figcaption></figcaption></figure>
+![Check if WSUS RSAT Tools installed successfully](/_images/02-Get-WSUSTools-installed.png "Check if WSUS RSAT Tools installed successfully")
 
 #### [How to fix the issue on a Windows Server OS](https://patchmypc.com/kb/wsus-not-installed/#howtofixwindowsserveros) <a href="#h-how-to-fix-the-issue-on-a-windows-server-os" id="h-how-to-fix-the-issue-on-a-windows-server-os"></a>
 
@@ -60,4 +60,4 @@ If you plan hosting the Patch My PC Publisher on a Windows Server, please follow
 
 You should get a result similar to this:
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/03_GetWSUSinstalled-on-Server.png" alt="Verify if the UpdateServices API is successfully installed"><figcaption></figcaption></figure>
+![Verify if the UpdateServices API is successfully installed](/_images/03_GetWSUSinstalled-on-Server.png "Verify if the UpdateServices API is successfully installed")

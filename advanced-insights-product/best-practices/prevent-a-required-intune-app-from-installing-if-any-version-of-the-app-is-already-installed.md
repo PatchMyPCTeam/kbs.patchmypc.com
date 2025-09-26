@@ -81,13 +81,13 @@ The provided script will be used as a requirement check for a Win32 app in Intun
 
 In the following example, we replace the default entries in the **$appNameList** array with **‘Google Chrome’** as this is the DisplayName that is shown in **Apps & Features / Installed Apps** when this app is installed.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_9.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_9.jpg)
 
 ```
 $appNameList = @('Google Chrome')
 ```
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_8.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_8.jpg)
 
 &#x20;4\. Save the script.
 
@@ -103,15 +103,15 @@ In the following example, we will use Google Chrome:-
 
 2\. Navigate to the Intune apps tab and click **options** (the options button might look different than depicted in the image below depending on your licence level).
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_1-2.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_1-2.jpg)
 
 2\. Ensure the check box is selected for [**Copy the requirements from previously created applications or updates when an updated application is created**](https://patchmypc.com/intune-application-creation-options#CopyRequirements)
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_2.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_2.jpg)
 
 3\. Ensure your desired variant of **Google Chrome** is selected with the intent to Publish by verifying the check box is ticked on the Intune apps tab.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_3.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_3.jpg)
 
 4\. After the next schedule sync cycle, or a manual sync, or as a result from being published previously, find your selected variant of Google Chrome in the Intune Admin Center.
 
@@ -125,7 +125,7 @@ In the following example, we will use Google Chrome:-
 
 2\. By reviewing the **Deployments** tab, ensure the app is already deployed. If it is not, [follow the instructions here](https://docs.patchmypc.com/installation-guides/patch-my-pc-cloud/deployments/deploy-an-app) to deploy an Intune app from Patch My PC Cloud.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_12.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_12.jpg)
 
 3\. Proceed to [Step 3](https://patchmypc.com/kb/prevent-required-intune-app-from/#step3).
 
@@ -139,21 +139,21 @@ In the following example, we will continue to use Google Chrome:-
 
 1\. Select the app in the Intune Admin Centre. In our example, we are using **Google Chrome**.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_4.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_4.jpg)
 
 2\. Select **Properties** and click **Edit** in the app requirements section.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_5.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_5.jpg)
 
 3\. Click **Add**.
 
 4\. Select the Requirement type **Script**.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_7-1.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_7-1.jpg)
 
 5\. Select the edited script you saved in [Step 1](https://patchmypc.com/kb/prevent-required-intune-app-from/#download-edit-script) and apply the following settings:-
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_10.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_10.jpg)
 
 * Script file: **Get-NotInstalledRequirement.ps1**
 * Run script as 32-bit process on 64-bit clients: **No**
@@ -169,25 +169,25 @@ In the following example, we will continue to use Google Chrome:-
 
 8\. The Win32 app should indicate that it now has the requirement script configured.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_11.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_11.jpg)
 
 ### Step 4: Verify a newer version of a required Intune app will not install if an older version of the application is already installed <a href="#h-step-4-verify-a-newer-version-of-a-required-intune-app-will-not-install-if-an-older-version-of-the" id="h-step-4-verify-a-newer-version-of-a-required-intune-app-will-not-install-if-an-older-version-of-the"></a>
 
 In the following example, **Google Chrome 114.0.5735.199** is already installed on the device.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_13.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_13.jpg)
 
 We can simulate a required deployment of a newer version of the Intune app. We deployed **Google Chrome 130.0.6723.59**, as an Intune app. In the Company Portal we can verify the newer version of the Intune app did not install, it is marked as **Requirements not met**.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_14.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_14.jpg)
 
 The AppWorkload.log also indicates the applicability result: ScriptRequirementRuleNotMet = **1008** (0x000003F0).
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_15.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_15.jpg)
 
 The AppActionProcessor.log also indicates the Intune app is not applicable.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/04/required_apps_solution_16-1.jpg" alt=""><figcaption></figcaption></figure>
+![](/_images/required_apps_solution_16-1.jpg)
 
 ### Summary <a href="#h-summary" id="h-summary"></a>
 

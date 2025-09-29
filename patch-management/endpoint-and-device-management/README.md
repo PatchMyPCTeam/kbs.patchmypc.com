@@ -1,2 +1,0 @@
-# Endpoint and Device Management
-

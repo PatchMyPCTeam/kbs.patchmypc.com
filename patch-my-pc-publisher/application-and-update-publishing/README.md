@@ -1,2 +1,0 @@
-# Application and Update Publishing
-

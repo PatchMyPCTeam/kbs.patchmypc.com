@@ -1,2 +1,0 @@
-# Log Collection and Analysis
-

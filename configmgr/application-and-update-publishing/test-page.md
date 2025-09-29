@@ -1,9 +1,8 @@
-# Alex test article
+# Test page
 
 ```yaml
-
 ---
-​
+
 taxonomy:
     products:
         - advanced-insights
@@ -14,8 +13,8 @@ taxonomy:
         - best-practices
     sub-solutions:
         - test
-​
+
 ---
 ```
 
-test content
+Content

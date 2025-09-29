@@ -7,7 +7,7 @@
   * [Application and Update Publishing](configmgr/application-and-update-publishing/README.md)
     * [ConfigMgr Application Manager Overview](configmgr/application-and-update-publishing/configmgr-app-manager.md)
     * [How to use the ConfigMgr Application Manager to Delete Applications Created by Patch My PC](configmgr/application-and-update-publishing/configmgr-app-manager-1.md)
-    * [Alex test article](configmgr/application-and-update-publishing/alex-test-article.md)
+    * [Test page](configmgr/application-and-update-publishing/test-page.md)
   * [Best Practices](configmgr/best-practices/README.md)
     * [Delaying ConfigMgr Base Application Updates](configmgr/best-practices/delaying-configmgr-base-application-updates.md)
   * [Common Issues and Error Codes](configmgr/common-issues-and-error-codes/README.md)

@@ -1,6 +1,3 @@
-# Power BI Reports for Microsoft Intune Third-Party Update and Application Deployments
-
-```yaml
 ---
 
 taxonomy:
@@ -15,7 +12,8 @@ taxonomy:
         - test
 
 ---
-```
+
+# Power BI Reports for Microsoft Intune Third-Party Update and Application Deployments
 
 Our Power BI dashboards can be used to monitor the compliance and deployment of [**third-party updates**](https://patchmypc.com/third-party-patch-management-for-microsoft-intune) and [**applications**](https://patchmypc.com/automatically-create-and-deploy-applications-in-microsoft-intune) in Microsoft Intune.
 

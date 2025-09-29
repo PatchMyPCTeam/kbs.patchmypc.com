@@ -1,5 +1,3 @@
-# Test page
-
 ```
 ---
 
@@ -16,6 +14,7 @@ taxonomy:
 
 ---
 ```
+# Test page
 
 Content
 

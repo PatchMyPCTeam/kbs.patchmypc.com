@@ -22,23 +22,23 @@ When you launch the Publisher, you might receive the following error.
 
 The PatchMyPCService is running, but the ConfigApi is not responding. Cloud features will not be available. Please see PatchMyPC.log for more information
 
-![](../../.gitbook/assets/ConfigApi_Error.png)
+![](/_images/ConfigApi_Error.png)
 
 When you click OK, you get a further warning.
 
 An unhandled exception occurred: :9001\]
 
-![](../../.gitbook/assets/ConfigApi_Error_UnhandledException.png)
+![](/_images/ConfigApi_Error_UnhandledException.png)
 
 Both of these errors can be found in the %ProgramFiles%Patch My PCPatch My PC Publishing ServicePatchMyPC.log
 
-![](../../.gitbook/assets/ConfigApi_Error_Log-1.png)
+![](/_images/ConfigApi_Error_Log-1.png)
 
 Run the following command to verify you are missing a configuration setting on the host which means the Publisher cannot bind to the ConfigApi on the loopback adapter.
 
 **netsh http show iplisten**
 
-![](../../.gitbook/assets/ConfigApi_Error_netsh.png)
+![](/_images/ConfigApi_Error_netsh.png)
 
 If 127.0.0.1 is not present in the list, this will cause the error listed in this article.
 
@@ -54,4 +54,4 @@ Verify the addition of 127.0.0.1 was successful by running the following command
 
 **netsh http show iplisten**
 
-![](../../.gitbook/assets/ConfigApi_Error_netshFix.png)
+![](/_images/ConfigApi_Error_netshFix.png)

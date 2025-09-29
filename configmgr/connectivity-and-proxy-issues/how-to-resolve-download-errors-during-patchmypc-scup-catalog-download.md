@@ -1,2 +1,1 @@
 # How to Resolve Download Errors During PatchMyPC SCUP Catalog Download
-

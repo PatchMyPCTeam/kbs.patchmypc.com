@@ -29,11 +29,11 @@ We store the **last download response code and domain for currently enabled prod
 
 The download history can be found on a CSV file in: **%InstallDir%\\PatchMyPC-DownloadHistory.csv**
 
-![PatchMyPC-DownloadHistory.csv File for Download History](images/PatchMyPC-DownloadHistory.csv-File-for-Download-History.png)
+![PatchMyPC-DownloadHistory.csv File for Download History](/_images/PatchMyPC-DownloadHistory-csv-File-for-Download-History.png "PatchMyPC-DownloadHistory.csv File for Download History")
 
 Here's an example of the data included in the **PatchMyPC-DownloadHistory.csv file**. You can use the **domain column to create firewall exceptions** based on the products enabled and failing to download.
 
-![PatchMyPC-DownloadHistory.csv Example List](images/PatchMyPC-DownloadHistory.csv-Example-List.png)
+![PatchMyPC-DownloadHistory.csv Example List](/_images/PatchMyPC-DownloadHistory-csv-Example-List.png "PatchMyPC-DownloadHistory.csv Example List")
 
 ## Resolution to this Specific Hash Check Failure
 
@@ -43,13 +43,13 @@ When the downloaded file is **less than 100 kb** in size, this almost always cor
 
 **Step 1** - **Open the PatchMyPC.log** from the **publishing service.**
 
-![PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI](images/PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI.png)
+![PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI](/_images/PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI.png "PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI")
 
-**Step 2 - Copy the download URL from the PatchMyPC.log** for any updates **receiving this hash error.** ![Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering](images/Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering.png)
+**Step 2 - Copy the download URL from the PatchMyPC.log** for any updates **receiving this hash error.** ![Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering](/_images/Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering.png "Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering")
 
 **Step 3 - Paste the download URL into a web browser** on the same server running the publishing service and check if you receive an **error that a web filter is blocking the download**.
 
-![Download URL Being Filtered in Browser](images/Download-URL-Being-Filter-in-Browser.png)
+![Download URL Being Filtered in Browser](/_images/Download-URL-Being-Filter-in-Browser.png "Download URL Being Filtered in Browser")
 
 **Note:** Patch My PC Publisher will attempt to download files from the internet in the **SYSTEM** context. This must be considered when using proxy servers or firewalls that require authentication.
 

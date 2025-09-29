@@ -22,7 +22,7 @@ An **Unknown** update state means the device(s) haven't successfully **scanned a
 
 If you are affected by scan issues, you will likely see a high percentage of devices showing an **Unknown state** in the ConfigMgr console's **All Software Updates** node. Although this issue **isn't specific to Patch My PC**, we will review some troubleshooting methods below as best-effort support.
 
-![ConfigMgr Updates Showing Unknown Software Update Status](images/ConfigMgr-Updates-Showing-Unknown-Software-Update-Status.png)
+![ConfigMgr Updates Showing Unknown Software Update Status](/_images/ConfigMgr-Updates-Showing-Unknown-Software-Update-Status.png "ConfigMgr Updates Showing Unknown Software Update Status")
 
 > **Note:** Depending on your Windows Update for Business (**WUfB**) policies, it's possible Microsoft updates can still apply from WUfB even if results show unknown in the ConfigMgr console. Third-party updates will never be applied if the update is in an **Unknown state**. Please see **[Using ConfigMgr With Windows 10 WUfB Deferral Policies](https://techcommunity.microsoft.com/t5/configuration-manager-archive/using-configmgr-with-windows-10-wufb-deferral-policies/ba-p/274278)** for more details about WUfB policies.
 
@@ -60,7 +60,7 @@ The following report **Software Updates - E Troubleshooting** > **Troubleshooti
 
 In this report, you can review if there are a large number of devices reporting scan errors.
 
-![Troubleshooting 1 - Scan errors](images/Troubleshooting-1-Scan-errors.png)
+![Troubleshooting 1 - Scan errors](/_images/Troubleshooting-1-Scan-errors.png "Troubleshooting 1 - Scan errors")
 
 ## Troubleshooting Step 3: Can the Client Find the WSUS/SUP Server?
 
@@ -94,10 +94,10 @@ OnSearchComplete - Failed to end search job. Error = 0x80244022
 
 OnSearchComplete - Failed to end search job. Error = 0x80240438
 
-![](../../_images/Wsus_IIS_Stopped.png)
+![](/_images/Wsus_IIS_Stopped.png)
 
 To begin with, the two should be started again. You can simply highlight the WSUS Administration website, or the WsusPool and select **Start** from the Actions pane on the right hand side of IIS.
 
-![](../../_images/Start-Stopped-Resources-IIS.png)
+![](/_images/Start-Stopped-Resources-IIS.png)
 
 Commonly the **WSUSPool Application Pool will crash due** to a lack of resources, or the app pool needing some advanced configuration changes. Microsoft has some docs [here](https://docs.microsoft.com/en-us/troubleshoot/mem/configmgr/windows-server-update-services-best-practices#disable-recycling-and-configure-memory-limits) which can help give a good baseline for your IIS configuration.

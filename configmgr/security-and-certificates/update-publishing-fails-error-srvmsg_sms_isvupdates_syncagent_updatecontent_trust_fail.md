@@ -29,18 +29,18 @@ When you **[subscribe to a third-party software update catalog](https://docs.mic
 
 For example, in the extracted catalog in the screenshot below, you can see a certificate used to **code-sign Dropbox's installer**.
 
-![](../../_images/catalog-content-certficate.png)
+![](/_images/catalog-content-certficate.png)
 
 During a catalog sync in the **SMS\_ISVUPDATES\_SYNCAGENT.log**, you can review the **certificates being imported** into Configuration Manager from a third-party update catalog.
 
-![](../../_images/content-certificate-import-SMS_ISVUPDATES_SYNCAGENT.png)
+![](/_images/content-certificate-import-SMS_ISVUPDATES_SYNCAGENT.png)
 
 ## Why The STATMSG: (SRVMSG\_SMS\_ISVUPDATES\_SYNCAGENT\_UPDATECONTENT\_  
 TRUST\_FAIL). Error?
 
 Before any third-party update can be published to WSUS, the SMS\_ISVUPDATES\_SYNCAGENT component will always **perform a certificate check on the downloaded update file**.
 
-![](../../_images/SMS_ISVUPDATES_SYNCAGENT-retrieved-certificate-checking-signature.png)
+![](/_images/SMS_ISVUPDATES_SYNCAGENT-retrieved-certificate-checking-signature.png)
 
 When an update file is downloaded, and the code-signing certificate **isn't trusted** within Configuration Manager, you will receive the error:
 
@@ -48,11 +48,11 @@ STATMSG: (SRVMSG\_SMS\_ISVUPDATES\_SYNCAGENT\_UPDATECONTENT\_TRUST\_FAIL).
 
 Within the Configuration Manager Console, you can navigate to **Administration** > **Security** > **Certificates**
 
-![](../../_images/unblock-certificate-configuraton-manage-third-party-updates.png)
+![](/_images/unblock-certificate-configuraton-manage-third-party-updates.png)
 
 You can then right-click the certificate of the blocked certificate and click **Unblock**. Once unblocked, you should be able to go back to the update and choose **Publish Third-Party Software Update Content,** and it should publish successfully.
 
-![](../../_images/Signature-check-on-download-binary-has-completed.png)
+![](/_images/Signature-check-on-download-binary-has-completed.png)
 
 ## Why was the Certificate Blocked in Configuration Manager
 

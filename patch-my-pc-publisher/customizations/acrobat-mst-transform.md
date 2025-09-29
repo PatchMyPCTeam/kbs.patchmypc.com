@@ -27,22 +27,22 @@ You can customize the Adobe Acrobat Reader using a custom **MST transform** file
 5. Open the Patch My PC Publisher and navigate to **_ConfigMgr Apps_** \-> **_All Products_** -> **_Adobe Systems, Inc._** \-> **_Adobe Acrobat Reader DC_**
 
 7. Right-click the application to modify and choose to **Add custom pre/post update installation scripts**.  
-    ![Adobe MST Right Click Pre/Post Script](images/AdobeMST-RC-AddPrePostScript.png)
+    ![Adobe MST Right Click Pre/Post Script](/_images/AdobeMST-RC-AddPrePostScript.png "Adobe MST Right Click Pre/Post Script")
       
     
 
 9. Click **Browse**... next to the **Additional Files** list box and select your custom **MST file**, Click **OK**.  
-    ![Adobe MST Additional Files Window](images/AdobeMST-W-AdditionalFiles.png)
+    ![Adobe MST Additional Files Window](/_images/AdobeMST-W-AdditionalFiles.png "Adobe MST Additional Files Window")
       
     
 
 11. Right-click the application to modify once more and choose **_Modify Command Line_**  
-     ![Adobe MST Right Click Modify Command Line](images/AdobeMST-RC-ModifyCommandLine.png)
+     ![Adobe MST Right Click Modify Command Line](/_images/AdobeMST-RC-ModifyCommandLine.png "Adobe MST Right Click Modify Command Line")
      
 
 13. Enter the following in the Additional Argument field and click **OK**:  
      TRANSFORMS=  
-     ![Adobe MST Modify Command Line Window](images/AdobeMST-W-AdditionalArgs.png)
+     ![Adobe MST Modify Command Line Window](/_images/AdobeMST-W-AdditionalArgs.png "Adobe MST Modify Command Line Window")
      
 
 15. Click **Apply** and **run a Sync** to update the Application in ConfigMgr.

@@ -32,9 +32,9 @@ In Scenario 1, We want to ensure that all of our devices have Google Chrome x64 
 
 To achieve this, We want to select the **Intune App** for Google Chrome x64 and set our assignments to **Required** on **All Devices**
 
-![](../../_images/Chrome_App.png)
+![](/_images/Chrome_App.png)
 
-![](../../_images/Required_All_Devices.png)
+![](/_images/Required_All_Devices.png)
 
 With this assignment set, Any time a device checks in it will evaluate the following
 
@@ -48,17 +48,17 @@ In Scenario 2, We want to make Chrome available to our users to install from the
 
 To achieve this, We want to select the **Intune App** for Google Chrome and set our Assignments to **Available** to **All Users**
 
-![](../../_images/Chrome_App.png)
+![](/_images/Chrome_App.png)
 
-![](../../_images/Available_All_Users.png)
+![](/_images/Available_All_Users.png)
 
 With this assignment set, Google Chrome will appear in the Company Portal for your users to install should they want to.
 
 Once we have this assignment set, We want to select the **Intune Update** for Google Chrome and set our **Assignments** to **Required** on **All Devices**
 
-![](../../_images/Chrome_Update.png)
+![](/_images/Chrome_Update.png)
 
-![](../../_images/Update_Required_All_Devices.png)
+![](/_images/Update_Required_All_Devices.png)
 
 With this assignment set, Any time a device checks in it will evaluate the following
 

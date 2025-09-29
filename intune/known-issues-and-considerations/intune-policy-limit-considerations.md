@@ -38,7 +38,7 @@ Failed to get the app policy from service, exception is System.ArgumentException
 
 It is likely a large Base64 encoded JSON payload will be shown as well, such as below.
 
-![JSON log snippet](images/RADmkscyOB.png)
+![JSON log snippet](/_images/RADmkscyOB.png "JSON log snippet")
 
 > **Note:** If you are hitting the policy limit the client will not be able to process application assignments. 
 
@@ -54,7 +54,7 @@ The largest part of any given Win32 application's policy is the scripts associat
 
 Within the Publisher the option to '**Digitally sign the detection method script**...' is provided as shown below.
 
-![](../../_images/detection_method.png)
+![](/_images/detection_method.png)
 
 When a script is digitally signed it will **add approximately 10kb to the total script size**. This does not seem like a lot, but for Intune Policy this is a very significant amount of overhead. Keeping in mind that **Intune Updates will have policy containing two scripts** when these are signed the policy per-app increases by approximately 20kb. 
 

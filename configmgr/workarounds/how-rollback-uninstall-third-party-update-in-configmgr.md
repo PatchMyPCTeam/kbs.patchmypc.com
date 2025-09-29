@@ -28,15 +28,15 @@ To rollback a third-party software update, you can use the **[application manage
 
 In the example below, we will show how to **revert Google Chrome 87.0.4280.66 (x64)** to **Google Chrome 84.0.4147.105 (x64)**. To perform a rollback, you will need to have an application you want to rollback to as well as the version you want to revert from (the software update that was installed).
 
-![Multiple Google Chrome Versions to Rollback Third-Party Update in SCCM](images/Multiple-Google-Chrome-Versions-to-Rollback-Third-Party-Update-in-SCCM.png)
+![Multiple Google Chrome Versions to Rollback Third-Party Update in SCCM](/_images/Multiple-Google-Chrome-Versions-to-Rollback-Third-Party-Update-in-SCCM.png "Multiple Google Chrome Versions to Rollback Third-Party Update in SCCM")
 
 > **Note:** If you are using the **[Update existing application’s metadata, deployment type, detection method, and content files (Default)](https://patchmypc.com/base-install-update-options-explained#topic1)**, you can enable the [retain up to X previously created applications](https://patchmypc.com/base-install-update-options-explained#topic3) in the **[ConfigMgr application options](https://patchmypc.com/base-install-update-options-explained)** to provide you with a rollback option. Otherwise, previous application versions would not be available from Patch My PC.
 > 
-> ![](../../_images/Rollback-1.2.png)
+> ![](/_images/Rollback-1-2.png)
 
 To revert to an older version, go to the **properties** of the application you want to revert to and perform the following actions: Click the **Supersedence** tab > click **Add...** > Click **Browse**... > Select the **latest application** your want to uninstall > Select the deployment type in the **New Deployment Type** drop-down > and Check the **Uninstall** checkbox.
 
-![Supersede Application for Third-Party Update Rollback in SCCM](images/Supercede-Application-for-Third-Party-Update-Rollback-in-SCCM.gif)
+![Supersede Application for Third-Party Update Rollback in SCCM](/_images/Supercede-Application-for-Third-Party-Update-Rollback-in-SCCM.gif "Supersede Application for Third-Party Update Rollback in SCCM")
 
 You can now **[deploy the application](https://docs.microsoft.com/en-us/mem/configmgr/apps/deploy-use/deploy-applications)** you want to revert to, and the deployment will automatically uninstall the latest update before the rollback.
 
@@ -46,6 +46,6 @@ You can now **[deploy the application](https://docs.microsoft.com/en-us/mem/conf
 
 If you want to remove a third-party **application entirely**, you can use the **[uninstall feature](https://docs.microsoft.com/en-us/mem/configmgr/apps/deploy-use/uninstall-applications#uninstall-an-application)** of the [application management feature](https://docs.microsoft.com/en-us/mem/configmgr/apps/understand/introduction-to-application-management). Almost all applications created by Patch My PC will have the uninstall program defined in the applications **[deployment type](https://docs.microsoft.com/en-us/mem/configmgr/apps/deploy-use/create-applications#bkmk_create-dt)**.
 
-![Uninstall Program for SCCM Application Deployment Type](images/Uninstall-Program-for-SCCM-Application-Deployment-Type.png)
+![Uninstall Program for SCCM Application Deployment Type](/_images/Uninstall-Program-for-SCCM-Application-Deployment-Type.png "Uninstall Program for SCCM Application Deployment Type")
 
 You can deploy the application you want to remove as an **[uninstall deployment](https://docs.microsoft.com/en-us/mem/configmgr/apps/deploy-use/deploy-applications#bkmk_deploy-settings)** to remove it from a device collection.

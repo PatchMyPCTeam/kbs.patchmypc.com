@@ -89,4 +89,4 @@ Example CMTace Error Message
 Example CMTrace Warning Message  
 sample-powershell command line
 
-[![More Information](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/04/more-info-icon.svg)**Note:** Here is an example call out section for something super duper cool
+[![More Information](/_images/more-info-icon.svg "More Information")](https://patchmypc.com/app/uploads/2025/04/more-info-icon.svg)**Note:** Here is an example call out section for something super duper cool

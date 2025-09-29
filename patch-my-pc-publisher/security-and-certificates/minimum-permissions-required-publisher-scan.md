@@ -18,7 +18,7 @@ For the Publisher to use the **Scan SCCM for Management Applications** feature, 
 
 This article describes the **minimum permissions** required to scan the SCCM database for installed applications from the Patch My PC Publisher. If you have the appropriate SQL permissions to the SCCM database, you should see scan results that look similar to below:
 
-![](../../_images/ConfigMgrDBScan.png)
+![](/_images/ConfigMgrDBScan.png)
 
 **Topics** covered in this article:
 
@@ -34,7 +34,7 @@ In the event, you receive the error "_**Unable to connect to the SCCM database.*
 
 Here's the error you will receive if you don't have the appropriate permissions.
 
-![](../../_images/ConfigMgrDBScan_ConnectionError.png)
+![](/_images/ConfigMgrDBScan_ConnectionError.png)
 
 In the PatchMyPC.log, you will also see the following information.
 
@@ -83,19 +83,19 @@ EXEC (@PermissionsSQL)
 
 From SQL Server Management Studio, click **New Login...**
 
-![SQL Server Add New Login](images/SQL-Server-Add-New-Login.png)
+![SQL Server Add New Login](/_images/SQL-Server-Add-New-Login.png "SQL Server Add New Login")
 
 Add the account you need to grant permissions to in SQL Server. In the event, you need to add a computer account such as a remote WSUS server enter it as $.
 
-![Add Computer Account to SQL Server](images/Add-Computer-Account-to-SQL-Server.png)
+![Add Computer Account to SQL Server](/_images/Add-Computer-Account-to-SQL-Server.png "Add Computer Account to SQL Server")
 
 **Note:** when you run the Query in the UI directly, the scan is performed under the **current user context**. In the event you enable automated product scanning highlighted below, the query is executed under **SYSTEM context** using **WSUS server's computer account**.
 
-![](../../_images/ConfigMgrDBScan_AutoEnable.png)
+![](/_images/ConfigMgrDBScan_AutoEnable.png)
 
 You can leave the **public** access only under the **Server Roles** tab and click OK. Under the **User Mapping** tab, you need to check the SCCM database and enable the **public** database role membership.
 
-![](../../_images/membership.png)
+![](/_images/membership.png)
 
 Next, you need to grant the account you added **Select** permissions on the the following SQL views within the Configuration Manager database:
 
@@ -113,4 +113,4 @@ Right click on each view and click **Properties** and grant **Select** permiss
 
 - **v\_Collection**
 
-![PatchMyPC Enable Select Permissions v_Add_Remove_Programs](images/PatchMyPC-Enable-Select-Permissions-v_Add_Remove_Programs.png)
+![PatchMyPC Enable Select Permissions v_Add_Remove_Programs](/_images/PatchMyPC-Enable-Select-Permissions-v_Add_Remove_Programs.png "PatchMyPC Enable Select Permissions v_Add_Remove_Programs")

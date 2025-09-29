@@ -18,11 +18,11 @@ By default, we will always [Timestamp](https://en.wikipedia.org/wiki/Trusted_ti
 
 Timestamping can be helpful because even after the WSUS Signing Certificate's expiration date has occurred, clients will still **trust any previously published updates** that were signed with that certificate if it was timestamped.
 
-![timestamp on WSUS cab file](images/timestamp-on-cab-file.png)
+![timestamp on WSUS cab file](/_images/timestamp-on-cab-file.png "timestamp on WSUS cab file")
 
 For example, the following WSUS Signing Certificate has an expiration date of **May 20, 2023**. If timestamping is enabled, clients will trust an be able to install updates even after the expiration date.
 
-![WSUS Signing Certificate Expiration Date](images/Expiration-Date-Timestamping.png)
+![WSUS Signing Certificate Expiration Date](/_images/Expiration-Date-Timestamping.png "WSUS Signing Certificate Expiration Date")
 
 We usually recommend leaving timestamping enabled, but if you need to disable the timestamp feature, you can create the following DWORD value:
 
@@ -30,7 +30,7 @@ We usually recommend leaving timestamping enabled, but if you need to disable th
 
 After creating the registry value, you will need to **restart the PatchMyPCService**
 
-![](../../_images/restart-patchmypc-publishing-service.png)
+![](/_images/restart-patchmypc-publishing-service.png)
 
 One reason why you may want to disable time stamping is to test if updates may be failing to publish due to [timestamping firewall rules](/list-of-domains-used-for-downloads-in-patch-my-pc-update-catalog) or [proxy not configured at the system-level](/update-publishing-fails-when-proxy-is-in-use-and-timestamping-is-enabled).
 

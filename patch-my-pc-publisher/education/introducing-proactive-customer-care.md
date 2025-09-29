@@ -30,7 +30,7 @@ If you enabled the [SMTP email feature](/troubleshooting-smtp-email-sending) or 
 
 Here's an example **email alert** you would receive if your **[WSUSContent is misconfigured](/an-error-occurred-while-publishing-an-update-to-wsus-createdirectory-failed)**.
 
-![email report of update that failed to publish](images/email-report-error-e1599795734300.png)
+![email report of update that failed to publish](/_images/email-report-error-e1599795734300.png "email report of update that failed to publish")
 
 Our goal with proactive customer care is to send alerts containing key information about **errors in your environment,** even if you **didn't enable emails using SMTP settings** directly in our software.
 
@@ -42,7 +42,7 @@ Starting in July 2021, we will also send alerts for settings that could allow yo
 
 For example, in Configuration Manager 1806, there are new settings for [software update maintenance](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/software-updates-maintenance) that aren't enabled by default.
 
-![WSUS Maintenance Turned Off in SCCM](images/WSUS-Maintenance-Turned-Off-in-SCCM.png)
+![WSUS Maintenance Turned Off in SCCM](/_images/WSUS-Maintenance-Turned-Off-in-SCCM.png "WSUS Maintenance Turned Off in SCCM")
 
 If these settings aren't enabled, you could receive a proactive email to let you know this could help improve performance and reliability.
 
@@ -52,4 +52,4 @@ By partnering with our customer base of over 2,000, we have seen **trends** and
 
 If we detect a **[known issue](/category/knowledge-base)** through **[error insights](/telemetry-data-collected-when-using-the-publisher#topic9)**, we will send you a direct email containing the information about how to resolve the issue. Here's an example of what a proactive email would look like:
 
-![Proactive Customer Care Email Example](images/Proactive-Customer-Care-Email-Example.png)
+![Proactive Customer Care Email Example](/_images/Proactive-Customer-Care-Email-Example.png "Proactive Customer Care Email Example")

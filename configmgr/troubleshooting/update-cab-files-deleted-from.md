@@ -27,13 +27,13 @@ exec spGetFrontEndServers
 
 The result of this query should list **all WSUS front end servers** using the same **SUSDB**.
 
-![spGetFrontEndServers Against SUSDB in SQL Management Studio](images/spGetFrontEndServers-Against-SUSDB-in-SQL-Management-Studio.png)
+![spGetFrontEndServers Against SUSDB in SQL Management Studio](/_images/spGetFrontEndServers-Against-SUSDB-in-SQL-Management-Studio.png "spGetFrontEndServers Against SUSDB in SQL Management Studio")
 
 If there aren't multiple servers listed in the **ServerName** column, this blog post will not be related to your issue.
 
 If affected, you will see **.CAB updates automatically be deleted** right after the publishing is completed. In many cases, this will happen so fast you will not see the file appear unless you run **[Procmon](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)** to verify it was created. You will likely only see a new folder created in the **[WSUSContent directory](/clean-up-third-party-updates-from-the-wsus-updateservicespackages-folder#wsuscontent)** that is empty, and the third-party update will fail to download to a deployment package with **error 404**.
 
-![](../../_images/deleting-update-wsus-content.gif)
+![](/_images/deleting-update-wsus-content.gif)
 
 ## Why the Third-Party Update CAB Files are Auto-Deleting
 
@@ -47,7 +47,7 @@ select \* from tbReference
 
 In the example below, we can see the **NLBMasterFrontEndServer** is set to **SITESYSTEM.CONTOSO.LOCAL**. The publishing of updates is being performed from the WSUS server **DEMO4.CONTOSO.LOCAL**, because it is the top-level software update point within our Configuration Manager environment.
 
-![SUSDB Get NLBMasterFrontEndServer Server](images/SUSDB-Get-NLBMasterFrontEndServer-Server.png)
+![SUSDB Get NLBMasterFrontEndServer Server](/_images/SUSDB-Get-NLBMasterFrontEndServer-Server.png "SUSDB Get NLBMasterFrontEndServer Server")
 
 The root cause for the actual .CAB files being deleted is because the **NLBMasterFrontEndServer** server doesn't trust the WSUS signing certificate from the WSUS server that is performing the publishing of third-party updates.
 
@@ -65,7 +65,7 @@ The previous section gives insight into the root cause of the issue which is the
 
 If are using the **[Patch My PC Publisher](/docs)**, you can **export** the WSUS Signing Certificate from the general tab to a **(.CER file)**.
 
-![Export WSUS Signing Certificate](images/Export-WSUS-Signing-Certficate.png)
+![Export WSUS Signing Certificate](/_images/Export-WSUS-Signing-Certficate.png "Export WSUS Signing Certificate")
 
 If you are not using the Publisher, you can **export** the WSUS Signing Certificate using the following steps:
 
@@ -75,36 +75,36 @@ If you are not using the Publisher, you can **export** the WSUS Signing Certific
 
 5. **Right-click** the **WSUS Signing Certificate** > **All Tasks** > **Export =**
     1. **
-        ![certlm.msc Export WSUS Signing Certificate](images/certlm.msc-Export-WSUS-Signing-Certificate.png)
+        ![certlm.msc Export WSUS Signing Certificate](/_images/certlm-msc-Export-WSUS-Signing-Certificate.png "certlm.msc Export WSUS Signing Certificate")
         **
 
 7. In the **Export Private Key** dialog, be sure to choose the option "**No, do not export the private key**"
 
 Copy the **(.CER certificate file)** from the WSUS server that it was exported from (DEMO4.CONTOSO.LOCAL in our case) to the **NLBMasterFrontEndServer** (SITESERVER.CONTOSO.LOCAL in our case). On the **NLBMasterFrontEndServer** WSUS server, open the **(.CER certificate file)**. In the **Certificate Path** tab, you will likely see the certificate shows an error similar to the one below:
 
-![This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store.](images/This-CA-Root-certificate-is-not-trusted-because-it-is-not-in-the-Trusted-Root-Certification-Authorities-store.png)
+![This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store.](/_images/This-CA-Root-certificate-is-not-trusted-because-it-is-not-in-the-Trusted-Root-Certification-Authorities-store.png "This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store.")
 
 On the General tab of the certificate, click **Install Certificate...** button
 
-![Install Certificate... from certlm.msc](images/Install-Certificate.-from-certlm.msc_.png)
+![Install Certificate... from certlm.msc](/_images/Install-Certificate-from-certlm-msc_.png "Install Certificate... from certlm.msc")
 
 In the **Certificate Import Wizard** choose **Local Machine** for the **Store Location**
 
-![Store Location as Local Machine](images/Store-Location-as-Local-Machine.png)
+![Store Location as Local Machine](/_images/Store-Location-as-Local-Machine.png "Store Location as Local Machine")
 
 Click the radio button **Place all certificates in the following store** and browse to **Trusted Root Certification Authorities**
 
-![Install Certificate to Trusted Root Certification Authorities certlm](images/Install-Certificate-to-Trusted-Root-Certification-Authorities-certlm.png)
+![Install Certificate to Trusted Root Certification Authorities certlm](/_images/Install-Certificate-to-Trusted-Root-Certification-Authorities-certlm.png "Install Certificate to Trusted Root Certification Authorities certlm")
 
 Once installed to **Trusted Root Certification Authorities**, **repeat the certificate installation** steps above, but choose the certificate store **Trusted Publishers**
 
-![Install Certificate to Trusted Publishers certlm](images/Install-Certificate-to-Trusted-Publishers-certlm.png)
+![Install Certificate to Trusted Publishers certlm](/_images/Install-Certificate-to-Trusted-Publishers-certlm.png "Install Certificate to Trusted Publishers certlm")
 
 > **Important:** The WSUS Signing Certificate must be installed at both the **Trusted Root Certification Authorities** and **Trusted Publishers**
 
 Once the [WSUS Signing Certificate](/wsus-signing-certificate-options-for-third-party-updates-in-configuration-manager) is installed on the **NLBMasterFrontEndServer** WSUS server, any future published updates should not be automatically deleted.
 
-![WSUS Update CAB File in WSUSContent Folder](images/WSUS-Update-CAB-File-in-WSUSContent-Folder.png)
+![WSUS Update CAB File in WSUSContent Folder](/_images/WSUS-Update-CAB-File-in-WSUSContent-Folder.png "WSUS Update CAB File in WSUSContent Folder")
 
 For any third-party update (.CAB files) that have already been deleted, you will need to republish those products as new updates using the article **[When and How to Republish Patch My PC Third-Party Updates](/when-and-how-to-republish-third-party-updates)**
 

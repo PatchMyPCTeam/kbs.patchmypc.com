@@ -34,7 +34,7 @@ Microsoft announced the end-of-life of System Center Updates Publisher (SCUP) in
 
 Patch My PC Publisher is a comprehensive tool, installed on a single Windows operating system, used for customizing and publishing third-party applications and updates to WSUS, Configuration Manager and Intune.
 
-![Patch My PC Publisher](images/publisher.jpg)
+![Patch My PC Publisher](/_images/publisher.jpg "Patch My PC Publisher")
 
 Some advantages of using the Patch My PC Publisher over SCUP include:-
 

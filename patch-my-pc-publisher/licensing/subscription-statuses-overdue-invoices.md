@@ -24,21 +24,21 @@ If payment is overdue to 60 days, your subscription will be marked as **at-risk.
 
 When a subscription is **at-risk**, you will receive the following notifications within our publisher tool.
 
-![](../../_images/at-risk-status-in-ui.png)
+![](/_images/at-risk-status-in-ui.png)
 
 If you click the **At-risk of suspension** label, you will receive a message about why your subscription was marked as **at-risk**.
 
-![](../../_images/at-risk-label-status-in-ui.png)
+![](/_images/at-risk-label-status-in-ui.png)
 
 If **Microsoft Teams** or **Email** alerts are enabled within the Publisher, you will also receive the following warnings.
 
 **Microsoft Teams Notification**
 
-![](../../_images/at-risk-teams-notification.png)
+![](/_images/at-risk-teams-notification.png)
 
 **Email Notification**
 
-![](../../_images/at-risk-email-notification.png)
+![](/_images/at-risk-email-notification.png)
 
 > **Note:** An **at-risk** subscription will still function and allow the catalog to be processed and publish new third-party software updates or applications to Microsoft Intune or Configuration Manager.
 
@@ -48,19 +48,19 @@ Generally, a subscription may be **suspended** when the payment of an invoice is
 
 When a subscription is **suspended**, you will receive the following notifications within our publisher tool.
 
-![](../../_images/suspended-status-in-ui.png)
+![](/_images/suspended-status-in-ui.png)
 
 If you click the **Subscription suspended** label, you will receive a message about why your subscription was **suspended.**
 
-![](../../_images/suspended-label-status-in-ui.png)
+![](/_images/suspended-label-status-in-ui.png)
 
 If **Microsoft Teams alerts** are enabled, you will see the following message:
 
-![](../../_images/suspended-teams-notification.png)
+![](/_images/suspended-teams-notification.png)
 
 If **email alerts** are enabled, you will see the following email:
 
-![](../../_images/suspended-email-notification.png)
+![](/_images/suspended-email-notification.png)
 
 > **Note:** If your subscription has been **suspended**, you will no longer be able to use our services to publish new third-party software updates or applications.
 

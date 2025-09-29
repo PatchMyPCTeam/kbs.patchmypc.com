@@ -40,13 +40,13 @@ The error will often be returned with **exit code 1603**, which can be vague or 
 
 If you run the installer manually, you will likely see an error similar to **The feature you are trying to use is on a network resource that's unavailable**
 
-![The feature you are trying to use is on a network resource that's unavailable](images/The-feature-you-are-trying-to-use-is-on-a-network-resource-thats-unavailable.png)
+![The feature you are trying to use is on a network resource that's unavailable](/_images/The-feature-you-are-trying-to-use-is-on-a-network-resource-thats-unavailable.png "The feature you are trying to use is on a network resource that's unavailable")
 
 ## Root Cause for System Error 1612 (The installation source for this product is not available)
 
 The error code **1612** is the most helpful to determine the root cause. If you perform an error lookup in CMTrace.exe, it will return **_The installation source for this product is not available. Verify that the source exists and that you can access it._**
 
-![MSI Error 1612](images/MSI-Error-1612.png)
+![MSI Error 1612](/_images/MSI-Error-1612.png "MSI Error 1612")
 
 **0x8024002D (-2145124307)** resolves to _**A full-file update could not be installed because it required the source.**_
 
@@ -60,7 +60,7 @@ The path to the cached installer is read by Windows Installer from the registry 
 
 The path to the original source folder is read from the registry value **InstallSource** of the same registry key.
 
-![](../../_images/2020-12-11_15-27-56-2.jpg)
+![](/_images/2020-12-11_15-27-56-2.jpg)
 
 You can see a Google Chrome installer (**C:\\Windows\\CCMcache\\3w\\GoogleChromeStandaloneEnterprise64.msi**) is installed and is in ccmcache. You can also see the file was cached to **C:\\Windows\\Installer67aa2f8a.msi**.
 
@@ -70,7 +70,7 @@ If the MSI file doesn't exist in the **C:\\Windows\\Installer** or **original so
 
 For example, we deleted both files above and attempted to uninstall or upgrade **Google Chrome** **87.0.4280.88 to anything newer**. You can see it's unable to perform the upgrade in this scenario since the previous version fails to uninstall due to missing installer.
 
-![](../../_images/2020-12-11_15-42-53.jpg)
+![](/_images/2020-12-11_15-42-53.jpg)
 
 > **Note:** It's common for the MSI InstallSource to not be accessible if it were in the **[ccmcache folder](https://docs.microsoft.com/en-us/mem/configmgr/core/clients/manage/manage-clients#BKMK_ClientCache)** and it was purged. However the primary issue is when the installer is deleted from **[C:\\Windows\\Installer](https://docs.microsoft.com/en-us/archive/blogs/joscon/can-you-safely-delete-files-in-the-windirinstaller-directory)**.
 > 

@@ -46,7 +46,7 @@ If you are publishing software from the [Patch My PC cloud portal](https://porta
 
 3. Assign the deployment with **Update only** and **Uninstall** intent and targed the group of devices / users you want to get the software uninstalled from.
 
-![How to assign Update and Uninstall intent using the PMPC Cloud](images/SCR-20240530-jjtv-2.png)
+![How to assign Update and Uninstall intent using the PMPC Cloud](/_images/SCR-20240530-jjtv-2.png "How to assign Update and Uninstall intent using the PMPC Cloud")
 
 When the software is published to Intune, you will have two win32 apps.
 

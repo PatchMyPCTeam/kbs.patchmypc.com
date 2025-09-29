@@ -18,7 +18,7 @@ We recently had a customer request our Publishing Service save certain events of
 
 In the customer's scenario, they wanted to automate specific actions based on certain events. Using the Windows event log with specific event ID's would allow for an easier experience than parsing the PatchMyPC.log
 
-![Windows-Event-Log-Publishing-Service-PatchMyPC](images/Windows-Event-Log-Publishing-Service-PatchMyPC.png)
+![Windows-Event-Log-Publishing-Service-PatchMyPC](/_images/Windows-Event-Log-Publishing-Service-PatchMyPC.png "Windows-Event-Log-Publishing-Service-PatchMyPC")
 
 Below are the current **event ID's** we use for the actions listed below.
 

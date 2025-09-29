@@ -32,7 +32,7 @@ Similar to how Microsoft updates need to be synced from a **[standalone internet
 
 In this example, we have **[installed and configured](https://docs.microsoft.com/en-us/mem/configmgr/sum/get-started/synchronize-software-updates-disconnected)** the Publisher software on DEMO1. We have published 7-Zip and Google Chrome to the WSUS on DEMO1. We also confirmed the updates have been published to WSUS using the **[Modify Published Updates](/modify-published-third-party-updates-wizard)** wizard from the **Advanced** tab.
 
-![Modify Published Updates to Confirm Published Updates for Offline WSUS](images/Modify-Published-Updates-to-Confirm-Published-Updates-for-Offline-WSUS.png)
+![Modify Published Updates to Confirm Published Updates for Offline WSUS](/_images/Modify-Published-Updates-to-Confirm-Published-Updates-for-Offline-WSUS.png "Modify Published Updates to Confirm Published Updates for Offline WSUS")
 
 Once updates are published to the online WSUS server, you can proceed to the **export** step.
 
@@ -51,7 +51,7 @@ To [perform the export update metadata](https://docs.microsoft.com/en-us/mem/con
     
     - In our example, we ran: **WsusUtil.exe export "C:\\WSUS-Export-2020-09-02.xml.gz" "C:\\WSUS-Export-2020-09-02.log"**
         - **
-            ![WSUSUtil export WSUS Catalog](images/WSUSUtil-export-WSUS-Catalog.png)
+            ![WSUSUtil export WSUS Catalog](/_images/WSUSUtil-export-WSUS-Catalog.png "WSUSUtil export WSUS Catalog")
             **
 
 ## Step 3: Import the Exported File on the Offline WSUS Server
@@ -65,12 +65,12 @@ Copy the **.xml.gz** from the online WSUS server to the offline WSUS server. On
 - Once there, run the **WSUSUtil.exe****import** command to export the catalog.
     - In our example, we ran: **WsusUtil.exe import "C:\\WSUS-Export-2020-09-02.xml.gz" "C:\\WSUS-Import-2020-09-02.log"**
         - **
-            ![WSUSUtil import WSUS Catalog](images/WSUSUtil-import-WSUS-Catalog.png)
+            ![WSUSUtil import WSUS Catalog](/_images/WSUSUtil-import-WSUS-Catalog.png "WSUSUtil import WSUS Catalog")
             **
 
 Optionally, after the import, you can run the modify published updates wizard on the offline WSUS server to verify the published third-party updates from the online-WSUS where imported:
 
-![View Published Updates on Offline WSUS](images/View-Published-Updates-on-Offline-WSUS.png)
+![View Published Updates on Offline WSUS](/_images/View-Published-Updates-on-Offline-WSUS.png "View Published Updates on Offline WSUS")
 
 ## Step 4: Copy the WSUSContent and UpdateServicesPackages to the Offline WSUS Server
 
@@ -80,7 +80,7 @@ In our scenario, a local network connection exists between **DEMO1** and **DEMO2
 
 The command in our example was: **robocopy "J:\\WSUS" "\\\\demo2\\j$\\WSUS" /E**
 
-![Copy WSUS Content Folder to Offline WSUS](images/Copy-WSUS-Content-Folder-to-Offline-WSUS.png)
+![Copy WSUS Content Folder to Offline WSUS](/_images/Copy-WSUS-Content-Folder-to-Offline-WSUS.png "Copy WSUS Content Folder to Offline WSUS")
 
 > **Important:** If you do not copy the WSUSContent folder to the offline environment, third-party updates will be unable to download on clients or into a ConfigMgr deployment package. This is because the third-party updates are signed using your [WSUS signing certificate](/wsus-signing-certificate-options-for-third-party-updates-in-configuration-manager) on the online-WSUS server.
 

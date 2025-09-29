@@ -16,7 +16,7 @@ taxonomy:
 
 In this article, we will cover all of the **ConfigMgr Application Creation Options** that are available within the publisher. These are options that apply specifically to the applications created in Configuration Manager. Below is a screenshot of this section as of the writing of this article.
 
-![ConfigMgr App Creation Options](images/ConfigMgr-App-Creation-Options.png)
+![ConfigMgr App Creation Options](/_images/ConfigMgr-App-Creation-Options.png "ConfigMgr App Creation Options")
 
 ## Allow applications to be installed from the Install Application task sequence action
 
@@ -24,7 +24,7 @@ When this option is checked every application created by the Publisher will have
 
 If you intend to use the applications as part of any Task Sequences, you will want to check this option.
 
-![](../../_images/this_option.png)
+![](/_images/this_option.png)
 
 ## Allow clients to use distribution points from the site's default boundary group
 
@@ -32,7 +32,7 @@ When this option is checked every application deployment type created by the Pub
 
 Whether you select this option is a company-specific decision based on your network layout and bandwidth considerations. See [this Microsoft docs link](https://docs.microsoft.com/en-us/mem/configmgr/apps/deploy-use/create-applications#bkmk_dt-content) for more information around the content options for applications.
 
-![](../../_images/applications_for.png)
+![](/_images/applications_for.png)
 
 ## Code-sign the PowerShell detection method script using the WSUS Signing Certificate.
 
@@ -40,7 +40,7 @@ When this option is checked every application created by the Publisher will have
 
 When you do sign the detection scripts, you'll see a large block of text at the end of the script as shown below.
 
-![](../../_images/shown_below.png)
+![](/_images/shown_below.png)
 
 ## Do not include the version in the application name, so the application name doesn't change after updates.
 
@@ -48,11 +48,11 @@ When this option is checked newly created applications will no longer have the v
 
 Below you can see the result of having this box _**unchecked.**_ The name of the application will be different every time a new one is published, reflecting the current version.
 
-![](../../_images/current_version.png)
+![](/_images/current_version.png)
 
 And the below shows the result of having this box _**checked**_, which removes the versioning. This results in a consistent name between application versions.
 
-![](../../_images/current_version_2.png)
+![](/_images/current_version_2.png)
 
 If you wish to control this on a per-application basis you can reference [this article.](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#custom-application-properties) It will show some of the additional options regarding application naming that are available within the right-click context menu.
 
@@ -64,7 +64,7 @@ When this option is checked every application created by the Publisher will be m
 
 This can be useful to keep applications that are being automatically created, and/or updated in one location.
 
-![](../../_images/one_location.png)
+![](/_images/one_location.png)
 
 ### When a New Application Update is Available:
 

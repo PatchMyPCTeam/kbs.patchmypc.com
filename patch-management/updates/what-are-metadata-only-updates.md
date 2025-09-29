@@ -17,7 +17,7 @@ taxonomy:
 In this article, we will cover the topic of [metadata-only updates](https://docs.microsoft.com/en-us/mem/configmgr/sum/understand/software-updates-icons#metadata-only-icon). This is a useful feature that is available in WSUS, and subsequently Configuration Manager.
 
 ## 
-![](../../_images/metadataonly.png)
+![](/_images/metadataonly.png)
  What is a Metadata-Only Update (Blue Icon)
 
 To clarify what metadata-only updates are, let's first discuss what the metadata is for updates.
@@ -57,17 +57,17 @@ This means the **metadata-only updates will not have the content downloaded to t
 
 Below is an example of an update that is published with full content. Note that we do see our applicability based metadata, required, installed, not required. More importantly, **this update has a content source path**.
 
-![](../../_images/Update_FullContent.png)
+![](/_images/Update_FullContent.png)
 
 We can look at the same set of information below for an update that is **published as metadata-only**.
 
 You can determine if updates are **metadata-only** from the **All Software Updates** node if the updates are displayed with a **blue icon**. Aside from the icon, the '**Metadata Only**' column is marked with a 'Yes' and we can also see the **Content Information tab shows no source path for the update**. This is the key difference for metadata-only updates.
 
-![](../../_images/Update_MetadataOnly.png)
+![](/_images/Update_MetadataOnly.png)
 
 Attempting to download an update that is metadata-only will present an error message box stating '**All software updates in this selection are expired or meta-data only, and cannot be downloaded.**'
 
-![](../../_images/Err_DownloadMetadataOnly.png)
+![](/_images/Err_DownloadMetadataOnly.png)
 
 > **Note:** Updates **do not need to be deployed** to receive applicability statistics such as required, installed, and not required. The update only needs to be in the WSUS catalog as metadata-only, or full content.
 
@@ -75,17 +75,17 @@ Attempting to download an update that is metadata-only will present an error mes
 
 One method of publishing an update as full content is to manually '[Publish Third-Party Software Update Content](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/third-party-software-updates#publish-and-deploy-third-party-software-updates)' as shown below.
 
-![publish third-party update with full-content from metadata-only](images/publish-third-party-update-with-full-content-from-metadata-only.png)
+![publish third-party update with full-content from metadata-only](/_images/publish-third-party-update-with-full-content-from-metadata-only.png "publish third-party update with full-content from metadata-only")
 
 You can review the full-content publishing progress in the [SMS\_ISVUPDATES\_SYNCAGENT.log](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/log-files#BKMK_SU_NAPLog). The log is located on the top-level software update point in the site system Logs folder.
 
 Once the publishing of third-party update content is complete, you can [sync your software update point](https://docs.microsoft.com/en-us/mem/configmgr/sum/get-started/synchronize-software-updates#manually-start-software-updates-synchronization) for SCCM to pick up the change from metadata-only to full-content faster.
 
-![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
+![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
 
 Once the software update point sync is complete, the third-party updates should show in a [normal state](https://docs.microsoft.com/en-us/mem/configmgr/sum/understand/software-updates-icons#normal-icon) with a green icon meaning they are available for software update deployment.
 
-![third-party updates in normal state](images/third-party-updates-in-normal-state.png)
+![third-party updates in normal state](/_images/third-party-updates-in-normal-state.png "third-party updates in normal state")
 
 ## Automatically Download Via Stage Content (v3 catalog, ConfigMgr 1910+)
 
@@ -95,23 +95,23 @@ The key improvement with the version 3 catalog is the ability to **select indivi
 
 To use these features, '**Subscribe to Catalog**' on the desired third-party software update catalog. This will bring up a wizard that is shown below.
 
-![](../../_images/v3_Subscribe.png)
+![](/_images/v3_Subscribe.png)
 
 Within the '**Select Categories**' of the wizard, the list of categories provided by the vendor is listed. With the 'Select categories for synchronization' option selected it is possible to specify any number of categories to select. This allows only updates that are of interest to synchronize instead of the entire catalog.
 
-![](../../_images/V3_SelectCategories.png)
+![](/_images/V3_SelectCategories.png)
 
 Beyond just select certain categories for synchronization, specific categories can also be selected such that ConfigMgr will '**Stage the content for the selected categories automatically**.'
 
 When the updates are automatically staged for a category, any new updates will be **published with full content** and automatically downloaded into the WSUSContent directory according to the schedule associated with the catalog. This removes the manual step of selecting updates publishing them.
 
-![](../../_images/V3_StageCategories.png)
+![](/_images/V3_StageCategories.png)
 
 ## Automatically Publish Updates as Full Content Using the Publisher
 
 When using the Patch My PC Publisher, the option is provided to select if an update is published as full content, or metadata-only. **By default, all updates will be published as full content**, but it is very simple to [right-click any update](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#publishing-type), vendor, or the 'all products' node in the publisher and select to publish as metadata only.
 
-![](../../_images/Publisher_FullContentMetadataRightClick.png)
+![](/_images/Publisher_FullContentMetadataRightClick.png)
 
 The behavior is otherwise identical. Updates will publish into the console as expected according to the configuration specified in the Publisher.
 

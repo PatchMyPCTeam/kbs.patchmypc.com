@@ -20,13 +20,13 @@ The **modify published updates wizard** can help perform various actions on thi
 
 Open the **Modify Published Updates** wizard in the **Options** window found in the updates tab.
 
-![Publisher - Updates - Options - Run Wizard](images/ModifyPublishedUpdatesLoc.png)
+![Publisher - Updates - Options - Run Wizard](/_images/ModifyPublishedUpdatesLoc.png "Publisher - Updates - Options - Run Wizard")
 
 ## Filter Selections for Published Updates
 
 Once all updates have loaded, you can easily filter the list of published updates.
 
-![Modify Updates Wizard with filters highlighted](images/Modify-Updates-Filters.png)
+![Modify Updates Wizard with filters highlighted](/_images/Modify-Updates-Filters.png "Modify Updates Wizard with filters highlighted")
 
 You can filter updates by **vendor**, **declined** status, **expired** status, **metadata** status, **superseded** status, or **enabled** status.
 
@@ -38,7 +38,7 @@ You can filter updates by **vendor**, **declined** status, **expired** status, *
 
 There are a variety of actions that are available for published third-party updates within WSUS.
 
-![Modify updates wizard buttons highlighted](images/Modify-Updates-Buttons.png) Patch My PC Modify Updates Wizard Available Options
+![Modify updates wizard buttons highlighted](/_images/Modify-Updates-Buttons.png "Modify updates wizard buttons highlighted") Patch My PC Modify Updates Wizard Available Options
 
 ### Re-Sign Update
 
@@ -74,13 +74,13 @@ This option will configure the update to **not show in the WSUS console**. By d
 
 This option can be helpful if you are **[troubleshooting the update detection states](/how-to-view-applicability-rules-and-troubleshoot-detection-states-for-third-party-updates)** on a device. When clicked, you will be able to see the applicability for the **installable** and **installed** logic for the update.
 
-![Show Applicability Rules](images/applicability-rules-third-party-update.png)
+![Show Applicability Rules](/_images/applicability-rules-third-party-update.png "Show Applicability Rules")
 
 ### More Details
 
 This option will show more **advanced details** about the published updates in WSUS. This may be helpful for more **troubleshooting scenarios**.
 
-![Third-Party Update More Details](images/more-details-of-third-party-update-in-wsus.png)
+![Third-Party Update More Details](/_images/more-details-of-third-party-update-in-wsus.png "Third-Party Update More Details")
 
 ### Extract Content
 

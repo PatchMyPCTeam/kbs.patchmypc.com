@@ -54,15 +54,15 @@ An error occurred while publishing an update to WSUS: Failed to sign package; er
 
 Within our publishing service, we always have **[timestamping](https://en.wikipedia.org/wiki/Trusted_timestamping)** enabled by default, as shown in the image below.
 
-![Time stamping Enabled Third-Party Updates](images/Timestamping-Enabled-General-Tab.png)
+![Time stamping Enabled Third-Party Updates](/_images/Timestamping-Enabled-General-Tab.png "Time stamping Enabled Third-Party Updates")
 
 By enabling timestamping, it allows clients to trust updates published even after the code-signing certificate has expired. For example, the example below shows a WSUS Signing Certificate that expires on **May 20, 2023**. If timestamping is enabled, clients will trust updates even if they are installed after the expiration date.
 
-![Expiration Date of Code-Signing WSUS Cert](images/Expiration-Date-of-Code-Signing-WSUS-Cert.png)
+![Expiration Date of Code-Signing WSUS Cert](/_images/Expiration-Date-of-Code-Signing-WSUS-Cert.png "Expiration Date of Code-Signing WSUS Cert")
 
 In the [PatchMyPC.log](/collecting-log-files-for-patch-my-pc-support#publishing-service-logs), you can also see the timestamping during the publishing attempt.
 
-![Publishing Third-Party Updates Timestamp PatchMyPC.Log](images/Publishing-Timestamp-PatchMyPCLog.png)
+![Publishing Third-Party Updates Timestamp PatchMyPC.Log](/_images/Publishing-Timestamp-PatchMyPCLog.png "Publishing Third-Party Updates Timestamp PatchMyPC.Log")
 
 ## Why Publishing May Fail when Timestamping
 
@@ -72,7 +72,7 @@ The CryptoAPI uses the proxy defined at the **SYSTEM level** on the WSUS server.
 
 So, even if the proxy is defined within our publishing service or on-site system in Configuration Manager, it will not be used during the publishing operating for timestamping.
 
-![Proxy Configured PatchMyPC SCCM](images/Proxy-Configured-PatchMyPC-SCCM.png)
+![Proxy Configured PatchMyPC SCCM](/_images/Proxy-Configured-PatchMyPC-SCCM.png "Proxy Configured PatchMyPC SCCM")
 
 ## Workaround 1 - Set the SYSTEM Level Proxy Using PSEXEC and Internet Explorer
 

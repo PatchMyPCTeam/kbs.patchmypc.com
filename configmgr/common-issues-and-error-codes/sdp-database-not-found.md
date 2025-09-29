@@ -28,7 +28,7 @@ When migrating to a new Software Update Point (WSUS Server), companies will ofte
 
 Once the new software update point is synchronized, the original SUP is removed from the site, and **the new SUP is set as the primary SUP.**
 
-![Removing Primary Software Update Point](images/Removing-Primary-Software-Update-Point.png)
+![Removing Primary Software Update Point](/_images/Removing-Primary-Software-Update-Point.png "Removing Primary Software Update Point")
 
 A small subset of metadata for third-party updates doesn't **synchronize during this process**, resulting in this error line in the **PatchMyPC.log** when we query already published updates.
 
@@ -42,13 +42,13 @@ Perform the steps below **on the new WSUS server using the Patch My PC Publisher
 
 **Decline** all "**Patch My PC**" updates using the [Modify Updates Wizard](https://patchmypc.com/modify-published-third-party-updates-wizard#decline) as shown in the GIF below.
 
-![Decline All Patch My PC Updates](images/Decline-All-PatchMyPC-Software-Updates.gif)
+![Decline All Patch My PC Updates](/_images/Decline-All-PatchMyPC-Software-Updates.gif "Decline All Patch My PC Updates")
 
 **Next, Republish** all Patch My PC updates at the **All Products** level. Choose **Yes** to both of the prompts.
 
 Next, trigger **Publisher Service Sync** in the **Sync Schedule** tab.
 
-![Republish All Patch My PC Updates](images/Republish-All-Software-Updates.gif)
+![Republish All Patch My PC Updates](/_images/Republish-All-Software-Updates.gif "Republish All Patch My PC Updates")
 
 Monitor the **[PatchMyPC.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-app-logs-intune)** for the sync to complete.
 

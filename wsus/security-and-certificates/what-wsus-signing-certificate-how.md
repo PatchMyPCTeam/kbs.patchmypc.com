@@ -34,17 +34,17 @@ Before any third-party software update is installed on a device, it will check t
 
 If you click the properties of a **CAB file** for a published update in the **WSUSContent** folder, you will be able to see the WSUS code-signing certificate that was used.
 
-![Third-Party Software Update CAB file WSUS Signing Certificate](images/third-party-update-cab-file-code-signed-from-wsus-signing-certficate.png)
+![Third-Party Software Update CAB file WSUS Signing Certificate](/_images/third-party-update-cab-file-code-signed-from-wsus-signing-certficate.png "Third-Party Software Update CAB file WSUS Signing Certificate")
 
 If you open the CAB file, you will be able to see the **binaries from the original update** from the vendor. For example, we can see the **GoogleChromeStandaloneEnterprise64.msi** within the CAB file in the image below.
 
-![](../../_images/cab-file-extracted-for-third-party-software-update.png)
+![](/_images/cab-file-extracted-for-third-party-software-update.png)
 
 In the event the **CAB file was modified**, it would no longer be trusted on a device that attempts to install the third-party update.
 
 The WSUS Signing Certificate can be viewed in the WSUS certificate store on the local machine using **certlm.msc**.
 
-![](../../_images/wsus-certificate-certlm-local-machine.png)
+![](/_images/wsus-certificate-certlm-local-machine.png)
 
 ### Should You Choose a Self-Signed or PKI Based WSUS Certificate?
 
@@ -107,15 +107,15 @@ If you decide to use a self-signed certificate, you have **three common ways** t
 
 After [installing our publisher](/publishing-service-setup-documentation), if there is no certificate detected, you can click **Generate a Self-Signed Certificate**.
 
-![](../../_images/generate-self-signed-certificate-patchmypc-publisher.png)
+![](/_images/generate-self-signed-certificate-patchmypc-publisher.png)
 
 In the **Certificate Options** dialog, you have the ability to adjust the **subject name**, **validity**, and **key length**.
 
-![](../../_images/certificate-creation-options-wsus-signing-certificate.png)
+![](/_images/certificate-creation-options-wsus-signing-certificate.png)
 
 Once the certificate is generated, you can click the **Show Certificate** button in our Publisher to view more details. You can also view the certificate in the WSUS store using **certlm.msc**.
 
-![](../../_images/wsus-signing-certificate-show-certificate-details.png)
+![](/_images/wsus-signing-certificate-show-certificate-details.png)
 
 ### Import a PKI Based Certificate Using Patch My PC's Publisher
 
@@ -123,7 +123,7 @@ If you decide to use a **PKI** based code-signing certificate, you have the abil
 
 We do have a separate article that will cover **[creating a certificate template and requesting the certificate using Active Directory Certificate Services](/pki-certificate-for-third-party-update-code-signing-in-sccm)**. Once you have the PFX file for the PKI based code-signing certificate, you can click the button to **Import PFX Certificate**.
 
-![](../../_images/import-pfx-wsus-signing-certficate.png)
+![](/_images/import-pfx-wsus-signing-certficate.png)
 
 > Please be aware that if you use a PKI based code-signing certificate, the PFX file can only be imported using **[Patch My PC's Publisher](/publishing-service-setup-documentation)** or [System Center Updates Publisher](https://www.microsoft.com/en-us/download/details.aspx?id=55543). You can't import a PFX certificate directly in the Configuration Manager console, although there is a [UserVoice for this feature](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/37129744-manage-pki-certificate-for-3rd-party-update-signin). Once the PKI certificate is imported, the option for configuration manager to **[Automatically manage the WSUS Signing certificate](#configuration-manager-automatically-manage-the-wsus-signing-certificate)** will still work and can be used to distribute that PKI based certificate to clients' **Trusted Root** and **Trusted Publishers** certificate stores automatically. 
 
@@ -133,7 +133,7 @@ If you enabled the option to **Automatically manage the WSUS Signing Certificat
 
 To enable this option, navigate to **Administration** > **Site Configuration** > **Sites** > **Right-click the site** > **Configure Site Components** > **Software Update Point**
 
-![](../../_images/configuration-manager-automatically-manage-the-wsus-signing-certficaite.png)
+![](/_images/configuration-manager-automatically-manage-the-wsus-signing-certficaite.png)
 
 Note that there are two options here. The difference is explained below.
 
@@ -155,11 +155,11 @@ Note that there are two options here. The difference is explained below.
 
 After enabling these options, **trigger a software update point synchronization** from the Configuration Manager console.
 
-![](../../_images/sync-sccm-software-update-point-for-declined-updates.png)
+![](/_images/sync-sccm-software-update-point-for-declined-updates.png)
 
 You can view the **wsyncmgr.log** on the site server. This log file will show the WSUS certificate **being created** or **imported** if one already existed.
 
-![](../../_images/wsyncmgr-creates-certificate-for-wsus.png)
+![](/_images/wsyncmgr-creates-certificate-for-wsus.png)
 
 > If the WSUS Signing Certificate **already existed** before setting the 'Enable third-party software updates' option, it will automatically **import the existing certificate,** and it will allow that certificate to be automatically deployed to client devices.
 > 
@@ -167,11 +167,11 @@ You can view the **wsyncmgr.log** on the site server. This log file will show th
 
 After the sync, the certificate details should appear in the **Software Update Point Component Properties** > **Third Party Updates** tab
 
-![](../../_images/wsus-singing-certficaite-details-sccm-console.png)
+![](/_images/wsus-singing-certficaite-details-sccm-console.png)
 
 You will want to ensure the client settings to **Enable third party software updates** is set to **Yes**. This should be enabled on the **Default Client Settings** as well as any **custom client device settings** targeted to devices that will install third-party software updates.
 
-![](../../_images/client-settings-enabled-third-party-software-updates-sccm.png)
+![](/_images/client-settings-enabled-third-party-software-updates-sccm.png)
 
 When this client setting is enabled, the device will **automatically** install the WSUS Signing Certificate to the **Trusted Root** and **Trusted Publishers**. If the **third party updates tab is not configured on your Software Update Point** or the **client settings is set to No**, you will need to [deploy the WSUS Signing Certificate using group policy](/scupcatalog/documentation/CertificateAndGPODeploymentGuide.pdf).
 

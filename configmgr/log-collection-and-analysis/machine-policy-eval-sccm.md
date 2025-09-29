@@ -54,7 +54,7 @@ One method is by using the Control Panel **Configuration Manager** Applet:
 2. Go to **System and Security** **\> Configuration Manager**.
 3. In the Actions tab, select **Machine Policy Retrieval & Evaluation Cycle** and click **Run Now**.
 
-![](../../_images/MPREC_1.jpg)
+![](/_images/MPREC_1.jpg)
 
 ### 2\. Using WMI
 
@@ -72,7 +72,7 @@ The other method of manually invoking the scan cycle from a client is by using P
 2. Locate the device and right-click on it.
 3. In the **Client Notification** section, choose **Download Computer Policy**.
 
-![](../../_images/MPREC_2.jpg)
+![](/_images/MPREC_2.jpg)
 
 ### 4\. Using Advanced Insights
 
@@ -85,7 +85,7 @@ To trigger the cycle from Advanced Insights, follow these steps:
 
 From the **Actions** dropdown, select the **Download Computer Policy** option.
 
-![](../../_images/MPREC_3.jpg)
+![](/_images/MPREC_3.jpg)
 
 ## Relevant logs to monitor on the client side
 

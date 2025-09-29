@@ -22,13 +22,13 @@ The first step in the process is to ensure we know what **new application** yo
 
 If you have a **new application** or **feature request**, the first step is to submit a new feature request on our **[UserVoice (https://ideas.patchmypc.com/)](https://ideas.patchmypc.com/)**. If you don’t submit it here, it’s unlikely your idea will ever be implemented into our product.
 
-![](../../_images/criteriatoprioritize-1.4.png)
+![](/_images/criteriatoprioritize-1-4.png)
 
 Before submitting a new request, you can **search** for the **application** or **feature** you would like to see added.
 
 If you see an **existing feature matching your request**, you should **up-vote** it rather than submitting a new idea. After subscribing to an existing idea, you will receive an **email notification** when there are any status updates.
 
-![](../../_images/criteriatoprioritize-2.2.png)
+![](/_images/criteriatoprioritize-2-2.png)
 
 ## How Does Patch My PC Prioritize New Application Requests?
 
@@ -58,7 +58,7 @@ We have these requirements because each new product added requires a **large am
 
 Our goal is to add around **50 new products per month**. In our **[Public Roadmap,](https://patchmypc.com/roadmap)** you can see the recent applications that shipped. Shipped application requests will use the “**New Products**” dark blue tag.
 
-![New Products Shipped in Public Roadmap Patch My PC](images/New-Products-Shipped-in-Public-Roadmap-Patch-My-PC.png)
+![New Products Shipped in Public Roadmap Patch My PC](/_images/New-Products-Shipped-in-Public-Roadmap-Patch-My-PC.png "New Products Shipped in Public Roadmap Patch My PC")
 
 ## How Does Patch My PC Prioritize New Feature Requests for the Publisher?
 
@@ -72,17 +72,17 @@ Many requests for features or improvements to our Publisher can be implemented 
 
 Since the engineering time can often vary, our criteria for adding features are **less based on the number of unique customers** and more based on the value we think the request could provide. For example, when filtering by **[shipped feature request for the publisher](https://ideas.patchmypc.com/?category=6706577541791499715&sort=recent&status=6706966578454455100),** you will see many features shipped with only 1 vote:
 
-[![Feature Request Shipped with Only 1 Vote Patch My PC](images/Feature-Request-Shipped-with-Only-1-Vote-Patch-My-PC.png)](https://ideas.patchmypc.com/ideas/PATCHMYPC-I-913)
+[![Feature Request Shipped with Only 1 Vote Patch My PC](/_images/Feature-Request-Shipped-with-Only-1-Vote-Patch-My-PC.png "Feature Request Shipped with Only 1 Vote Patch My PC")](https://ideas.patchmypc.com/ideas/PATCHMYPC-I-913)
 
 Oftentimes, these lower voted for ideas that are **easier to implement** from an engineering perspective may ship in a **few weeks**. However, there are often **complex** feature requests that may take many subscribers before it’s implemented. For example, the feature request to add support for [Microsoft Intune](https://ideas.patchmypc.com/ideas/PATCHMYPC-I-175) took about **1-year to implement** because it was difficult and took a **massive amount of engineering time**.
 
-[![Microsoft Intune Feature Shipped Patch My PC](images/Microsoft-Intune-Feature-Shipped-Patch-My-PC.png)](https://ideas.patchmypc.com/ideas/PATCHMYPC-I-175)
+[![Microsoft Intune Feature Shipped Patch My PC](/_images/Microsoft-Intune-Feature-Shipped-Patch-My-PC.png "Microsoft Intune Feature Shipped Patch My PC")](https://ideas.patchmypc.com/ideas/PATCHMYPC-I-175)
 
 ## What Does Each Status Mean in the UserVoice Portal?
 
 Each idea submitted will have a **status** associated with it. The status will help you know at what point in the process the idea is in.
 
-![](../../_images/idea-type.png)
+![](/_images/idea-type.png)
 
 Below is an overview of how we define status:
 

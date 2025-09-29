@@ -20,7 +20,7 @@ Error **0X87D20417**, **0x80070005**, or **5**, generally occurs when attempti
 
 Whenever a software update is being downloaded, regardless of whether it’s a Microsoft or third-party update, you receive the following error using the Download Software Updates wizard in the console:
 
-![Failed to download content access denied - download wizard](images/FailedToDownloadContentAccessDenied-1.png)
+![Failed to download content access denied - download wizard](/_images/FailedToDownloadContentAccessDenied-1.png "Failed to download content access denied - download wizard")
 
 Looking in the **[PatchDownloader.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#deployment-package-download-logs)** file we can also see an error code which resolves to access denied (**0x80070005**):
 
@@ -36,7 +36,7 @@ ERROR: DownloadUpdateContent() failed with hr=0x80070005
 
 If using Automatic Deployment Rules (ADR), the error code will be different and unfortunately a little more generic (**0X87D20417**):
 
-![Failed to download content access denied - ADR](images/FailedToDownloadContentAccessDenied-3.png)
+![Failed to download content access denied - ADR](/_images/FailedToDownloadContentAccessDenied-3.png "Failed to download content access denied - ADR")
 
 Looking at the [ruleengine.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#automatic-deployment-rules-logs) log file for ADRs, we can find a more useful error code which also resolves to access denied (**5**):
 
@@ -61,11 +61,11 @@ First you need to find out what the source path is for your Deployment Package.
 
 **Right click the Deployment Package** you, or your ADR, is trying to download to and choose **Properties**:
 
-![Failed to download content access denied - Deployment Package properties](images/FailedToDownloadContentAccessDenied-5.png)
+![Failed to download content access denied - Deployment Package properties](/_images/FailedToDownloadContentAccessDenied-5.png "Failed to download content access denied - Deployment Package properties")
 
 Go to the directory in File Explorer and **verify the user or computer object has at least Modify permission** in the **Security** tab of the folder's Properties:
 
-![Failed to download content access denied - NTFS permissions](images/FailedToDownloadContentAccessDenied-6.png)
+![Failed to download content access denied - NTFS permissions](/_images/FailedToDownloadContentAccessDenied-6.png "Failed to download content access denied - NTFS permissions")
 
 > **Note:** It's not necessary to directly add the user or computer object here. It is possible to use Active Directory groups to contain users or computer objects.
 
@@ -77,13 +77,13 @@ The instructions to verify SMB permissions will vary between platforms, i.e. it'
 
 Open up the **Computer Management** mmc snap in (protip: right click on the start menu and choose **Computer Management**), expand **Shared Folders** and select **Shares**:
 
-![Failed to download content access denied - Shared folders](images/FailedToDownloadContentAccessDenied-7.png)
+![Failed to download content access denied - Shared folders](/_images/FailedToDownloadContentAccessDenied-7.png "Failed to download content access denied - Shared folders")
 
 Right click on the shared folder in the centre pane and choose **Properties**.
 
 In this case I will right click on **Sources**. Go to the **Share Permissions** tab and **verify the user or computer object has at least Change permission**.
 
-![Failed to download content access denied - SMB permissions](images/FailedToDownloadContentAccessDenied-8.png)
+![Failed to download content access denied - SMB permissions](/_images/FailedToDownloadContentAccessDenied-8.png "Failed to download content access denied - SMB permissions")
 
 As you can see from the above, only the **Everyone** object is in the Access Control List (ACL) with only the **Read** permission. This will need changing to allow the user or computer object access to the shared folder with the **Change** permission.
 

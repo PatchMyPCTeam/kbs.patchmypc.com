@@ -28,7 +28,7 @@ To move the WSUSContent folder to a new location, you will need to use the **WS
 
 Here is a list of available command lines for **WSUSUtil.exe**:
 
-![](../../_images/WSUSUtil-Example-Commands.png)
+![](/_images/WSUSUtil-Example-Commands.png)
 
 There are two possible options you can use when moving the WSUSContent folder:
 
@@ -36,35 +36,35 @@ The first option is to move file's in the current WSUSContent folder to the new 
 
 **Example:** "C:\\Program Files\\Update Services\\Tools\\WsusUtil.exe" movecontent **J:\\WSUS** C:\\WSUSmove.log
 
-![](../../_images/WSUSUtil-movecontent-with-contentincluded-commandline.png)
+![](/_images/WSUSUtil-movecontent-with-contentincluded-commandline.png)
 
 The second option includes the -skipcopy parameter and does not copy the existing file's in the current WSUSContent folder to the new location. This option can save time if you haven't published any third-party updates before or don't want to migrate previous content.
 
 **Example:** "C:\\Program Files\\Update Services\\Tools\\WsusUtil.exe" movecontent **J:\\WSUS** -skipcopy C:\\WSUSmove.log
 
-![](../../_images/WSUSUtil-movecontent-with-content-commandline.png)
+![](/_images/WSUSUtil-movecontent-with-content-commandline.png)
 
 ## Validate WSUSContent Move was Successful
 
 There are three different places where the WSUSContent configuration is utilized. If configured correctly, **all these locations should point to the same path**.
 
 1. In the registry on the WSUS server, HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Update Services\\Server\\Setup:**ContentDir**
-    - ![WSUSContent Folder From Registry](images/WSUSContent-Folder-From-Registry.png)
+    - ![WSUSContent Folder From Registry](/_images/WSUSContent-Folder-From-Registry.png "WSUSContent Folder From Registry")
         
 
 3. In IIS > Sites > WSUS Administration > **Content**
-    - ![](../../_images/WSUS-Content-IIS-Folder.png)
+    - ![](/_images/WSUS-Content-IIS-Folder.png)
         
     
-    - ![](../../_images/IIS-WSUSContent-Location-Path.png)
+    - ![](/_images/IIS-WSUSContent-Location-Path.png)
         
 
 5. In **SQL Server Management Studio**, run the following query against the **SUSDB** run the following query: **Select LocalContentCacheLocation from tbConfigurationB**
-    - ![](../../_images/WSUS-Content-SUSDB.png)
+    - ![](/_images/WSUS-Content-SUSDB.png)
         
 
 7. In **Computer Management**, review the **Shared Folders** node and validate the **Folder Path**
-    - ![](../../_images/WSUS-Shared-Folder-Paths.png)
+    - ![](/_images/WSUS-Shared-Folder-Paths.png)
         
 
 ## How to Use WSUSUtil.exe to Move the WSUSContent Folder to a New Location (Video)

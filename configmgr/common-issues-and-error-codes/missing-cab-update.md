@@ -28,7 +28,7 @@ When you attempt to download update content in ConfigMgr, you may encounter the 
 
 The ADR will display the error code 0X87D20417 "Auto Deployment Rule download failed".
 
-![](../../_images/missing_wsus_content_1.png)
+![](/_images/missing_wsus_content_1.png)
 
 Additionally, RuleEngine.log will display the following error.
 
@@ -39,27 +39,27 @@ Failed to download update contents.
 Failed to run the DownloadAction for the AutoDeployment.  
 STATMSG: ID=8706 SEV=E LEV=M SOURCE="SMS Server" COMP="SMS\_RULE\_ENGINE" SYS=CM.constoso.LOCAL SITE=CM1 PID=3520 TID=8116 GMTDATE=Mon Oct 14 08:21:46.082 2024 ISTR0="SMS Rule Engine" ISTR1="Failed to download one or more content files" ISTR2="" ISTR3="" ISTR4="" ISTR5="" ISTR6="" ISTR7="" ISTR8="" ISTR9="" NUMATTRS=0 LE=0X0
 
-![](../../_images/missing_wsus_content_2.png)
+![](/_images/missing_wsus_content_2.png)
 
 Additionally, PatchDownloader.log will display the following.
 
 HttpSendRequest failed HTTP\_STATUS\_NOT\_FOUND  
 ERROR: DownloadUpdateContent() failed with hr=0x80070194
 
-![](../../_images/missing_wsus_content_3.png)
+![](/_images/missing_wsus_content_3.png)
 
 **Scenario 2: Manually downloading the Software update**
 
 The download software updates wizard will display the following message "Error: Failed to download content id xxxxxx. Error: The cloud file provider exited unexpectedly."
 
-![](../../_images/missing_wsus_content_4.png)
+![](/_images/missing_wsus_content_4.png)
 
 Additionally, PatchDownloader.log will display the following.
 
 HttpSendRequest failed HTTP\_STATUS\_NOT\_FOUND  
 ERROR: DownloadUpdateContent() failed with hr=0x80070194
 
-![](../../_images/missing_wsus_content_3.png)
+![](/_images/missing_wsus_content_3.png)
 
 ## Identify a missing update file name
 
@@ -67,13 +67,13 @@ PatchDownloader.log reveals the name of the content that was not found.
 
 Look for a line containg "**Contentsource ="** just before the log line where the download fails.
 
-![](../../_images/missing_wsus_content_5.png)
+![](/_images/missing_wsus_content_5.png)
 
 In the example above, the missing cab file is called **316611FD021A120AE9FC6A3534A56DF7656F61F5.cab**
 
 We can verify if the content is missing by browsing to the URL for the content and getting the same 404 status message.
 
-![](../../_images/missing_wsus_content_6.png)
+![](/_images/missing_wsus_content_6.png)
 
 ## Manually match the missing content to an Update
 
@@ -81,7 +81,7 @@ PatchDownloader.log reveals the name of the content that was not found.
 
 Look for a line containg "**Download destination ="** just before the log line where the download fails.
 
-![](../../_images/missing_wsus_content_13.png)
+![](/_images/missing_wsus_content_13.png)
 
 In the example above, the **Download destination =**
 
@@ -154,7 +154,7 @@ If querying multiple .cab files, each list item should be seperate by a comma an
 
 The Results pane will indicate which updates were associated with the missing cab file(s).
 
-![](../../_images/missing_wsus_content_7.png)
+![](/_images/missing_wsus_content_7.png)
 
 ## Use ConfigMgr to match the missing content to an Update
 
@@ -162,7 +162,7 @@ Once you have gathered a list of missing cab file(s) in the previous step, you c
 
 1\. From the ConfigMgr console, choose to **Connect via Windows PowerShell**
 
-![](../../_images/missing_wsus_content_8.png)
+![](/_images/missing_wsus_content_8.png)
 
 2\. Define a PowerShell list containg the URL(s) of the missing content referenced in PatchDownloader.log. e.g.
 
@@ -176,13 +176,13 @@ Run the following snippet (This is a single line PowerShell command).
 
 The output will list the Update(s) and Update Id(s) for the missing content.
 
-![](../../_images/missing_wsus_content_9-1.png)
+![](/_images/missing_wsus_content_9-1.png)
 
 ## Find the Update and Decline or Re-Publish
 
 Now that you have identified the update(s) with missing content, you can find them in the ConfigMgr console by searching for the Unique Update ID.
 
-![](../../_images/missing_wsus_content_10.png)
+![](/_images/missing_wsus_content_10.png)
 
 If this is the latest version of the update available in the Patch My PC catalog, you can simply [re-publish the update](https://patchmypc.com/when-and-how-to-republish-third-party-updates) to restore the missing content in the WSUS Content folder.
 
@@ -194,11 +194,11 @@ If this is an older version of an update or you no longer need it because it is 
 
 3\. Click "Run Wizard".
 
-![](../../_images/missing_wsus_content_11.png)
+![](/_images/missing_wsus_content_11.png)
 
 4\. Search for and select the update(s) with missing content and click **Decline**.
 
-![](../../_images/missing_wsus_content_12.png)
+![](/_images/missing_wsus_content_12.png)
 
 5\. Perform a Software update Polint Sync for the update to be marked as expired in ConfigMgr.
 

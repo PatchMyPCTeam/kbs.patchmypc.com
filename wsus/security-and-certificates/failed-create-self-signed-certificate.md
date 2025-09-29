@@ -20,7 +20,7 @@ In this article, we will review why the error above is received when you attempt
 
 You may receive the following dialogue box when you attempt to generate a self-signed certificate using the Patch My PC Publisher.
 
-![](../../_images/error-2.png)
+![](/_images/error-2.png)
 
 **[PatchMyPC.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-logs)** will indicate:-
 
@@ -36,7 +36,7 @@ SqlException occurred. Number 50000 and message spSetConfiguration was called wh
 
 Discarding stack trace for user DOMAIN, IP Address ::1, exception System.InvalidOperationException: Cannot save configuration because the server is still processing a previous
 
-![](../../_images/errorsoftwaredistributionlog.png)
+![](/_images/errorsoftwaredistributionlog.png)
 
 ## Reason
 
@@ -44,7 +44,7 @@ This error generally occurs when WSUS is "busy" running another stored procedure
 
 The excerpt below is the result of a recent **wsusutil movecontent** command being run. [SoftwareDistribution.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-logs) indicates that WSUS is attempting to validate the calculated hash for each update in the database. Until this reconciliation has completed, we cannot use the Publisher to generate a self-signed certificate.
 
-![](../../_images/wsusmovecontent.png)
+![](/_images/wsusmovecontent.png)
 
 ## Workaround
 
@@ -66,4 +66,4 @@ To genereate a self-signed certificate, from the Publisher, without marking the 
 
 5. Click **Generate Certificate**
 
-![](../../_images/exportprivatekeydisable.png)
+![](/_images/exportprivatekeydisable.png)

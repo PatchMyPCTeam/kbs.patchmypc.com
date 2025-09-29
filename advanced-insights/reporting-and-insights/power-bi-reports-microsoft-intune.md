@@ -36,7 +36,7 @@ The next step is to **export** the latest assignment statics to a **.CSV** fil
 
 Perform the following actions: [**Open the Intune Application Manager Utility**](https://patchmypc.com/intune-application-manager-utility) > **Export**
 
-![](../../_images/IntunePowerBiReportVersion1.0.2.png)
+![](/_images/IntunePowerBiReportVersion1-0-2.png)
 
 ## Step 3: Open the Power BI Report and Import the CSV File
 
@@ -44,29 +44,29 @@ Perform the following actions: [**Open the Intune Application Manager Utility**]
 
 After importing, you should see a dashboard for both **third-party software updates** and **Win32 application assignments** in Microsoft Intune.
 
-![Intune Dashboard for Third-Party Updates](images/Intune-Dashboard-for-Third-Party-Updates-2023.png)
+![Intune Dashboard for Third-Party Updates](/_images/Intune-Dashboard-for-Third-Party-Updates-2023.png "Intune Dashboard for Third-Party Updates")
 
 ## Step 4: Explore the Power BI Report
 
 There are two pages the will show you compliance statistics for **[third-party update](/third-party-patch-management-for-microsoft-intune)** or **[third-party application](/automatically-create-and-deploy-applications-in-microsoft-intune)** assignments
 
-![Power BI Tabs for Intune Patching of Third-Party Updates](images/Power-BI-Tabs-for-Intune-Patching-of-Third-Party-Updates.png)
+![Power BI Tabs for Intune Patching of Third-Party Updates](/_images/Power-BI-Tabs-for-Intune-Patching-of-Third-Party-Updates.png "Power BI Tabs for Intune Patching of Third-Party Updates")
 
 ### Intune Patching Overview Tab
 
 The Intune Patching Overview tab will display **compliance statistics** for any third-party update assignments within your Microsoft Intune tenant.  
 Some of the charts can be **shown as a data point table** to review specific compliance data. For example, if you right-click the **Update Timeline**, you can drill into updates deployed on a specific day.
 
-![Drill Into Specific Updates Power BI](images/Drill-Into-Specific-Updates-Power-BI.png)
+![Drill Into Specific Updates Power BI](/_images/Drill-Into-Specific-Updates-Power-BI.png "Drill Into Specific Updates Power BI")
 
 Here's an example of this **data point**:
 
-![Drilled In Report for Software Update](images/Drilled-In-Report-for-Software-Update.png)
+![Drilled In Report for Software Update](/_images/Drilled-In-Report-for-Software-Update.png "Drilled In Report for Software Update")
 
 ### Intune Application Overview Tab
 
 The Intune Application Overview tab will display **compliance statistics** for any third-party applications (Win32 applications for initial deployment) within your Microsoft Intune tenant.  
-![](../../_images/Intune-Application-Overview.png)
+![](/_images/Intune-Application-Overview.png)
 
 ### Dashboard components explained
 

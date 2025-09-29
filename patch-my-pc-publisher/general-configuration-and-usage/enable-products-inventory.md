@@ -20,7 +20,7 @@ This new feature is directly from customer feedback on our [UserVoice](https://i
 
 In the **Updates** or **ConfigMgr Apps** tab you can click the **database icon** to launch the scan feature. The scan feature allows you to perform a one-time query against your environment as well as automated scanning during scheduled synchronizations and automatic product enabling.
 
-![](../../_images/ConfigMgrDBScan_AutoPublish.png)
+![](/_images/ConfigMgrDBScan_AutoPublish.png)
 
 ### How does Scanning Work?
 
@@ -30,7 +30,7 @@ Each time a synchronization is performed, the service will query the SCCM databa
 
 In the event you want to exclude any existing products, you can right-click the product in the update or application rules tab in the publishing service.
 
-![](../../_images/scanwizrd3.png)
+![](/_images/scanwizrd3.png)
 
 ### SQL Permissions Required?
 

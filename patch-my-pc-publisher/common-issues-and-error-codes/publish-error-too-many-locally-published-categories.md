@@ -26,11 +26,11 @@ WSUS has a limitation on the number of unique third-party vendors/products that 
 
 Here's an example of all the custom third-party products that may be listed.
 
-![WSUS too many locally published categories third party updates](images/WSUS-too-many-locally-published-categories-third-party-updates.png)
+![WSUS too many locally published categories third party updates](/_images/WSUS-too-many-locally-published-categories-third-party-updates.png "WSUS too many locally published categories third party updates")
 
 Due to this **100 category limitation** and after talking to the Microsoft product group, this is why we decided to use a **[single vendor and product](https://www.youtube.com/watch?v=kqttlu-kkMs)** in our catalog.
 
-![PatchMyPC Single WSUS Product and Category](images/PatchMyPC-Single-WSUS-Product-and-Category.png)
+![PatchMyPC Single WSUS Product and Category](/_images/PatchMyPC-Single-WSUS-Product-and-Category.png "PatchMyPC Single WSUS Product and Category")
 
 ## Am I Affected?
 
@@ -38,11 +38,11 @@ If you receive this error, it means you currently have **100 or more categories*
 
 The WSUS API checks the total number of categories before it allows an update to be published. Part of the check requires the API to call the _**GetLatestRevisionNumberForUpdate**_ stored procedure in SQL. This stored procedure is looking in the tbRevision table to see if the category already exists. If it doesn't, it needs to calculate how many new categories the API call will make and if that total plus the existing category total is larger than 100, the API throws the error "Too many locally published categories".
 
-![](../../_images/wsus_api_error.jpg)
+![](/_images/wsus_api_error.jpg)
 
 Note that the stored procedure is checking the **tbRevision** table here.
 
-![](../../_images/wsus_api_error_5.jpg)
+![](/_images/wsus_api_error_5.jpg)
 
 ### **Check using  SQL Server Management Studio**
 
@@ -138,7 +138,7 @@ FROM
 DROP TABLE #CategoryData;
 ```
 
-![](../../_images/company_portal_notifications_6.jpg)
+![](/_images/company_portal_notifications_6.jpg)
 
 As the API call is only limited by total number of categories, including revisions, for updates marked as **isLocallyPublisher = 1**, a simple workaround is to change this flag. Changing this flag for all updates in a category will mean the those third party updates will show in the WSUS console.
 
@@ -276,7 +276,7 @@ Write-Host "Result Set 2:" -ForegroundColor Yellow
 $dataSet.Tables[1] | Format-Table -AutoSize
 ```
 
-![](../../_images/powershell.jpg)
+![](/_images/powershell.jpg)
 
 ### Resolution for Error: Too many locally published categories
 
@@ -298,17 +298,17 @@ In Publisher, the **Modify Published Updates Wizard** allows you to set third-pa
 
 It can be found under the **Updates** tab > **Options** > select **Run Wizard** under **Modify Published Updates**.
 
-![](../../_images/published-categories-1.2.png)
+![](/_images/published-categories-1-2.png)
 
 After running the SQL query shared above in [Resolution for Error: too many locally published categories](#topic2) you should be able to understand which products to select to reduce the overal category count.
 
 In this example, we need to reduce the **TotalCategories** count down from 205 to under 100
 
-![](../../_images/wsus_api_error_3.jpg)
+![](/_images/wsus_api_error_3.jpg)
 
 In the **Modify Published Updates Wizard**, filter by one of the vendors identified in your SQL query results, click **Select All** and click **Show in WSUS**.
 
-![](../../_images/wsus_api_error_4.jpg)
+![](/_images/wsus_api_error_4.jpg)
 
 Re-run the SQL query again. Repeat this process until the query indicates you are below **100** categories.
 
@@ -318,21 +318,21 @@ Re-run the SQL query again. Repeat this process until the query indicates you ar
 
 Our publishing service **Modify Published Updates Wizard** allows you to delete published third-party updates. It can be found under the **Updates** tab > **Options** > select **Run Wizard** under **Modify Published Updates**. In the example below, we selected two updates from the vendor **7-Zip** and choose **Delete**.
 
-![](../../_images/published-categories-1.2.png)
+![](/_images/published-categories-1-2.png)
 
-![](../../_images/published-categories-2.2.png)
+![](/_images/published-categories-2-2.png)
 
 **Note:** To enable the **Delete** button, create a new DWORD registry value: Computer\\HKEY\_LOCAL\_MACHINE\\Software\\Patch My PC Publishing Service: EnableDeleteUpdates = 1
 
-![](../../_images/toomanycategories2.png)
+![](/_images/toomanycategories2.png)
 
 Once you have deleted the updates from WSUS, run the **WSUS Cleanup Wizard** from the Options node in WSUS.
 
-![WSUS Server Cleanup Wizard](images/WSUS-Server-Cleanup-Wizard.png)
+![WSUS Server Cleanup Wizard](/_images/WSUS-Server-Cleanup-Wizard.png "WSUS Server Cleanup Wizard")
 
 You should be able to leave the default checkboxes in the **Select items to Clean** wizard
 
-![WSUS Server Cleanup Options](images/WSUS-Server-Cleanup-Options.png)
+![WSUS Server Cleanup Options](/_images/WSUS-Server-Cleanup-Options.png "WSUS Server Cleanup Options")
 
 Once you complete the WSUS Server Cleanup Wizard, **republish the updates**.
 
@@ -348,17 +348,17 @@ You will want to navigate to our GitHub page and run this script: [CustomerTroub
 
 This will open a UI showing all the categories you have published in WSUS. You can select multiple categories and delete.  
 
-![](../../_images/Picture1.png)
+![](/_images/Picture1.png)
 
 If you receive an error stating “The update content cannot be deleted as it is still referenced by other updates(s).”
 
-![](../../_images/Picture2.png)
+![](/_images/Picture2.png)
 
 Run the script again with **\-force**. This will ensure it also removes revised categories, which is common with customers migrating from Ivanti.  
 
 After running with -force, it should say “The update could not be found.” 
 
-![](../../_images/Picture3.png)
+![](/_images/Picture3.png)
 
 This indicates we successfully removed the revised categories from WSUS, despite the update referenced under that category not being found.. 
 

@@ -45,7 +45,7 @@ Once the console is installed, **perform the following steps**:
 3. Re-open the Publisher
 
 5. Navigate to the **About tab** and click **Restart service****
-    ![Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.](images/Could-not-load-file-or-assembly-AdminUI.WqlQueryEngine.png)
+    ![Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.](/_images/Could-not-load-file-or-assembly-AdminUI-WqlQueryEngine.png "Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.")
     **
 
 7. These actions should **resolve the issue**

@@ -22,7 +22,7 @@ In the **Sync Schedule** tab of the Patch My PC Publisher, you can set the caden
 
 You can also use the **Run Publishing Service Sync** option to trigger a manual or [Selective Sync.](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#SelectiveSync)
 
-![](../../_images/Sync-Schedule-12.png)
+![](/_images/Sync-Schedule-12.png)
 
 ## How to Create a Custom Publisher Sync Schedule
 
@@ -30,11 +30,11 @@ You can use Task Scheduler to synchronize the Publisher on a schedule that isnâ€
 
 First, open **Task Scheduler**.
 
-![](../../_images/Sync-Schedule-1.png)
+![](/_images/Sync-Schedule-1.png)
 
 Rights-Click **Task Scheduler Library** and select **Create Task**.
 
-![](../../_images/Sync-Schedule-2.png)
+![](/_images/Sync-Schedule-2.png)
 
 In the **Create Task** window, enter a name for the task under the **General** tab and set the **Security options**. You have a couple of options for the **Security options** section:
 
@@ -44,19 +44,19 @@ In the **Create Task** window, enter a name for the task under the **General** t
 
 We are going to use **Option 2** and run the Task as **System**.
 
-![](../../_images/Sync-Schedule-3.2.png)
+![](/_images/Sync-Schedule-3-2.png)
 
-![](../../_images/Sync-Schedule-4.png)
+![](/_images/Sync-Schedule-4.png)
 
 Next, move to the **Triggers** tab and select **New**.
 
-![](../../_images/Sync-Schedule-6.png)
+![](/_images/Sync-Schedule-6.png)
 
 In the **Begin the task** drop down, select **On a schedule**.
 
 Choose your frequency in the Settings section and select **OK**. In our example, we have chosen Weekly and Recur every 2 weeks on Friday.Â 
 
-![](../../_images/Sync-Schedule-7.png)
+![](/_images/Sync-Schedule-7.png)
 
 Next, move to the **Actions** tab and select **New**.
 
@@ -66,12 +66,12 @@ In the **Settings** section under **Program/script**, browse to the installation
 
 In the **Add arguments (optional)** section enter: **/syncnow**
 
-![](../../_images/Sync-Schedule-9.png)
+![](/_images/Sync-Schedule-9.png)
 
 Lastly, select **OK** to save the new task.
 
-![](../../_images/Sync-Schedule-10.png)
+![](/_images/Sync-Schedule-10.png)
 
 After the task is created, you can disable the sync schedule in the publisher, so it doesn't sync automatically outside the new scheduled task.
 
-![](../../_images/Sync-Schedule-11.png)
+![](/_images/Sync-Schedule-11.png)

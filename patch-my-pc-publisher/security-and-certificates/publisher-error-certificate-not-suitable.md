@@ -42,7 +42,7 @@ To confirm if you are affected by this issue, the following steps may be perform
     - Key Usage - Digital Signature
 
 11. Click "Edit Properties..." ensure that Code Signing is listed and enabled under the list of "Certificate purposes"  
-     ![Image of Certificate and Certificate Properties window showing the proper properties for a code signing certificate](images/CodeSigningCertificateProperties.png)
+     ![Image of Certificate and Certificate Properties window showing the proper properties for a code signing certificate](/_images/CodeSigningCertificateProperties.png "Image of Certificate and Certificate Properties window showing the proper properties for a code signing certificate")
      
 
  If any of the properties listed above do not exist or contain the values listed, the certificate cannot be used to sign PowerShell scripts
@@ -68,7 +68,7 @@ If recreating the Code Signing Certificate is not possible, the following steps 
 5. Click Options...
 
 7. Deselect the option to "Code-sign the PowerShell detection method script using the WSUS Signing Certificate" and click "OK"  
-    ![](../../_images/DisableCodeSigningPublisher.png)
+    ![](/_images/DisableCodeSigningPublisher.png)
     
 
 9. Click Apply to apply the changes
@@ -80,17 +80,17 @@ The Publisher also attempts to code sign any Patch My PC provided scripts by def
 3. Navigate to an application with a Patch My PC defined script (Oracle Java is a popular example)
 
 5. Right click on the Product and select "Patch My PC defined pre/post scripts"  
-    ![](../../_images/DefinedPatchMyPCScript.png)
+    ![](/_images/DefinedPatchMyPCScript.png)
     
 
 7. Select the Option to "Disable the Patch My PC recommended pre/post-update script for this product."  
-    ![](../../_images/DisablePatchMyPCScript.png)
+    ![](/_images/DisablePatchMyPCScript.png)
     
 
 9. Click on View Script, this will open the provided script in a web browser
 
 11. Save the script as a ".ps1" file in a location that the Publisher has read access, close the web browser  
-     ![](../../_images/SaveDefinedScript.png)
+     ![](/_images/SaveDefinedScript.png)
      
 
 13. Click OK in the "Patch My PC Defined Script(s)" window
@@ -102,7 +102,7 @@ The Publisher also attempts to code sign any Patch My PC provided scripts by def
 19. Select "Browse..." next to the appropraite pre/post script option
 
 21. Navigate and select the script that was just saved  
-     ![](../../_images/UpdateCustomScript.png)
+     ![](/_images/UpdateCustomScript.png)
      
 
 23. Click OK, Click Apply

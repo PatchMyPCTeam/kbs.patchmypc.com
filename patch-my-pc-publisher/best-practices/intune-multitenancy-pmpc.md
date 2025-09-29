@@ -20,7 +20,7 @@ By and large, **the core functionality of the Publisher is the same** as detaile
 
 Multi-tenant management features of the Publisher are **available for Managed Services Providers using the MSP subscription**. To find out more information about this subscription, please see **[Information for Managed Service Providers](https://patchmypc.com/information-for-managed-service-providers)**.
 
-![MSP license in the Publisher for multitenancy](images/multitenant00.png)
+![MSP license in the Publisher for multitenancy](/_images/multitenant00.png "MSP license in the Publisher for multitenancy")
 
 ## Installation
 
@@ -34,17 +34,17 @@ After installing the Patch My PC Publisher you can start adding more tenants in 
 
 To configure the first tenant, either click **Options...** or the **+** icon, and it will produce the typical [Intune Options](https://patchmypc.com/intune-application-creation-options) window.
 
-![Adding first tenant for multitenancy](images/multitenant1.png)
+![Adding first tenant for multitenancy](/_images/multitenant1.png "Adding first tenant for multitenancy")
 
 Enter your the tenant's Azure App registration details including a friendly name to identify the tenant, e.g. customer or tenant domain name.
 
-![Entering tenant details for multitenancy](images/multitenant2.png)
+![Entering tenant details for multitenancy](/_images/multitenant2.png "Entering tenant details for multitenancy")
 
 For more information on how to create the Azure App registrations, see our documentation: **[Azure App Registration - Getting Started (patchmypc.com)](https://docs.patchmypc.com/installation-guides/intune/azure-app-registration)**.
 
 After entering the Azure App registration details for your first tenant, click **OK**.
 
-![Selecting products for a tenant multitenancy](images/multitenant3.png)
+![Selecting products for a tenant multitenancy](/_images/multitenant3.png "Selecting products for a tenant multitenancy")
 
 This tenant will be currently in-focus for both the **Intune Apps** and **Intune Updates** tabs.
 
@@ -56,11 +56,11 @@ Click on **Options...** to change the [Intune Options](https://patchmypc.com/in
 
 To add an additional tenant, click on the **+** at the top right in either of the **Intune Apps** or **Intune Updates** tab. It will produce the typical [Intune Options](https://patchmypc.com/intune-application-creation-options) windows where you can configure another tenant for publishing.
 
-![Add a new tenant for multitenancy](images/multitenant4.png)
+![Add a new tenant for multitenancy](/_images/multitenant4.png "Add a new tenant for multitenancy")
 
 To remove a tenant, change the currently selected tenant to the one you want to remove from the dropdown. Click on the red cross at the top right in either of the **Intune Apps** or **Intune Updates** tab. You will be prompted to confirm you want to delete the tenant.
 
-![Removing a tenant for multitenancy](images/multitenant5.png)
+![Removing a tenant for multitenancy](/_images/multitenant5.png "Removing a tenant for multitenancy")
 
 ## Importing Tenants
 
@@ -78,11 +78,11 @@ These are the supported configurations carried over when you import settings fro
 
 - **[Intune Win32 Application Options](https://patchmypc.com/intune-application-creation-options)**
 
-![Import settings from other Publishers for multitenancy](images/multitenant6.png)
+![Import settings from other Publishers for multitenancy](/_images/multitenant6.png "Import settings from other Publishers for multitenancy")
 
-![Import settings from other Publishers for multitenancy](images/multitenant7.png)
+![Import settings from other Publishers for multitenancy](/_images/multitenant7.png "Import settings from other Publishers for multitenancy")
 
-![Import settings from other Publishers for multitenancy](images/multitenant8.png)
+![Import settings from other Publishers for multitenancy](/_images/multitenant8.png "Import settings from other Publishers for multitenancy")
 
 As noted in the confirmation dialogue, **some previously configured settings may need to be updated**.
 
@@ -114,9 +114,9 @@ The feature for **[Manage conflicting processes](https://patchmypc.com/manage-co
 
 You can still configure global settings via the **Manage default settings**, however this enables you to configure the above settings differently per tenant.
 
-![Manage conflicting processes for multitenancy](images/multitenant9.png)
+![Manage conflicting processes for multitenancy](/_images/multitenant9.png "Manage conflicting processes for multitenancy")
 
-![Manage conflicting processes for multitenancy](images/multitenant10.png)
+![Manage conflicting processes for multitenancy](/_images/multitenant10.png "Manage conflicting processes for multitenancy")
 
 ## Alerts
 

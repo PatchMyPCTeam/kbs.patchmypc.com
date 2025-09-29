@@ -30,7 +30,7 @@ A procmon trace is also very useful at revealing competing antivirus products in
 
 Procmon can either be downloaded as a zip file (1) or as an executable (2) from the Sysinternals website.
 
-[![procmon download](images/procmon-download-1.png)](https://patchmypc.com/app/uploads/2025/04/procmon-download-1.png)
+[![procmon download](/_images/procmon-download-1.png "procmon download")](https://patchmypc.com/app/uploads/2025/04/procmon-download-1.png)
 
 Typically, we recommend downloading the zip file and extracting the contents to disk so they can be used for continuous troubleshooting when working with our engineers on a support case.
 
@@ -38,7 +38,7 @@ Typically, we recommend downloading the zip file and extracting the contents to 
 
 The extracted zip file will reveal the following files which we will use for troubleshooting.
 
-[![procmon extracted](images/procmon-extracted-1.png)](https://patchmypc.com/app/uploads/2025/04/procmon-extracted-1.png)
+[![procmon extracted](/_images/procmon-extracted-1.png "procmon extracted")](https://patchmypc.com/app/uploads/2025/04/procmon-extracted-1.png)
 
 ## Run a procmon trace to diagnose publishing issues
 
@@ -46,35 +46,35 @@ Unless otherwise instructed, a procmon trace is run from the same computer where
 
 1\. Run **procmon.exe** (1) on the same computer where the Patch My PC Publisher Serviceis installed (2)
 
-![procmon launch](images/procmon-launch-1.png)
+![procmon launch](/_images/procmon-launch-1.png "procmon launch")
 
 2\. Agree to the Sysinternals licence terms
 
 3\. Procmon will start collecting events straight away. To avoid unnecessarily âlarge capture files, stop the capture until you are ready to reproduce the issue. Stop the trace by clicking the **Capture** icon on the toolbar.
 
-![procmon capture button](images/procmon-capture-button-e1703848606988.png)
+![procmon capture button](/_images/procmon-capture-button-e1703848606988.png "procmon capture button")
 
 4\. Clear the current trace by clicking the **Clear** icon on the taskbar.
 
-![procmon clear button](images/procmon-clear-button.png)
+![procmon clear button](/_images/procmon-clear-button.png "procmon clear button")
 
 5\. Re-produce the publishing issue by selecting the appropriate products in the Publisher and from the **Sync Schedule** (1) tab click **Run Publishing Service Sync** (2).
 
-![procmon publisher sync](images/procmon-publisher-sync.png)
+![procmon publisher sync](/_images/procmon-publisher-sync.png "procmon publisher sync")
 
 6\. Immediately, in procmon click the **Capture** icon on the toolbar to begin capturing the publishing events that occur during the sync.
 
-![procmon capture button small](images/procmon-capture-button-small.png)
+![procmon capture button small](/_images/procmon-capture-button-small.png "procmon capture button small")
 
 7\. Once publishing has completed, click the **Capture** icon on the toolbar again (see above) to finish the capture. You can verify the sync has completed by reviewing the following log file and observing the **\*\*\* Report** log line. This log line indicates the sync has completed and will report any success and failures.
 
 - %PatchMyPCInstallDirectory%\\PatchMyPC.log
 
-![sync complete](images/procmon-sync-complete-e1703850811274.png)
+![sync complete](/_images/procmon-sync-complete-e1703850811274.png "sync complete")
 
 8\. Save the capture by clicking **Save** from the **File** menu.
 
-![procmon save](images/procmon-save.png)
+![procmon save](/_images/procmon-save.png "procmon save")
 
 9\. Unless instructed to filter captured events, ensure the following options are selected:-
 
@@ -84,13 +84,13 @@ Unless otherwise instructed, a procmon trace is run from the same computer where
 
 5. Path = **Make a note of the path where the .pml file will be saved**
 
-![procmon save options](images/procmon-save-options.png)
+![procmon save options](/_images/procmon-save-options.png "procmon save options")
 
 By default, the .pml file will save into the same folder that procmon.exe was launched from and will be named **LogFile.PML.**
 
 10\. Finally, the .pml file will compress very well. Please compress the file before sending it to Patch My PC support.
 
-![pml file size](images/pml-file-size.png)
+![pml file size](/_images/pml-file-size.png "pml file size")
 
 ## Send the  capture (pml) file to Patch My PC support
 

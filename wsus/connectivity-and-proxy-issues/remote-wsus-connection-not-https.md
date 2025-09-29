@@ -16,7 +16,7 @@ taxonomy:
 
 Since the release of Configuration Manager 1806, some customers report that the [WSUS signing certificate](/wsus-signing-certificate-options-for-third-party-updates-in-configuration-manager) isn't being populated in the **Third Party Updates tab** of the software update point. It occurs even when the option **Configuration Manager manages the certificate** is enabled.
 
-![WSUS Signing Certificate Not Populating in SCCM](images/WSUS-Signing-Certificate-Not-Populating-in-SCCM.png)
+![WSUS Signing Certificate Not Populating in SCCM](/_images/WSUS-Signing-Certificate-Not-Populating-in-SCCM.png "WSUS Signing Certificate Not Populating in SCCM")
 
 ## Configuration Manager Manages the Certificate Overview
 
@@ -30,7 +30,7 @@ The most common reason why the WSUS signing certificate doesn't automatically ge
 
 For example, in the screenshot below **SCCM3-DPMPSUP-1** is our Software update point and it's remote from the primary site server **SCCM3-SITESVR-2**
 
-![](../../_images/SCCM-Software-Update-Point-Remote-From-Site-Server.png)
+![](/_images/SCCM-Software-Update-Point-Remote-From-Site-Server.png)
 
 When your software update point is remote from your site server, the option **Configuration Manager managed the certificate** will only work if the WSUS/SUP is configured for HTTPS/SSL as described in the [Microsoft Docs](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/third-party-software-updates#additional-requirements-when-the-sup-is-remote-from-the-top-level-site-server).
 
@@ -46,7 +46,7 @@ You have two options to work around this issue:
 
 The first workaround is to create a self-signed or import a PKI-based code-signing certificate for the WSUS Signing Certificate using our [Publishing Service](https://patchmypc.com/publishing-service-setup-documentation) and deploy the certificate to clients using an alternative method mentioned [how to deploy the WSUS signing certificate](https://patchmypc.com/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates). If you choose this method, you can change the option to **Manually manage the certificate** in SCCM.
 
-![Import PKI or Generate Self-Signed WSUS Signing Certificate for SCCM](images/Import-PKI-or-Generate-Self-Signed-WSUS-Signing-Certificate-for-SCCM.png)
+![Import PKI or Generate Self-Signed WSUS Signing Certificate for SCCM](/_images/Import-PKI-or-Generate-Self-Signed-WSUS-Signing-Certificate-for-SCCM.png "Import PKI or Generate Self-Signed WSUS Signing Certificate for SCCM")
 
 This option will generally be the most straightforward because you won't need to request a web server certificate for WSUS and configure [WSUS to use SSL](https://docs.microsoft.com/en-us/previous-versions/system-center/configuration-manager-2007/bb633246\(v=technet.10\)). The one disadvantage to this option is clients won't have the WSUS Signing Certificate automatically deployed to their Trusted Root and Trusted Publishers certificate store natively using the SCCM [client setting](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/third-party-software-updates#enable-third-party-updates-on-the-clients) to enable third-party updates.
 

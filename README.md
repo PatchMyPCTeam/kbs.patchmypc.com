@@ -1,1 +1,2 @@
-# Advanced Insights (product)
+# Advanced Insights
+

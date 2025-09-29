@@ -38,7 +38,7 @@ If the **WsusContent** or **UpdateServicesPackages** don't exist you can eithe
 
 We expect to see that **both folders exist**, and the **paths match those found above in the share dialog**. 
 
-![](../../_images/WSUS_FoldersExist.png)
+![](../../.gitbook/assets/WSUS_FoldersExist.png)
 
 ## Step 2: Validate the Permissions on the WsusContent and UpdateServicesPackages Shares
 
@@ -96,26 +96,26 @@ Follow these steps to verify if the correct names were added: 
 
 1\. Go to **IIS**, select **WSUS Administration** and click **on** **Bindings**
 
-![](../../_images/SSLcert01-01.png)
+![](../../.gitbook/assets/SSLcert01-01.png)
 
 2\. Select **the** **https** binding and choose **Edit**. 
 
-![](../../_images/sslcert02-1.png)
+![](../../.gitbook/assets/sslcert02-1.png)
 
 3\. Next to your **SSL Certificate**, press the **Vi ew** button. 
 
-![](../../_images/sslcert03-1.png)
+![](../../.gitbook/assets/sslcert03-1.png)
 
 4\. Go on the **Details** tab, and scroll down until you find the **Subject Alternative Name**. If you click on it, you should find 2 DNS entries, one for the Alias and one for the FQDN. 
 
-![](../../_images/SSLcert04-1.png)
+![](../../.gitbook/assets/SSLcert04-1.png)
 
 If the wrong names were added when the certificate was issued, you would have to request the certificate again, and this time add the correct DNS names.  
 You can follow [this video guide](https://youtu.be/nChKKM9APAQ?t=724) we posted on our youtube channel for instructions. 
 
 Once the new SSL certificate is requested and added, you would have to use the wsusutil.exe command to configuressl again. This is also referenced in the video guide linked above. 
 
-![](../../_images/SSLcert05-1.png)
+![](../../.gitbook/assets/SSLcert05-1.png)
 
 # Step 5: If you have HTTPS configured and you are using a DNS alias
 

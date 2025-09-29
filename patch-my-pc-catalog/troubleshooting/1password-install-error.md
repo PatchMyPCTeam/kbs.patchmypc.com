@@ -21,7 +21,7 @@ The installation of 1Password fails, and when running manually, the error messag
 If the installation of 1Password fails, locate the installer in the cache or [download](https://downloads.1password.com/win/1PasswordSetup-latest.exe) the installer from the vendor's website and attempt the installation manually.  
 This error should appear:
 
-![](../../_images/ApplicationFrameHost_FWqmtYCXwV.png)
+![](../../.gitbook/assets/ApplicationFrameHost_FWqmtYCXwV.png)
 
 ## Potential Resolution
 

@@ -34,7 +34,7 @@ New-Item -itemtype Directory -Path "$env:ProgramFilesNotepad++pluginsComparePlus
 Expand-Archive -Path $PSScriptRootComparePlus_cp_1.2.0_x64.zip -DestinationPath "$env:ProgramFilesNotepad++pluginsComparePlus" -Force
 ```
 
-![](../../_images/compareplus_2.png)
+![](../../.gitbook/assets/compareplus_2.png)
 
 The **PowerShell file** and **Zip file** were saved to a location that the publisher can access.
 
@@ -48,7 +48,7 @@ In the "**Choose Custom Pre/Post Update Script(s)**" window, click "**Browse...*
 
 Next, click "**Browse...**" next to the "**Additional Files**" option and select the zip file containing the Notepad++ plugin that was downloaded earlier. Then select "**OK**"
 
-![](../../_images/compareplus_3.png)
+![](../../.gitbook/assets/compareplus_3.png)
 
 Use the "**Browse..**" buttons to select the Pre/Post Update Scripts or Extra Files/Folders to include.
 

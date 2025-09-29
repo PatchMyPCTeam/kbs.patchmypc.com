@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Advanced Insights](README.md)
-  * [Reporting and Insights](readme/reporting-and-insights/README.md)
-    * [Power BI Reports for Microsoft Intune Third-Party Update and Application Deployments](readme/reporting-and-insights/power-bi-reports-microsoft-intune.md)
+  * [Reporting and Insights](advanced-insights/reporting-and-insights/README.md)
+    * [Power BI Reports for Microsoft Intune Third-Party Update and Application Deployments](advanced-insights/reporting-and-insights/power-bi-reports-microsoft-intune.md)
 * [ConfigMgr](configmgr/README.md)
   * [Application and Update Publishing](configmgr/application-and-update-publishing/README.md)
     * [ConfigMgr Application Manager Overview](configmgr/application-and-update-publishing/configmgr-app-manager.md)

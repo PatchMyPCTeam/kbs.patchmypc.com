@@ -148,7 +148,7 @@
   * [Log Collection and Analysis](wsus/log-collection-and-analysis/README.md)
     * [Page 57](wsus/log-collection-and-analysis/page-57.md)
   * [Best Practices](wsus/best-practices/README.md)
-    * [Page 58](wsus/best-practices/page-58.md)
+    * [How The Publisher is Affected by Code Signing Certificate Changes](/wsus/best-practices/code-signing-impact.md)
   * [Connectivity and Proxy Issues](wsus/connectivity-and-proxy-issues/README.md)
     * [Page 59](wsus/connectivity-and-proxy-issues/page-59.md)
   * [Education](wsus/education/README.md)

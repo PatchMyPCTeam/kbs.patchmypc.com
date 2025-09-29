@@ -173,7 +173,7 @@ jobs:
           import re, glob, os
           from urllib.parse import unquote
           from html import unescape
-
+          
           # -------- front matter helpers --------
           def split_front_matter(text: str):
               if text.startswith('\ufeff'):
@@ -186,12 +186,12 @@ jobs:
                   body = text[m.end():]
                   return fm, body
               return "", text
-
+          
           def join_front_matter(fm: str, body: str) -> str:
               return (fm or "") + body
-
+          
           IMG_EXT = r"(?:png|jpe?g|gif|webp|svg|gifv)"
-
+          
           def clean_filename_from_url(url: str) -> str:
               if not url: return "unknown.png"
               url = url.strip().rstrip('>')
@@ -212,15 +212,15 @@ jobs:
               base = re.sub(r"[^A-Za-z0-9_\-()]", "-", base)
               base = re.sub(r"-{2,}", "-", base).strip("-")
               return f"{base}.{ext.lower()}" if ext else base
-
+          
           def to_root_image_url(url: str) -> str:
               return "/_images/" + clean_filename_from_url(url)
-
+          
           def norm_text(s: str) -> str:
               t = unescape(s or "")
               t = t.replace("“", '"').replace("”", '"').replace("’", "'")
               return t
-
+          
           def build_md(alt: str, url: str) -> str:
               alt = norm_text(alt or "")
               alt_md = alt.replace("]", r"\]")
@@ -229,15 +229,15 @@ jobs:
                   return f'![{alt_md}]({to_root_image_url(url)} "{title}")'
               else:
                   return f'![{alt_md}]({to_root_image_url(url)})'
-
+          
           md_files = [p for g in ("**/*.md","**/*.MD","**/*.mdx","**/*.MDX","**/*.markdown","**/*.MARKDOWN")
                       for p in glob.glob(g, recursive=True)]
-
+          
           # ---------- GitBook hint blocks -> Gutenberg blockquote (unchanged) ----------
           HINT_BLOCK = re.compile(r'{%\s*hint\b[^%]*%}(.*?){%\s*endhint\s*%}', re.I | re.S)
           MD_LINK    = re.compile(r'\[([^\]]+)\]\((https?://[^)]+)\)')
           BARE_URL   = re.compile(r'^(https?://\S+)$')
-
+          
           def convert_hint_blocks(s: str) -> str:
               def _repl(m):
                   inner = m.group(1).strip()
@@ -254,73 +254,54 @@ jobs:
                   content = "\n".join(paras) if paras else "<p></p>"
                   return f'<blockquote class="wp-block-quote">\n{content}\n</blockquote>'
               return HINT_BLOCK.sub(_repl, s)
-
-          # ---------- NEW: enhance existing blockquotes with marker -> class ----------
-          # Detect first <p> as a marker (**Note**, **Tip**, **Important**, with optional colon)
-          # and convert <blockquote class="wp-block-quote"> -> add 'is-note' / 'is-tip' / 'is-important'
-          # Also removes the marker paragraph from inside the blockquote.
+          
+          # ---------- NEW: enhance existing blockquotes with marker -> class (keep marker <p>) ----------
           MARKERS = {
-              'note': 'is-note',
-              'tip': 'is-tip',
-              'important': 'is-important',
-              'warning': 'is-warning',
-              'caution': 'is-caution',
-              'info': 'is-info',
+            'note': 'is-note',
+            'tip': 'is-tip',
+            'important': 'is-important',
+            'warning': 'is-warning',
+            'caution': 'is-caution',
+            'info': 'is-info',
           }
-
-          # Matches a blockquote, capturing entire inner HTML
-          BQ = re.compile(
-              r'<blockquote\s+class="([^"]*\bwp-block-quote\b[^"]*)">\s*(.*?)\s*</blockquote>',
-              re.I | re.S
-          )
-          # First paragraph in the block
-          FIRST_P = re.compile(r'^\s*<p>(.*?)</p>\s*(.*)$', re.I | re.S)
-
+          
+            BQ = re.compile(
+            r'<blockquote\s+class="([^"]*\bwp-block-quote\b[^"]*)">\s*(.*?)\s*</blockquote>',
+            re.I | re.S
+            )
+            FIRST_P = re.compile(r'^\s*<p>(.*?)</p>', re.I | re.S)
+          
           def strip_md_bold(s: str) -> str:
-              # remove **strong** or __strong__
-              s = re.sub(r'^\s*[\*_\s]*', '', s)
-              s = re.sub(r'[\*_\s]*\s*$', '', s)
-              s = re.sub(r'^\s*(\*\*|__)\s*', '', s)
-              s = re.sub(r'\s*(\*\*|__)\s*$', '', s)
-              return s.strip()
-
+                                 s = re.sub(r'^\s*(\*\*|__)\s*', '', s)
+                                 s = re.sub(r'\s*(\*\*|__)\s*$', '', s)
+                                 return s.strip()
+          
           def detect_marker(text: str) -> str:
-              # Normalize: remove **, trailing colon, casefold
-              t = strip_md_bold(text)
-              t = re.sub(r':\s*$', '', t).strip().lower()
-              return t
-
+                                    t = strip_md_bold(re.sub(r'<[^>]+>', '', text))
+                                    t = re.sub(r':\s*$', '', t).strip().lower()
+                                    return t
+          
           def enhance_blockquotes(s: str) -> str:
-              def _repl(m):
-                  classes = m.group(1)
-                  inner   = m.group(2)
-
-                  fm = FIRST_P.match(inner)
-                  if not fm:
-                      return m.group(0)
-
-                  first_p_html = fm.group(1)
-                  rest_html    = fm.group(2)
-
-                  # Pull plain-ish text out of the first <p> (not perfect, but good enough)
-                  first_text = re.sub(r'<[^>]+>', '', first_p_html).strip()
-                  key = detect_marker(first_text)
-
-                  if key in MARKERS:
-                      mod = MARKERS[key]
-                      # avoid duplicates
-                      class_list = classes.split()
-                      if mod not in class_list:
-                          classes = classes + " " + mod
-                      # drop the first <p> marker
-                      new_inner = rest_html.strip()
-                      if not new_inner:
-                          new_inner = ""  # allow empty
-                      return f'<blockquote class="{classes}">\n{new_inner}\n</blockquote>'
-                  else:
-                      return m.group(0)
-              return BQ.sub(_repl, s)
-
+                                       def _repl(m):
+                                         classes = m.group(1)
+                                         inner   = m.group(2)
+          
+                                         # check first paragraph only; DO NOT remove it
+                                         fm = FIRST_P.search(inner)
+                                         if not fm:
+                                           return m.group(0)
+          
+                                         first_p_html = fm.group(1)
+                                         key = detect_marker(first_p_html)
+                                         if key in MARKERS:
+                                           mod = MARKERS[key]
+                                           class_list = classes.split()
+                                           if mod not in class_list:
+                                             classes = classes + " " + mod
+                                           return f'<blockquote class="{classes}">\n{inner}\n</blockquote>'
+                                         return m.group(0)
+                                       return BQ.sub(_repl, s)
+          
           # ---------- image normalizations (your existing logic) ----------
           html_img = re.compile(
               r'<img\b[^>]*\bsrc=["\']([^"\']+)["\'][^>]*?(?:\balt=["\']([^"\']*)["\'])?[^>]*>',
@@ -351,14 +332,14 @@ jobs:
               r'(\[([^\]]+)\]\s*:\s*)' r'<?("?)([^>\r\n]+?)\3>?' r'(\s+"[^"]*")?\s*$',
               re.I
           )
-
+          
           any_changed = False
           for path in md_files:
               with open(path, encoding="utf-8") as f:
                   raw = f.read()
               fm, s = split_front_matter(raw)
               o = s
-
+          
               # 1) HTML <img> → strict MD
               s = html_img.sub(lambda m: build_md(m.group(2) or "", m.group(1)), s)
               # 1.5) GitBook inline MD images → strict MD to /_images
@@ -383,7 +364,7 @@ jobs:
                   inner = re.sub(r'\s+"(?:[^"\\]|\\.)*"\s*', '', inner)
                   return build_md(alt, inner)
               s = md_img_any.sub(_sanitize_md_img, s)
-
+          
               # 3) Gather reference defs
               defs = {}
               lines = s.splitlines()
@@ -393,14 +374,14 @@ jobs:
                       rid = m.group(2).strip()
                       url = m.group(4).strip()
                       defs[rid] = url
-
+          
               # 4) Reference usages → strict MD
               def repl_ref_use(m):
                   alt, rid = m.group(1), m.group(2).strip()
                   url = defs.get(rid)
                   return build_md(alt, url) if url else m.group(0)
               s = md_img_ref_use.sub(repl_ref_use, s)
-
+          
               # 5) Reference defs to /_images/<slug>
               def rewrite_def_line(ln: str) -> str:
                   m = ref_def_loose.search(ln)
@@ -409,7 +390,7 @@ jobs:
                   new_url = to_root_image_url(url)
                   return f"{head}{new_url}{title}"
               s = "\n".join(rewrite_def_line(ln) for ln in s.splitlines())
-
+          
               # 6) Fix bare .gitbook/assets occurrences outside code fences
               out_lines, fenced = [], False
               fence_re = re.compile(r'^\s*```')
@@ -422,23 +403,25 @@ jobs:
                       ln = asset_re.sub(lambda m: to_root_image_url(m.group(1)), ln)
                   out_lines.append(ln)
               s = "\n".join(out_lines)
-
+          
               # 7) Remove lingering ../ or ./ before _images
               s = re.sub(r'\]\(\s*<?(?:\.\./|\.?/)+_images/', '](/_images/', s)
-
+          
               # 8) NEW: enhance blockquotes (add classes + remove marker <p>)
               s = enhance_blockquotes(s)
-
+          
               if s != o:
                   with open(path, "w", encoding="utf-8", newline="") as f:
                       f.write(join_front_matter(fm, s))
                   print(f"Fixed: {path}")
                   any_changed = True
-
+          
           if not any_changed:
               print("No image links or blockquotes needed normalization.")
           PY
-      
+
+
+
 
       # FINAL PATCH: strip quoted fragments inside filename parentheses before .ext
       - name: Final fix — collapse ("…") inside filenames

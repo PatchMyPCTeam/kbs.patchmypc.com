@@ -18,7 +18,7 @@ During the installation of 1Password, despite it being done silently, the user r
 
 > Your IT team will need to install 1Password for you. Contact them for more information.
 
-![](/_images/1password_YourITTeam2.png)
+![](../../_images/1password_YourITTeam2.png)
 
 ## The cause of this issue
 
@@ -26,7 +26,7 @@ This issue appears when the installation of 1Password is attempted using the use
 
 If you navigate to **%localAppData%\\Local\\1Password\\logs\\setup** and open the **windows\_starter\_rCURRENT.log** file, the following warning will be displayed:
 
-![](/_images/1password_yourITteamLog.png)
+![](../../_images/1password_yourITteamLog.png)
 
 ## Resolution
 

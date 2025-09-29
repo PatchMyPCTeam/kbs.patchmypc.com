@@ -32,13 +32,13 @@ Exception Message: CreateDirectory failed
 
 If **Step 1 looks okay**, perform the following check: **Open** the **Computer Management** snap-in by opening a **run dialog** and typing **compmgmt.msc**
 
-![createdirectory failed verify WSUS Shares Exist](/_images/Validate-WSUS-Content-Folders-Exist.png "createdirectory failed verify WSUS Shares Exist")
+![createdirectory failed verify WSUS Shares Exist](images/Validate-WSUS-Content-Folders-Exist.png)
 
 If the **WsusContent** or **UpdateServicesPackages** don't exist you can either manually create them with the appropriate permissions or an easier option may be to **[move the WSUS content folders](/how-to-move-the-wsus-content-folder-to-a-new-location)** to a new folder to reset all settings.
 
 We expect to see that **both folders exist**, and the **paths match those found above in the share dialog**. 
 
-![](/_images/WSUS_FoldersExist.png)
+![](../../_images/WSUS_FoldersExist.png)
 
 ## Step 2: Validate the Permissions on the WsusContent and UpdateServicesPackages Shares
 
@@ -50,7 +50,7 @@ After validating the shares exist, confirm **both** the **WsusContent** and **Up
 
 - **Administrators**.
 
-![validate sharing permissions wsuscontent](/_images/validate-sharing-permissions-wsuscontent.png "validate sharing permissions wsuscontent")
+![validate sharing permissions wsuscontent](images/validate-sharing-permissions-wsuscontent.png)
 
 For **NTFS permissions** on the **Security** tab, you will need to ensure the **Full control** permission is applied for the following local (i.e. non-domain) users and groups:
 
@@ -62,7 +62,7 @@ For **NTFS permissions** on the **Security** tab, you will need to ensure the **
 
 - **Administrators**
 
-![A screenshot of the NTFS permissions required for WsusContent and UpdateServicesPackages folders.](/_images/UpdateServicesPackagesNTFS.jpg "A screenshot of the NTFS permissions required for WsusContent and UpdateServicesPackages folders.")
+![A screenshot of the NTFS permissions required for WsusContent and UpdateServicesPackages folders.](images/UpdateServicesPackagesNTFS.jpg)
 
 **Note:** If your WSUS server is configured to use a shared folder for its content, there are more considerations to make for delegating folder permissions:
 
@@ -85,7 +85,7 @@ Select LocalContentCacheLocation from tbConfigurationB
 
 Ensure the paths **resolve to the same root folder** as shown below:
 
-![Validate WSUSContent Matches for Error An error occurred while publishing an update to WSUS: createdirectory failed](/_images/validate-path-matches-susdb-and-registry.png "Validate WSUSContent Matches for Error An error occurred while publishing an update to WSUS: createdirectory failed")
+![Validate WSUSContent Matches for Error An error occurred while publishing an update to WSUS: createdirectory failed](images/validate-path-matches-susdb-and-registry.png)
 
 If these values don't match and one is incorrect, you should review the following KB instead specific to this scenario: [Failed to sign package; error was: 2147942403](https://patchmypc.com/failed-to-sign-package-error-was-2147942403)
 
@@ -96,26 +96,26 @@ Follow these steps to verify if the correct names were added: 
 
 1\. Go to **IIS**, select **WSUS Administration** and click **on** **Bindings**
 
-![](/_images/SSLcert01-01.png)
+![](../../_images/SSLcert01-01.png)
 
 2\. Select **the** **https** binding and choose **Edit**. 
 
-![](/_images/sslcert02-1.png)
+![](../../_images/sslcert02-1.png)
 
 3\. Next to your **SSL Certificate**, press the **Vi ew** button. 
 
-![](/_images/sslcert03-1.png)
+![](../../_images/sslcert03-1.png)
 
 4\. Go on the **Details** tab, and scroll down until you find the **Subject Alternative Name**. If you click on it, you should find 2 DNS entries, one for the Alias and one for the FQDN. 
 
-![](/_images/SSLcert04-1.png)
+![](../../_images/SSLcert04-1.png)
 
 If the wrong names were added when the certificate was issued, you would have to request the certificate again, and this time add the correct DNS names.  
 You can follow [this video guide](https://youtu.be/nChKKM9APAQ?t=724) we posted on our youtube channel for instructions. 
 
 Once the new SSL certificate is requested and added, you would have to use the wsusutil.exe command to configuressl again. This is also referenced in the video guide linked above. 
 
-![](/_images/SSLcert05-1.png)
+![](../../_images/SSLcert05-1.png)
 
 # Step 5: If you have HTTPS configured and you are using a DNS alias
 

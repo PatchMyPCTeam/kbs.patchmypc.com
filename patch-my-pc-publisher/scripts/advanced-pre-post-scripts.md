@@ -34,13 +34,13 @@ New-Item -itemtype Directory -Path "$env:ProgramFilesNotepad++pluginsComparePlus
 Expand-Archive -Path $PSScriptRootComparePlus_cp_1.2.0_x64.zip -DestinationPath "$env:ProgramFilesNotepad++pluginsComparePlus" -Force
 ```
 
-![](/_images/compareplus_2.png)
+![](../../_images/compareplus_2.png)
 
 The **PowerShell file** and **Zip file** were saved to a location that the publisher can access.
 
 Next, we can configure them in the Patch My PC Publisher. Open the Publisher and navigate to the product to be customized. **Right-click** the desired product and select "**Add custom pre/post update installation scripts**"
 
-![Add a Pre/Post Update Script by right-clicking the product to add the script to.](/_images/RightClickOptionPostUpdateScript.png "Add a Pre/Post Update Script by right-clicking the product to add the script to.")
+![Add a Pre/Post Update Script by right-clicking the product to add the script to.](images/RightClickOptionPostUpdateScript.png)
 
 Add a Pre/Post Update Script by **right-clicking the product** to add the script to.
 
@@ -48,7 +48,7 @@ In the "**Choose Custom Pre/Post Update Script(s)**" window, click "**Browse...*
 
 Next, click "**Browse...**" next to the "**Additional Files**" option and select the zip file containing the Notepad++ plugin that was downloaded earlier. Then select "**OK**"
 
-![](/_images/compareplus_3.png)
+![](../../_images/compareplus_3.png)
 
 Use the "**Browse..**" buttons to select the Pre/Post Update Scripts or Extra Files/Folders to include.
 

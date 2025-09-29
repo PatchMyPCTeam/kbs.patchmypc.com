@@ -1,8 +1,3 @@
-# ConfigMgr Application Manager Overview
-
-
-
-```yaml
 ---
 
 taxonomy:
@@ -19,7 +14,8 @@ taxonomy:
         - general-configuration-and-usage
         
 ---
-```
+
+# ConfigMgr Application Manager Overview
 
 Open the **ConfigMgr Application Manager** in the **Options** window found in the **ConfigMgr Apps** tab in the Patch My PC Publisher.
 

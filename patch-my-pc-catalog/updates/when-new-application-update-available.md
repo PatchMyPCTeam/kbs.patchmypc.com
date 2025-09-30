@@ -18,7 +18,7 @@ taxonomy:
 
 In this article, we will explain the options available when an **application update is available**. This information will help clarify the functionality of some of our base install options, which are highlight below.
 
-![When a new ConfigMgr application update is available...](images/ConfigMgr-Apps-Options.png)
+![When a new ConfigMgr application update is available...](/_images/ConfigMgr-Apps-Options.png "When a new ConfigMgr application update is available...")
 
 ## Option 1: Update existing application's metadata, deployment type, detection method, and content files (Default)
 

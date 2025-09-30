@@ -56,7 +56,7 @@ Additionally, per [https://learn.microsoft.com/en-us/defender-endpoint/configure
 
 - C:\\Windows\\IMECache\\52dfd2fc-2384-4757-af76-744a7c458f13\_1\\PatchMyPC-ScriptRunner.exe
 
-![folder depth](images/image.png)
+![folder depth](/_images/image.png "folder depth")
 
 **Note:** An asterisk `*` in a folder exclusion stands in place for a single folder. Use multiple instances of `\*\` to indicate multiple nested folders with unspecified names.
 

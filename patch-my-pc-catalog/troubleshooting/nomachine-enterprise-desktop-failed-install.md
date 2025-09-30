@@ -24,15 +24,15 @@ The installation might fail when an update is attempted on a device with an olde
 If the older version of NoMachine is the **free version** and not the **Enterprise** version, then the install will fail.  
 The installation will fail with **Exit Code 1**.
 
-![](../../_images/NoMachine-install-failure.png)
+![](/_images/NoMachine-install-failure.png)
 
 Also, if we investigate the **AppEnforce.log** file, it will show us the same exit code:
 
-![](../../_images/NoMachine-failure_AppEnforce.png)
+![](/_images/NoMachine-failure_AppEnforce.png)
 
 Finally, if the [Right click customization](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications) option to enable additional, vendor verbose installation logs - [Manage installation logging](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#install-logging) - is enabled, the vendor log will show the exact cause of the failure:
 
-![](../../_images/NoMachine-Vendor-Log-failure.png)
+![](/_images/NoMachine-Vendor-Log-failure.png)
 
 ## Resolution
 

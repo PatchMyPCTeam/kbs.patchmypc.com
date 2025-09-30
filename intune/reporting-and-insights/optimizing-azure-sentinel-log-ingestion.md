@@ -32,9 +32,9 @@ You may see excessive events when you run the following query agains the **Devic
 DeviceProcessEvents | where InitiatingProcessFolderPath != "C:\Program Files (x86)\Microsoft intune management extensionagentexecutor.exe"
 ```
 
-![](../../_images/sentinel_data_kql_query.jpg)
+![](/_images/sentinel_data_kql_query.jpg)
 
-![](../../_images/sentinel_data.jpg)
+![](/_images/sentinel_data.jpg)
 
 A useful KQL query to understand the extent of these invocations and recorded entries against the DeviceProcessEvents table can be found below.
 
@@ -44,7 +44,7 @@ A useful KQL query to understand the extent of these invocations and recorded en
 let TotalCount = toscalar(DeviceProcessEvents     | summarize Total = count());DeviceProcessEvents| summarize Count = count() by bin(TimeGenerated, 7d), InitiatingProcessFolderPath| extend Percentage = round(100.0 * Count / TotalCount, 2)| sort by Percentage desc
 ```
 
-![](../../_images/kql_sentinel_example.jpg)
+![](/_images/kql_sentinel_example.jpg)
 
 ## Workaround
 
@@ -62,25 +62,25 @@ Ensure you carefully evaluate the impact of any exclusions, and consult with you
 
 3\. From the list of workspaces, locate the Log Analytics Workspace associated with your Azure Sentinel instance.
 
-![](../../_images/sentinel_1.jpg)
+![](/_images/sentinel_1.jpg)
 
 4\. From the left-hand menu, under Settings, click on **Tables**.
 
 5\. Use the search bar to find the **DeviceProcessEvents** table.
 
-![](../../_images/sentinel_2.jpg)
+![](/_images/sentinel_2.jpg)
 
 6\. Click on the ellipsis (...) and select **Create transformation**.
 
-![](../../_images/sentinel_3.jpg)
+![](/_images/sentinel_3.jpg)
 
 7\. Select **Create a new data collection rule**.
 
-![](../../_images/sentinel_4.jpg)
+![](/_images/sentinel_4.jpg)
 
 8\. Select the desired **Subscription** and **Resource Group** to create the data collection rule in. Enter a **Name** for the rule and click **Done**.
 
-![](../../_images/sentinel_5.jpg)
+![](/_images/sentinel_5.jpg)
 
 9\. Click **Next**.
 
@@ -93,13 +93,13 @@ source
 
 Ensure the query **Runs** (copying and pasting from Wordpress can result in incorrect ASCII chars being pasted) and then click **Apply**.
 
-![](../../_images/sentinel_6.jpg)
+![](/_images/sentinel_6.jpg)
 
 11\. Click **Next** and on the summary review screen, click **Create**.
 
 **Note:** You can find data collection rules used on table transformations by navigating to **Agents > Data Collection Rules** from the Log Analytics workspace.
 
-![](../../_images/sentinel_7.jpg)
+![](/_images/sentinel_7.jpg)
 
 > **NOTE  
 > **  

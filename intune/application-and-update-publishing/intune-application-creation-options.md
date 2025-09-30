@@ -18,7 +18,7 @@ taxonomy:
 
 In this article, we will cover all of the Intune Application Creation Options that are available from the publisher. These are options that apply specifically to the creation of Win32 applications for your Intune tenant. Below is a screenshot of this section as of the writing of this article.
 
-![](../../_images/IntuneOptions.png)
+![](/_images/IntuneOptions.png)
 
 This article does not go over configuring Authority, Application ID, and Application Secret. For documentation on configuring these items please refer to our setup documentation for Intune [here](https://docs.patchmypc.com/installation-guides/intune/azure-app-registration).
 
@@ -26,7 +26,7 @@ This article does not go over configuring Authority, Application ID, and Applica
 
 When this option is checked, it will enforce signature checking for the detection method script.  This option will be reflected in the application's properties in your Intune tenant under Detection Rules.
 
-![enforcing the signature property within Intune tenant](images/enforce-signature.png)
+![enforcing the signature property within Intune tenant](/_images/enforce-signature.png "enforcing the signature property within Intune tenant")
 
 If this option is enabled, you will need to browse for a code-signing certificate from your local computer's personal store to sign the Powershell detection method scripts for all created applications.  If you also use our product for MEMCM (SCCM), you can use your WSUS code signing certificate that you previously created also to sign the detection method script for Intune apps, as long you are running the service from the same server. Alternatively, you can generate a code signing certificate to sign the detection method script ([How to generate a code signing certificate and sign PowerShell .ps1 script - Patch My PC)](https://patchmypc.com/generate-signing-cert-and-sign-powershell-ps1-script). The certificate will still need to be deployed to your Intune-managed clients for the script to be trusted.
 
@@ -34,7 +34,7 @@ If this option is enabled, you will need to browse for a code-signing certificat
 
 The Publisher can immediately add assignments for the apps to Azure AD groups upon creation.  This option can be executed through a right-click action at a global, vendor, or individual level.  Right-clicking a product, vendor, or All Products will give you the option to Manage Assignments. From this window, you can add an assignment for an app or apps as Available, Required, or as an Uninstall.
 
-![assign app to azure group](images/add-assignments.png)
+![assign app to azure group](/_images/add-assignments.png "assign app to azure group")
 
 When a new version of an app is created, and the box to copy assignments in the Intune Options window is checked, the Publisher will automatically transfer these assignments to the newly created application. The assignments will not be transferred if you enable this option after the fact, while the newer version already exists in Intune.
 
@@ -56,7 +56,7 @@ This option will support maintaining your application dependencies in Intune. Wh
 
 > **Note:** When this option is enabled, the notification below will display. Previously, if you had a dependency change the applications would not go away. With this option enabled, there is a possibility that applications can be deleted. 
 > 
-> ![](../../_images/intune-app-options-2.png)
+> ![](/_images/intune-app-options-2.png)
 
 ### Copy the requirements from previously created applications or updates when an updated application is created
 

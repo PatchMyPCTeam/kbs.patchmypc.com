@@ -26,19 +26,19 @@ You will see that the Notifications displayed in the Company Portal app do not r
 
 In this example, we only see **2** app related issues being notified (the other errors shown are related to device compliance for other devices belonging to the user).
 
-![](../../_images/company_portal_notifications_1.jpg)
+![](/_images/company_portal_notifications_1.jpg)
 
 But our expectation is there should be more. In your case, you might be expecting fewer, or no errors in the Company Portal at all.
 
 We can see there are **8** related app install issues for this device.
 
-![](../../_images/company_portal_notifications_2.jpg)
+![](/_images/company_portal_notifications_2.jpg)
 
 ## Workaround
 
 The Company Portal periodically requests updated app status reports from the Intune service after each action (e.g. install, uninstall). It tracks the app status by requesting reports for the Intune enrolled device. 
 
-![](../../_images/company_portal_notifications_5.jpg)
+![](/_images/company_portal_notifications_5.jpg)
 
 However, the notifications shown in the Company Portal do not always match the actual state of applications on the device. This discrepancy is largley due to stale Win32 app reporting data cached in the user profile for the Company Portal.
 
@@ -50,13 +50,13 @@ The JSON file is located here for each user profile on the device:
 C:\Users\AppData\LocalPackages\Microsoft.CompanyPortal_8wekyb3d8bbweLocalState<>
 ```
 
-![](../../_images/company_portal_notifications_3.jpg)
+![](/_images/company_portal_notifications_3.jpg)
 
 **Delete** the file **Win32LocalAppStatus.json** and **re-open** the Company Portal.
 
 The Company Portal should now show the correct notifications. In this example, it is displaying more errors - which is expected for this device.
 
-![](../../_images/company_portal_notifications_4.jpg)
+![](/_images/company_portal_notifications_4.jpg)
 
 > **Note:** Since the Company Portal tracking and reporting functions are proprietary to Microsoft Intune, the underlying processes remain outside direct control of Patch My PC.
 > 

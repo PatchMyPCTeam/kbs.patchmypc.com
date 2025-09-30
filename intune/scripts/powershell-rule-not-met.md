@@ -24,7 +24,7 @@ When you deploy [Intune Updates](https://patchmypc.com/intune-apps-vs-intune-upd
 
 The status details in such cases will state **Powershell script requirement rule is not met**.
 
-![PowerShell script requirement rule is not met.](images/Requirements-not-met.png)
+![PowerShell script requirement rule is not met.](/_images/Requirements-not-met.png "PowerShell script requirement rule is not met.")
 
 ## [Additional information](#additionalinformation)
 

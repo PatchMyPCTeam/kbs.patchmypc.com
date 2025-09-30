@@ -3,7 +3,7 @@ title: "Application Creation Bug if PowerShell Execution Policy is Set via GPO"
 date: 2021-06-17
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - scripts
+        - automation
+        - troubleshooting
 ---
 
 As of June 16, 2021, the Patch My PC team was made aware of a bug in the Publisher that affected **approximately 116 customers**.
@@ -48,7 +50,7 @@ In **[build 2.0.6](https://docs.patchmypc.com/release-history/production-release
 
 If an application failed to update from build 2.0.4.1, it would cause any future application updates created with build 2.0.6 to lose the association.
 
-![Duplicate Application PowerShell Security Error Bug](/_images/Duplicate-Application-PowerShell-Security-Error-Bug.png "Duplicate Application PowerShell Security Error Bug")
+![Duplicate Application PowerShell Security Error Bug](images/Duplicate-Application-PowerShell-Security-Error-Bug.png)
 
 This means the new version will be created as a new application rather than **[updating the existing application in place](https://patchmypc.com/base-install-update-options-explained)**.
 

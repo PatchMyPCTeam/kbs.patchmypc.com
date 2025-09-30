@@ -3,7 +3,7 @@ title: "How to Clean Up Third-Party Updates from the WSUS UpdateServicesPackages
 date: 2020-01-21
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - workarounds
+        - best-practices
+        - general-configuration-and-usage
 ---
 
 This article and video will describe the steps required to clean up obsolete/declined updates from the WSUS Database and how to properly remove the content folders for these updates from the **UpdateServicesPackages** folder.
@@ -20,15 +22,15 @@ This article and video will describe the steps required to clean up obsolete/dec
 
 The **WSUSContent** folder is the folder where published third-party updates (.CAB files) are stored. The **WSUSContent** folder maps to the **Content** virtual directly in the **WSUS Administration** website. The **Content** virtual directory is where the updates are downloaded by clients or downloaded to a Configuration Manager deployment package.
 
-![WSUSContent Directory](/_images/WSUSContent-Folder.png "WSUSContent Directory")
+![WSUSContent Directory](images/WSUSContent-Folder.png)
 
 If you review the **Content** virtual directory in IIS, you can see how it maps to the WSUSContent directory on the file system.
 
-![](/_images/WSUS-WSUSContent-IIS-Virtual-Directory.png)
+![](../../_images/WSUS-WSUSContent-IIS-Virtual-Directory.png)
 
 When reviewing the **Content Information** tab in the properties of a software update in Configuration Manager, you can view the download path for the third-party update from the **WSUSContent** folder.
 
-![](/_images/Update-WSUSContent-Download-Location-From-WSUS.png)
+![](../../_images/Update-WSUSContent-Download-Location-From-WSUS.png)
 
 If you enabled the [WSUS Maintenance](https://docs.microsoft.com/en-us/configmgr/sum/deploy-use/software-updates-maintenance#wsus-cleanup-starting-in-version-1906) feature in Configuration Manager 1906 or newer, older declined update content should be removed automatically.
 
@@ -40,11 +42,11 @@ The **UpdateServicesPackages** folder is used primarily for third-party update 
 
 Each folder within the **UpdateServicesPackages** corresponds to a third-party update and contains the content downloaded from the vendor and the digitally signed CAB file used for a specific UpdateID.
 
-![](/_images/WSUS-UpdateServicesPackages-UpdateID-Folder.png)
+![](../../_images/WSUS-UpdateServicesPackages-UpdateID-Folder.png)
 
 In the folder **93171a38-662f-47a7-92c1-4862cbf16146**, from the screenshot above, you can find the original binaries downloaded from the vendor for the software update.
 
-![](/_images/Downloaded-Third-Party-Update-Content.png)
+![](../../_images/Downloaded-Third-Party-Update-Content.png)
 
 For a deeper look into the **UpdateServicesPackages** and how to clean up obsolete updates from this directory, please review the video guide below.
 
@@ -54,7 +56,7 @@ In **[build 2.0.7 of the Publisher](https://patchmypc.com/clean-up-third-party-u
 
 When enabled, this feature will **automatically delete any declined third-party updates from Patch My PC** and then **delete any unreferenced update folders** from the UpdateServicesPackages folder.
 
-![](/_images/wsus-options-1.png)
+![](../../_images/wsus-options-1.png)
 
 By default, we only delete declined updates for "Patch My PC" updates. If you would like, you can uncheck "**Only delete declined Patch My PC third-party updates.**". When unchecked, we will also delete third-party updates for declined updates of other vendors such as Dell, HP, Lenovo, etc.
 

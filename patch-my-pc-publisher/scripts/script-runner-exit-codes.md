@@ -3,7 +3,7 @@ title: "PatchMyPC-ScriptRunner - Known Exit Codes"
 date: 2024-04-30
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - scripts
+        - automation
+        - education
 ---
 
 A short summary of the issue including keywords.
@@ -60,7 +62,7 @@ By default, if this script fails to run successfully for any reason, the PatchMy
 
 **Exit code 32767** - This exit code is returned if the [custom pre-script specified by the customer](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#custom-scripts) does not run successfully **and** if the option "Don't attempt software update if the pre script returns an exit code other than 0 or 3010."
 
-![](/_images/custompreinstallscriptfailureV2.png)
+![](../../_images/custompreinstallscriptfailureV2.png)
 
 ## [Honorable Mentions](#honorablementions)
 

@@ -3,7 +3,7 @@ title: "Failed to sign package; error was: 2148204810"
 date: 2020-08-25
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,8 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
 ---
 
 In this article, we will be reviewing an error that can occur when trying to publish third-party software updates to **WSUS**.
@@ -32,7 +33,7 @@ This error generally will occur when the software update is being **[timestamped
 
 On the WSUS Server, open **certlm.msc** from a **Run** prompt. In the **WSUS certificate store**, double click your WSUS Signing Certificate and click the **Certification Authority** tab.
 
-![Check if WSUS Cert Root CA is Trusted](/_images/Check-WSUS-Cert-Root-CA.png "Check if WSUS Cert Root CA is Trusted")
+![Check if WSUS Cert Root CA is Trusted](images/Check-WSUS-Cert-Root-CA.png)
 
 The most common root cause for **error 2148204810** is the **WSUS Signing Certificate is not trusted at the [root level](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/trusted-root-certification-authorities-certificate-store)** for the CA the issued the certificate.
 

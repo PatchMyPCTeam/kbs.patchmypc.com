@@ -3,7 +3,7 @@ title: "Pass Variables into Pre and Post Scripts"
 date: 2022-09-27
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - scripts
+        - automation
+        - customizations        
 ---
 
 This article covers the feature to pass variables into pre and post scripts using Patch My PC.
@@ -20,7 +22,7 @@ This article covers the feature to pass variables into pre and post scripts usin
 
 Starting with the Patch My PC Publisher Preview Release 2.1.6.35 and Production Release 2.1.7.0, variables are now able to be passed into pre/post scripts defined in the [Add custom pre/post scripts](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#custom-scripts) feature. **These variables can be passed into the Pre/Post scripts by including them in the arguments list of the Pre/Post script.**
 
- **![Example of creating a post script with variables.](/_images/PostScriptwithVariables.png "Example of creating a post script with variables.") Example of creating a post script with variables.**
+ **![Example of creating a post script with variables.](images/PostScriptwithVariables.png) Example of creating a post script with variables.**
 
 With release 2.1.6.35 and 2.1.7.0 the following variables can be passed into Pre/Post Scripts defined in Patch My PC:
 

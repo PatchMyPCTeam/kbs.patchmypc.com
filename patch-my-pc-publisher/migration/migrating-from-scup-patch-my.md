@@ -3,7 +3,7 @@ title: "Migrating from SCUP to Patch My PC Publisher"
 date: 2024-09-01
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - migration
+        - best-practices
+        - updates
 ---
 
 In a Microsoft Configuration Manager environment, our customers have traditionally used one of three primary methods to accomplish third-party patching:-
@@ -34,7 +36,7 @@ Microsoft announced the end-of-life of System Center Updates Publisher (SCUP) in
 
 Patch My PC Publisher is a comprehensive tool, installed on a single Windows operating system, used for customizing and publishing third-party applications and updates to WSUS, Configuration Manager and Intune.
 
-![Patch My PC Publisher](/_images/publisher.jpg "Patch My PC Publisher")
+![Patch My PC Publisher](images/publisher.jpg)
 
 Some advantages of using the Patch My PC Publisher over SCUP include:-
 

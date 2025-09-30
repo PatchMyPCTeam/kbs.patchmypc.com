@@ -3,7 +3,7 @@ title: "Telemetry Data Collected when Using the Publisher"
 date: 2020-07-19
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - log-collection-and-analysis
+        - education
+        - best-practices
 ---
 
 Patch My PC will collect **basic telemetry data** when our **[Publisher software](https://patchmypc.com/publishing-service-setup-documentation)** is used to **improve our products and services**.

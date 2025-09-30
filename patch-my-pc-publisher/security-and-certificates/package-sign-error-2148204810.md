@@ -33,7 +33,7 @@ This error generally will occur when the software update is being **[timestamped
 
 On the WSUS Server, open **certlm.msc** from a **Run** prompt. In the **WSUS certificate store**, double click your WSUS Signing Certificate and click the **Certification Authority** tab.
 
-![Check if WSUS Cert Root CA is Trusted](images/Check-WSUS-Cert-Root-CA.png)
+![Check if WSUS Cert Root CA is Trusted](/_images/Check-WSUS-Cert-Root-CA.png "Check if WSUS Cert Root CA is Trusted")
 
 The most common root cause for **error 2148204810** is the **WSUS Signing Certificate is not trusted at the [root level](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/trusted-root-certification-authorities-certificate-store)** for the CA the issued the certificate.
 

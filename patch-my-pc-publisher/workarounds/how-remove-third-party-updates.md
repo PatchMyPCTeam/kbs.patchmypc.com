@@ -26,21 +26,21 @@ To decline a third-party update, perform the **following steps**:
 
 Open the **[Modify Published Updates Wizard](/modify-published-third-party-updates-wizard)** from the Updates (tab) > Options (button) in the **[Publisher](/docs)**.
 
-![](../../_images/ModifyUpdatesWizard.png)
+![](/_images/ModifyUpdatesWizard.png)
 
 **Check** the updates to decline from WSUS, and click **Decline**
 
-![decline third-party updates from WSUS](images/decline-third-party-updates-from-WSUS.png)
+![decline third-party updates from WSUS](/_images/decline-third-party-updates-from-WSUS.png "decline third-party updates from WSUS")
 
 Click **Close** on the dialog box that list the status of the declining operation.
 
 After the updates are **declined in the Publisher**, you can manually **sync your software update point** in SCCM for the changes to occur immediately.
 
-![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
+![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
 
 After the software update point sync is complete, you should see the **declined updates show as expired** in SCCM and will no longer be deployed. In the example below, you can see the declined 7-Zip updates show expired.
 
-![Declined Updates switch to Expired in SCCM All Software Updates](images/Declined-Updates-switch-to-Expired-in-SCCM-All-Software-Updates.gif)
+![Declined Updates switch to Expired in SCCM All Software Updates](/_images/Declined-Updates-switch-to-Expired-in-SCCM-All-Software-Updates.gif "Declined Updates switch to Expired in SCCM All Software Updates")
 
 > **Note:** Expired updates will be automatically purged from the Configuration Manager after **7 days**.
 
@@ -54,18 +54,18 @@ As a result, we **don't enable the Delete button** by default. To enable the del
 
 To **delete** an update after setting the **EnableDeleteUpdates** registry value, open the **[Modify Published Updates Wizard](/modify-published-third-party-updates-wizard)** from the Updates (tab) > Options (button) in the **[Publisher](/docs)**.
 
-![](../../_images/ModifyUpdatesWizard.png)
+![](/_images/ModifyUpdatesWizard.png)
 
 **Check** the updates to delete from WSUS, and click **Delete**
 
-![Delete Updates from WSUS for Third-Party Updates](images/Delete-Updates-from-WSUS-for-Third-Party-Updates.png)
+![Delete Updates from WSUS for Third-Party Updates](/_images/Delete-Updates-from-WSUS-for-Third-Party-Updates.png "Delete Updates from WSUS for Third-Party Updates")
 
 After the updates are **deleted in the Publisher**, you can manually **sync your software update point** in SCCM for the changes to occur immediately.
 
-![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
+![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
 
 After the software update point sync is complete, you should see the **deleted updates show as expired** in SCCM and will no longer be deployed. In the example below, you can see the deleted 7-Zip updates show expired.
 
-![Declined Updates switch to Expired in SCCM All Software Updates](images/Declined-Updates-switch-to-Expired-in-SCCM-All-Software-Updates.gif)
+![Declined Updates switch to Expired in SCCM All Software Updates](/_images/Declined-Updates-switch-to-Expired-in-SCCM-All-Software-Updates.gif "Declined Updates switch to Expired in SCCM All Software Updates")
 
 > **Note:** Expired updates will be automatically purged from the Configuration Manager after **7 days**.

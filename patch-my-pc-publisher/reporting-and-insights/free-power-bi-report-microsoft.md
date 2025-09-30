@@ -76,11 +76,11 @@ Once you've downloaded the file, go ahead and open it to get started. Opening th
 
 5. Collection Filter
 
-![Power BI Template Details](images/Snag_1b93d6aa.png)
+![Power BI Template Details](/_images/Snag_1b93d6aa.png "Power BI Template Details")
 
 Below is an example of what you might put in each field.
 
-![Filled in Template](images/Snag_1b9668fd.png)
+![Filled in Template](/_images/Snag_1b9668fd.png "Filled in Template")
 
 > **Note:** The Percent sign here is used as a wild card to return all machines, related to all collections. You can use this to only return machines from specific collections as needed.
 
@@ -88,11 +88,11 @@ When you first run this report, you will need to **authorize the SQL queries to 
 
 You can find the contents of these queries publicly available, along with an explanation behind their logic, on our **[learning website](https://learn.patchmypc.com/patch-my-pc-extras/patch-my-pc-power-bi-queries)**.
 
-![Allow Native Database Query](images/Snag_385497.png)
+![Allow Native Database Query](/_images/Snag_385497.png "Allow Native Database Query")
 
 The security setting under the options governs the default behavior of Power BI and, we do not recommend unchecking the pictured option.
 
-![Power BI Native Database Queries](images/Snag_3222a7.png)
+![Power BI Native Database Queries](/_images/Snag_3222a7.png "Power BI Native Database Queries")
 
 Once you have approved all of the queries, the report will load, keep in mind it **may take some time based on the size of your environment**.
 
@@ -102,7 +102,7 @@ The Patch My PC PowerBI dashboard is broken up into three different components. 
 
 ### Compliance Overview
 
-![Compliance Overview](images/Snag_464707.png)
+![Compliance Overview](/_images/Snag_464707.png "Compliance Overview")
 
 1. Filters - This section can be used to filter the report, only to show information about patches released over X date range, patches in a specific software update group, or to only grade based on deployed updates.
 
@@ -114,7 +114,7 @@ The Patch My PC PowerBI dashboard is broken up into three different components. 
 
 This report tab is filtered specifically to workstation-only information.
 
-![Workstation Compliance](images/Snag_4e4e63.png)
+![Workstation Compliance](/_images/Snag_4e4e63.png "Workstation Compliance")
 
 1. Filters allow you to filter down to the criteria you care about.
 
@@ -130,7 +130,7 @@ Please note this report was written with the idea of being actionable, and as a 
 
 This report tab is filtered specifically to server-only information.
 
-![Server Compliance](images/Snag_a6be57.png)
+![Server Compliance](/_images/Snag_a6be57.png "Server Compliance")
 
 1. Filters allow you to filter down to the criteria you care about.
 

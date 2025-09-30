@@ -50,7 +50,7 @@ In **[build 2.0.6](https://docs.patchmypc.com/release-history/production-release
 
 If an application failed to update from build 2.0.4.1, it would cause any future application updates created with build 2.0.6 to lose the association.
 
-![Duplicate Application PowerShell Security Error Bug](images/Duplicate-Application-PowerShell-Security-Error-Bug.png)
+![Duplicate Application PowerShell Security Error Bug](/_images/Duplicate-Application-PowerShell-Security-Error-Bug.png "Duplicate Application PowerShell Security Error Bug")
 
 This means the new version will be created as a new application rather than **[updating the existing application in place](https://patchmypc.com/base-install-update-options-explained)**.
 

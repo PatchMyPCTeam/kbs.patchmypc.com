@@ -27,11 +27,11 @@ The Patch My PC Intune Scan Wizard does not populate any application statistics.
 ### Current Intune Application Manager functionality
 
 ### 
-![](../../_images/CurrentFunctionality.png)
+![](/_images/CurrentFunctionality.png)
 
 ###  Expected Intune Application Manager functionality
 
-![](../../_images/ExpectedFunctionality.png)
+![](/_images/ExpectedFunctionality.png)
 
 ## Cause
 
@@ -42,17 +42,17 @@ The Patch My PC Intune Scan Wizard uses these endpoints to gather information on
 - /deviceAppManagement/mobileApps/{mobileAppId}/installSummary
     
 
-![](../../_images/InstallSummary.png)
+![](/_images/InstallSummary.png)
 
 - /deviceAppManagement/mobileApps/{mobileAppId}/deviceStatuses
     
 
-![](../../_images/deviceStatuses.png)
+![](/_images/deviceStatuses.png)
 
 - /deviceAppManagement/mobileApps/{mobileAppId}/userStatuses
     
 
-![](../../_images/userStatuses.png)
+![](/_images/userStatuses.png)
 
 (08/062023) There is no mention of this breaking change in the ChangeLog for Graph API
 

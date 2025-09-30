@@ -36,9 +36,9 @@ If there are no errors in the logs, the next step is to **review if third-party 
 
 In the **Updates** tab of our publishing service, you can select **Options** and run the **Modify Published Updates** wizard to view what updates are published to WSUS.
 
-![](../../_images/troubleshooting-updates-KB-1.png)
+![](/_images/troubleshooting-updates-KB-1.png)
 
-![](../../_images/troubleshooting-updates-KB-2.2.png)
+![](/_images/troubleshooting-updates-KB-2-2.png)
 
 If the third-party updates that aren't appearing in the SCCM console **do exist in WSUS**, proceed to the next troubleshooting steps.
 
@@ -48,15 +48,15 @@ If the third-party updates were published successfully to WSUS, the next step in
 
 We recommend performing a manual **synchronization** of your software update point within the SCCM console.
 
-![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
+![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
 
 Once the sync has started, you should review the [wsyncmgr.log](https://docs.microsoft.com/en-us/sccm/core/plan-design/hierarchy/log-files#BKMK_SUPLog) using the CMTrace log viewing tool. You will want to verify in the log file the sync succeeded.
 
-![wsyncmgr log file verify successful](images/wsyncmgr-log-file-verify-successful.png)
+![wsyncmgr log file verify successful](/_images/wsyncmgr-log-file-verify-successful.png "wsyncmgr log file verify successful")
 
 In the Configuration Manager console under **Monitoring** > **Software Update Point Synchronization,** you can also verify if the last sync was successful.
 
-![verify software update point sync completed](images/verify-software-update-point-sync-completed.png)
+![verify software update point sync completed](/_images/verify-software-update-point-sync-completed.png "verify software update point sync completed")
 
 If the software update point synchronization is failing, you will need to [resolve the sync issue](https://support.microsoft.com/en-us/help/4505439/troubleshoot-software-update-synchronization-in-configuration-manager) before any third-party software updates will show up in the SCCM console.
 
@@ -66,7 +66,7 @@ In your SCCM console, you will need to ensure **Patch My PC** vendor and **SCUP 
 
 Within the SCCM console, navigate to **Administration** > **Site Configuration** > **Sites** > **Configure Site Components** > **Software Update Point**
 
-![software update point products patch-my-pc](images/software-update-point-products-patch-my-pc.png)
+![software update point products patch-my-pc](/_images/software-update-point-products-patch-my-pc.png "software update point products patch-my-pc")
 
 If the product shown above is not enabled, you need to enable the product, click Apply then running another Software Update Point synchronization should resolve the issue for third-party software updates not appearing in SCCM.
 
@@ -80,10 +80,10 @@ For our third-party updates, we will use **Critical, Security Updates, and Upda
 
 Within the **modify published updates wizard**, you can see what classification third-party updates are classified as.
 
-![third-party software update classifications](images/third-party-software-update-classifications.png)
+![third-party software update classifications](/_images/third-party-software-update-classifications.png "third-party software update classifications")
 
 If an **update classification isn't enabled in the Classifications** tab of the software update point, the update will not appear in SCCM unless that classification is enabled and another software update point synchronization is performed.
 
 In the screenshot below, we can see the Updates classification isn't enabled, and that would cause many third-party software updates to not appear in SCCM.
 
-![sccm software update point classifications](images/sccm-software-update-point-classifications.png)
+![sccm software update point classifications](/_images/sccm-software-update-point-classifications.png "sccm software update point classifications")

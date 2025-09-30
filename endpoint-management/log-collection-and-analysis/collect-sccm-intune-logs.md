@@ -6,7 +6,7 @@ taxonomy:
         - 
     tech-stack:
         - 
-    solution:
+    solutions:
         - endpoint-management
     post_tag:
         - 

@@ -1,1 +1,0 @@
-# Adding Third-Party Software Update Catalog Fails with Error 12045 / 0x80072f0d in SCCM

@@ -6,7 +6,7 @@ taxonomy:
         - 
     tech-stack:
         - 
-    solution:
+    solutions:
         - patch-management
     post_tag:
         - 

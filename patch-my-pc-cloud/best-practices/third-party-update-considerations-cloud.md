@@ -3,9 +3,9 @@ title: "Third-Party Update Considerations with Cloud Management Gateway (CMG) in
 date: 2020-04-15
 taxonomy:
     products:
-        - 
-    tech-stack:
         - patch-my-pc-cloud
+    tech-stack:
+        - 
     solution:
         - 
     post_tag:

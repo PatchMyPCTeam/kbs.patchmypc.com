@@ -3,11 +3,11 @@ title: "A guide to using Attack Surface Reduction Rules (ASR) with Patch My PC"
 date: 2025-09-01
 taxonomy:
     products:
-        - patch-management
+        - 
     tech-stack:
         - 
     solutions:
-        - 
+        - patch-management
     post_tag:
         - 
     sub-solutions:

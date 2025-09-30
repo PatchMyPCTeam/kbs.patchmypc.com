@@ -3,7 +3,7 @@ title: "New Categorization Methodology for Patch My PC Java Releases"
 date: 2021-07-10
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - updates
+        - application-and-update-publishing
+        - best-practices
 ---
 
 In July 2021, Patch My PC added a new flavor of OpenJDK – Zulu JDK. With this new addition we are trying a new methodology for the JRE/JDK releases. If this new methodology proves to be successful, Patch My PC plans to utilize the same methodology for all other available versions of Java in the catalog. This post will explain the changes we plan to make to the Java installers and why.

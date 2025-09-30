@@ -3,7 +3,7 @@ title: "Patch My PC Custom Apps - Public Support Statement"
 date: 2024-04-17
 taxonomy:
     products:
-        - 
+        - patch-my-pc-cloud
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - custom-apps
+        - education
+        - application-and-update-publishing
 ---
 
 Patch My PC Custom Apps is a feature that allows Patch My PC customers to upload their own applications to be made available in the Patch My PC Publisher. This feature will be available in the Publisher for the following tabs:- 

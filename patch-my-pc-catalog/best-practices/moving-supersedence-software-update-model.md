@@ -3,7 +3,7 @@ title: "Moving to Supersedence Software Update Model"
 date: 2018-12-29
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,8 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - updates
 ---
 
 Starting **December 28, 2018**, we are moving to a **supersedence model** for software updates in our third-party software update catalog. Before this change, we would mark previous versions of software updates as expired.
@@ -26,12 +27,12 @@ By moving to a supersedence model, **you will have complete control over how lon
 
 You can control whether you want superseded updates to be immediately expired or delay expiring superseded updates for a certain number of months using the **[Supersedence Rules](https://docs.microsoft.com/en-us/sccm/sum/plan-design/plan-for-software-updates#BKMK_SupersedenceRules)** option on your software update point. In the example below, configuration manager won't expire superseded updates until they have been superseded for 1 month.
 
-![Supersedence Rules SCCM](/_images/Supersedence-Rules-SCCM.png "Supersedence Rules SCCM")
+![Supersedence Rules SCCM](images/Supersedence-Rules-SCCM.png)
 
 In today's catalog update in our lab, we can see the previous versions of applications are superseded and not expired. This change will allow the superseded application updates to continue being deployed for an additional month in our configuration.
 
-![Superseded Updates After Publishing New Updates](/_images/Superseded-Updates-After-Publishing-New-Updates.png "Superseded Updates After Publishing New Updates")
+![Superseded Updates After Publishing New Updates](images/Superseded-Updates-After-Publishing-New-Updates.png)
 
 If you are not expiring superseded immediately and using automatic deployment rules, you will want to ensure that you **exclude superseded updates** in your criteria to ensure your ADR's only deploy the latest updates.
 
-![ADR Exclude Superseded Third-Party Updates](/_images/ADR-Exclude-Superseded-Third-Party-Updates.png "ADR Exclude Superseded Third-Party Updates")
+![ADR Exclude Superseded Third-Party Updates](images/ADR-Exclude-Superseded-Third-Party-Updates.png)

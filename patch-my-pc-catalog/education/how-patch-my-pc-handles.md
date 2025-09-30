@@ -3,7 +3,7 @@ title: "How Patch My PC Handles Products with Multiple Versions"
 date: 2022-09-02
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - general-configuration-and-usage
+        - best-practices
 ---
 
 Some applications within the Patch My PC Catalog have multiple versions that are all supported at the same time. This article will explain how Patch My PC supports updates for these applications and general rules for working with these applications and updates.

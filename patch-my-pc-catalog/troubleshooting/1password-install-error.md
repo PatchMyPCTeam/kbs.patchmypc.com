@@ -3,7 +3,7 @@ title: "1Password was unable to complete installation and will roll back any cha
 date: 2022-06-16
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - deployments
+        - common-issues-and-error-codes
 ---
 
 The installation of 1Password fails, and when running manually, the error message “1password was unable to complete installation and will roll back any change” appears.
@@ -21,7 +23,7 @@ The installation of 1Password fails, and when running manually, the error messag
 If the installation of 1Password fails, locate the installer in the cache or [download](https://downloads.1password.com/win/1PasswordSetup-latest.exe) the installer from the vendor's website and attempt the installation manually.  
 This error should appear:
 
-![](/_images/ApplicationFrameHost_FWqmtYCXwV.png)
+![](../../_images/ApplicationFrameHost_FWqmtYCXwV.png)
 
 ## Potential Resolution
 

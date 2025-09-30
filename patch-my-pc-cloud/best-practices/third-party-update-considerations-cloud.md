@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - patch-my-pc-cloud
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - updates
+        - migration
 ---
 
 In this video guide, Cody Mathis and Justin Chalfant from Patch My PC will review common issues that can arise with third-party patch management through Cloud Management Gateway in Microsoft Configuration Manager (SCCM).

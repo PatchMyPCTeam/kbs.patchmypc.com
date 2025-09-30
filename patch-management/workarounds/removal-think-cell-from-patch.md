@@ -7,11 +7,13 @@ taxonomy:
     tech-stack:
         - 
     solution:
-        - 
+        - patch-management
     post_tag:
         - 
     sub-solutions:
-        - 
+        - workarounds
+        - best-practices
+        - updates
 ---
 
 Patch My PC will be removing the think-cell product from its catalog on March 17, 2025.

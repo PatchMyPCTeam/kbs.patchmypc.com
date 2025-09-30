@@ -3,7 +3,7 @@ title: "How to leverage Patch My PC to uninstall software from devices using Con
 date: 2024-06-03
 taxonomy:
     products:
-        - 
+        - patch-my-pc-cloud
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - deployments
+        - workarounds
+        - best-practices
 ---
 
 If you want to deploy Patch My PC Packaged software to uninstall it from managed devices, this article shows what you need to take into consideration.
@@ -46,7 +48,7 @@ If you are publishing software from the [Patch My PC cloud portal](https://porta
 
 3. Assign the deployment with **Update only** and **Uninstall** intent and targed the group of devices / users you want to get the software uninstalled from.
 
-![How to assign Update and Uninstall intent using the PMPC Cloud](/_images/SCR-20240530-jjtv-2.png "How to assign Update and Uninstall intent using the PMPC Cloud")
+![How to assign Update and Uninstall intent using the PMPC Cloud](images/SCR-20240530-jjtv-2.png)
 
 When the software is published to Intune, you will have two win32 apps.
 

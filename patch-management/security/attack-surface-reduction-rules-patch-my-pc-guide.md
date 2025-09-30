@@ -3,7 +3,7 @@ title: "A guide to using Attack Surface Reduction Rules (ASR) with Patch My PC"
 date: 2025-09-01
 taxonomy:
     products:
-        - 
+        - patch-management
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - security
+        - best-practices
+        - education
 ---
 
 Microsoft Defender’s **Attack Surface Reduction (ASR) rules** are designed to limit the actions of applications and reduce the overall attack surface on Windows devices. While these rules are effective at blocking common attack techniques, they can sometimes interfere with legitimate enterprise tools that must operate across both the **SYSTEM** and **USER** contexts.
@@ -54,7 +56,7 @@ Additionally, per [https://learn.microsoft.com/en-us/defender-endpoint/configure
 
 - C:\\Windows\\IMECache\\52dfd2fc-2384-4757-af76-744a7c458f13\_1\\PatchMyPC-ScriptRunner.exe
 
-![folder depth](/_images/image.png "folder depth")
+![folder depth](images/image.png)
 
 **Note:** An asterisk `*` in a folder exclusion stands in place for a single folder. Use multiple instances of `\*\` to indicate multiple nested folders with unspecified names.
 

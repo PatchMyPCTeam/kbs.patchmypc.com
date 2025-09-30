@@ -3,7 +3,7 @@ title: "List of Products with Patch My PC Defined Scripts"
 date: 2019-05-07
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - general-configuration-and-usage
+        - education
+        - licensing
 ---
 
 Our Patch My PC defined scripts feature is a way we ensure products that are a little more complicated and require custom actions to happen can be performed by default.

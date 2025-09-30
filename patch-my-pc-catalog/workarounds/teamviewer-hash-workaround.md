@@ -3,7 +3,7 @@ title: "TeamViewer Hash Mismatch Workaround"
 date: 2022-09-01
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - workarounds
+        - security
+        - updates
 ---
 
 A short summary of the issue including keywords.
@@ -26,12 +28,12 @@ This article will cover how to work around this issue by modifying a manually do
 
 1. Download the TeamViewer installation file to be published
     - The link to the download can be found in the Patch My PC Publisher by right-clicking on the appropriate Product and selecting "Show Package Info.."
-        ![Screenshot of the Patch My PC Publisher with the option to show package info selected](/_images/RemoteDesktopManagerFree_t5uiehYV0L.png "Screenshot of the Patch My PC Publisher with the option to show package info selected")
+        ![Screenshot of the Patch My PC Publisher with the option to show package info selected](images/RemoteDesktopManagerFree_t5uiehYV0L.png)
         Patch My PC Publisher - Show Package Info
 
 3. Move the downloaded file to the "Local Content Repository" path
     - If the "Local Content Repository" path is not defined, it may be set in the Patch My PC Publisher under the "Advanced" tab
-        ![Screenshot of the Patch My PC Publisher with the Local Content folder indicated.](/_images/RemoteDesktopManagerFree_mDlEYM2DLo.png "Screenshot of the Patch My PC Publisher with the Local Content folder indicated.")
+        ![Screenshot of the Patch My PC Publisher with the Local Content folder indicated.](images/RemoteDesktopManagerFree_mDlEYM2DLo.png)
         Patch My PC Publisher - Local Content Folder
 
 5. Download the script from here:
@@ -40,11 +42,11 @@ This article will cover how to work around this issue by modifying a manually do
     - The script will modify the TeamViewer files in the Local Content Repository in-place
 
 9. In the Publisher, ensure that the checkbox to "Check the local content repository for content files before attempting to download content files from the internet." under the "Advanced" tab is enabled
-    ![Screenshot of the Patch My PC Publisher on the Advanced Tab with the ](/_images/RemoteDesktopManagerFree_voRM5G9tAx.png "Screenshot of the Patch My PC Publisher on the Advanced Tab with the ")
+    ![Screenshot of the Patch My PC Publisher on the Advanced Tab with the ](images/RemoteDesktopManagerFree_voRM5G9tAx.png)
     Patch My PC Publisher - Check for Local Content
 
 11. On the "**Sync Schedule**" tab, click "**Run Publishing Service Sync**" to sync the modified installers
-     ![Screenshot of the Patch My PC Publisher on the Sync Schedule Tab with Run Publishing Service Sync button identified](/_images/RemoteDesktopManagerFree_utyQpai8dZ.png "Screenshot of the Patch My PC Publisher on the Sync Schedule Tab with Run Publishing Service Sync button identified")
+     ![Screenshot of the Patch My PC Publisher on the Sync Schedule Tab with Run Publishing Service Sync button identified](images/RemoteDesktopManagerFree_utyQpai8dZ.png)
      Patch My PC Publisher - Run Publishing Service Sync
 
 > **Note:** The script provided by Patch My PC is digitally signed, and the installer files modified by the script should still have valid signatures even after this process is complete.

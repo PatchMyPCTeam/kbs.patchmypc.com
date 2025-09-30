@@ -7,11 +7,13 @@ taxonomy:
     tech-stack:
         - 
     solution:
-        - 
+        - patch-management
     post_tag:
         - 
     sub-solutions:
-        - 
+        - updates
+        - workarounds
+        - patching
 ---
 
 This article will describe your options for **uninstalling old versions of Oracle Java** while updating Java with Patch My PC.
@@ -30,11 +32,11 @@ The Patch My PC defined scripts will allow you to automatically uninstall all ve
 
 For example, by default, the install for **JRE 8 (32-bit)** installations will remove older versions of Oracle Java 8 (x86) prior to installing the latest update. To view this script, right-click the **Oracle Java 8 (x86)** product in our [publishing services](https://patchmypc.com/publishing-service-setup-documentation) Update Rules tab and choose Patch My PC defined pre/post update installation scripts.
 
-![](/_images/java-uninstall-patchmypc-definied-script-3.png)
+![](../../_images/java-uninstall-patchmypc-definied-script-3.png)
 
 The script will automatically be inserted into the Pre-Update Script box.  This option is also available for **Oracle Java 8 (x64)** and **Oracle Java SE Development Kit 8 (x64)/(x86)**.
 
-![java removal patchmy pc recommended script pre-update script box](/_images/java-patchmypc-recommended-script.png "java removal patchmy pc recommended script pre-update script box")
+![java removal patchmy pc recommended script pre-update script box](images/java-patchmypc-recommended-script.png)
 
 ## OPTION 2: Add REMOVEOUTOFDATEJRES=1 as Custom Command Line
 
@@ -44,7 +46,7 @@ This option should **only be used if you are only running a single JRE 8 archite
 
 To use this method to remove previous versions during the latest JRE 8 update, right-click the **Oracle Java 8 (x86) /** **Oracle Java 8 (x64)** and choose to **Modify command line for product**.
 
-![](/_images/modify-jre8-command-line.png)
+![](../../_images/modify-jre8-command-line.png)
 
 In the input box for the additional argument add **REMOVEOUTOFDATEJRES=1**
 

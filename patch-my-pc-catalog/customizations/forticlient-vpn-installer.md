@@ -3,7 +3,7 @@ title: "Forticlient VPN Online Installer"
 date: 2022-03-21
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - customizations
+        - deployments
+        - application-and-update-publishing
 ---
 
 > **Update 27/11/2023: Fortinet have removed the free download link for v7.0.x. This version now requires a support contract with Fortinet to access. [More info](#v7.0.x)**
@@ -36,27 +38,27 @@ The Forticlient VPN **requires a manual download.** Browse to [Download Forticli
 
 The product we are looking for specifically, is highlighted below:
 
-![](/_images/download.png)
+![](../../_images/download.png)
 
 ### Extract the Installer and Grab the MSI
 
 Once you have the online installer downloaded, you will have to extract it.
 
-![](/_images/explorer_sR4ZzMUp10.png)
+![](../../_images/explorer_sR4ZzMUp10.png)
 
 Running the **FortiClientVPNOnlineInstaller exe** will present you with a popup showing the download progress:
 
-![](/_images/download-2.png)
+![](../../_images/download-2.png)
 
 Once the download is finished, the installer will launch. Leave this open in the background for now.
 
 With the installer open, navigate to **%ProgramData%\\ApplicationsCache**
 
-![](/_images/explorer_eRPpseDrNm.png)
+![](../../_images/explorer_eRPpseDrNm.png)
 
 Copy the MSI file you see here and place it in your [Local Content Repository](https://patchmypc.com/local-content-repository-for-licensed-applications-that-require-manual-download) set in  the Patch My PC Publisher Advanced tab:
 
-![](/_images/RemoteDesktopManager_eWbDgDQCmX.png)
+![](../../_images/RemoteDesktopManager_eWbDgDQCmX.png)
 
 ## FortiClient VPN EXE v7.0.X, v7.2.X, 7.4.X & Latest
 
@@ -68,9 +70,9 @@ https://support.fortinet.com/Download/FirmwareImages.aspx
 
 Ensure you select the product titled **FortiClient**
 
-![](/_images/FORTICLIENT-EXE.png)
+![](../../_images/FORTICLIENT-EXE.png)
 
-![](/_images/FORTICLIENT-EXE-DOWNLOAD.png)
+![](../../_images/FORTICLIENT-EXE-DOWNLOAD.png)
 
 Once download, Copy the file into your [Local Content Repository](https://patchmypc.com/local-content-repository-for-licensed-applications-that-require-manual-download) set in the Patch My PC Publisher Advanced tab
 
@@ -95,10 +97,10 @@ To acquire the MSI
 7. Copy the FortiClientVPN.MSI to your **[local content repository](https://patchmypc.com/local-content-repository-for-licensed-applications-that-require-manual-download)**, set in the Patch My PC Publisher Advanced tab.  
     **Note**: The MSI file name has changed from Forticlient.msi to ForticlientVPN.msi
 
-![](/_images/FORTICLIENT-EXE.png)
+![](../../_images/FORTICLIENT-EXE.png)
 
-![](/_images/FORTICLIENT-EXE-DOWNLOAD.png)
+![](../../_images/FORTICLIENT-EXE-DOWNLOAD.png)
 
-![](/_images/FortiClientVPNEXE_4.png)
+![](../../_images/FortiClientVPNEXE_4.png)
 
 > **Note:** This process will need to be carried out **for each new version of the Forticlient VPN Online Installer**.

@@ -3,7 +3,7 @@ title: "When a New Application Update is Available for SCCM Base Installations"
 date: 2020-04-29
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,12 +11,14 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - updates
+        - best-practices
+        - application-and-update-publishing
 ---
 
 In this article, we will explain the options available when an **application update is available**. This information will help clarify the functionality of some of our base install options, which are highlight below.
 
-![When a new ConfigMgr application update is available...](/_images/ConfigMgr-Apps-Options.png "When a new ConfigMgr application update is available...")
+![When a new ConfigMgr application update is available...](images/ConfigMgr-Apps-Options.png)
 
 ## Option 1: Update existing application's metadata, deployment type, detection method, and content files (Default)
 

@@ -3,7 +3,7 @@ title: "How to migrate from the Publisher to Cloud - Patch My PC"
 date: 2024-11-29
 taxonomy:
     products:
-        - 
+        - patch-my-pc-cloud
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - migration
+        - best-practices
+        - updates
 ---
 
 If you're a Patch My PC customer currently using the On-Prem Patch My PC Publisher Console to integrate and automate the publishing of Win32 apps to Intune, but want to transition to our new SaaS Cloud Portal, this guide is here to help.

@@ -3,7 +3,7 @@ title: "Why is the newest version of Firefox ESR not available in the Applicatio
 date: 2024-04-04
 taxonomy:
     products:
-        - 
+        - patch-my-pc-catalog
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - known-issues-and-considerations
+        - application-and-update-publishing
+        - updates
 ---
 
 ## Symptoms

@@ -44,7 +44,7 @@ You can do this by verifying the three conditions below:
 
 **HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Update Services\\Server\\Setup**
 
-![A screenshot of HKEY_LOCAL_MACHINE\Software\Microsoft\Update Services\Server\Setup](images/WSUSDNSAlias_Registry.png)
+![A screenshot of HKEY_LOCAL_MACHINE\Software\Microsoft\Update Services\Server\Setup](/_images/WSUSDNSAlias_Registry.png "A screenshot of HKEY_LOCAL_MACHINE\Software\Microsoft\Update Services\Server\Setup")
 
 If the above is true for you, this means you likely have a DNS record configured, on a DNS server you manage, likely of type CNAME (although this can be an A record if WSUS is Internet-accessible and using a public DNS), pointing to your WSUS server's IP address.
 
@@ -64,13 +64,13 @@ ErrorPatchMyPC-Service.8Publisher.PublishPackagePublishPackage(): Operation Fail
 
 You will also notice the path includes the DNS alias hostname, and not the server's Active Directory domain name. This is what causes the Kerberos logon failure; there is a bug in the WSUS SDK where the HostHeader registry value is ignored (if configured) and WSUS tries to reach out to the **UpdateServicesPackages** shared folder using the host's alias in the path (via the **ServerCertificateName** registry value).
 
-![A screenshot of Process Monitor showing the error](images/WSUSDNSAlias_procmon.png)
+![A screenshot of Process Monitor showing the error](/_images/WSUSDNSAlias_procmon.png "A screenshot of Process Monitor showing the error")
 
 > **Note:** WSUS writes date times to SoftwareDistribution.log always in UTC, irrespective of your server's configured time zone.
 
 At the same time as the above, you will also see the [event ID 4625 on the WSUS server's security event log](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4625) also for logon failures.
 
-![A screenshot of event ID 4625 in the Event Viewer](images/WSUSDNSAlias_eventviewer.png)
+![A screenshot of event ID 4625 in the Event Viewer](/_images/WSUSDNSAlias_eventviewer.png "A screenshot of event ID 4625 in the Event Viewer")
 
 If all the conditions above are the same for you, it's highly likely this article can help you and either of the proposed solutions below will fix the issue.
 
@@ -108,7 +108,7 @@ Thereafter, configure Internet Information Services (IIS) to use this newly impo
 
 9. In the dropdown for **SSL certificate**, choose your new certificate:
 
-![A screenshot of the certificate selection in IIS website binding](images/WSUSDNSAlias_iiscert.png)
+![A screenshot of the certificate selection in IIS website binding](/_images/WSUSDNSAlias_iiscert.png "A screenshot of the certificate selection in IIS website binding")
 
 Next, you need to reconfigure WSUS HTTPS configuration. This will update the ServerCertificateName registry value to that of the correct SAN in your new certificate:
 

@@ -20,7 +20,7 @@ In this article, we're going to cover an issue that we periodically see related 
 
 This issue generally occurs when attempting to **import/create** a new WSUS signing certificate, and it may cause the **WSUS signing certificate to not be properly detected** even when it exists in the WSUS store in **certlm.msc**.
 
-![](../../_images/certlm-wsus-certificate.png)
+![](/_images/certlm-wsus-certificate.png)
 
 ## Errors Related to %1 is not a valid Win32 application
 
@@ -36,7 +36,7 @@ An error occurred while publishing an update to WSUS: Failed to sign package; er
 
 Depending on the build of the Publisher, you may also receive the error "_**No certificate found in the WSUS certificate store on this server.**_"
 
-![No certificate found in the WSUS certificate store on this server.](images/No-certificate-found-in-the-WSUS-certificate-store-on-this-server.png)
+![No certificate found in the WSUS certificate store on this server.](/_images/No-certificate-found-in-the-WSUS-certificate-store-on-this-server.png "No certificate found in the WSUS certificate store on this server.")
 
 ## Resolution to %1 is not a valid Win32 application
 
@@ -46,7 +46,7 @@ We've seen the rogue file often is a log file for **ccmsetup.exe** or some other
 
 In some versions of Windows, you may even receive a warning on login about issues that can occur when "**C:\\Program**" file exists.
 
-![](../../_images/file-name-warning.png)
+![](/_images/file-name-warning.png)
 
 The fix is to rename the "**C:\\Program**" to "**C:\\Program1**" or you can delete the file if you determine it's not needed.
 

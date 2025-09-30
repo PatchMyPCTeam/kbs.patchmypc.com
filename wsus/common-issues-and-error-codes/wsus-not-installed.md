@@ -22,7 +22,7 @@ This article discusses the "Windows Server Update Services is not installed" err
 
 When you install the Patch My PC Publisher on a Windows 10 / 11 / Windows Server, you get the error message “Windows Server Update Services is not installed”.
 
-![Windows Server Update Services is not installed error message.](images/01_WSUS-is-not-installed.png)
+![Windows Server Update Services is not installed error message.](/_images/01_WSUS-is-not-installed.png "Windows Server Update Services is not installed error message.")
 
 Even for the Intune-only integration, the Patch My PC Publisher can only be installed if the WSUS RSAT tools are installed. These tools are needed to be installed to parse the Patch My PC catalog XML.
 
@@ -54,7 +54,7 @@ You can verify if this capability installed successfully by running the followin
 
 You should get a result similar to this:
 
-![Check if WSUS RSAT Tools installed successfully](images/02-Get-WSUSTools-installed.png)
+![Check if WSUS RSAT Tools installed successfully](/_images/02-Get-WSUSTools-installed.png "Check if WSUS RSAT Tools installed successfully")
 
 ### [How to fix the issue on a Windows Server OS](#howtofixwindowsserveros)
 
@@ -72,4 +72,4 @@ If you plan hosting the Patch My PC Publisher on a Windows Server, please follow
 
 You should get a result similar to this:
 
-![Verify if the UpdateServices API is successfully installed](images/03_GetWSUSinstalled-on-Server.png)
+![Verify if the UpdateServices API is successfully installed](/_images/03_GetWSUSinstalled-on-Server.png "Verify if the UpdateServices API is successfully installed")

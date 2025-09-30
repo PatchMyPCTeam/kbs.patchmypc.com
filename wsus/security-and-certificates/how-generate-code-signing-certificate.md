@@ -25,7 +25,7 @@ If you would like to sign your own files, and this is done on a machine where no
 1. If you are using [SignTool](https://docs.microsoft.com/en-us/windows/win32/seccrypto/signtool) to automatically select the best signing certificate, the verbose output will say:  
     SignTool Error: No certificates were found that met all the given criteria.  
       
-    ![](../../_images/01-codesign.png)
+    ![](/_images/01-codesign.png)
     
 
 ## How to get a code signing certificate
@@ -39,31 +39,31 @@ Another one would be to issue one from your internal Certificate Authority, whic
 1. Open **Certification Authority** (**certsrv.msc**) on a machine where you have installed the certification authority.
 
 3. Expand the name of the **Certification Authority**, then right-click on **Certificate Templates** and choose **Manage**  
-    ![](../../_images/03-codesign.png)
+    ![](/_images/03-codesign.png)
     
 
 5. Right-Click on **Code Signing** under the **Template Display Name** column and choose **Duplicate template**.  
-    ![](../../_images/04-codesign.png)
+    ![](/_images/04-codesign.png)
     
 
 7. On the properties of the new template, click on the **General** tab and give it the name you want. Also, choose the validity period. Save change with **Apply**.  
-    ![](../../_images/05-codesign.png)
+    ![](/_images/05-codesign.png)
     
 
 9. Go on the **Request Handling** tab, and make sure **Allow private key to be exported** is enabled.  
-    ![](../../_images/06-codesign.png)
+    ![](/_images/06-codesign.png)
     
 
 11. On the **Subject Name** tab, set the **Subject name format** to **Common Name**.  
-     ![](../../_images/07-codesign.png)
+     ![](/_images/07-codesign.png)
      
 
 13. On the **Extensions** tab, make sure that the description of **Key Usage** contains **Digital Signature**.  
-     ![](../../_images/08-codesign.png)
+     ![](/_images/08-codesign.png)
      
 
 15. On the Security tab, ensure that “**Authenticated Users**” have **Read** and **Enroll** permissions.  
-     ![](../../_images/09-codesign.png)
+     ![](/_images/09-codesign.png)
      
 
 > **Note:** You might not want all Authenticated Users to be able to Enroll the certificate, you can add your own custom security group which should have these permissions.
@@ -71,11 +71,11 @@ Another one would be to issue one from your internal Certificate Authority, whic
 9. You can now click OK and then close the Certificate Templates Console.
 
 11. Back to **Certification Authority**, right click **Certificate Templates**, choose **New** and then select **Certificate Template to Issue**.
-     ![](../../_images/10-codesign.png)
+     ![](/_images/10-codesign.png)
      
 
 13. From the **Enable Certificate Templates list**, select your certificate template and confirm with **OK**.  
-     ![](../../_images/11-codesign.png)
+     ![](/_images/11-codesign.png)
      
 
 ## Requesting a certificate on a machine to use it for code signing
@@ -91,11 +91,11 @@ Another one would be to issue one from your internal Certificate Authority, whic
 9. In the console, expand **Certificates – Current User**, then expand **Personal**.
 
 11. Right-click **Certificates**, then go to **All Tasks** and select **Request New Certificate**.  
-     ![](../../_images/12-codesign.png)
+     ![](/_images/12-codesign.png)
      
 
 13. In the **Certificate Enrollment** window, click **Next** until you see a list of certificates to request. The issues certificate should appear in this list. Select it and confirm with **Enroll**.  
-     ![](../../_images/13-codesign.png)
+     ![](/_images/13-codesign.png)
      
 
 15. The certificate should now be enrolled on that device and can be used for code signing.
@@ -106,7 +106,7 @@ In terms of signing, you can either use [SignTool](https://docs.microsoft.com/en
 
 **Example 1**: SignTool
 
-![](../../_images/14-codesign.png)
+![](/_images/14-codesign.png)
 
 In this example, we used the following arguments:
 
@@ -120,7 +120,7 @@ In this example, we used the following arguments:
 
 **Example 2**: PowerShell cmdlet [Set-AuthenticodeSignature](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-authenticodesignature)
 
-![](../../_images/15-codesign.png)
+![](/_images/15-codesign.png)
 
 In this example, on the server where the Patch My PC Publishing service is installed, from an elevated PowerShell ISE instance:
 

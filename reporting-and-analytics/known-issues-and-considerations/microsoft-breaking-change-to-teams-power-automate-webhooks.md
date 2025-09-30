@@ -44,7 +44,7 @@ If you’ve received this message, it means you have a flow using an HTTP webhoo
 
 Continue reading to learn how to check whether your Patch My PC alerts are affected and what steps to take.
 
-![](../../_images/Msft-flow-email.png)
+![](/_images/Msft-flow-email.png)
 
 ### Patch My PC Publisher
 
@@ -56,7 +56,7 @@ To understand whether you need to replace any webhooks within the Patch My PC Pu
 
 5. **Observe the URL**; if the URL contains **logic.azure.com,** then you are affected and need to update it with the new webhook
 
-![](../../_images/Publisher-Flow-oldurl-1024x821.png)
+![](/_images/Publisher-Flow-oldurl-1024x821.png)
 
 ### Patch My PC Cloud
 
@@ -70,7 +70,7 @@ To understand whether you need to replace any webhooks within Patch My PC Cloud:
 
 7. **Observe the URL** within the tooltip; if the URL contains **logic.azure.com**, then you are affected and need to update it with the new webhook
 
-![](../../_images/Cloud-Flow-oldurl2-1024x596.png)
+![](/_images/Cloud-Flow-oldurl2-1024x596.png)
 
 ## Retrieve the new webhook URL
 
@@ -86,11 +86,11 @@ Any Flow, upon editing one, which previously used the old URL will have a warnin
 
 > "_Click here to copy the new trigger URL. The old trigger URL <trigger URL> will stop working on November 30, 2025. Your tools that use this flow WILL break unless you update them with the new URL._"
 > 
-> ![](../../_images/Flow-warning-oldurl-1024x543.png)
+> ![](/_images/Flow-warning-oldurl-1024x543.png)
 
 If you have multiple Flows with the same name, you may be able to identify the correct Flow editing one and verifying the Team and Channel configuration:
 
-![](../../_images/Flow-identifychannel-1024x546.png)
+![](/_images/Flow-identifychannel-1024x546.png)
 
 If you have multiple Flows all sharing the same channel and perhaps used for different purposes, unless they're named appropriately, it may be hard to identify the Flow used for Patch My PC. In this circumstance, you may be better off generating a new webhook (new webhooks made after August 2025 will use the new URL).
 

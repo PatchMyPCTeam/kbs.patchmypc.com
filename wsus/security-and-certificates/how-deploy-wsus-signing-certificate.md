@@ -43,7 +43,7 @@ To enable this option, **perform the steps below:**
 - Select the top-level site in the hierarchy. In the ribbon, click **Configure Site Components**, and select **Software Update Point**.
 
 - Switch to the **Third-Party Updates** tab. Select the option **Configuration Manager manages the certificate**.
-    - ![](../../_images/configuration-manager-automatically-manage-the-wsus-signing-certficaite.png)
+    - ![](/_images/configuration-manager-automatically-manage-the-wsus-signing-certficaite.png)
         
 
 - A new certificate of type **Third-party WSUS Signing** will be created in the **Certificates** node under the **Security** node in the **Administration** workspace.
@@ -52,15 +52,15 @@ After performing the steps above, **validate the certificate is created/imported
 
 - Trigger a **software update point synchronization** by right-clicking the All Software Updates node, and clicking **Synchronize Software Updates.**
     - **
-        ![](../../_images/sync-sccm-software-update-point-for-declined-updates.png)
+        ![](/_images/sync-sccm-software-update-point-for-declined-updates.png)
         **
 
 - If you review the **wsyncmgr.log**, you should see some details about the certificate being imported and created.
-    - ![](../../_images/how-to-deploy-wsus-cert-1.png)
+    - ![](/_images/how-to-deploy-wsus-cert-1.png)
         
 
 - If the certificate was configured successfully, if you re-open the **Third Party Updates tab**, you should see the **certificate detail**s.
-    - ![](../../_images/how-to-deploy-wsus-cert-2.png)
+    - ![](/_images/how-to-deploy-wsus-cert-2.png)
         
 
 Lastly, you need to enable the client settings to **enable third party updates on clients:**
@@ -72,7 +72,7 @@ Lastly, you need to enable the client settings to **enable third party updates o
 - Select the **Software Updates** tab on the left-hand side. If you don't have this tab, make sure that the **Software Updates** box is enabled.
 
 - Set the **Enable third-party software updates** to **Yes**.
-    - ![](../../_images/client-settings-enabled-third-party-software-updates-sccm.png)
+    - ![](/_images/client-settings-enabled-third-party-software-updates-sccm.png)
         
 
 - Validate the client settings is **deployed to all devices**
@@ -89,15 +89,15 @@ If you enabled the client setting to **enable third party software updates**, p
 
 View the **[result client settings](https://docs.microsoft.com/en-us/mem/configmgr/core/clients/deploy/configure-client-settings#view-client-settings)** on the specific device, not installing the certificate from the ConfigMgr console's **Devices** node.
 
-![Resultant Client Settings SCCM Third Party Updates](images/Resultant-Client-Settings-SCCM-Third-Party-Updates.png)
+![Resultant Client Settings SCCM Third Party Updates](/_images/Resultant-Client-Settings-SCCM-Third-Party-Updates.png "Resultant Client Settings SCCM Third Party Updates")
 
 If the **result client settings** shows the Enable third party software updates as **No**, that means there another client setting taking priority of the policy you deployed to set this value to Yes.
 
-![Enable Third Party Updates is Yes](images/Enable-Third-Party-Updates-is-Yes.png)
+![Enable Third Party Updates is Yes](/_images/Enable-Third-Party-Updates-is-Yes.png "Enable Third Party Updates is Yes")
 
 You can view all the client settings deployed to a specific device in the **Client Settings** tab.
 
-![Client Setting Deployed to Device SCCM tab](images/Client-Setting-Deployed-to-Device-SCCM-tab.png)
+![Client Setting Deployed to Device SCCM tab](/_images/Client-Setting-Deployed-to-Device-SCCM-tab.png "Client Setting Deployed to Device SCCM tab")
 
 When troubleshooting client certificate installation issues, in addition to the client settings priority, you need to ensure the **client version** is also **ConfigMgr 1806** or **newer**. The client version for build 1806 is **5.00.8692.1003**
 

@@ -3,9 +3,9 @@ title: "Failed to download content id <id>. Error: Access is Denied."
 date: 2021-02-23
 taxonomy:
     products:
-        - configmgr
-    tech-stack:
         - 
+    tech-stack:
+        - configmgr
     solution:
         - 
     post_tag:

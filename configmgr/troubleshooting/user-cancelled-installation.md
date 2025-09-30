@@ -34,7 +34,7 @@ In the **PatchMyPC-ScriptRunner.log** you will see this:-
 
 In the Intune Admin Center, you will see this error message for the application install status: “ **The user cancelled the app installation** **(****0x80070642)**”.
 
-![](../../_images/update_for_notepad-2.png)
+![](/_images/update_for_notepad-2.png)
 
 ## Cause
 
@@ -54,15 +54,15 @@ An update to this app was published from Patch My PC Publisher to Intune, and ba
 
 - Right click the product and select "Manage Conflicting Process".
 
-![](../../_images/update_for_notepad_select.png)
+![](/_images/update_for_notepad_select.png)
 
 > **Note:** By default, if you see the **x** icon next to any app, it indicates that the app must be closed before an update can be installed. This implies that Managed Conflicting Process (MCP) feature needs to be configured for this product.
 
-![](../../_images/notepad_rightclick_mcp.png)
+![](/_images/notepad_rightclick_mcp.png)
 
 The default behavior for these apps is set to **Skip Installation when conflicting process are in use**.
 
-![](../../_images/skipinstall_mcp.png)
+![](/_images/skipinstall_mcp.png)
 
 With this option set and un-changed, the update will install successfully if the application is closed, but it will fail if the app remains open, and it will fail with exit code 1618. **[https://patchmypc.com/patchmypc-scriptrunner-known-exit-codes](https://patchmypc.com/patchmypc-scriptrunner-known-exit-codes)[.](https://patchmypc.com/patchmypc-scriptrunner-known-exit-codes)**
 
@@ -74,7 +74,7 @@ If this customization is enabled, allowing users to defer the installation, then
 
 You can customize the behavior when the application is running. For instance, you can trigger a notification asking the user for permission to close the app so the update can proceed successfully. For more detailed guidance, please refer to our comprehensive Knowledge Base article at [Manage Conflicting Processes when Updating Third-Party Applications - Patch My PC.](https://patchmypc.com/manage-conflicting-processes-when-updating-third-party-applications)
 
-![](../../_images/notify_user_mcp.png)
+![](/_images/notify_user_mcp.png)
 
 According to the settings above, the user can snooze the update up to 5 times. After the 5th time, there will be one more pop-up and that is when the coutdown will reach 0 and the app will be closed automatically and the update will be installed.
 
@@ -84,15 +84,15 @@ In the following scenario, Notepad++ was running and when the update was initiat
 
 1\. IME processes the policy.
 
-![](../../_images/notepad_update_1.png)
+![](/_images/notepad_update_1.png)
 
 2\. User selects "Snooze Update".
 
-![](../../_images/notepad_update_2.png)
+![](/_images/notepad_update_2.png)
 
 3\. IME reports installation failed
 
-![](../../_images/notepad_update_3.png)
+![](/_images/notepad_update_3.png)
 
 4\. Error reported in the PatchMyPC-Scriptrunner.log.
 

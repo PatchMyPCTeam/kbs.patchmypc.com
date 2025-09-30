@@ -48,27 +48,27 @@ To fix the digest validation error, you will need to **import** or **sync** the 
 
 You will need to [perform a sync of the catalog manually](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/third-party-software-updates#subscribe-to-a-third-party-catalog-and-sync-updates). In the Third-Party Software Update Catalog node in your SCCM console, right-click the Patch My PC Catalog and choose **Sync now**. By default, SCCM will only [automatically sync a third-party software update catalog every 7 days](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/third-party-software-updates#subscribe-to-a-third-party-catalog-and-sync-updates).
 
-![](../../_images/force-third-party-software-update-catalog-sync-in-the-sccm-console.png)
+![](/_images/force-third-party-software-update-catalog-sync-in-the-sccm-console.png)
 
 You can review the catalog sync progress in the **SMS\_ISVUPDATES\_SYNCAGENT.log**. located on the top-level software update point in the site system logs folder.
 
 Once the catalog publishing sync is complete, you can **perform a sync of your software update point** to have any newly released third-party updates show up in the "All Software Updates" node of the SCCM console.
 
-![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
+![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
 
 Once the sync is complete, you should see **new updates** for the product, and the **previous updates that were failing should become superseded**. The latest version of the update should be able to publish the update content successfully.
 
-![](../../_images/new-updates-synced-in-sccm-publish-with-full-content.png)
+![](/_images/new-updates-synced-in-sccm-publish-with-full-content.png)
 
 #### **If you are using System Center Updates Publisher:**
 
 You will need to import the latest catalog manually from the console:
 
-![](../../_images/import-the-lastest-patchmypc-third-party-update-catalog-to-resolve-hash-error-in-scup.png)
+![](/_images/import-the-lastest-patchmypc-third-party-update-catalog-to-resolve-hash-error-in-scup.png)
 
 Once the newest catalog is imported, you should see **the latest update(s)** for the product that was previously failing to publish. Choose to publish the latest software updates(s).
 
-![](../../_images/scup-with-latest-third-party-updates-imported.png)
+![](/_images/scup-with-latest-third-party-updates-imported.png)
 
 #### **If you are using Patch My PC'****s Publisher**
 
@@ -90,7 +90,7 @@ For example, the SCCM 1806+ catalog feature can [only perform an automatic catal
 
 If you were to switch to our [publishing service](https://patchmypc.com/publishing-service-setup-documentation), you would have complete control over how often our catalog syncronizes. The scheduling options will allow you to sync the catalog more frequently to ensure you have the most recent catalog metadata.
 
-![](../../_images/publishing-service-sync-scedule.png)
+![](/_images/publishing-service-sync-scedule.png)
 
 Our publishing service will always download the most recent catalog before downloading any third-party update content. By downloading the newest metadata, it will ensure we are pulling the most recent updates with the current file digest before performing content publishing.
 

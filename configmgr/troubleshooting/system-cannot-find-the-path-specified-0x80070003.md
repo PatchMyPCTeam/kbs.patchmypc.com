@@ -32,11 +32,11 @@ This error occurs because the ADR was initially configured to "**download softwa
 
 A common mistake here is that the UNC path specified in the download location is set to a location intended to download the updates **_to_**, such as a deployment package, when it is asking where to download updates **_from_**.
 
-![specify location ADR downloads updates from](images/ADR-Download-Location-Config.png)
+![specify location ADR downloads updates from](/_images/ADR-Download-Location-Config.png "specify location ADR downloads updates from")
 
 You do not need to designate a specific UNC path to download Patch My PC third-party updates. When setting up an ADR, you will need to configure the deployment package to "**Download software updates from the Internet**" instead of a UNC path. The ADR download will automatically use the WSUSContent website where the update was published when the option "**Download software updates from the Internet**" is checked.
 
-![ERROR: DownloadUpdateContent() failed with hr=0x80070003](images/download-from-internet-3rd-party-updates-SCCM.png)
+![ERROR: DownloadUpdateContent() failed with hr=0x80070003](/_images/download-from-internet-3rd-party-updates-SCCM.png "ERROR: DownloadUpdateContent() failed with hr=0x80070003")
 
 Unfortunately, this is not a setting you can change in the properties of an ADR after it is created. You will need to create a new ADR to configure the download location, as seen in the picture above.
 

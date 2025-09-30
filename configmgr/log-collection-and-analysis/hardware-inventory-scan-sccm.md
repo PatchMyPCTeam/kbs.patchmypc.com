@@ -63,7 +63,7 @@ To configure the Hardware Inventory Scan Cycle to run automatically, follow thes
 
 This setup ensures the Hardware Inventory Scan Cycle runs automatically according to the specified schedule.
 
-![](../../_images/01_hinv.png)
+![](/_images/01_hinv.png)
 
 ## [Ways to manually invoke the Hardware Inventory Scan Cycle](#HowToManuallyInvokeIt)
 
@@ -136,11 +136,11 @@ This tool will give you more information about the Configuration Manager agent o
 
 It can give you information on when the last hardware inventory was performed:
 
-![](../../_images/02_hinv.png)
+![](/_images/02_hinv.png)
 
 If you’re curious about the information stored in the WMI collected by the Hardware Inventory Scan Cycle, this tool can give you that insight as well:
 
-![](../../_images/03_hinv.png)
+![](/_images/03_hinv.png)
 
 This option can be useful if you’re setting additional classes to be collected by the hardware inventory, and you’re curious to know if it’s collected, it’s one option to check.
 
@@ -156,7 +156,7 @@ But back to the topic. If you wish to trigger a Hardware Inventory cycle, do thi
     OR
 
 Select  **Advanced** and then **Hardware inventory cycle (full resynchronization)** to run a full sync.  
-![](../../_images/04_hinv.png)
+![](/_images/04_hinv.png)
 
 ### 5\. Using Advanced Insights
 
@@ -172,7 +172,7 @@ To trigger the cycle, follow these steps:
 
 From the **Actions** dropdown, select the **Hardware Inventory** option.
 
-![](../../_images/05_hinv.png)
+![](/_images/05_hinv.png)
 
 ## [Viewing the data using Resource Explorer](#ResourceExplorer)
 
@@ -187,7 +187,7 @@ Once the data is collected, you probably want to view it. Here’s how:
 In the Resource Explorer Window, you can browse the various categories to see the information collected from clients, such as Installed applications, Operating System, Network adapters, and more.  
 This information can be used to create a dynamic collection, for example.
 
-![](../../_images/06_hinv.png)
+![](/_images/06_hinv.png)
 
 ## [Relevant logs to monitor on the client side](#RelevantLogs)
 
@@ -199,13 +199,13 @@ If you want to monitor the evaluation of this action, it can be done using these
 
 If you trigger a **Delta** hardware inventory scan, this is how the InventoryAgent.log will look like:
 
-![](../../_images/07_hinvV2.png)
+![](/_images/07_hinvV2.png)
 
 > **Note:** Don’t worry about the Warning messages. If a class the hardware inventory scan cycle is supposed to collect data for, but the class doesn’t exist on the device and there is no data to collect, you’ll see the warning.
 
 However, if you trigger a full hardware inventory sync using the Support Center Client Tools, this is how the log is going to look like:
 
-![](../../_images/08_hinvV2.png)
+![](/_images/08_hinvV2.png)
 
 Every time a delta hardware inventory sync is performed, the minor version is incremented (e.g., from 6.1 to 6.2). When a full hardware inventory sync is performed, the major version is incremented, and the minor version resets (e.g., from 6.2 to 7.0).
 

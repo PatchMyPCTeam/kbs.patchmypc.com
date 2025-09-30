@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - updates
+        - application-and-update-publishing
 ---
 
 This article will explain the process of delaying the update of ConfigMgr base applications in the Patch My PC Publisher. 
@@ -22,7 +24,7 @@ In the Publisher, head to the **ConfigMgr Apps** tab and click **Options**.
 
 For the option highlighted below, you can set the number of days to delay updating base install ConfigMgr Applications published through the Patch My PC Publishing Service. This setting delays **all** Applications published through the Publisher.
 
-![](/_images/DelayUpdate3_1-2.png)
+![](../../_images/DelayUpdate3_1-2.png)
 
 ## How the delay works
 

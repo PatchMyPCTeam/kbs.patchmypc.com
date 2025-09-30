@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - connectivity-and-proxy-issues
+        - troubleshooting
+        - security-and-certificates
 ---
 
 In this article, we will look at the cause and resolution for error **\-2146233079** when trying to import our catalog into **System Center Update Publisher**.

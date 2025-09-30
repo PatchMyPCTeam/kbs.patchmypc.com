@@ -5,20 +5,22 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - security-and-certificates
+        - troubleshooting
+        - common-issues-and-error-codes
 ---
 
 When installing some, or all, third-party software updates, you receive the error code **0x800b0101**.
 
 ## Determine if you are affected - Possible Cause 1
 
-![](/_images/WindowsUpdate-log_.png)
+![](../../_images/WindowsUpdate.log_.png)
 
 In **[WindowsUpdate.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#update-troubleshooting-client-logs "Collecting Log Files to Send to Support for SCCM and Intune")** you will see the following error in the log:
 
@@ -36,13 +38,13 @@ Scan failed with error = 0x800b0101.
 
 The error suggests that the certificate bound to the WSUS instance in IIS has expired. You will need to generate a new SSL certificate and bind it to the site
 
-![](/_images/IIS_Certificate.png)
+![](../../_images/IIS_Certificate.png)
 
 ## Determine if You are Affected - Possible Cause 2
 
 This error generally will occur when attempting to **install some (not always all) third-party software updates**. You may see the following error in software center:
 
-![Error-0x800b0101-Third-Party-Updates-SCCM](/_images/Error-0x800b0101-Third-Party-Updates-SCCM.png "Error-0x800b0101-Third-Party-Updates-SCCM")
+![Error-0x800b0101-Third-Party-Updates-SCCM](images/Error-0x800b0101-Third-Party-Updates-SCCM.png)
 
 In **[WUAHandler.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#update-troubleshooting-client-logs "Collecting Log Files to Send to Support for SCCM and Intune")** and [UpdatesHandler.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#update-troubleshooting-client-logs "Collecting Log Files to Send to Support for SCCM and Intune") you will see the following error in the log:
 
@@ -52,9 +54,9 @@ Failed to initiate install of WSUS updates, error = 0x800b0101
 Failed to start batch install through WSUS Install handler , error = 0x800b0101  
 InstallUpdatesInBatch failed with error 0x800b0101
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-2](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-2.png "Error-0x800b0101-Third-Party-Updates-SCCM-2")
+![Error-0x800b0101-Third-Party-Updates-SCCM-2](images/Error-0x800b0101-Third-Party-Updates-SCCM-2.png)
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-3](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-3.png "Error-0x800b0101-Third-Party-Updates-SCCM-3")
+![Error-0x800b0101-Third-Party-Updates-SCCM-3](images/Error-0x800b0101-Third-Party-Updates-SCCM-3.png)
 
 In [WindowsUpdate.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#update-troubleshooting-client-logs "Collecting Log Files to Send to Support for SCCM and Intune") you may see something similar to the below:
 
@@ -62,7 +64,7 @@ Error: 0x800b0101 when verifying trust for C:\\Windows\\SoftwareDistribution\\Do
 Copy update to cache failed with exit code = 0x800B0101  
 ISusInternal:: CopyUpdateToCache2 failed, hr=800B0101
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-4](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-4.png "Error-0x800b0101-Third-Party-Updates-SCCM-4")
+![Error-0x800b0101-Third-Party-Updates-SCCM-4](images/Error-0x800b0101-Third-Party-Updates-SCCM-4.png)
 
 **0x800b0101 = A required certificate is not within its validity period when verifying against the current system clock or the timestamp in the signed file.**
 
@@ -80,15 +82,15 @@ You can see the certificate used to sign an update and whether it is timestamped
 
 Go to the **Digital Signatures** tab, select the certificate from the list and choose **Details**.
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-6](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-6.png "Error-0x800b0101-Third-Party-Updates-SCCM-6")
+![Error-0x800b0101-Third-Party-Updates-SCCM-6](images/Error-0x800b0101-Third-Party-Updates-SCCM-6.png)
 
 From here you can see if the .cab file is timestamped in the **Countersignatures** section at the botom.
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-7](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-7.png "Error-0x800b0101-Third-Party-Updates-SCCM-7")
+![Error-0x800b0101-Third-Party-Updates-SCCM-7](images/Error-0x800b0101-Third-Party-Updates-SCCM-7.png)
 
 Click **View Certificate** and verify if the certificate has expired.
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-8](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-8.png "Error-0x800b0101-Third-Party-Updates-SCCM-8")
+![Error-0x800b0101-Third-Party-Updates-SCCM-8](images/Error-0x800b0101-Third-Party-Updates-SCCM-8.png)
 
 ## Step 1: Renew your code signing certificate and import it into the Publisher
 
@@ -98,7 +100,7 @@ If you use a self-signed certificate, regenerate a new code signing certificate 
 
 After you have obtained **a new valid certificate**, import it into the Publisher.
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-5](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-5.png "Error-0x800b0101-Third-Party-Updates-SCCM-5")
+![Error-0x800b0101-Third-Party-Updates-SCCM-5](images/Error-0x800b0101-Third-Party-Updates-SCCM-5.png)
 
 > **Note:** If your SUP is remote from your site server, ensure this new certificate is also in the **Trusted Root** and **Trusted Publishers** certificate store **on the site server** itself.
 
@@ -112,11 +114,11 @@ Right-click on the offending updates and choose **Republish update(s) for these 
 
 For the subsequent pop-ups, select **Yes** for the first pop-up, and we recommend you consider selecting **Yes** for the second pop-up.Ã 
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-9](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-9.png "Error-0x800b0101-Third-Party-Updates-SCCM-9")
+![Error-0x800b0101-Third-Party-Updates-SCCM-9](images/Error-0x800b0101-Third-Party-Updates-SCCM-9.png)
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-10](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-10.png "Error-0x800b0101-Third-Party-Updates-SCCM-10")
+![Error-0x800b0101-Third-Party-Updates-SCCM-10](images/Error-0x800b0101-Third-Party-Updates-SCCM-10.png)
 
-![Error-0x800b0101-Third-Party-Updates-SCCM-11](/_images/Error-0x800b0101-Third-Party-Updates-SCCM-11.png "Error-0x800b0101-Third-Party-Updates-SCCM-11")
+![Error-0x800b0101-Third-Party-Updates-SCCM-11](images/Error-0x800b0101-Third-Party-Updates-SCCM-11.png)
 
 ## Step 3: Sync, the Publisher, download the updates, distribute, and deploy
 

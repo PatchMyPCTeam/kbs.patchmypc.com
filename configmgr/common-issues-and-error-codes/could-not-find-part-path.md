@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+
 ---
 
 The error message **_An error occurred while parsing XML node of the catalog: Could not find a part of the path 'C:\\Program Files\\Update Services\\Schema\\baseapplicabilityrules.xsd'_** will occur when the **Schema** folder has been deleted from the WSUS installation directory.
@@ -26,7 +28,7 @@ An error occurred while parsing XML node of the catalog: Could not find a part o
 
 This error can occur when the **[Schema](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/bb972752\(v=vs.85\))** folder is deleted from the **WSUS installation directory** (Default path: C:\\Program Files\\Update Services). This error doesn't occur often, and we don't have any root cause of what may have caused the deletion of the folder for affected customers. In the example below, you can see there is **no Schema folder** in the Update Services folder.
 
-![WSUS-schema-folder-missing-Could not find a part of the path C-Program Files-Update Services-Schema-baseapplicabilityrules.xsd](/_images/WSUS-schema-folder-missing-Could-not-find-a-part-of-the-path-C-Program-Files-Update-Services-Schema-baseapplicabilityrules-xsd_.png "WSUS-schema-folder-missing-Could not find a part of the path C-Program Files-Update Services-Schema-baseapplicabilityrules.xsd")
+![WSUS-schema-folder-missing-Could not find a part of the path C-Program Files-Update Services-Schema-baseapplicabilityrules.xsd](images/WSUS-schema-folder-missing-Could-not-find-a-part-of-the-path-C-Program-Files-Update-Services-Schema-baseapplicabilityrules.xsd_.png)
 
 ## Resolution for Missing Schema Folder Error
 

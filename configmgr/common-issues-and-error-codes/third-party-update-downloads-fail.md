@@ -5,13 +5,16 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - connectivity-and-proxy-issues
+        - security-and-certificates
 ---
 
 Error **0x800b0004,** **0x80073633,** or **13875** generally occurs when attempting to download third-party software updates into a deployment package. When attempting to download an update into a deployment package in the SCCM console, you receive the error message **Error: Invalid certificate signature**
@@ -20,11 +23,11 @@ Error **0x800b0004,** **0x80073633,** or **13875** generally occurs when attem
 
 Whenever a software update is being downloaded, regardless of whether it's a Microsoft or third-party update, the **certificate used to sign the software update must always be trusted** by the machine running the **ConfigMgr console** or by the **site server** in the case it's an automatic deployment rule.
 
-![third-party update download fails in the sccm console error Invalid certificate signature 0x800b0004](/_images/downloads-fail-in-the-sccm-console-error-Invalid-certificate-signature-0x800b0004.png "third-party update download fails in the sccm console error Invalid certificate signature 0x800b0004")
+![third-party update download fails in the sccm console error Invalid certificate signature 0x800b0004](images/downloads-fail-in-the-sccm-console-error-Invalid-certificate-signature-0x800b0004.png)
 
 If using **automatic deployment**, the error code will be a little different, as shown in the screenshot below:
 
-![SCCM ADR Error Code 0x80073633 Invalid certificate signature](/_images/SCCM-ADR-Error-Code-0x80073633-Invalid-certificate-signature.png "SCCM ADR Error Code 0x80073633 Invalid certificate signature")
+![SCCM ADR Error Code 0x80073633 Invalid certificate signature](images/SCCM-ADR-Error-Code-0x80073633-Invalid-certificate-signature.png)
 
 If the **[WSUS signing certificate](/wsus-signing-certificate-options-for-third-party-updates-in-configuration-manager)** hasn't properly been deployed to the **Trusted Root** and **Trusted Publishers** certificate store on the **console device** or the **site server**, the update validation check will fail, and the update will not be downloaded into the deployment package.
 
@@ -72,11 +75,11 @@ To check if the WSUS signing certificate is installed, perform the **following 
 
 **1\. Download** the specific update CAB file failing to download using a web browser or copy directly from the WSUSContent folder. You can get the update download URL or folder/file path to the WSUSContent folder based on the **PatchDownloader.log**
 
-![manually download update failing with error 0x800b0004 Error Invalid certificate signature](/_images/manually-download-update-failing-with-error-0x800b0004-Error-Invalid-certificate-signature.png "manually download update failing with error 0x800b0004 Error Invalid certificate signature")
+![manually download update failing with error 0x800b0004 Error Invalid certificate signature](images/manually-download-update-failing-with-error-0x800b0004-Error-Invalid-certificate-signature.png)
 
 2\. **Copy** the .CAB file to the machine running the **ConfigMgr console if failing to download via console** or to the **site server if using an ADR**. On **properties** of the file, review the **Certification Path** tab, and review if there are any trust errors.
 
-![This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store](/_images/This-CA-Root-certificate-is-not-trusted-because-it-is-not-in-the-Trusted-Root-Certification-Authorities-store.png "This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store")
+![This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store](images/This-CA-Root-certificate-is-not-trusted-because-it-is-not-in-the-Trusted-Root-Certification-Authorities-store.png)
 
 If the certificate shows any **trust errors**, you will need to **[deploy this certificate to all machines](/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates)** or **manually install** it to **Trusted Root** and **Trusted Publishers** on the affected machine if for testing only.
 

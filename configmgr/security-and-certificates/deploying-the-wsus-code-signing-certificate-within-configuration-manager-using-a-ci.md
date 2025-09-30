@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - security-and-certificates
+        - deployments
+        - best-practices
 ---
 
 In this article, we will cover how a **[WSUS signing certificate](/wsus-signing-certificate-options-for-third-party-updates-in-configuration-manager),** or other code-signing certificates can be deployed to your Configuration Manager clients by using a **Configuration Item**. A code-signing certificate is a core component in Third-Party Patching. The certificates private key is used to sign the CAB files that will be published to WSUS, and ultimately installed on clients. The client must **trust** this certificate and the **certificate chain**.
@@ -37,11 +39,11 @@ The script itself will need to be edited with your specific Thumbprint and Base6
 - **Certificate Thumbprint****:**
     - Within the properties of your Code Signing certificate, go to the Details tab and scroll to down to the thumbnail area. This thumbprint will help us uniquely identify the certificate.
         -  
-            ![certificate properties, details, thumbprint field](/_images/cert-details.png "certificate properties, details, thumbprint field")
+            ![certificate properties, details, thumbprint field](images/cert-details.png)
             
     
     - This can also be copied out of the Patch My PC Publisher, as shown below.
-        - ![General Tab, Show Certificate, Thumbprint field](/_images/publisher-show-certificate.png "General Tab, Show Certificate, Thumbprint field")
+        - ![General Tab, Show Certificate, Thumbprint field](images/publisher-show-certificate.png)
             
 
 - **Base64 Encoded Certificate String****:** This can be acquired a handful of ways, but a simple way is to get a copy of the certificate as a file and run a PowerShell command similar to the below
@@ -52,15 +54,15 @@ The script itself will need to be edited with your specific Thumbprint and Base6
 
 This process will require creating a new Configuration Item, which can be accessed in the context menu as shown below, or within the ribbon when in the node shown.
 
-![](/_images/new_configuration.png)
+![](../../_images/new_configuration.png)
 
 The CI will return a Boolean value, either **$true** or **$false** based on the presence of the specified certificate thumbprint. See below, for example, Discovery, and Remediation implementation.
 
 Note Data Type is set to Boolean, and the script is modified between Detection and Remediation. A **$Remediate** variable is changed based on the purpose of the script. The **$CodeSigningCertificateThumbprint** and **$EncodedCertString** variables will also need to be populated and should be the same in both scripts. The below screenshots simply show placeholder text.
 
-![](/_images/placeholder_text.png)
+![](../../_images/placeholder_text.png)
 
-![](/_images/place_holder_text_2.png)
+![](../../_images/place_holder_text_2.png)
 
 ## Step 2: Create the Associate Compliance Rule
 
@@ -68,7 +70,7 @@ When creating the Configuration Item, you will also configure a Compliance Rule.
 
 Note that we check the box for **"Run the specified remediation script when this setting is noncompliant."** This option is needed to ensure we can perform remediation.
 
-![](/_images/associate_compliance.png)
+![](../../_images/associate_compliance.png)
 
 ## Step 3: Associate the CI with a Configuration Baseline
 
@@ -76,11 +78,11 @@ With the CI created, we need to create a Configuration Baseline, which can be ac
 
 Alternatively, you could add this CI to an existing baseline you have in place.
 
-![](/_images/configuration_baseline.png)
+![](../../_images/configuration_baseline.png)
 
 See the below wizard for an example of the wizard for creating a Configuration Baseline where we are adding our previously created Configuration Item.
 
-![](/_images/Configuration_item-1024x505.png)
+![](../../_images/Configuration_item-1024x505.png)
 
 ## Step 4: Deploy the Configuration Baseline
 
@@ -88,8 +90,8 @@ Finally! The entire point of this article.
 
 What you select within this wizard is ultimately up to you. If you want the _action_ to happen, you, at a minimum, need the check the **"Remediate noncompliant rules when supported"** checkbox. Whether you allow this outside maintenance windows, and on what schedule, targeting which devices etc. are all decisions that will be specific to your organization.
 
-![](/_images/your_organization.png)
+![](../../_images/your_organization.png)
 
 Assuming all steps were followed, and the values for the base64 string and thumbprint are valid, you should be able to perform a **Machine Policy Evaluation Cycle** on a client that is targeted with the deployment, and check the Configurations tab as shown below. Once the Configuration Baseline has evaluated as compliant, the certificate should show in the **Trusted Root Certificate Authorities** certificate store and the **Trusted Publishers** certificate store and with no 'content' needed! We can store the certificate as a string, very cool! 
 
-![](/_images/very_cool.png)
+![](../../_images/very_cool.png)

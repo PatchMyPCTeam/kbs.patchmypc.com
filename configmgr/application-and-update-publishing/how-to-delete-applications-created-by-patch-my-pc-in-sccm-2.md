@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - application-and-update-publishing
+        - workarounds
+        - best-practices
 ---
 
 # How to Delete Applications Created by Patch My PC in SCCM
@@ -33,7 +35,7 @@ The following **two methods** are available for application deletion:
 - **[Step 1: Delete the Applications Using the Utility](#Delete-With-Util)**
 - **[Step 2: Recreation of All Applications (optional)](#Recreate-Apps)**
 
-[![More Information](/_images/more-info-icon.svg "More Information")](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**Note:** When **using the SCCM Application Manager to delete applications**, we will also **remove the source files automatically**. The steps for manually deleting the application include the process for manually deleting application source files. The manual deletion should _not_ be needed when using the SCCM Application Manager.
+[![More Information](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**Note:** When **using the SCCM Application Manager to delete applications**, we will also **remove the source files automatically**. The steps for manually deleting the application include the process for manually deleting application source files. The manual deletion should _not_ be needed when using the SCCM Application Manager.
 
 ## Step 1: Delete the Applications Using the Utility
 
@@ -45,7 +47,7 @@ Within the Publisher, you can navigate through the UI as shown below.
 4. **Delete Applications** 
     1. **Note:** Only the applications you have highlighted will be deleted. You can hold CTRL and select multiple applications for deletion.
 
-![](/_images/Sccm-AppMan-Util.png)
+![](../../_images/Sccm-AppMan-Util.png)
 
 ## Step 2: Recreation of All Applications (optional)
 
@@ -65,16 +67,16 @@ If you only need to delete a single application, the easiest method is to delete
 
 - Open the application's deployment type in the SCCM console
 - Copy the content location path from the Content tab of the deployment type
-    - ![deployment type content location path](/_images/get-content-location-path-of-deployment-type.png "deployment type content location path")
+    - ![deployment type content location path](images/get-content-location-path-of-deployment-type.png)
 - Open the folder in file explorer and delete the GUID folder for the application
-    - ![UNC content folder for deployment type in file explorer](/_images/UNC-content-folder-deployment-type.png "UNC content folder for deployment type in file explorer")
+    - ![UNC content folder for deployment type in file explorer](images/UNC-content-folder-deployment-type.png)
 
 If you need to delete all application content, you can remove all the vendor folders from the application source directory that was defined in the application options in the publishing service.
 
 - Find the source folder specified in the base install options of the publishing service
-    - ![source folder in base install options](/_images/source-folder-base-install-options.png "source folder in base install options")
+    - ![source folder in base install options](images/source-folder-base-install-options.png)
 - Go to this directory in file explorer to find the applications subfolder and delete all of the vendor folders within
-    - ![vendor folders in application source files](/_images/vendor-folders-application-source-files.png "vendor folders in application source files")
+    - ![vendor folders in application source files](images/vendor-folders-application-source-files.png)
 
 ## Step 2: Delete the Application(s) from SCCM
 
@@ -82,25 +84,25 @@ To delete individual applications in the SCCM console:
 
 - Go to the **Applications node** in the Software Library
 - **Right-click** the desired application and click **Delete**
-    - ![delete single application in SCCM](/_images/delete-single-app-in-SCCM.png "delete single application in SCCM")
+    - ![delete single application in SCCM](images/delete-single-app-in-SCCM.png)
 
 To delete all applications in the SCCM console:
 
 - Click the blue tab in the top left corner of the console and **Connect Via Windows Powershell**
-    - ![connect via powershell in SCCM console](/_images/SCCM-connect-via-powershell.png "connect via powershell in SCCM console")
+    - ![connect via powershell in SCCM console](images/SCCM-connect-via-powershell.png)
 - Run the following command in the Powershell window
     - **Get-CMApplication | Where-Object {($\_.SDMPackageXML -like '\*PatchMyPC-ScriptRunner.exe\*')} | Remove-CMApplication -Force -Verbose**
 - The following verbose logging will show each application being deleted:
-    - ![deleting applications with powershell](/_images/power-shell-application-deleting.png "deleting applications with powershell")
+    - ![deleting applications with powershell](images/power-shell-application-deleting.png)
 - Any active deployments or task sequence references must be removed before the application can be successfully deleted. If an application is deployed or referenced in a task sequence, you will get  the following error:
-    - ![delete application with powershell error](/_images/powershell-delete-app-error.png "delete application with powershell error")
+    - ![delete application with powershell error](images/powershell-delete-app-error.png)
 
 ## Step 3: Recreation of All Applications (optional)
 
 If applications were deleted due to a recommendation from the Patch My PC support team due to a bug in a previous version, here is the process to quickly recreate the applications.
 
 - Manually run a publishing service sync in the Sync Schedule tab of the publishing service
-    - ![manually run publishing sync](/_images/manually-run-publishing-sync.png "manually run publishing sync")
+    - ![manually run publishing sync](images/manually-run-publishing-sync.png)
 - Monitor the sync process by opening the PatchMyPC.log in the General Settings tab
 - Once all applications are recreated, verify in the console under the Comments column of the application that the "Created by Patch My PC..." version matches the version in the About tab in the publishing service
-    - ![application version verification](/_images/application-version-verification.png "application version verification")
+    - ![application version verification](images/application-version-verification.png)

@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - connectivity-and-proxy-issues
+        - common-issues-and-error-codes
 ---
 
 Microsoft has docs that discuss this scenario [here](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/optimize-windows-10-update-delivery#bkmk_DO-1910) in the 'Important' note box, specifically the last bullet point.
@@ -22,11 +24,11 @@ We were able to reproduce this issue and wanted to explain what's happening and 
 
 For our scenario, we could only reproduce the third-party software update download issue when the client setting "[Allow clients to download delta content when available](https://docs.microsoft.com/en-us/configmgr/core/clients/deploy/about-client-settings#allow-clients-to-download-delta-content-when-available)" within "**Software Updates**" is enabled.
 
-![SCCM download delta content enabled](/_images/download-delta-content-enabled-300x39.png "SCCM download delta content enabled")
+![SCCM download delta content enabled](images/download-delta-content-enabled-300x39.png)
 
 A quick way to check if this client policy may be enabled on a device facing the download issue is to right-click the device in the **Devices** node > **Client Settings** > **Result Client Settings**. In the Result Client Settings, check if the policy is Yes.
 
-![](/_images/download-delta-content-enabled-result.png)
+![](../../_images/download-delta-content-enabled-result.png)
 
 ###  Step 2: Reproduction of the Scenario
 

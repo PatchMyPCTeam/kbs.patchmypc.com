@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - log-collection-and-analysis
+        - troubleshooting
+        - updates
 ---
 
 The **Software Updates Deployment Evaluation Cycle** is a critical process in SCCM that determines how frequently client devices evaluate whether they have the required software updates installed. This is critical in ensuring devices are up-to-date with security patches and other important updates as required by the organization.
@@ -90,7 +92,7 @@ One method is by using the Control Panel **Configuration Manager** Applet:
 
 5. In the Actions tab, select **Software Update Deployment Evaluation Cycle** and click **Run Now**.
 
-![](/_images/SUDE_1.jpg)
+![](../../_images/SUDE_1.jpg)
 
 ### 2\. Using WMI
 
@@ -111,7 +113,7 @@ The other method of manually invoking the scan cycle from a client is by using P
 
 5. In the **Client Notification** section, choose **Download Computer Policy**.
 
-![](/_images/SUDE_2.jpg)
+![](../../_images/SUDE_2.jpg)
 
 ## Relevant logs to monitor on the client side
 

@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - updates
 ---
 
 Error **0x80246002** occurs when installing updates on a client in Configuration Manager (SCCM) when there is a **hash validation issue**. This article will review why **0x80246002** may happen and the steps to take to troubleshoot and hopefully resolve the issue.
@@ -30,7 +32,7 @@ Hash check on file C:\\Windows\\SoftwareDistribution\\Download.cab using algorit
 
 If the update is set to be **visible in software center**, the error show a message similar to below:
 
-![Update Error Hash for 0x80246002](/_images/Update-Error-Hash-for-0x80246002-1.png "Update Error Hash for 0x80246002")
+![Update Error Hash for 0x80246002](images/Update-Error-Hash-for-0x80246002-1.png)
 
 ## Background of Windows Update Content Hash Validation Checking
 
@@ -62,11 +64,11 @@ One of the more obvious root causes is a corrupted **[deployment package](https
 
 If the update content is ever **corrupted during this process**, clients' binary downloaded will fail with a hash error. A good first step is trying to **delete problematic updates** from the ConfigMgr **deployment package(s)**.
 
-![Delete updates from deployment package](/_images/Delete-updates-from-deployment-package.png "Delete updates from deployment package")
+![Delete updates from deployment package](images/Delete-updates-from-deployment-package.png)
 
 You can then **delete the problematic updates** from the deployment package.
 
-![Delete specific update from a deployment package in ConfigMgr](/_images/Delete-specific-update-from-a-deployment-package-in-ConfigMgr.png "Delete specific update from a deployment package in ConfigMgr")
+![Delete specific update from a deployment package in ConfigMgr](images/Delete-specific-update-from-a-deployment-package-in-ConfigMgr.png)
 
 We recommend **waiting up to one hour** to ensure the deletion of the updates from the **deployment package source folder** and the **content library**. After waiting, you can then try to **re-download the update(s)** to a deployment package and verify the deployment package is distributed.
 
@@ -76,7 +78,7 @@ If you **[deleted updates directly from WSUS](https://patchmypc.com/modify-publi
 
 **Note:** The delete update button **is not enabled by default** because it can cause hash issues if an update is deleted, and that product is still enabled, causing the same UpdateID to be republished. 
 
-![Delete Updates from WSUS for Third-Party Updates](/_images/Delete-Updates-from-WSUS-for-Third-Party-Updates.png "Delete Updates from WSUS for Third-Party Updates")
+![Delete Updates from WSUS for Third-Party Updates](images/Delete-Updates-from-WSUS-for-Third-Party-Updates.png)
 
 If you **delete an update** and **the product is still enabled**, it will publish again using the **same UpdateID**. This is problematic because the **hash of the update will be updated in the WSUS database**, but those **hash changes will not sync to the ConfigMgr database** based on our simulations.
 

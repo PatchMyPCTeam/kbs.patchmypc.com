@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - security
 ---
 
 In the **[PatchMyPC.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-logs)**, you may see the following error when the option to trigger a software update point sync is enabled.
@@ -33,7 +35,7 @@ This security template was updated on **May 7, 2020** to include the **Read** an
 
 Import the file **Patch My PC - Base Installations.xml** from the extracted ZIP file in your console under **Administration** > **Security** > **Security Roles**
 
-![](/_images/security-role-software-updates-modify-and-read-in-sccm.png)
+![](../../_images/security-role-software-updates-modify-and-read-in-sccm.png)
 
 Validate the security role has **Read** and **Modify** for **Software Updates**.
 
@@ -41,18 +43,18 @@ Validate the security role has **Read** and **Modify** for **Software Updates**.
 
 In build 1.8.6 or newer, the Publisher can **automatically create** the Security role with the minimum permissions for you.
 
-![Auto create ConfigMgr security role for Patch My PC](/_images/Create-ConfigMgr-Security-Role-for-Publisher-Automatically.png "Auto create ConfigMgr security role for Patch My PC")
+![Auto create ConfigMgr security role for Patch My PC](images/Create-ConfigMgr-Security-Role-for-Publisher-Automatically.png)
 
 After the security role is created, you will need to **assign the computer account** of the server running the publisher to it.
 
-![Assign ConfigMgr Security Role](/_images/assign-configmgr-security-role-to-server.png "Assign ConfigMgr Security Role")
+![Assign ConfigMgr Security Role](images/assign-configmgr-security-role-to-server.png)
 
 ## Assign the Computer the Security Role
 
 Add the computer account of the server running the publisher in the **Administration** > **Security** > **Administrative Users** node on the Configuration Manager console.
 
-![](/_images/computer-account-SCCM-permissions.png)
+![](../../_images/computer-account-SCCM-permissions.png)
 
 After the computer account is added, ensure you assign the security role for Patch My PC.
 
-![](/_images/assign-security-role-sccm-patchmypc.png)
+![](../../_images/assign-security-role-sccm-patchmypc.png)

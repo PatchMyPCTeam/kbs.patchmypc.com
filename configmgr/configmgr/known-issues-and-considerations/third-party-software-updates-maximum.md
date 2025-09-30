@@ -34,15 +34,15 @@ You may find after the next time the clients performs a scheduled software updat
 
 Microsoft expose options to change the default maximum run timeout for different types of software updates in Configuration Manager. **However, at the time of writing this, these options do not apply to third party updates** (see image below).
 
-![ConfigMgr SUP updates max run time](images/SUPMaximumRunTime.png)
+![ConfigMgr SUP updates max run time](/_images/SUPMaximumRunTime.png "ConfigMgr SUP updates max run time")
 
 You can check your updates' current maximum run time value by adding the column to the All Software Updates view in-console for **Maximum Run Time (Mins).**
 
-![In-console view of Maximum Run Time (Mins) for all software updates](images/SCCMConsoleMaxRunTimeColumn.png)
+![In-console view of Maximum Run Time (Mins) for all software updates](/_images/SCCMConsoleMaxRunTimeColumn.png "In-console view of Maximum Run Time (Mins) for all software updates")
 
 You can also check an individual update's maximum run time by right clicking on the software update > **Properties** > **Maximum Run Time** tab.
 
-![A particular software update's maximum run time configuration](images/SoftwareUpdateMaxRunTime.png)
+![A particular software update's maximum run time configuration](/_images/SoftwareUpdateMaxRunTime.png "A particular software update's maximum run time configuration")
 
 ## Determine if You Are Affected
 
@@ -59,13 +59,13 @@ Update (Site\_x/SUM\_x) Progress: Status = ciStateError, PercentComplete = 0, Do
 
 **0x87d00664** resolves to **Updates handler job was cancelled**.
 
-![Updates handler job was cancelled](images/2022-02-01_15-36-58.png)
+![Updates handler job was cancelled](/_images/2022-02-01_15-36-58.png "Updates handler job was cancelled")
 
 ## Changing the Maximum Run Time Value
 
 For accurate reporting of software update installation, it is recommend to change the maximum run time for updates which typically exceed the default run time. Adjust its value by right clicking on the software update > **Properties** > **Maximum Run Time** tab:
 
-![A particular software update's maximum run time configuration](images/SoftwareUpdateMaxRunTime.png)
+![A particular software update's maximum run time configuration](/_images/SoftwareUpdateMaxRunTime.png "A particular software update's maximum run time configuration")
 
 > **Note:** if the software update was already deployed and you change its maximum run time value, in order for the client to recognise the changed maximum run time value **you must remove the deployment and re-deploy it**.
 

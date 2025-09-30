@@ -34,49 +34,49 @@ There are two common scenarios where this error could occur. The first is when *
 
 If using the **[Patch My PC Publisher](/publishing-service-setup-documentation)**, you should see the following in the **PatchMyPC.log** before the signature validation error:
 
-![Verification of file signature-failed for file](images/Verification-of-file-signature-failed-for-file.png)
+![Verification of file signature-failed for file](/_images/Verification-of-file-signature-failed-for-file.png "Verification of file signature-failed for file")
 
 If using the **[in-console third-party catalog feature in SCCM](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/third-party-software-updates#publish-and-deploy-third-party-software-updates)**, you should see the following line in the **[SMS\_ISVUPDATES\_SYNCAGENT.log](/collecting-log-files-for-patch-my-pc-support#publishing-in-console-logs)** to confirm a new update fails to publish:
 
-![sccm in console publishing error for validation of signature](images/sccm-in-console-publishing-error-for-validation-of-signature.png)
+![sccm in console publishing error for validation of signature](/_images/sccm-in-console-publishing-error-for-validation-of-signature.png "sccm in console publishing error for validation of signature")
 
 If the error occurs when publishing a new update to WSUS, the **[WSUS Signing Certificate](/wsus-signing-certificate-options-for-third-party-updates-in-configuration-manager)** is not **[properly installed](/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates)** in the **Trusted Root** or **Trusted Publishers** certificate store on the WSUS Server.
 
 Next, you need to determine the **thumbprint** of the **WSUS Signing Certificate**. If using the Publisher, you can click the **Show Certificate** in the **General** tab and take note of **thumbprint**.
 
-![show wsus signing certificate thumbprint](images/show-wsus-signing-certificate-thumbprint.png)
+![show wsus signing certificate thumbprint](/_images/show-wsus-signing-certificate-thumbprint.png "show wsus signing certificate thumbprint")
 
 If you are using the SCCM in-console publishing or any other method, you can open **certlm.msc**  and navigate to the **WSUS** certificate store. If you double click the certificate, you can review the thumbprint in the **Details** tab.
 
-![check the certificate thumbprint](images/check-the-certificate-thumbprint.png)
+![check the certificate thumbprint](/_images/check-the-certificate-thumbprint.png "check the certificate thumbprint")
 
 Once the WSUS Signing Certificate is identified, you need to ensure it's added to the **Trusted Root** and **Trusted Publisher** certificate store on the WSUS server.
 
 Open **certlm.msc** and review the **Certification Path** tab of the WSUS certificate.
 
-![This CA Root certificate is not trusted](images/This-CA-Root-certificate-is-not-trusted.png)
+![This CA Root certificate is not trusted](/_images/This-CA-Root-certificate-is-not-trusted.png "This CA Root certificate is not trusted")
 
 You may notice an error in this tab about the **certificate not being trusted**. Next, you need to ensure the certificate exists on both the **Trusted Root** and **Trusted Publishers** certificate store.
 
 In the WSUS certificate store, **right-click** the certificate and click **Copy.**
 
-![Copy WSUS Certificate in certlm](images/Copy-WSUS-Certificate-in-certlm.png)
+![Copy WSUS Certificate in certlm](/_images/Copy-WSUS-Certificate-in-certlm.png "Copy WSUS Certificate in certlm")
 
 In the **Trusted Publishers** store, right-click and click **Paste**:
 
-![Paste WSUS Certificate in Trusted Publishers](images/Paste-WSUS-Certificate-in-Trusted-Publishers.png)
+![Paste WSUS Certificate in Trusted Publishers](/_images/Paste-WSUS-Certificate-in-Trusted-Publishers.png "Paste WSUS Certificate in Trusted Publishers")
 
 Validate the certificate was copied to the **Trusted Publishers store**. If you receive a message, the certificate already exists you can click **Yes** to overwrite the existing certificate.
 
-![Validate Certificate now Exist in Trusted Publishers](images/Validate-Certificate-now-Exist-in-Trusted-Publishers.png)
+![Validate Certificate now Exist in Trusted Publishers](/_images/Validate-Certificate-now-Exist-in-Trusted-Publishers.png "Validate Certificate now Exist in Trusted Publishers")
 
 Repeat the same process to **Paste** the WSUS Signing Certificate into the **Trusted Root** certificate store.
 
-![Paste WSUS Certificate in Trusted Root](images/Paste-WSUS-Certificate-in-Trusted-Root.png)
+![Paste WSUS Certificate in Trusted Root](/_images/Paste-WSUS-Certificate-in-Trusted-Root.png "Paste WSUS Certificate in Trusted Root")
 
 The WSUS certificate should now be trusted on the WSUS server, and you can attempt to **publish the update again**.
 
-![Update Published after Verification of file signature failed](images/Update-Published-after-Verification-of-file-signature-failed.png)
+![Update Published after Verification of file signature failed](/_images/Update-Published-after-Verification-of-file-signature-failed.png "Update Published after Verification of file signature failed")
 
 > **Note:** Although manually copying the WSUS signing certificate to the **Trusted Root** and **Trusted Publishers** is a quick fix for the WSUS server, ideally, the WSUS signing certificate should **[automatically be deployed to all machines](/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates),** including the WSUS server. 
 
@@ -84,13 +84,13 @@ The WSUS certificate should now be trusted on the WSUS server, and you can attem
 
 The error can also occur when an update already published to WSUS is attempting to be **revised**. In the **PatchMyPC.log**, you will see the following line before the error if it's being revised:
 
-![Revising update validation failed](images/Revising-update-validation-failed.png)
+![Revising update validation failed](/_images/Revising-update-validation-failed.png "Revising update validation failed")
 
 #### If the CAB file for the update being revised **does exist**:
 
 If the **.CAB** file for the update referred to in the error exists. You will want to review the certificate used to sign it in the **Properties** of the file.
 
-![CAB file in UpdateServicesPackage for Verification Failed](images/CAB-file-in-UpdateServicesPackage-for-Verification-Failed.png)
+![CAB file in UpdateServicesPackage for Verification Failed](/_images/CAB-file-in-UpdateServicesPackage-for-Verification-Failed.png "CAB file in UpdateServicesPackage for Verification Failed")
 
 You will need to **repeat the steps in the previous section** to ensure the certificate for the previously published update exist in the **Trusted Root** and **Trusted Publishers** certificate store on the WSUS server.
 

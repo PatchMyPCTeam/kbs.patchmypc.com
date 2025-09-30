@@ -24,7 +24,7 @@ The most common scenario that leads to us checking for duplicate Patch My PC cat
 
 In the ConfigMgr console, navigate to **Administration** > **Site Configuration** > **Sites** > **Configure Site Components** > **Software Update Point**. In the **Products** tab, check if there are multiple Patch My PC categories as shown below:
 
-![Duplicate Patch My PC Category in WSUS and SUP](images/Duplicate-Patch-My-PC-Category-in-WSUS-and-SUP.png)
+![Duplicate Patch My PC Category in WSUS and SUP](/_images/Duplicate-Patch-My-PC-Category-in-WSUS-and-SUP.png "Duplicate Patch My PC Category in WSUS and SUP")
 
 ## Root Cause of Duplicate Product Categories
 
@@ -38,11 +38,11 @@ exec spGetTopLevelCategories
 
 You can see the **duplicate categories** created
 
-![Duplicate Company spGetTopLevelCategories](images/Duplicate-Company-spGetTopLevelCategories.png)
+![Duplicate Company spGetTopLevelCategories](/_images/Duplicate-Company-spGetTopLevelCategories.png "Duplicate Company spGetTopLevelCategories")
 
 > **Important:** The duplicate category is not specific to Patch My PC updates. This WSUS bug **affects any published third-party category**. For example, in the example below, you can see a duplicate Dell category when Dell drivers were published after the OS upgrade
 > 
-> ![Duplicate Dell Company Category in ConfigMgr Products SUP](images/Duplicate-Dell-Company-Category-in-ConfigMgr-Products-SUP.png)
+> ![Duplicate Dell Company Category in ConfigMgr Products SUP](/_images/Duplicate-Dell-Company-Category-in-ConfigMgr-Products-SUP.png "Duplicate Dell Company Category in ConfigMgr Products SUP")
 
 ## Resolution for Duplicate Patch My PC Categories
 
@@ -50,7 +50,7 @@ The primary issue that causes customer problems is the **new company category in
 
 The quickest and easiest fix is to simply **enable the second Patch My PC category** in the Software Update Point Products tab
 
-![Enable Patch My PC Category in SUP Products](images/Enable-Patch-My-PC-Category-in-SUP-Products.gif)
+![Enable Patch My PC Category in SUP Products](/_images/Enable-Patch-My-PC-Category-in-SUP-Products.gif "Enable Patch My PC Category in SUP Products")
 
 Once the product is enabled and you completed a **[software update point sync](https://patchmypc.com/troubleshooting-why-third-party-updates-dont-show-in-sccm#topic2)** in ConfigMgr, the new updates should appear in the All Software Updates as normal.
 
@@ -60,4 +60,4 @@ In the **Software Update** tab of your automatic deployment rule, you will need 
 
 To enable both vendors, you can **uncheck** one of the Patch My PC vendors then **recheck** it again and the criteria should then list **both vendors**. This change will allow your ADR to search updates published before the WSUS OS upgrade and after.
 
-![Adjust ADR for Both Vendors](images/Adjust-ADR-for-Both-Vendors.gif)
+![Adjust ADR for Both Vendors](/_images/Adjust-ADR-for-Both-Vendors.gif "Adjust ADR for Both Vendors")

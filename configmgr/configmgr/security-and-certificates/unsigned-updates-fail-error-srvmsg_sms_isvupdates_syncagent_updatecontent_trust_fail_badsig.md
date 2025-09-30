@@ -20,7 +20,7 @@ One of the new requirements when using the **System Center Configuration Manager
 
 If you right-click an update where the **installer isn't signed** and choose to **Publish Third-Party Software Update Content**, you will receive an error in the binary validation in the **SMS\_ISVUPDATES\_SYNCAGENT.log** log file.
 
-![](../../_images/publish-third-party-update-with-full-content-from-metadata-only.png)
+![](/_images/publish-third-party-update-with-full-content-from-metadata-only.png)
 
 ## Determine if You are Affected
 

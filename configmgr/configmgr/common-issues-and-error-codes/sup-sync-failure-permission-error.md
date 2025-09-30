@@ -18,12 +18,12 @@ taxonomy:
 
 We recently encountered this error when running a sync on a remote Software Update Point.
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-2.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-2.jpg)
 
 In this example, we are using **CM1.corp.contoso.com** as the primary site server and **SP1.corp.contoso.com** as the remote site system with the software update point role configured.
 
 # 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-3-1.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-3-1.jpg)
 
 ## Determine if You are Affected
 
@@ -35,7 +35,7 @@ STATMSG: ID=6703 SEV=E LEV=M SOURCE="SMS Server" COMP="SMS\_WSUS\_SYNC\_MANAGER"
 
 Sync failed. Will retry in 60 minutes
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-1.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-1.jpg)
 
 ## Understanding 0X8013150A or 0X80131500
 
@@ -43,7 +43,7 @@ The **0x80131500** error typically means that you are unable to connect to the S
 
 Unfortunately, the CMTrace error lookup feature (Ctrl + L) cannot help with the error code.
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-4-1.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-4-1.jpg)
 
 > **Note:** This error message is different from a previous build of ConfigMgr. When setting up this scenario, we were running the latest build of ConfigMgr. Configuration Manager 2403. In older builds, the error was 0x80131500 instead of 0x8013150A.
 
@@ -51,23 +51,23 @@ Unfortunately, the CMTrace error lookup feature (Ctrl + L) cannot help with the 
 
 Merge **[WCM.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-logs)** and [wsyncmgr.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#publishing-service-logs) in **CMTrace.**
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-6.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-6.jpg)
 
 Review the connecting account. In this case, the credentials for **CORPService-SCCM** are being used for the network connection.
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-7.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-7.jpg)
 
 This account is unable to connect to the remote WSUS server.
 
 The account used to connect to the Software Update Point is found under **Administration** > **Servers and Site System Roles** > (Your Software Update Point) > **Properties** > **Proxy and Account Settings**
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-8-1.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-8-1.jpg)
 
 ## Resolution
 
 The **minimum permissions** required for this account is to be in **WSUS Administrators** on the Software Update Point Site Server (in this example, we added SRVC\_SCCM to the WSUS Administrators on SP1.corp.contoso.com).
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-9.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-9.jpg)
 
 If you were to uncheck the box for "**Use Credentials to connect to the WSUS Server**" the computer name of your primary site server would need to be added to the **WSUS Administrators** group on the Software Update Point.
 
@@ -75,6 +75,6 @@ This scenario may have occured as a result of the Software Update Point (SP1.cor
 
 Once the appropriate permissions were added. The Software Update Point synced correctly.
 
-![](../../_images/SUP_SYNC_0x80131500_or_0x8013150A-10.jpg)
+![](/_images/SUP_SYNC_0x80131500_or_0x8013150A-10.jpg)
 
 > **Note:** Minimum permissions for all ConfigMgr accounts can be found here: [https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/accounts](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/accounts)

@@ -18,11 +18,11 @@ taxonomy:
 
 In this post, we will cover an issue you might encounter when trying to subscribe to our third-party software update catalog in Microsoft System Center Configuration Manager.
 
-![](../../_images/third-party-catalog-patchmypc-in-sccm-subscribe.png)
+![](/_images/third-party-catalog-patchmypc-in-sccm-subscribe.png)
 
 When attempting to subscribe to the custom catalog added for your subscription to Patch My PC, configuration manager will show the following error message "Unable to create the subscription. The console failed to download the catalog from (URL) because of **error code 193**."
 
-![](../../_images/third-party-catalog-patchmypc-in-sccm-error-193.png)
+![](/_images/third-party-catalog-patchmypc-in-sccm-error-193.png)
 
 ## Why does this happen?
 
@@ -40,11 +40,11 @@ The reason is related to a new catalog format required for SCCM to support impor
 
 If we take a look into the new catalog format, you will notice there is a new folder called "ContentCertificates"
 
-![](../../_images/third-party-catalog-patchmypc-in-sccm-contentcertificates.png)
+![](/_images/third-party-catalog-patchmypc-in-sccm-contentcertificates.png)
 
 Whenever we release a new catalog update, we need to ensure we include every certificate used to sign all update binary files within our [supported products](/supported-products) for our catalog. The added content certificates allow SCCM to have a layer of trust when publishing all third-party update content. There are currently around 119 certificates we need to manage and maintain when new certificates are used to code-sign update files.
 
-![](../../_images/third-party-catalog-patchmypc-in-sccm-certificates.png)
+![](/_images/third-party-catalog-patchmypc-in-sccm-certificates.png)
 
 #### **Unique Catalog for Every Supported Product**
 

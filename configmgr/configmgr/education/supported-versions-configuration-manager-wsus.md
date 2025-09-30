@@ -28,7 +28,7 @@ The versions of **Configuration Manager** listed below have been tested by our t
 
 \[table id=19 /\]
 
-![Feature Is Supported on this Subscription Level](images/Yes-Green-Check.svg) **= Feature is tested and supported**![Feature Is Depreciated on this Subscription Level](images/Depreciated-Orange-Triangle.svg) **= Support has been deprecated**![Feature Not Supported on this Subscription Level](images/No-Red-X.svg) **= Feature is not supported**
+![Feature Is Supported on this Subscription Level](/_images/Yes-Green-Check.svg "Feature Is Supported on this Subscription Level") **= Feature is tested and supported**![Feature Is Depreciated on this Subscription Level](/_images/Depreciated-Orange-Triangle.svg "Feature Is Depreciated on this Subscription Level") **= Support has been deprecated**![Feature Not Supported on this Subscription Level](/_images/No-Red-X.svg "Feature Not Supported on this Subscription Level") **= Feature is not supported**
 
 > **Upgrade Tip:** If the Patch My PC Publisher software is **installed on the site server**, we recommend stopping the **PatchMyPCService** before the site upgrade is started. This step will ensure the service doesn't have any locks on console files during the console upgrade portion of the site upgrade on the site server.
 
@@ -38,13 +38,13 @@ The versions of **WSUS** listed below have been tested by our team to ensure co
 
 \[table id=14 /\]
 
-![Feature Is Supported on this Subscription Level](images/Yes-Green-Check.svg) **= Feature is tested and supported**
+![Feature Is Supported on this Subscription Level](/_images/Yes-Green-Check.svg "Feature Is Supported on this Subscription Level") **= Feature is tested and supported**
 
-![Feature Is Depreciated on this Subscription Level](images/Depreciated-Orange-Triangle.svg) **= Support has been deprecated**
+![Feature Is Depreciated on this Subscription Level](/_images/Depreciated-Orange-Triangle.svg "Feature Is Depreciated on this Subscription Level") **= Support has been deprecated**
 
 Newer versions of the publisher aren't supported on deprecated versions of WSUS. You can download an **[older version of the publisher](/scupcatalog/downloads/publishingservice/PatchMyPC-Publishing-Service-Legacy.msi)** that was tested for deprecated versions of WSUS.
 
-![Feature Not Supported on this Subscription Level](images/No-Red-X.svg) **= Feature is not supported**
+![Feature Not Supported on this Subscription Level](/_images/No-Red-X.svg "Feature Not Supported on this Subscription Level") **= Feature is not supported**
 
 ### Patch My PC Publisher System Requirements and Prerequisites
 

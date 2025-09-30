@@ -18,7 +18,7 @@ taxonomy:
 
 Installation **error 1603** is one of the more common errors we see for application or update installations. This article will review installation error **1603** and explain how to get more details about why the installation failed. Error code 1603 is a generic Windows Installer error and translates to: "**Fatal error during installation.**"
 
-![MSI Error Code 1603 During Install](images/MSI-Error-Code-1603-During-Install.png)
+![MSI Error Code 1603 During Install](/_images/MSI-Error-Code-1603-During-Install.png "MSI Error Code 1603 During Install")
 
 ## Determine if You are Affected
 
@@ -50,11 +50,11 @@ For Patch My PC support to help you with error 1603, we will need the actual **i
 
 Patch My PC has an option that simplifies enabling logging for a product installer using our Publisher's **[custom right-click options](/custom-options-available-for-third-party-updates-and-applications)**. This option enables logging **during the installation of the update or application** on the client device.
 
-![Right-Click Option to Enable Installer Logging in Patch My PC](images/Right-Click-Option-to-Enable-Installer-Logging-in-Patch-My-PC.png)
+![Right-Click Option to Enable Installer Logging in Patch My PC](/_images/Right-Click-Option-to-Enable-Installer-Logging-in-Patch-My-PC.png "Right-Click Option to Enable Installer Logging in Patch My PC")
 
 When enabled, the installer will create a directory (default path: **C:\\Windows\\CCM\\LogsPatchMyPCInstallLogs**) that will store the vendor's installation log product, providing greater detail when troubleshooting is necessary.  Additional checkbox options enable **verbose logging**, **prefix the log** with the client device's computer name, and designate a **backup location** to store log files for failed installations.
 
-![additional options for installation logging](images/install-logging-options.png)
+![additional options for installation logging](/_images/install-logging-options.png "additional options for installation logging")
 
 - **Available At:** All Products, Vendors, and Products
 
@@ -70,4 +70,4 @@ Even if Patch My PC logging wasn't enabled before the installation failed with *
 
 You can check the **C:\\Windows\\Temp** folder to see if there are any logs specific to the failed update or application install.
 
-![Right-Click Option to Enable Installer Logging in Patch My PC](images/Right-Click-Option-to-Enable-Installer-Logging-in-Patch-My-PC-1.png)
+![Right-Click Option to Enable Installer Logging in Patch My PC](/_images/Right-Click-Option-to-Enable-Installer-Logging-in-Patch-My-PC-1.png "Right-Click Option to Enable Installer Logging in Patch My PC")

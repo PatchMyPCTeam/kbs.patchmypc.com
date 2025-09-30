@@ -3,7 +3,7 @@ title: "Export Publisher Product List"
 date: 2021-07-31
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - general-configuration-and-usage
+        - education
+        - licensing
 ---
 
 In this article, we will cover the feature with the Publisher that allows you to export the current list of enabled products and their right-click configurations.
@@ -20,7 +22,7 @@ In this article, we will cover the feature with the Publisher that allows you to
 
 This option is found within the Advanced tab of the Publisher. You will need to scroll down in order to find the Product Export section. The section can be seen below.
 
-![Product Export](/_images/ProductExport.png "Product Export")
+![Product Export](images/ProductExport.png)
 
 Once you have found the section exporting the list is as simple as:
 

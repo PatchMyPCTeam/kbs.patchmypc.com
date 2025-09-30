@@ -3,7 +3,7 @@ title: "Advanced Configurations Using Registry Values for Publisher"
 date: 2019-10-04
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - customizations
+        - general-configuration-and-usage
+        - troubleshooting
 ---
 
 In this article, we will describe some **advanced settings** you can make using registry values for our [Publisher](/docs).

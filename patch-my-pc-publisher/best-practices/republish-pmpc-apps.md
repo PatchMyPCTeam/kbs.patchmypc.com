@@ -3,7 +3,7 @@ title: "Republish Patch My PC ConfigMgr Apps, Intune Apps and Intune Updates"
 date: 2023-02-03
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - application-and-update-publishing
+        - updates
 ---
 
 In this article, the topic of republishing non-WSUS updates in Patch My PC will be explained in detail.
@@ -52,15 +54,15 @@ There are four scenarios that would require an update to be republished. Those s
 
 Once you determine what product(s) meet the criteria described above for requiring a republish operation you can **right-click the product, vendor, or all products level and choose the** '**Republish update(s) for these product(s) during next sync schedule**'
 
-![](/_images/republish-updates-1.png)
+![](../../_images/republish-updates-1.png)
 
 You may be prompted to verify if you want Patch My PC to Recreate Intune assignments for the products selected for republish.
 
-![](/_images/republish-updates-2.png)
+![](../../_images/republish-updates-2.png)
 
 If you select **Yes**, you will be prompted to verify if you want to **supersede the currently published updates** for this product when the new updates are republished. The popup also includes some details on how you can optionally expire those previously published updates.
 
-![](/_images/republish-updates-3.png)
+![](../../_images/republish-updates-3.png)
 
 > **Note:** If you select "**No**" in the above prompt you will **continue to receive warnings** from the Publisher stating that the update could not be revised. To stop these warnings in this scenario you will want to decline the update which is failing to revise using the [modify published updates wizard](https://patchmypc.com/modify-published-third-party-updates-wizard#topic3).
 
@@ -70,14 +72,14 @@ If you review the **PatchMyPC.log,** you should see the updates being republis
 
 Optionally you can use the **WSUS Options** in the **Updates** tab of the Publisher to **disable the appending of the republish tag**. See below for an example of the option. With the checkbox checked republished updates **will not have the republished tag**, but would still supersede old updates if requested.
 
-![](/_images/republish-updates-4.png)
+![](../../_images/republish-updates-4.png)
 
 Once the republishing has completed, the updates will show up in SCCM after the next software update point sync has occurred. You can force a sync to happen by clicking '**Synchronize Software Updates**' in the Configuration Manager Console.
 
-![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
+![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
 
 You can monitor the SCCM software update point sync by reviewing the **wsyncmgr.log**. Once the sync is complete, you should see the newly republished update(s) in the console with the date appended as described above. If you choose to **supersede** previously published updates for this product, you will see the previous update(s) as superseded as well as indicated by their [icon](https://docs.microsoft.com/en-us/mem/configmgr/sum/understand/software-updates-icons#superseded-icon), and a 'Yes' in the superseded column.
 
-![](/_images/Real-Time-Alerts-Notification.png)
+![](../../_images/Real-Time-Alerts-Notification.png)
 
 Note that the update has our appended republish date, and our previous update is now marked superseded.

@@ -3,7 +3,7 @@ title: "Publisher High-Level Post"
 date: 1970-01-01
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - general-configuration-and-usage
 ---
 
 # Main KB Title of Article
@@ -89,4 +91,4 @@ Example CMTace Error Message
 Example CMTrace Warning Message  
 sample-powershell command line
 
-[![More Information](/_images/more-info-icon.svg "More Information")](https://patchmypc.com/app/uploads/2025/04/more-info-icon.svg)**Note:** Here is an example call out section for something super duper cool
+[![More Information](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/04/more-info-icon.svg)**Note:** Here is an example call out section for something super duper cool

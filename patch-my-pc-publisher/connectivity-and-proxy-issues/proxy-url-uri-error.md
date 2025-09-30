@@ -3,7 +3,7 @@ title: "An error occurred while converting the provided Proxy URL to a URI"
 date: 2020-08-21
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - connectivity-and-proxy-issues
+        - troubleshooting
+        - security
 ---
 
 In this article, we will discuss a bug introduced in **version 1.8.6.0** of the Patch My PC Publisher.
@@ -26,15 +28,15 @@ An error occurred while converting the provided Proxy URL to a URI for use by th
 
 Check if you are on **build 1.8.6.0** and a **proxy is enabled**:
 
-![Check Build 1.8.6](/_images/Version-1-8-6-Bug-Proxy.png "Check Build 1.8.6")
+![Check Build 1.8.6](images/Version-1.8.6-Bug-Proxy.png)
 
-![](/_images/Proxy-Is-Enabled.png)
+![](../../_images/Proxy-Is-Enabled.png)
 
 If you open the Publisher UI, you will **likely see error(s)** similar to the error shown below:
 
-![SupportedProxy Can't Download Because Proxy Bug](/_images/Network-Error-SupportedProducts.png "SupportedProxy Can't Download Because Proxy Bug")
+![SupportedProxy Can't Download Because Proxy Bug](images/Network-Error-SupportedProducts.png)
 
-![Publisher Can't Validate License](/_images/Publisiher-License-Validation-Fails.png "Publisher Can't Validate License")
+![Publisher Can't Validate License](images/Publisiher-License-Validation-Fails.png)
 
 > **Note:** This proxy is used by the publisher for all download operations, including downloading Publisher updates.
 
@@ -44,12 +46,12 @@ Manually update the publisher to a build that is [version 1.8.7.0 or above](http
 
 Once the upgrade is complete, attempt to validate the **License URL** in the Publisher to confirm the fix.
 
-![Validate License after Proxy Bug](/_images/Validate-License-Proxy-Bug.png "Validate License after Proxy Bug")
+![Validate License after Proxy Bug](images/Validate-License-Proxy-Bug.png)
 
 ## Resolving the Issue (Option 2)
 
 Within the Publisher on the affected 1.8.6 build, navigate to the '**Advanced Tab**' and update the Proxy URL field by adding **http://** to the beginning of your URL as shown below.  Once you have changed this you can click **Apply, then close and reopen the publisher**. Once this is complete the error messages will be resolved. 
 
-![](/_images/Proxy-No-HTTP.png)
+![](../../_images/Proxy-No-HTTP.png)
 
-![](/_images/Proxy-With-HTTP.png)
+![](../../_images/Proxy-With-HTTP.png)

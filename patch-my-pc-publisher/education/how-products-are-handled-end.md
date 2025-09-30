@@ -3,7 +3,7 @@ title: "How Products are Handled at End-Of-Life (EOL) or Become Incompatible"
 date: 2021-01-14
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - general-configuration-and-usage
+        - best-practices
 ---
 
 We remove products from our [supported products](/supported-products) list for a few reasons. The primary reasons for products being removed from our catalog are:

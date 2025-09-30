@@ -3,7 +3,7 @@ title: "Intune Pricing and New Advanced Intune Features in Enterprise Plus"
 date: 2022-06-01
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - general-configuration-and-usage
+        - troubleshooting
+        - best-practices
 ---
 
 Since we added [Intune integration](https://patchmypc.com/automatically-create-and-deploy-applications-in-microsoft-intune) a couple of years ago, we have continued to invest in innovation, bringing more and more functionality to those who use our product to deploy and patch applications using Intune.

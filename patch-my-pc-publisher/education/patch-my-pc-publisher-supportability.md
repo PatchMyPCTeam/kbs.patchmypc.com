@@ -3,7 +3,7 @@ title: "Patch My PC Publisher Supportability for Older Releases"
 date: 2021-04-16
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - best-practices
+        - general-configuration-and-usage
 ---
 
 The supportability of older releases of the **[Patch My PC Publisher](/docs)** is covered in this article.

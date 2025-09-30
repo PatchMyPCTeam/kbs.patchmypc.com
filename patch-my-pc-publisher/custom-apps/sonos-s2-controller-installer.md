@@ -3,7 +3,7 @@ title: "Sonos S1/S2 Controller Installer"
 date: 2025-07-07
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - custom-apps
+        - application-and-update-publishing
+        - deployments
 ---
 
 In this article, we will detail how to get the MSI required for the Sonos S1/S2 Controller Latest (MSI-x64) product in our catalog.
@@ -34,7 +36,7 @@ Browse to Download the Sonos Controller you require. The download should start i
 
 [https://www.sonos.com/redir/controller\_software\_pc2](https://www.sonos.com/redir/controller_software_pc2 )
 
-![](/_images/image-11.png)
+![](../../_images/image-11.png)
 
 ## Extract the Installer to obtrain the MSI
 
@@ -44,7 +46,7 @@ Navigate to the downloaded exe file. You can either extract the MSI manually or 
 
 1. **Manually** - Extract the MSI by double-clicking the downloaded exe. The installer will launch. Leave this open in the background for now.
 
-![](/_images/image-13.png)
+![](../../_images/image-13.png)
 
 With the installer open, navigate to:-
 
@@ -57,7 +59,7 @@ C:\\Users\\<UserName>\\AppData\\Local\\Downloaded Installations\\{AF00AB56-E4FE-
 
 You will see the MSI file. (The MST is not needed)
 
-![](/_images/image-12.png)
+![](../../_images/image-12.png)
 
 2. **Silently** – For a silent extract, open a command prompt, navigate to the download, and run the following command:
 
@@ -67,7 +69,7 @@ Sonos_xx.x-xxxxx.exe /S /x /b"C:\Windows\Temp" /v"/qb"
 
 Navigate to: "C:\\Windows\\Temp" to obtain the MSI file.
 
-![](/_images/image-13.png)
+![](../../_images/image-13.png)
 
 ## Copy the MSI to the Local Content Repository
 

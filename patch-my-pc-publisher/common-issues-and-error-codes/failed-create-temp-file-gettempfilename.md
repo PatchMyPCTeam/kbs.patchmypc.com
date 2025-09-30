@@ -3,7 +3,7 @@ title: "Failed to create temp file with GetTempFileName() at temp location . err
 date: 2021-10-11
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,8 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
 ---
 
 Error **80**, or **0x80070050**, generally occurs when attempting to download software updates (whether third party updates or Microsoft updates) into a deployment package. When attempting to download an update into a deployment package in the SCCM console, you receive the error message: **Failed to download content id Error: The file exists.**
@@ -20,7 +21,7 @@ Error **80**, or **0x80070050**, generally occurs when attempting to download so
 
 Whenever a software update is being downloaded, regardless of whether it’s a Microsoft or third-party update, you receive the following error using the Download Software Updates wizard in the console:
 
-![Error: The file exists.](/_images/fileexists1.jpg "Error: The file exists.")
+![Error: The file exists.](images/fileexists1.jpg)
 
 Looking in [PatchDownloader.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#deployment-package-download-logs) file we can see an error code which resolves to The file exists (**0x80070050** or **80**):
 
@@ -29,7 +30,7 @@ ERROR: DownloadUpdateContent() failed with hr=0x80070050
 
 If using Automatic Deployment Rules (ADR), the error code will be different and unfortunately a little more generic (**0X87D20417**):
 
-![Failed to download content access denied - ADR](/_images/FailedToDownloadContentAccessDenied-3.png "Failed to download content access denied - ADR")
+![Failed to download content access denied - ADR](images/FailedToDownloadContentAccessDenied-3.png)
 
 Looking at the [ruleengine.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#automatic-deployment-rules-logs) log file for ADRs, we can find a more useful error code which resolves to the file exists (80):
 
@@ -96,7 +97,7 @@ Another possible solution could be that the security context trying to conduct t
 
 Therefore ensure your user or system object has the **Delete** NTFS permission in the temp directory.
 
-![NTFS Delete permission](/_images/ntfsdeletepermission.jpg "NTFS Delete permission")
+![NTFS Delete permission](images/ntfsdeletepermission.jpg)
 
 If downloading software updates mmanually via right click > Download, %temp% will resolve to your **user profile's temp directory** - typically this is in **AppData**.
 

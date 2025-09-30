@@ -3,7 +3,7 @@ title: "List of Domains for Firewall Allowlist when Using Patch My PC"
 date: 2018-04-14
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,10 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - connectivity-and-proxy-issues
+        - cloud-integration
+        - troubleshooting
+        - known-issues-and-considerations
 ---
 
 When updates are published using **full content** from our catalog, the Publisher will need to download content files **from patchmypc.com** and **other vendor's websites**.
@@ -26,11 +29,11 @@ In addition to the full list of domains provided below, we also store the **last
 
 The download history can be found on a CSV file in: **%InstallDir%\\PatchMyPC-DownloadHistory.csv**
 
-![PatchMyPC-DownloadHistory.csv File for Download History](/_images/PatchMyPC-DownloadHistory-csv-File-for-Download-History.png "PatchMyPC-DownloadHistory.csv File for Download History")
+![PatchMyPC-DownloadHistory.csv File for Download History](images/PatchMyPC-DownloadHistory.csv-File-for-Download-History.png)
 
 Here's an example of the data included in the **PatchMyPC-DownloadHistory.csv file**. You can use the **domain column to create firewall exceptions** based on the products enabled and failing to download.
 
-![PatchMyPC-DownloadHistory.csv Example List](/_images/PatchMyPC-DownloadHistory-csv-Example-List.png "PatchMyPC-DownloadHistory.csv Example List")
+![PatchMyPC-DownloadHistory.csv Example List](images/PatchMyPC-DownloadHistory.csv-Example-List.png)
 
 ## List of Domains Always Required
 

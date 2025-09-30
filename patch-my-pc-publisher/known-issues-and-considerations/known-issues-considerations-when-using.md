@@ -3,7 +3,7 @@ title: "Known Issues and Considerations when Using Patch My PC"
 date: 2020-05-09
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - known-issues-and-considerations
+        - troubleshooting
+        - best-practices
 ---
 
 **The article below shows known issues and considerations** to make when deploying specific products using Patch My PC.

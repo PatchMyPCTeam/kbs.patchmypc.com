@@ -3,7 +3,7 @@ title: "Access to the Path Is Denied - Configuring Content Source Permissions"
 date: 2025-05-29
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - security
 ---
 
 In this article, we will cover the necessary **permissions required for the Patch My PC Publisher to manage content** for the Applications which are published to Configuration Manager. This article is useful when you are **receiving errors such as the below** from the Patch My PC Publisher.
@@ -29,11 +31,11 @@ The **PatchMyPCService** is the identity that will perform all content-based act
 
 In our example, **the _who_** will be our **Configuration Manager Site Server**, named **SCCM**. In other environments, this may be the site server or the software update point. Whichever is hosting the **[publisher](/docs)**.
 
-![PatchMyPCService in Services](/_images/RemoteDesktopManagerFree_dL5SuC26OV.png "PatchMyPCService in Services")
+![PatchMyPCService in Services](images/RemoteDesktopManagerFree_dL5SuC26OV.png)
 
 If you have navigated the Base Install options, you might be familiar with an option to configure the **SMS Provider connection**. It is important to note the credentials in the below location are **specifically for interactions between the Publisher, and the SMS Provider**, i.e. application publishing, content distribution, etc. For more details, see [this article.](https://patchmypc.com/permissions-required-in-sccm-for-base-installation-packages-from-patch-my-pc) Otherwise, **all of the file-based operations for managing the sources will happen as the Local System**, as shown in the Services screenshot above.
 
-![SMS Provider Credentials - Not used for File based operations](/_images/SMSProviderConnection.png "SMS Provider Credentials - Not used for File based operations")
+![SMS Provider Credentials - Not used for File based operations](images/SMSProviderConnection.png)
 
 ## Step 2: Identify _What_ To Grant Permissions To
 
@@ -41,7 +43,7 @@ The sources location which the service will need permissions to can be found wit
 
 **Note:** You do not need to share out the direct folder which the settings reference. It just needs to be a folder that sits within a shared folder. For example, the share can be "\\\\sccm\\sources" while your source folder below can be "sccm\\sourcesPatchMyPC" if you prefer. For our example, the share happens to be the same folder as the sources.
 
-![Content Source for ConfigMgr Applications.](/_images/PublishingService-ContentSourceInfo-2.png "Content Source for ConfigMgr Applications.")
+![Content Source for ConfigMgr Applications.](images/PublishingService-ContentSourceInfo-2.png)
 
 ## Step 3: Configure the Permissions - Both Share, and NTFS
 
@@ -49,11 +51,11 @@ The effective permissions of your sources folder will be the result of combining
 
 As noted above, the share which you grant permissions on may not be the exact path specified in the settings. But the sources folder should be a subfolder of the share. 
 
-![Source Folder Sharing Permissions](/_images/SourceSharePermissions.png "Source Folder Sharing Permissions")
+![Source Folder Sharing Permissions](images/SourceSharePermissions.png)
 
 With share permissions set, we can configure the NTFS permissions. This is where the _who,_ and the _where_ comes into play, which we determined earlier to be the computer account which runs the Publisher, and the UNC path configured in the Publishing Tool. At a minimum, the computer account needs read, write, and modify permissions on the folder structure which will host the source content. This should also propagate to all subfolders and files. Because this is more restrictive than the ‘Everyone Full Control’ permission set on the share, this will be our effective permission for the SCCM principal. 
 
-![Sources ACL Permissions](/_images/Sources_ACL.png "Sources ACL Permissions")
+![Sources ACL Permissions](images/Sources_ACL.png)
 
 ## Other Considerations: Processes Locking Source Content
 
@@ -69,4 +71,4 @@ Sometimes an ‘Access Denied’ does not mean the permissions are setup incorre
     
     - **Solution:** Open the MMC on the server hosting your shares, and add the ‘Shared Folders’ snap-in. Within this snap-in, there is an ‘Open Files’ section where you can ‘Close Open File’
 
-![](/_images/close_open_file.png)
+![](../../_images/close_open_file.png)

@@ -3,7 +3,7 @@ title: "Personal Lab Subscription"
 date: 2021-06-07
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - licensing
+        - education
+        - best-practices
 ---
 
 We offer a Personal Lab subscription for those that want to use our **[enterprise Patch My PC Publisher](https://patchmypc.com/application-patch-management)** in their personal Configuration Manager or Intune lab environment.
@@ -34,7 +36,7 @@ The **maximum count of 25 devices** is evaluated by the Patch My PC Publisher at
 
 Total device count.
 
-![Personal Lab Subscription device count exceeded in WSUS console](/_images/HomeLabExceededCount-WSUS.png "Personal Lab Subscription device count exceeded in WSUS console")
+![Personal Lab Subscription device count exceeded in WSUS console](images/HomeLabExceededCount-WSUS.png)
 
 Exceeding the device count in WSUS will cause the Updates tab to stop functioning, and products from this tab will no longer publish to WSUS.
 
@@ -44,7 +46,7 @@ If this is the only platform you have to exceed in the device count, other tabs 
 
 All Desktop and Servers Clients device collection.
 
-![Personal Lab Subscription device count exceeded in SCCM console](/_images/HomeLabExceededCount-SCCM.png "Personal Lab Subscription device count exceeded in SCCM console")
+![Personal Lab Subscription device count exceeded in SCCM console](images/HomeLabExceededCount-SCCM.png)
 
 ### How is the device count determined in Intune?
 
@@ -68,6 +70,6 @@ Exceeding the device count in **one platform will not cause other tabs to stop w
 
 If you exceed the number of allowed devices in any platform, you will receive an error similar to the below in [PatchMyPC.log](/collecting-log-files-for-patch-my-pc-support#publishing-service-app-logs-intune):
 
-![Personal Lab Subscription device count exceeded log entry in PatchMyPC.log](/_images/HomeLabExceededCount2.png "Personal Lab Subscription device count exceeded log entry in PatchMyPC.log")
+![Personal Lab Subscription device count exceeded log entry in PatchMyPC.log](images/HomeLabExceededCount2.png)
 
 You will be **unable to publish new applications or updates** if the device count is exceeded.

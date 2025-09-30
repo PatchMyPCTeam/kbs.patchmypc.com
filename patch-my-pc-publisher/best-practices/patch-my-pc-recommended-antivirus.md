@@ -3,7 +3,7 @@ title: "Patch My PC - Recommended antivirus exclusions"
 date: 2023-12-14
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - security
+        - education
 ---
 
 This article outlines Microsoft's recommended antivirus exclusions for **Configuration Manager**, **WSUS**, and **Intune**. It documents folders pertinent to content distribution, particularly those within Patch My PC's scope of third-party updates. We've included links to relevant Microsoft documentation for a deeper dive into the topic.

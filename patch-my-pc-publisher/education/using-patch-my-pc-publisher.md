@@ -3,7 +3,7 @@ title: "Using Patch My PC Publisher with Azure Update Manager"
 date: 2024-12-19
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - general-configuration-and-usage
+        - best-practices
 ---
 
 In this article, we discuss the high-level steps for implementation and key considerations when using Azure Update Manager (AUM) to manage third-party updates.
@@ -28,7 +30,7 @@ Most third-party software vendors provide updates in the form of catalogs, speci
 
 The screenshot below shows first-party updates identified as required during a scan of Microsoft Update, and third-party updates identified as required during a scan of a local WSUS instance.
 
-![](/_images/AUM_Configuration2-1.jpg)
+![](../../_images/AUM_Configuration2-1.jpg)
 
 ## Scenarios
 
@@ -123,7 +125,7 @@ Computer Configuration > Administrative Templates > Windows Components > Windows
 Set the intranet update service for detecting updates = https://MyWSUSServer.contoso.com:8531  
 Set the intranet statistics server = https://MyWSUSServer.contoso.com:8531
 
-![](/_images/admx_1.jpg)
+![](../../_images/admx_1.jpg)
 
 ### 2\. Configure the UseWUServer Policy (Required)
 
@@ -146,7 +148,7 @@ Configure an automatic approval rule in WSUS to ensure that third-party updates,
 
 This is essential because AUM relies on WSUS to host the necessary update metadata and content for the devices it orchestrates patching for.
 
-![](/_images/AUM_Approval.jpg)
+![](../../_images/AUM_Approval.jpg)
 
 ### 4\. Accept Trusted Publisher Certifcates (Required)
 
@@ -164,7 +166,7 @@ Set the **AcceptTrustedPublisherCerts** registry value to **1 (DWORD)**
 Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
 **Allow signed updates from an intranet Microsoft update service location** \= Enabled
 
-![](/_images/admx_2.jpg)
+![](../../_images/admx_2.jpg)
 
 > **Note:** By downloading first-party updates directly from Microsoft Update, organizations can significantly reduce the storage requirements for WSUS, as first-party update content no longer needs to be stored locally. However, since each server downloads its first-party updates directly from the internet, organizations must plan for potential bandwidth impacts. Unlike Configuration Manager, which can efficiently distribute content via on-premises distribution points, this approach may lead to higher network usage for large deployments.
 
@@ -184,7 +186,7 @@ Set the **NoAutoUpdate** registry value to 1 **(DWORD)**
 Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
 **Configure Automatic Updates** = Disabled
 
-![](/_images/admx_3.jpg)
+![](../../_images/admx_3.jpg)
 
 ## Scan Source Requirements (for Scenario 2)
 
@@ -218,7 +220,7 @@ Additionally, set the UseUpdateClassPolicySource registry key to complete scan s
 Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
 **Specify source service for specific classes of Windows Updates** \= Windows Update
 
-![](/_images/admx_4.jpg)
+![](../../_images/admx_4.jpg)
 
 **Note:  
 **There is no scan source class specifically for third-party updates. "Other Updates" does not mean third-party updates.  
@@ -231,7 +233,7 @@ WSUS = 1
 
 Currently, AUM's "install on demand" functionality, specifically for third-party updates from the Patch My PC catalog, has certain limitations. AUM relies on update IDs that follow a specific format traditionally used by Microsoft's updates, which differs from the `PMPC-year-month-day` format used in the Patch My PC catalog. This incompatibility can prevent AUM from targeting specific third-party updates for on-demand installation, as the update IDs do not align with the expectations of AUM's mechanisms.
 
-![](/_images/AUM_Configuration2.jpg)
+![](../../_images/AUM_Configuration2.jpg)
 
 Patch My PC is exploring whether it is feasible to adopt a more compatible KB ID format for updates in our catalog to improve targeting capabilities. However, this effort is still in the exploratory phase, and no confirmed timeline is available for implementation. Customers should take this into account when planning third-party update orchestration with AUM, especially if they require precise on-demand installation functionality.
 
@@ -241,7 +243,7 @@ A commonly overlooked configuration when using AUM to orchestrate third-party up
 
 Ensure the **Updates** classification is included for **Windows** operating systems in your maintenance configuration.
 
-![](/_images/AUM_Configuration.jpg)
+![](../../_images/AUM_Configuration.jpg)
 
 ## Useful Logs
 

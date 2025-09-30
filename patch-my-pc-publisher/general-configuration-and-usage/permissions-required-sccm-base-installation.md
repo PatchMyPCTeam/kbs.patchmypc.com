@@ -3,7 +3,7 @@ title: "Permissions Required in SCCM for Base Installation Packages from Patch M
 date: 2019-04-12
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,24 +11,26 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - general-configuration-and-usage
+        - best-practices
+        - security
 ---
 
 > **Note:** As a first step, ensure that the Configuration Manager console is installed on the remote Software Update Point as well. It is a [mandatory requirement](https://docs.patchmypc.com/installation-guides/configmgr/requirements).
 
 When enabling the **[base installation feature](/automating-application-packaging-in-microsoft-sccm)** as shown below in our **[Publisher](https://patchmypc.com/publishing-service-setup-documentation)**, it's important to understand what permissions are required in SCCM.
 
-![SCCM Application Options](/_images/SCCM-Application-Options-PatchMyPC.png "SCCM Application Options")
+![SCCM Application Options](images/SCCM-Application-Options-PatchMyPC.png)
 
 ## Automatically Create the Configuration manager Security Role for the Patch My PC Publisher
 
 In build 1.8.6 or newer, the Publisher can **automatically create** the Security role with the minimum permissions for you.
 
-![Auto create ConfigMgr security role for Patch My PC](/_images/Create-ConfigMgr-Security-Role-for-Publisher-Automatically.png "Auto create ConfigMgr security role for Patch My PC")
+![Auto create ConfigMgr security role for Patch My PC](images/Create-ConfigMgr-Security-Role-for-Publisher-Automatically.png)
 
 After the security role is created, you will need to **assign the computer account** of the server running the publisher, **or the provided alternative account** to the security role.
 
-![Assign ConfigMgr Security Role](/_images/assign-configmgr-security-role-to-server.png "Assign ConfigMgr Security Role")
+![Assign ConfigMgr Security Role](images/assign-configmgr-security-role-to-server.png)
 
 **Note:** If you already have a role with the same 'Patch My PC Publisher' name then you will be prompted to overwrite the existing role. This will keep existing Security Role associations and simply update the permissions.
 
@@ -54,8 +56,8 @@ We will need to be able to create, modify, delete, and distribution packages wit
 
 You can download our pre-created security role named "**[Patch My PC - Base Installations](https://patchmypc.com/app/uploads/2025/06/PatchMyPC-ConfigMgr-Role.zip)**". Once imported, you will then need to add the computer account as a new **Administrative User** and assign this new security role. Be sure to select **"All instances of the objects that are related to the assigned security roles"** to prevent potential issues with scoping.
 
-![](/_images/RolePermissions.png)
+![](../../_images/RolePermissions.png)
 
 If you prefer, you can configure an **impersonation account to use rather than the computer account** of the server in the base install options.
 
-![](/_images/configure-connection-account-for-sccm-base-installs.png)
+![](../../_images/configure-connection-account-for-sccm-base-installs.png)

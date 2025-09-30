@@ -3,7 +3,7 @@ title: "The underlying connection was closed: Could not establish trust relation
 date: 2020-05-10
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - connectivity-and-proxy-issues
+        - troubleshooting
+        - security
 ---
 
 The download error "_Could not establish trust relationship for the SSL/TLS secure channel"_ is generally related to your machine not trusting the website's root **[Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)**. We are generally pretty limited in the amount of support we can provide for issues related to **web filters**, **firewalls**, **proxies**, **certificate trust**, or other **network-related errors**. However, our resolution below will generally help diagnose and resolve this specific error.
@@ -37,7 +39,7 @@ On the machine receiving the error, browse to the URL from the log file for the 
 
 A common reason you may receive the error **Could not establish trust relationship for the SSL/TLS secure channel** is because the **SSL certificate isn't trusted**.
 
-![](/_images/ssl-certificate-not-trusted.png)
+![](../../_images/ssl-certificate-not-trusted.png)
 
 If the SSL certificate is not trusted, you will need to **install the SSL certificate's** root certificate.
 

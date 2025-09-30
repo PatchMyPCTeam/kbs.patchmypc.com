@@ -3,7 +3,7 @@ title: "When and How to Republish Patch My PC Third-Party Updates"
 date: 2020-09-23
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - updates
+        - application-and-update-publishing
 ---
 
 In this article, the topic of republishing updates in Patch My PC will be explained in detail.
@@ -24,7 +26,7 @@ Republishing an update means the selected update(s) will be **published to WSUS 
 
 As shown below, a republished update will have the name appended with '(Republished on )'.
 
-![](/_images/RemoteDesktopManager_3V7Eb7Pumf.png)
+![](../../_images/RemoteDesktopManager_3V7Eb7Pumf.png)
 
 Within the Publisher, we offer an option when republishing an update to supersede 'previously published update(s) for these product(s)', which will be discussed later in this article.
 
@@ -32,9 +34,9 @@ Within the Publisher, we offer an option when republishing an update to supersed
 
 Republishing a ConfigMgr App means that the selected application(s) will have its content recreated and its revision incremented while retaining its package ID.
 
-![](/_images/RemoteDesktopManager_Jt4aaHOt4b.png)
+![](../../_images/RemoteDesktopManager_Jt4aaHOt4b.png)
 
-![](/_images/KrmB8z1h2n.png)
+![](../../_images/KrmB8z1h2n.png)
 
 ## Why Would an Application or Update Need Republishing
 
@@ -78,11 +80,11 @@ Apple iTunes 12.10.8.5 (x64) previously published without custom actions, republ
 
 Additionally, **if the Teams Alerts are configured** you will receive a message similar to below.
 
-![](/_images/TeamsRepublishWarning.png)
+![](../../_images/TeamsRepublishWarning.png)
 
 Similarly, if the [SMTP based alerts](https://patchmypc.com/email-alerts-for-newly-published-third-party-products) are configured, the **email report will include a notice** such as below.
 
-![](/_images/EmailRepublishWarning.png)
+![](../../_images/EmailRepublishWarning.png)
 
 Receiving a**ny of these alerts, or log entries would indicate that the specified update should be republished**. The process for republishing can be found below.
 
@@ -90,15 +92,15 @@ Receiving a**ny of these alerts, or log entries would indicate that the specifie
 
 Once you determine what product(s) meet the criteria described above for requiring a republish operation you can **right-click the product, vendor, or all products level and choose the** '**Republish update(s) for these product(s) during next sync schedule**'
 
-![](/_images/republish-updates-1.png)
+![](../../_images/republish-updates-1.png)
 
 You will be prompted to verify that you do want to **mark these update(s) for republishing**. The popup also includes scenarios for republishing.
 
-![](/_images/republish-updates-2.png)
+![](../../_images/republish-updates-2.png)
 
 If you select **Yes**, you will be prompted to verify if you want to **supersede the currently published updates** for this product when the new updates are republished. The popup also includes some details on how you can optionally expire those previously published updates.
 
-![](/_images/republish-updates-3.png)
+![](../../_images/republish-updates-3.png)
 
 > **Note:** If you select "**No**" in the above prompt you will **continue to receive warnings** from the Publisher stating that the update could not be revised. To stop these warnings in this scenario you will want to decline the update which is failing to revise using the [modify published updates wizard](https://patchmypc.com/modify-published-third-party-updates-wizard#topic3).
 
@@ -108,14 +110,14 @@ If you review the **PatchMyPC.log,** you should see the updates being republis
 
 Optionally you can use the **WSUS Options** in the **Updates** tab of the Publisher to **disable the appending of the republish tag**. See below for an example of the option. With the checkbox checked republished updates **will not have the republished tag**, but would still supersede old updates if requested.
 
-![](/_images/republish-updates-4.png)
+![](../../_images/republish-updates-4.png)
 
 Once the republishing has completed, the updates will show up in SCCM after the next software update point sync has occurred. You can force a sync to happen by clicking '**Synchronize Software Updates**' in the Configuration Manager Console.
 
-![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
+![sync sccm software update point for declined updates](images/sync-sccm-software-update-point-for-declined-updates.png)
 
 You can monitor the SCCM software update point sync by reviewing the **wsyncmgr.log**. Once the sync is complete, you should see the newly republished update(s) in the console with the date appended as described above. If you choose to **supersede** previously published updates for this product, you will see the previous update(s) as superseded as well as indicated by their [icon](https://docs.microsoft.com/en-us/mem/configmgr/sum/understand/software-updates-icons#superseded-icon), and a 'Yes' in the superseded column.
 
-![](/_images/superseded_column.png)
+![](../../_images/superseded_column.png)
 
 Note that the update has our appended republish date, and our previous update is now marked superseded.

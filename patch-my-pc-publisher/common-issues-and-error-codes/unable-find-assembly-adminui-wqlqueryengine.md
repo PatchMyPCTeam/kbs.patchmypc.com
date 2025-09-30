@@ -3,7 +3,7 @@ title: "Unable to find the Assembly: AdminUI.WqlQueryEngine, Version=5.0.0.0, Cu
 date: 2021-03-23
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,8 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
 ---
 
 The error message "_**Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.**_" occurs when the **[Configuration Manager console isn't installed](https://docs.microsoft.com/en-us/mem/configmgr/core/servers/deploy/install/install-consoles)** on the device running the **[Patch My PC Publisher](https://patchmypc.com/docs)**. We use the assembly files within the Configuration Manager console to connect to ConfigMgr to perform the following actions:
@@ -45,7 +46,7 @@ Once the console is installed, **perform the following steps**:
 3. Re-open the Publisher
 
 5. Navigate to the **About tab** and click **Restart service****
-    ![Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.](/_images/Could-not-load-file-or-assembly-AdminUI-WqlQueryEngine.png "Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.")
+    ![Could not load file or assembly 'AdminUI.WqlQueryEngine, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.](images/Could-not-load-file-or-assembly-AdminUI.WqlQueryEngine.png)
     **
 
 7. These actions should **resolve the issue**

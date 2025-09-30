@@ -3,7 +3,7 @@ title: "What is Patch My PC ScriptRunner?"
 date: 2024-09-16
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - scripts
+        - best-practices
 ---
 
 In this article we will explore what the Patch My PC ScriptRunner is and how it enables IT administrators to automate and customize the installation of third-party applications and software updates.
@@ -24,7 +26,7 @@ In this article we will explore what the Patch My PC ScriptRunner is and how it 
 
 PatchMyPC-ScriptRunner.exe is signed, ensuring its authenticity and integrity. It is signed by our EV (Extended Validation) code signing certificate.
 
-![](/_images/scriptrunner_signed.png)
+![](../../_images/scriptrunner_signed.png)
 
 To avoid interference from security solutions, it is recommended that PatchMyPC-ScriptRunner.exe and its associated binaries be whitelisted in ASR (Attack Surface Reduction) rules for Defender or the relevant rule for other, alternative, Endpoint Detection and Response (EDR) solutions:-
 
@@ -73,7 +75,7 @@ A full list of customizations that we offer within our tooling is documented at 
 
 You may come across a files called **package.xml** in the installation source folder for apps and updates that have been packaged by Patch My PC. ScriptRunner will use the content of this XML file to understand how it should customize the installation.
 
-![](/_images/package_xml.png)
+![](../../_images/package_xml.png)
 
 In the above example, PatchMyPC-ScriptRunner.exe will call msiexec.exe and use the following parameters to customise the installation:-
 
@@ -85,7 +87,7 @@ Some of the parameters above are understood by msiexec and others are understood
 
 ScriptRunner keeps logs of everything it does helping you track what happened during installations and troubleshoot any issues that arise. You can also enable verbose logs for all the MSI installers that support it and detailed logs will be generated that will definitely help in troubleshooting installation failures, or stuck deployment.
 
-![](/_images/logging.png)
+![](../../_images/logging.png)
 
 ## References
 

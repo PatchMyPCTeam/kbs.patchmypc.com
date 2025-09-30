@@ -3,7 +3,7 @@ title: "Digest Mismatch Due To Download URL Being Filtered by Firewall or Web Fi
 date: 2019-02-16
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,9 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - connectivity-and-proxy-issues
+        - common-issues-and-error-codes
+        - troubleshooting
 ---
 
 If you received an error message in the [PatchMyPC.log](/collecting-log-files-for-patch-my-pc-support#publishing-service-logs) similar to the one shown below when publishing a third-party update this article should help.
@@ -29,11 +31,11 @@ We store the **last download response code and domain for currently enabled prod
 
 The download history can be found on a CSV file in: **%InstallDir%\\PatchMyPC-DownloadHistory.csv**
 
-![PatchMyPC-DownloadHistory.csv File for Download History](/_images/PatchMyPC-DownloadHistory-csv-File-for-Download-History.png "PatchMyPC-DownloadHistory.csv File for Download History")
+![PatchMyPC-DownloadHistory.csv File for Download History](images/PatchMyPC-DownloadHistory.csv-File-for-Download-History.png)
 
 Here's an example of the data included in the **PatchMyPC-DownloadHistory.csv file**. You can use the **domain column to create firewall exceptions** based on the products enabled and failing to download.
 
-![PatchMyPC-DownloadHistory.csv Example List](/_images/PatchMyPC-DownloadHistory-csv-Example-List.png "PatchMyPC-DownloadHistory.csv Example List")
+![PatchMyPC-DownloadHistory.csv Example List](images/PatchMyPC-DownloadHistory.csv-Example-List.png)
 
 ## Resolution to this Specific Hash Check Failure
 
@@ -43,13 +45,13 @@ When the downloaded file is **less than 100 kb** in size, this almost always cor
 
 **Step 1** - **Open the PatchMyPC.log** from the **publishing service.**
 
-![PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI](/_images/PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI.png "PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI")
+![PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI](images/PatchMyPC-Publishing-Service-Open-PatchMyPC-Log-File-UI.png)
 
-**Step 2 - Copy the download URL from the PatchMyPC.log** for any updates **receiving this hash error.** ![Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering](/_images/Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering.png "Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering")
+**Step 2 - Copy the download URL from the PatchMyPC.log** for any updates **receiving this hash error.** ![Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering](images/Copy-Download-URL-For-Update-Hash-Error-Due-To-Filtering.png)
 
 **Step 3 - Paste the download URL into a web browser** on the same server running the publishing service and check if you receive an **error that a web filter is blocking the download**.
 
-![Download URL Being Filtered in Browser](/_images/Download-URL-Being-Filter-in-Browser.png "Download URL Being Filtered in Browser")
+![Download URL Being Filtered in Browser](images/Download-URL-Being-Filter-in-Browser.png)
 
 **Note:** Patch My PC Publisher will attempt to download files from the internet in the **SYSTEM** context. This must be considered when using proxy servers or firewalls that require authentication.
 

@@ -3,7 +3,7 @@ title: "Custom Apps for MSPs using Patch My PC Publisher"
 date: 2024-10-21
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
         - 
     solution:
@@ -11,7 +11,10 @@ taxonomy:
     post_tag:
         - 
     sub-solutions:
-        - 
+        - custom-apps
+        - education
+        - best-practices
+
 ---
 
 In this article, we will learn how Managed Service Providers (MSPs) can create and manage custom apps and updates to be deployed using Patch My PC Publisher.
@@ -29,9 +32,9 @@ The customers that you manage in Patch My PC Publisher **do not** have their own
 **Onboarding Information**  
 When onboarding to Patch My PC Cloud, select **Create Company** and enter **your** business name in the **Company Name** field.
 
-![](/_images/msp_custom_apps_publisher_1.jpg)
+![](../../_images/msp_custom_apps_publisher_1.jpg)
 
-![](/_images/msp_custom_apps_publisher_2.jpg)
+![](../../_images/msp_custom_apps_publisher_2.jpg)
 
 Once onboarding to Patch My PC Cloud has been completed, you will need to create a connection to the Publisher.
 
@@ -44,7 +47,7 @@ Before we can create a custom app, we need to create a connection between the Pu
 **Publisher Connection Information  
 **The **Connection Name** that you enter when configuring the **Cloud tab** in the Publisher should be your MSP business name.
 
-![](/_images/msp_custom_apps_publisher_3.jpg)
+![](../../_images/msp_custom_apps_publisher_3.jpg)
 
 ## Create a Custom App
 
@@ -54,6 +57,6 @@ Please refer to [https://docs.patchmypc.com/installation-guides/patch-my-pc-clou
 
 When a Custom App is created, it will appear in the Publisher across all Intune tabs as both an application and an update for all tenants. You can individually enable and customize each app or update uniquely for every tenant, using right-click options to apply specific configurations. Each tenant’s selection and customization within the Publisher remains unique, even though the app is available across all tenants configured in the Publisher.
 
-![](/_images/msp_custom_apps_publisher_4.jpg)
+![](../../_images/msp_custom_apps_publisher_4.jpg)
 
 > **Note:** Removing a Custom App from the Cloud Portal will also remove it across all tenant Intune tabs in the Publisher

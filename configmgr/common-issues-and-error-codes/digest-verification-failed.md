@@ -3,9 +3,9 @@ title: "Digest Verification Failed on Content for Software Update"
 date: 2019-03-11
 taxonomy:
     products:
-        - configmgr
-    tech-stack:
         - 
+    tech-stack:
+        - configmgr
     solution:
         - 
     post_tag:

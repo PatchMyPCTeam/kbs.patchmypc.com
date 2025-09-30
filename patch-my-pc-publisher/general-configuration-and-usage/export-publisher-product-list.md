@@ -22,7 +22,7 @@ In this article, we will cover the feature with the Publisher that allows you to
 
 This option is found within the Advanced tab of the Publisher. You will need to scroll down in order to find the Product Export section. The section can be seen below.
 
-![Product Export](images/ProductExport.png)
+![Product Export](/_images/ProductExport.png "Product Export")
 
 Once you have found the section exporting the list is as simple as:
 

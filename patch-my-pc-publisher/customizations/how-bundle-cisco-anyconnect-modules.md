@@ -20,7 +20,7 @@ The Cisco AnyConnect Secure Mobility Client module needs to be updated first on 
 
 If you try and update any of the modules, before first updating the Secure Client, you will get an error similar to the below:
 
-![Update Secure Client first before updating any of the newer modules](images/CiscoAnyConnectUpdateSecureClientFirst.png)
+![Update Secure Client first before updating any of the newer modules](/_images/CiscoAnyConnectUpdateSecureClientFirst.png "Update Secure Client first before updating any of the newer modules")
 
 This article will demonstrate how you can control the order of install for the Cisco AnyConnect modules, and also bundle in the **preferences.xml** and **configuration.xml**.
 
@@ -42,13 +42,13 @@ The steps covered in this article can be used in all tabs in Publisher: Updates,
 
 Download all the latest Cisco AnyConnect modules and **store only the Secure Mobility Client** installer in your **[local content repository](https://patchmypc.com/local-content-repository-for-licensed-applications-that-require-manual-download)**:
 
-![Store the Secure Mobility Client in the local content repository](images/CiscoAnyConnectModules1.png)
+![Store the Secure Mobility Client in the local content repository](/_images/CiscoAnyConnectModules1.png "Store the Secure Mobility Client in the local content repository")
 
 ## Step 2: Enable the product and configure post script
 
 Within the Patch My PC Publisher, ensure you **only have the Cisco AnyConnect Secure Mobility Client enabled**. Right click on the product and choose **Add custom pre/post scripts**.
 
-![Enable the Secure Mobility Client](images/CiscoAnyConnectModules2.png)
+![Enable the Secure Mobility Client](/_images/CiscoAnyConnectModules2.png "Enable the Secure Mobility Client")
 
 Download and save [PatchMyPC-Install-CiscoAnyConnectModules.ps1](https://raw.githubusercontent.com/PatchMyPCTeam/Community-Scripts/main/Install/Post-Install/Cisco%20AnyConnect%20Modules%20and%20Config%20Files/Install-CiscoAnyConnectModules.ps1). This is the post-script which will call the other module installers.
 
@@ -60,7 +60,7 @@ Also include the [configuration.xml or preferences.xml](https://community.cisco.
 
 Click **OK**.
 
-![Define post script and additional files](images/CiscoAnyConnectModules311.png)
+![Define post script and additional files](/_images/CiscoAnyConnectModules311.png "Define post script and additional files")
 
 ## Step 3: Synchronize to publish
 

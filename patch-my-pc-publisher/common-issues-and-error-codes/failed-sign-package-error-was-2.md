@@ -38,7 +38,7 @@ You can check if your certificate has been revoked by following these steps usin
 
 3. Click **Validate Trust Chain...**
 
-![Validate Trust Chain](images/ValidateTrustChain-Revoked.png)
+![Validate Trust Chain](/_images/ValidateTrustChain-Revoked.png "Validate Trust Chain")
 
 > **Note:** We have also had reports of this specific error from customers even when the certificate was not revoked. Therefore, **all circumstances as to why WSUS uses this error code are not yet known**.
 
@@ -72,7 +72,7 @@ For guidance to deploy your new code signing certificate, see [How to Deploy the
 
 Using the [Modify Published Updates Wizard](https://patchmypc.com/modify-published-third-party-updates-wizard), select all of your existing third-party software updates in WSUS and choose the option to **Re-Sign Update**.
 
-![Re-sign all third party updates](images/ModifyPublishedUpdates-ReSignUpdate.png)
+![Re-sign all third party updates](/_images/ModifyPublishedUpdates-ReSignUpdate.png "Re-sign all third party updates")
 
 ### 4\. Download all third-party updates into a new Deployment Package
 
@@ -80,10 +80,10 @@ At this point, after re-signing all of your third-party updates, all of the .cab
 
 You can verify this by browsing to your WSUSContent or UpdateServicesPackages folder and looking at the digital signature for any of your .cab files containing a third-party update.
 
-![Verify digital signature is of new certificate after re-signing](images/WsusContentDigitalSignature.png)
+![Verify digital signature is of new certificate after re-signing](/_images/WsusContentDigitalSignature.png "Verify digital signature is of new certificate after re-signing")
 
 Now, you must **delete any previously downloaded third-party software updates in any existing Deployment Packages**. After you have done this, you need to **download all of your third-party software updates** into a **new Deployment Package in Configuration Manager**.
 
 Updates need to be downloaded again because the .cab files in your current Deployment Package(s) are signed with your old code signing certificate. They need to be re-downloaded since their digital signatures have changed, and you need your clients to trust all of your third-party updates.
 
-![Delete deployment package in Configuration Manager](images/DeleteDeploymentPackage.png)
+![Delete deployment package in Configuration Manager](/_images/DeleteDeploymentPackage.png "Delete deployment package in Configuration Manager")

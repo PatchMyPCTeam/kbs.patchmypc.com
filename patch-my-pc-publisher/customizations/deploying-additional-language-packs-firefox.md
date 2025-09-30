@@ -38,17 +38,17 @@ They can be found here: **https://releases.mozilla.org/pub/firefox/releases//win
 
 Once you have the script saved and the language packs downloaded, right click on any version of Firefox in out Publisher and select **Add custom pre/post scripts**.
 
-![](../../_images/pre_post_1_new.png)
+![](/_images/pre_post_1_new.png)
 
 Add the script to the **Post Script** field and add any language packs you downloaded previously in the **Additional files** section.
 
-![](../../_images/pre_post_2_new_1.png)
+![](/_images/pre_post_2_new_1.png)
 
 ## Step 3: Synchronize to publish
 
 Once you have completed Step 2 you will need to run a sync, or wait for your next sync schedule , to allow our Publisher to either update existing Firefox packages with the post script and additional files or publish fresh if Firefox was not previously published.
 
-![](../../_images/sync_schedule_1_new.png)
+![](/_images/sync_schedule_1_new.png)
 
 > **Note - Configuration Manager:** Previously published Firefox **Applications** will have their content updated on next sync to include the post script and zip file. Previously published Firefox **updates** will need [republished](https://patchmypc.com/when-and-how-to-republish-third-party-updates) to have the post script and zip file included.
 

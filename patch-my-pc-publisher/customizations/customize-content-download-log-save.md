@@ -26,11 +26,11 @@ By default, content files are downloaded temporarily to **%temp%** during publis
 
 Optionally, you can define a custom folder in the **Advanced tab** for where these content files are downloaded.
 
-![](../../_images/custom-download-folder-publisher-settings.png)
+![](/_images/custom-download-folder-publisher-settings.png)
 
 When this setting is configured, the temporary content downloads will take place in the random subfolder of the folder defined. 
 
-![](../../_images/custom-folder-download-location.png)
+![](/_images/custom-folder-download-location.png)
 
 > **Use Case:** The option to define a custom folder for temporary content downloads can be helpful in the following situations.
 > 

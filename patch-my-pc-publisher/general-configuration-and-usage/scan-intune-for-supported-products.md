@@ -33,15 +33,15 @@ The intent with this feature was to provide some parity to our Configuration Man
 
 The Intune scanning UI can be seen below.
 
-![Scan Intune Utility](images/ScanIntune1.png)
+![Scan Intune Utility](/_images/ScanIntune1.png "Scan Intune Utility")
 
-![](../../_images/ScanIntune.png)
+![](/_images/ScanIntune.png)
 
 **Intune Connection:**
 
 - This Intune Connection will share the configuration of the other Intune based features in the product. The configuration for API permissions can be found [here](https://patchmypc.com/intune-authentication-using-azure-app-registration).
 
-[![More Info](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**There are additional permissions required with this feature beyond what is required for creating applications. Please review the [article](https://patchmypc.com/intune-authentication-using-azure-app-registration) to ensure your permissions are configured correctly.**
+[![More Info](/_images/more-info-icon.svg "More Info")](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**There are additional permissions required with this feature beyond what is required for creating applications. Please review the [article](https://patchmypc.com/intune-authentication-using-azure-app-registration) to ensure your permissions are configured correctly.**
 
 **Auto Publishing Rules:**
 
@@ -50,7 +50,7 @@ The Intune scanning UI can be seen below.
         - ie. The threshold set to 30, Zoom Meetings found on 55 devices, Zoom Meetings will be automatically selected for publishing
     - The dropdown "1 selected..." box lets you configure certain options for the published applications, such as disabling the self-updater if supported
 
-[![More Info](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)If you have [Manage assignments](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#ManageAssignments) configured at the product or vendor level, and a product becomes enabled via auto-publishing rules, the newly enabled product will not inherit the assignments. This is by design to prevent customers experiencing an [Intune policy size limit](https://patchmypc.com/intune-policy-limit-considerations) issue.
+[![More Info](/_images/more-info-icon.svg "More Info")](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)If you have [Manage assignments](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#ManageAssignments) configured at the product or vendor level, and a product becomes enabled via auto-publishing rules, the newly enabled product will not inherit the assignments. This is by design to prevent customers experiencing an [Intune policy size limit](https://patchmypc.com/intune-policy-limit-considerations) issue.
 
 **Filter:**
 

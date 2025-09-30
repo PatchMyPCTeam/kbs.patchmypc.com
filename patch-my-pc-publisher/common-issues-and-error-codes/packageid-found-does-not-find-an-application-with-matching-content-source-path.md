@@ -28,7 +28,7 @@ Customers experiencing this failure will likely have the following application u
 
 If affected, you will see the below notification:
 
-![](../../_images/Pasted-image-20250522124123.png)
+![](/_images/Pasted-image-20250522124123.png)
 
 In [PatchMyPC.log](/collecting-log-files-for-patch-my-pc-support#publishing-service-logs), the error will read along the lines of:
 
@@ -132,11 +132,11 @@ The Publisher first begins searches for the source folder on disk by performing 
 \\server*\share\Applications\Google, Inc.\Google Chrome (MSI-x64)\80fadc14-8188-41b9-b326-3f0735bbc470
 ```
 
-[![More Information](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**Note:** If the **Source Folder** you provided contains an FQDN address for the shared folder in **ConfigMgr Apps** -> **Options**, the FQDN will be stripped to just the hostname and replaced with a wildcard.
+[![More Information](/_images/more-info-icon.svg "More Information")](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**Note:** If the **Source Folder** you provided contains an FQDN address for the shared folder in **ConfigMgr Apps** -> **Options**, the FQDN will be stripped to just the hostname and replaced with a wildcard.
 
 For example, **\\\\server.contoso.com\\share** will be replaced with **\\\\server\*\\share**.
 
-![](../../_images/Pasted-image-20250527171426.png)
+![](/_images/Pasted-image-20250527171426.png)
 
 If it cannot find the folder with the exact the path above, it will then begin a wider search using wildcards:
 
@@ -148,7 +148,7 @@ This use of wildcard is intended to provide flexibility when products are rename
 
 In **PatchMyPC.log**, if the new version does not exist and the current version needs updating:
 
-![](../../_images/Pasted-image-20250527180913.png)
+![](/_images/Pasted-image-20250527180913.png)
 
 ```
 Processing Installable Application: 1/1. (Google Chrome (MSI-x64))
@@ -164,7 +164,7 @@ Updating ConfigMgr applications for Google Chrome (MSI-x64)
 
 If the latest version already exists:
 
-![](../../_images/Pasted-image-20250527171426.png)
+![](/_images/Pasted-image-20250527171426.png)
 
 ```
 Processing Installable Application: 1/1. (Google Chrome 137.0.7151.41 (x64))
@@ -199,7 +199,7 @@ At a high-level overview, this process involves:
 
 1. Download the update to the cache content folder. If the download fails, abort publishing and move onto the next application.
 
-[![More Information](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)Note: By default this is C:\\Windows\\temp but it is customisable. Read more here: **[Customize Content Download and Log Save Location - Patch My PC](/customize-content-download-and-log-save-location)**
+[![More Information](/_images/more-info-icon.svg "More Information")](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)Note: By default this is C:\\Windows\\temp but it is customisable. Read more here: **[Customize Content Download and Log Save Location - Patch My PC](/customize-content-download-and-log-save-location)**
 
 **PatchMyPC.log**:
 
@@ -210,12 +210,12 @@ The file is not present in the cache: GoogleChromeStandaloneEnterprise64.msi
 Downloading the file to the cache [Destination: C:\Windows\TEMP\PMP-r3l3u3jt\80fadc14-8188-41b9-b326-3f0735bbc470\GoogleChromeStandaloneEnterprise64.msi]
 Configured Download Timeout: 15 minutes and 0 seconds
 Finished downloading file: [https://dl.google.com/chrome/install/GoogleChromeStandaloneEnterprise64.msi] Average speed: 17.82 MB/s (6.00 MB)
-Removing download job 0f78781b-f9af-4c19-b0a0-9198c2d7c7df [GoogleChromeStandaloneEnterprise64.msi] : (https://dl.google.com/chrome/install/GoogleChromeStandaloneEnterprise64.msi) from the processing queue.
+[GoogleChromeStandaloneEnterprise64.msi] : /_images/GoogleChromeStandaloneEnterprise64-msi)-from-the-processing-queue
 ```
 
 2. Copy the source folder for the current version to a subfolder named _Retained Apps_
 
-[![More Information](images/more-info-icon.svg)](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**Note:** It has historically been this step of publishing which has failed and largely caused the issues for customers, resulting in creating this knowledge base article.
+[![More Information](/_images/more-info-icon.svg "More Information")](https://patchmypc.com/app/uploads/2025/05/more-info-icon.svg)**Note:** It has historically been this step of publishing which has failed and largely caused the issues for customers, resulting in creating this knowledge base article.
 
 **PatchMyPC.log**:
 

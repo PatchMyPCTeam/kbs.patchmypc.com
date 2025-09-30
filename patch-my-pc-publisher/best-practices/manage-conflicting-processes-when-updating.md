@@ -18,7 +18,7 @@ taxonomy:
 
 When updating third-party applications, there may be cases where you need to **close an application** that is currently open by an end-user. This guide will explain the option "**Notify the user to close the application**" within the [custom right-click option](/custom-options-available-for-third-party-updates-and-applications) **Manage conflicting processes**.
 
-![](../../_images/Manage-Conflicting-Process-17.png)
+![](/_images/Manage-Conflicting-Process-17.png)
 
 ## Video Walkthrough of Notify the user to close the application feature
 
@@ -105,7 +105,7 @@ There are a variety of options available for this feature. Below you can find de
     
     - Refer to the '[Update in progress...](#h-update-in-progress)' section for more detailed information.
 
-![Update in progress user notification](images/UpdateInProgress.png)
+![Update in progress user notification](/_images/UpdateInProgress.png "Update in progress user notification")
 
 > **Note:** If an update is snoozed, or if the notification times out the software will return a 1602 exit code.
 
@@ -113,21 +113,21 @@ There are a variety of options available for this feature. Below you can find de
 
 The **Mange process list** option allows you to add and remove apps that need to close in order for the update to process (This applies only if you have Auto-close or Notify option enabled).
 
-![](../../_images/Manage-Conflicting-Process-18.png)
+![](/_images/Manage-Conflicting-Process-18.png)
 
 The UI notification for Conflicting Processes now lists all processes which are conflicting in a dropdown. This is to make it more clear what software will be closed.
 
-![](../../_images/Manage-Conflicting-Process-22.2.gif)
+![](/_images/Manage-Conflicting-Process-22-2.gif)
 
 ## Add Custom Branding for Notifications
 
 In the **Manage default settings** options, you can configure a customer banner image and company name.
 
-![](../../_images/Manage-Conflicting-Process-19.png)
+![](/_images/Manage-Conflicting-Process-19.png)
 
 You can also preview how it will appear for an end-user by clicking **Preview how it will** **appear**.
 
-![Patch My PC Close and Update UI Popup](images/Patch-My-PC-Close-and-Update-UI-Popup.png)
+![Patch My PC Close and Update UI Popup](/_images/Patch-My-PC-Close-and-Update-UI-Popup.png "Patch My PC Close and Update UI Popup")
 
 ## Custom Banner Images for Custom Usage
 
@@ -135,27 +135,27 @@ We have various banner images available below. You can use these images to custo
 
 Download our [default JPG banner image](https://patchmypc.com/app/uploads/2025/04/UI-Notification-Banner.jpg) below.
 
-![Default Notification Banner](images/UI-Notification-Banner.jpg)
+![Default Notification Banner](/_images/UI-Notification-Banner.jpg "Default Notification Banner")
 
 Download the [light-theme GIF image](https://patchmypc.com/app/uploads/2025/04/Patch-My-PC-Close-Application-GIF-370x100-1.gif) below to show an application close and update completed.
 
-![Patch My PC - Close Application GIF - 370x100](images/Patch-My-PC-Close-Application-GIF-370x100-1.gif)
+![Patch My PC - Close Application GIF - 370x100](/_images/Patch-My-PC-Close-Application-GIF-370x100-1.gif "Patch My PC - Close Application GIF - 370x100")
 
 Download the [dark-theme GIF image](https://patchmypc.com/app/uploads/2025/04/Patch-My-PC-Close-and-Update-UI-Popup-Dark-Theme.gif) below to show an application close and update completed.
 
-![Patch My PC Close and Update UI Popup - Dark Theme](images/Patch-My-PC-Close-and-Update-UI-Popup-Dark-Theme.gif)
+![Patch My PC Close and Update UI Popup - Dark Theme](/_images/Patch-My-PC-Close-and-Update-UI-Popup-Dark-Theme.gif "Patch My PC Close and Update UI Popup - Dark Theme")
 
 ## Customize Notification
 
 In the **Mange default settings** option, you can customize the notification and add multiple languages under the **Localization** section.
 
-![](../../_images/Manage-Conflicting-Process-20.png)
+![](/_images/Manage-Conflicting-Process-20.png)
 
 You can add languages by selecting **Add/Remove** under **Localization** and then fill in the fields for those unique languages and their requirements. The language that is then chosen is based on the language of the machine in question at the time of the UI prompt opening.
 
-![](../../_images/Manage-Conflicting-Process-21.png)
+![](/_images/Manage-Conflicting-Process-21.png)
 
-![](../../_images/Manage-Conflicting-Processes-22.gif)
+![](/_images/Manage-Conflicting-Processes-22.gif)
 
 > **Note:** Keep in mind that you **MUST** provide content for each selected language in each possible intended state. This means cycling through the drop downs under **Selected Language** and **Intent**. Otherwise you won’t be able to select the **OK** button.
 
@@ -175,7 +175,7 @@ Below is a list of products we are aware of that will generally fail to update w
 
 When the option is set to '**Prevent the end-user from opening an application while the application is updating**' we use the [Image File Execution Options](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/xperf/image-file-execution-options) feature to stop the application from opening. Example usage of this can be seen below.
 
-![Image File Execution Options debugger](images/IFEO-Debugger.png)
+![Image File Execution Options debugger](/_images/IFEO-Debugger.png "Image File Execution Options debugger")
 
 The user would expect to see a message box that says '**An update is currently being installed on your computer. Please, do not try to start** ' or in some cases **'The requested operation requires elevation'** depending on the version of PatchMyPC-Scriptrunner.exe.
 

@@ -34,21 +34,21 @@ The following products currently require a manual download of the installer file
 
 When you enable a product that requires a manual download, you will receive the following message when you click **Apply**.
 
-![SCCM third-party updates products requiring manual download message](images/products-requiring-manual-download-message.png)
+![SCCM third-party updates products requiring manual download message](/_images/products-requiring-manual-download-message.png "SCCM third-party updates products requiring manual download message")
 
 This message will let you know you need to configure the folder in the **Advanced tab** that our publishing service will use to search for installers that are required for enabled products where the download can't be performed directly online.
 
-![Local Content Repository Input Menu](images/local-content-folder-location-publishing-service-advanced-tab.png)
+![Local Content Repository Input Menu](/_images/local-content-folder-location-publishing-service-advanced-tab.png "Local Content Repository Input Menu")
 
 The folder you define in the **Local Content Path** will be the location the publishing service searches through when attempting to publish third-party updates. You will need to download the EXE or MSI installer for products that require manual downloads.
 
 In the example above, we defined a UNC path of "**sccm\\sourcesSoftware UpdatesThird-Party-Updates-Local-Repository**". In this folder, the Java installer files for **Java 8 Update 211** have been downloaded as shown below. **Note:** if you use a UNC path, the computer account of the server running the publishing service will need **read and modify permissions**.
 
-![Example of Java Installer in Local Content Folder](images/example-of-jre-downloaded-in-local-repository.png)
+![Example of Java Installer in Local Content Folder](/_images/example-of-jre-downloaded-in-local-repository.png "Example of Java Installer in Local Content Folder")
 
 We highly recommend enabling email notifications from the [Alerts](https://patchmypc.com/how-publishing-alerts-work#topic1) tab. If we are **unable to locate the installer file** during a publishing attempt, you will receive an email listing the specific updates that need to be manually downloaded as well as the expected file name.
 
-![](../../_images/Email_Rreport_LocalContent.png)
+![](/_images/Email_Rreport_LocalContent.png)
 
 These emails are especially helpful because they will let you know when action is required on your part to download installers when new updates are available for licensed products. 
 
@@ -58,13 +58,13 @@ If you are using SCCM 1806+ [in-console publishing](https://learn.microsoft.com/
 
 The path used in the catalog metadata for any licensed updates is: **LocalHostPatchMyPCRepository**
 
-![Default Local Content Path When Using SCCM](images/SCCM-Defualt-Local-Content-Path.png)
+![Default Local Content Path When Using SCCM](/_images/SCCM-Defualt-Local-Content-Path.png "Default Local Content Path When Using SCCM")
 
 To set this path, create a shared folder on the top-level WSUS/SUP server shared as "**PatchMyPCRepository**".
 
 Once created, simply download any update installers that require manual downloads from the vendors pay portal. In the example below, we downloaded Java 8 Update 211 and Java SE Development Kit 8 Update 211 into the local content repository folder.
 
-![Local Content Installers in Folder](images/PatchMyPCRepository-Local-Content-Download.png)
+![Local Content Installers in Folder](/_images/PatchMyPCRepository-Local-Content-Download.png "Local Content Installers in Folder")
 
 You can use the right-click option to [Show package info](https://patchmypc.com/custom-options-available-for-third-party-updates-and-applications#PackageInfo) to gather details such as file name, and version which can be helpful in getting the proper content to place in the local content repository.
 
@@ -86,7 +86,7 @@ The folder you define in the **Local Content Path** will be the location the pub
 
 There are two additional options in the local content repository menu
 
-![Publisher Local Content Other Options](images/local-content-repository-options.png)
+![Publisher Local Content Other Options](/_images/local-content-repository-options.png "Publisher Local Content Other Options")
 
 **Delete the update file in the local repository after publishing**
 

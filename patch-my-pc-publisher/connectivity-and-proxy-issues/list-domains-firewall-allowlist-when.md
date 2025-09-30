@@ -29,11 +29,11 @@ In addition to the full list of domains provided below, we also store the **last
 
 The download history can be found on a CSV file in: **%InstallDir%\\PatchMyPC-DownloadHistory.csv**
 
-![PatchMyPC-DownloadHistory.csv File for Download History](images/PatchMyPC-DownloadHistory.csv-File-for-Download-History.png)
+![PatchMyPC-DownloadHistory.csv File for Download History](/_images/PatchMyPC-DownloadHistory-csv-File-for-Download-History.png "PatchMyPC-DownloadHistory.csv File for Download History")
 
 Here's an example of the data included in the **PatchMyPC-DownloadHistory.csv file**. You can use the **domain column to create firewall exceptions** based on the products enabled and failing to download.
 
-![PatchMyPC-DownloadHistory.csv Example List](images/PatchMyPC-DownloadHistory.csv-Example-List.png)
+![PatchMyPC-DownloadHistory.csv Example List](/_images/PatchMyPC-DownloadHistory-csv-Example-List.png "PatchMyPC-DownloadHistory.csv Example List")
 
 ## List of Domains Always Required
 

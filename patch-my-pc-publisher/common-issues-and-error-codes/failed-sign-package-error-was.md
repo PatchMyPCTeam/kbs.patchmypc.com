@@ -41,7 +41,7 @@ Select LocalContentCacheLocation from tbConfigurationB
 
 Ensure the paths **resolve to the same root folder** as shown below:
 
-![Validate WSUSContent Matches for Error An error occurred while publishing an update to WSUS: createdirectory failed](images/validate-path-matches-susdb-and-registry.png)
+![Validate WSUSContent Matches for Error An error occurred while publishing an update to WSUS: createdirectory failed](/_images/validate-path-matches-susdb-and-registry.png "Validate WSUSContent Matches for Error An error occurred while publishing an update to WSUS: createdirectory failed")
 
 ## Troubleshooting Step 2: If LocalContentCacheLocation Database Value doesn't Match ContentDir RegKey
 
@@ -49,7 +49,7 @@ If the database value for **LocalContentCacheLocation** **matches** the **Conten
 
 Here's an example where the WSUS content directory is different and incorrect in the database:
 
-![WSUSContent Value Does Not Match](images/Value-Does-Not-Match-WSUSContent.png)
+![WSUSContent Value Does Not Match](/_images/Value-Does-Not-Match-WSUSContent.png "WSUSContent Value Does Not Match")
 
 #### **Option 1 Fix (Recommended):**
 
@@ -73,9 +73,9 @@ Update tbConfigurationB Set LocalContentCacheLocation = 'J:\\WSUS\\WsusContent'
 
 Validate the **WSUSContent** and **UpdateServicesPackages** exist and are shared as shown below:
 
-![Validate WSUSContent and UpdateServicesPackages Folders Exist](images/Validate-WSUSContent-and-UpdateServicesPackages-Folders-Exist.png)
+![Validate WSUSContent and UpdateServicesPackages Folders Exist](/_images/Validate-WSUSContent-and-UpdateServicesPackages-Folders-Exist.png "Validate WSUSContent and UpdateServicesPackages Folders Exist")
 
-![createdirectory failed verify WSUS Shares Exist](images/Validate-WSUS-Content-Folders-Exist.png)
+![createdirectory failed verify WSUS Shares Exist](/_images/Validate-WSUS-Content-Folders-Exist.png "createdirectory failed verify WSUS Shares Exist")
 
 If the folders or shares do not exist please see **[CreateDirectory failed Error when Publishing Third-Party Updates | Patch My PC](https://patchmypc.com/an-error-occurred-while-publishing-an-update-to-wsus-createdirectory-failed#topic3)**
 

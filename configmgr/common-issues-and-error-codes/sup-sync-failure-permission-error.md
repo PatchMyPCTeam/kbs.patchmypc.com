@@ -3,9 +3,9 @@ title: "Software Update Point Sync Failure - Request for Principal Permission fa
 date: 2024-09-18
 taxonomy:
     products:
-        - configmgr
-    tech-stack:
         - 
+    tech-stack:
+        - configmgr
     solution:
         - 
     post_tag:

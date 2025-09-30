@@ -1,1 +1,0 @@
-# Supported Versions of Configuration Manager and WSUS for Patch My PC

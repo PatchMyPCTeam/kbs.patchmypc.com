@@ -3,9 +3,9 @@ title: "The Simple Guide to WSUS Maintenance and Optimization in ConfigMgr"
 date: 2021-10-18
 taxonomy:
     products:
-        - wsus
-    tech-stack:
         - 
+    tech-stack:
+        - wsus
     solution:
         - 
     post_tag:

@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - security-and-certificates
+        - troubleshooting
+        - common-issues-and-error-codes
 ---
 
 ## Determine if You are Affected
@@ -35,7 +37,7 @@ This error can be caused by a lack of permissions on the WSUSCertServer Service.
 
 9. While in this properties window, also ensure that Administrations and SYSTEM have full control of that registry key
     1. In order to complete this step "Administrators" may need to be made the owner before adding the "Full Control" permissions. Once the "Full Control" permissions are added, set the owner back to "WSUS Administrators"  
-        ![Registry Key Permissions required to adjust DCOM permissions on WSusCertServer](/_images/RegistryKeyPermissions.png "Registry Key Permissions required to adjust DCOM permissions on WSusCertServer")
+        ![Registry Key Permissions required to adjust DCOM permissions on WSusCertServer](images/RegistryKeyPermissions.png)
         
 
 11. Start dcomcnfg.exe as Administrator
@@ -46,17 +48,17 @@ This error can be caused by a lack of permissions on the WSUSCertServer Service.
 
 17. Click "Customize" under "**Launch and Activation Permissions**" then click "Edit"
      1. Ensure "Local Launch", "Remote Launch", "Local Activation", and "Remote Activation" are enabled for the following accounts: "**WSUS Administrators**", "**SYSTEM**", and "**Administrators**"  
-         ![dcomcnfg Launch and activation permissions for WSusCertServer](/_images/dcomcnfglaunchandactivationpermissions.png "dcomcnfg Launch and activation permissions for WSusCertServer")
+         ![dcomcnfg Launch and activation permissions for WSusCertServer](images/dcomcnfglaunchandactivationpermissions.png)
          
 
 19. Click "**Customize**" under "**Access Permissions**" then click "**Edit**"
      1. Ensure "**Local Access**" and "**Remote Access**" are enabled for the following accounts:  "**WSUS Administrators**", "**SYSTEM**", and "**Administrators**"  
-         ![dcomconf access permissions configuration](/_images/dcomcnfgaccesspermissions.png "dcomconf access permissions configuration")
+         ![dcomconf access permissions configuration](images/dcomcnfgaccesspermissions.png)
          
 
 21. Click "**Customize**" under "**Configuration Permissions**" then click "**Edit**"
      1. Ensure the following accounts have "Full Control": "WSUS Administrators", "SYSTEM", and "Administrators"  
-         ![dcomcnfg Configuration Permissions](/_images/dcomcnfgconfigurationpermissions.png "dcomcnfg Configuration Permissions")
+         ![dcomcnfg Configuration Permissions](images/dcomcnfgconfigurationpermissions.png)
          
 
 23. Restart the WSUSCertServer Service from Services.msc

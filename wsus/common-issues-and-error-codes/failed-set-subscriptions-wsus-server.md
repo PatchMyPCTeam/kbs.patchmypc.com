@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - known-issues-and-considerations
 ---
 
 In this video KB article, we will be reviewing an issue that can happen when a third-party vendor has been removed from the WSUS products list, but the product is still enabled in the software update points products list.
@@ -34,7 +36,7 @@ Before reviewing the resolution, we want to make sure you understand why this er
 
 If you **view the log file**, you will actually see more details on the issue
 
-![Failed to set Subscriptions on the WSUS Server. Error(-2147467259)Unspecified error](/_images/Failed-to-set-Subscriptions-on-the-WSUS-Server-Error-2147467259Unspecified-error.png "Failed to set Subscriptions on the WSUS Server. Error(-2147467259)Unspecified error")
+![Failed to set Subscriptions on the WSUS Server. Error(-2147467259)Unspecified error](images/Failed-to-set-Subscriptions-on-the-WSUS-Server.-Error-2147467259Unspecified-error.png)
 
 The root cause is one of the products for third-party vendors was r**emoved from WSUS**, but it's **still enabled in the software update point**. One common reason products may be removed from WSUS is when **[Software update maintenance](https://docs.microsoft.com/en-us/mem/configmgr/sum/deploy-use/software-updates-maintenance)** runs and then the WSUS cleanup wizard is run. Unfortunately, **ConfigMgr will not automatically un-check products that don't exist in WSUS** from the software update point products.
 
@@ -44,7 +46,7 @@ To fix this error, you will need to un-check all products that don't exist in WS
 
 Based on the error in our example log, we can see the vendor **Adobe Systems, Inc.** and **Notepad++** Team no longer exist in WSUS. In our example, we would un-check these products in our software update point.
 
-![Error(-2147467259)Unspecified error fix](/_images/Error-2147467259Unspecified-error-fix.gif "Error(-2147467259)Unspecified error fix")
+![Error(-2147467259)Unspecified error fix](images/Error-2147467259Unspecified-error-fix.gif)
 
 Once un-checked monitor the [WCM.log](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/log-files#BKMK_SU_NAPLog) to review if the error is resolved.
 

@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - known-issues-and-considerations
+        - best-practices
 ---
 
 On the 20th Septemeber 2024, [Microsoft announced](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/windows-server-update-services-wsus-deprecation/ba-p/4250436) the deprecation of **Windows Server Update Services (WSUS)**, encouraging their customers to explore more modern update management solutions. Despite this announcement, **Patch My PC customers are unaffected**. WSUS will continue to be supported in its current state, and no action is required by our customers. This article explains the deprecation in more detail and reassures customers about its non-impact on their environments.

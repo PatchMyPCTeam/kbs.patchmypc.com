@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - security-and-certificates
 ---
 
 When attempting to install third-party software updates, you receive error code **0x800b0109** or **0x8024b303.**
@@ -20,7 +22,7 @@ When attempting to install third-party software updates, you receive error code 
 
 This error generally will occur when attempting to **install third-party software updates**. You may see the following error in software center based on the **deployment visibility**.
 
-![Error-0x800b0109-Third-Party-Updates-SCCM](/_images/Error-0x800b0109-Third-Party-Updates-SCCM.png "Error-0x800b0109-Third-Party-Updates-SCCM")
+![Error-0x800b0109-Third-Party-Updates-SCCM](images/Error-0x800b0109-Third-Party-Updates-SCCM.png)
 
 In [WUAHandler.log](https://patchmypc.com/collecting-log-files-for-patch-my-pc-support#update-troubleshooting-client-logs), you will see the following error in the log.
 
@@ -43,15 +45,15 @@ It's important to review the certificate used to sign the **specific update fail
 
 **1.** Get the **UpdateID** for the update failing. The **UpdateID** can be found in the line before the error message in the **WUAHandler.log**.
 
-![Copy UpdateID for Error 0x800b0109 in WUAHandler](/_images/Copy-UpdateID-for-Error-0x800b0109-in-WUAHandler.png "Copy UpdateID for Error 0x800b0109 in WUAHandler")
+![Copy UpdateID for Error 0x800b0109 in WUAHandler](images/Copy-UpdateID-for-Error-0x800b0109-in-WUAHandler.png)
 
 **2\. Download** the update CAB file using the Configuration Manager console. Navigate to **All Software Updates** > **Search UpdateID** > **Properties** of **Update** > **Content Information** tab > **Ctrl + C** to copy the **Source Path** > **Paste** to Notepad and remove non-URL text
 
-![Copy Source Path to Download Update for Error 0x800b0109](/_images/Copy-Source-Path-to-Download-Update-for-Error-0x800b0109.png "Copy Source Path to Download Update for Error 0x800b0109")
+![Copy Source Path to Download Update for Error 0x800b0109](images/Copy-Source-Path-to-Download-Update-for-Error-0x800b0109.png)
 
 3\. **Download** or **copy** the .CAB file to the client receiving error **0x800b0109 / 0x8024b303**. On **properties** of the file, review the **Certification Path** tab, and review if there are any trust errors.
 
-![This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store](/_images/This-CA-Root-certificate-is-not-trusted-because-it-is-not-in-the-Trusted-Root-Certification-Authorities-store.png "This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store")
+![This CA Root certificate is not trusted because it is not in the Trusted Root Certification Authorities store](images/This-CA-Root-certificate-is-not-trusted-because-it-is-not-in-the-Trusted-Root-Certification-Authorities-store.png)
 
 If the certificate shows any **trust errors**, you will need to **[deploy this certificate to all client devices](/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates)**.
 
@@ -59,7 +61,7 @@ If the certificate shows any **trust errors**, you will need to **[deploy this c
 
 **4.1** Take note of the **thumbprint** of the WSUS signing certificate from the **Details** tab of the .CAB file as shown in **step 3**. Open **certlm.msc** on the client receiving the error and check if the certificate exists in both **Trusted Root** and **Trusted Publishers** certificate stores by checking the **subject name** and **thumbprint**.
 
-![Check Trusted Root and Trusted Publishers store certlm](/_images/Check-Trusted-Root-and-Trusted-Publishers-store-certlm.png "Check Trusted Root and Trusted Publishers store certlm")
+![Check Trusted Root and Trusted Publishers store certlm](images/Check-Trusted-Root-and-Trusted-Publishers-store-certlm.png)
 
 **4.2** If the certificate appears is installed in both **Trusted Root** and **Trusted Publishers**, and you still receive **0x800b0109 / 0x8024b303**, you also need to validate the setting [Allow signed updates for an intranet Microsoft update service location](#step3) is enabled and deployed.
 
@@ -73,7 +75,7 @@ To check if the policy is enabled perform the following actions:
 
 **1.** Open regedit.exe, and navigate to: **HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate:AcceptTrustedPublisherCerts=1 | (REG\_DWORD)**. If enabled, you will see the RegValue **AcceptTrustedPublisherCerts** set to **1** as a **REG\_DWORD**
 
-![AcceptTrustedPublisherCerts](/_images/AcceptTrustedPublisherCerts.png "AcceptTrustedPublisherCerts")
+![AcceptTrustedPublisherCerts](images/AcceptTrustedPublisherCerts.png)
 
 **2.** If the value isn't set, **updates will fail to install** with error **0x800b0109**. You can use a **[Configuration Manager client setting](/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates#clientsetting)** or **[group policy](https://patchmypc.com/scupcatalog/documentation/CertificateAndGPODeploymentGuide.pdf)** to deploy this policy to devices.
 
@@ -90,7 +92,7 @@ Scan failed with error = 0x80244010.
 
 To resolve the error in this scenario, you will need to install the **[Root Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority)** for the CA that issue the SSL certificate to the WSUS server on the client. One option to do this is using **[Group Policy](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/distribute-certificates-to-client-computers-by-using-group-policy)**.
 
-![  Automate 3rd Party Patching   Discover how PMPC can resolve your patching headaches  ](/_images/interactive-156207349366.png "  Automate 3rd Party Patching   Discover how PMPC can resolve your patching headaches  ")
+![  Automate 3rd Party Patching   Discover how PMPC can resolve your patching headaches  ](images/interactive-156207349366.png)
 
 ## Video Resolution Guide for Error 0x800b0109
 

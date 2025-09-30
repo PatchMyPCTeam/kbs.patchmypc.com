@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - known-issues-and-considerations
+        - best-practices
+        - licensing
 ---
 
 Microsoft Configuration Manager can throw the error in the title when the Software Update Point tries to synchronise new updates from WSUS and the update it is trying to supersede no longer has its End User Licensing Agreement (EULA) available on disk.

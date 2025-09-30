@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - log-collection-and-analysis
+        - troubleshooting
+        - education
 ---
 
 In this article, we will discuss how to enable trace logging for the Windows Update Agent on a Windows device. This can also be considered debug, or verbose logging. With this enabled the WindowsUpdate.log file, and the corresponding event logs will contain more information which is helpful for troubleshooting.
@@ -22,7 +24,7 @@ In this article, we will discuss how to enable trace logging for the Windows Upd
 
 First, a registry key must be created at the location **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate\\Trace**. The WindowsUpdate key should already exist, but the Trace key will need to be created.
 
-![](/_images/wsus-trace.png)
+![](../../_images/wsus-trace.png)
 
 Once this is created two **REG\_DWORD** values must be made as noted below, and also shown in the picture above.
 
@@ -32,7 +34,7 @@ Once this is created two **REG\_DWORD** values must be made as noted below, and 
 
 Lastly, the Windows Update service must be restarted. This can be done in many ways. The services MMC method is shown below by simply right-clicking the **Windows Update** service and selecting restart.
 
-![](/_images/windows-update-restart.png)
+![](../../_images/windows-update-restart.png)
 
 ## Enable trace logging with a PowerShell snippet
 
@@ -40,6 +42,6 @@ A script is available on GitHub [here](https://github.com/PatchMyPCTeam/Customer
 
 . "C:\\temp\\Set-WSUSTraceLogging.ps1" -TraceLogging Enabled
 
-![](/_images/wsus-enable-trace-ps1.png)
+![](../../_images/wsus-enable-trace-ps1.png)
 
 > **Note:** Once you have enabled or disabled trace logging you can collect the logs using the Get-WindowsUpdateLog PowerShell cmdlet, or review the event logs. More information regarding the Windows Update logs can be found within the Microsoft documentation found [here](https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-logs).

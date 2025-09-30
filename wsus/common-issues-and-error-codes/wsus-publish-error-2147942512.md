@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - common-issues-and-error-codes
+        - troubleshooting
+        - security
 ---
 
 In this article, we're going to review a common error code that can occur when the drive the **WSUSContent** folder is located on has no more free space available.
@@ -24,7 +26,7 @@ An error occurred while publishing an update to WSUS: failed to create cab; erro
 
 Check if the drive **hosting the WSUSContent** folder has **low disk space:**
 
-![WSUS Drive with Low Disk Space](/_images/wsus-content-drive-low-disk-space.png "WSUS Drive with Low Disk Space")
+![WSUS Drive with Low Disk Space](images/wsus-content-drive-low-disk-space.png)
 
 ## Resolution 1: Extend the disk to have more free space
 

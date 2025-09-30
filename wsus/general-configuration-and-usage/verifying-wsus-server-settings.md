@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - general-configuration-and-usage
+        - troubleshooting
+        - best-practices
 ---
 
 This topic covers typical WSUS Server settings as recommended by Microsoft.

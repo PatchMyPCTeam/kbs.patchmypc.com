@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - wsus
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - general-configuration-and-usage
+        - best-practices
+        - troubleshooting
 ---
 
 ## Description
@@ -28,19 +30,19 @@ Standalone WSUS mode is **only required when you are not using Configuration Man
 
 To enable standalone WSUS mode, go to the **Updates** tab and select **Options**. In the **WSUS options** window check the box **Make updates appear in the WSUS console. This option isn’t needed if using Configuration Manager.**
 
-![](/_images/standalone-WSUS-2.png)
+![](../../_images/standalone-WSUS-2.png)
 
 If your WSUS database is using a **Windows Internal Database** (WID), the **database connection options will be read-only**.
 
 When using a **SQL Server for the WSUS database**, you will need to choose either to connect to the database using the **SYSTEM account** or define a user name and password using **SQL authentication**.
 
-![Connect as SYSTEM for WSUS](/_images/connection-options-wsus-standalone-mode.png "Connect as SYSTEM for WSUS")
+![Connect as SYSTEM for WSUS](images/connection-options-wsus-standalone-mode.png)
 
 ## Verify Third-Party Updates Appear in the WSUS Console
 
 Any updates published after this setting was enabled should appear directly in the WSUS console.
 
-![](/_images/standalone-WSUS-3.png)
+![](../../_images/standalone-WSUS-3.png)
 
 You can now deploy the third-party updates just like a Microsoft update **directly from the WSUS console**.
 

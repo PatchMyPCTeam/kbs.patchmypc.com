@@ -5,15 +5,14 @@ taxonomy:
     products:
         - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
+        - intune
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
         - migration
-        - configmgr
-        - intune
 ---
 
 This article provides a detailed step-by-step guide on how to make this transition, ensuring a seamless and efficient patch management process.  

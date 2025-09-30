@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - intune
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - best-practices
+        - migration
+        - cloud-integration
 ---
 
 At Patch My PC, we currently offer two solutions designed to simplify the process of publishing third-party software in Intune.

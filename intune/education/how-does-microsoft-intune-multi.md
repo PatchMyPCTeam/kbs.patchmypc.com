@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - intune
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - education
+        - best-practices
+        - migration
 ---
 
 The Microsoft Intune [Multi Admin Approval](https://learn.microsoft.com/en-us/mem/intune/fundamentals/multi-admin-approval) (MAA) feature introduces the option for administrators to add an additional layer of security when creating or modifying scripts and apps in Intune by requiring admin approval before changes become effective.
@@ -24,10 +26,10 @@ MAA only affects changes to applications when the **delegated authentication flo
 
 Here is an example of the MAA feature in action within the Intune Admin Center. When an assignment is removed from a Win32 app, the change must be approved.
 
-![](/_images/MAA-Intune_Admin_Center.jpg)
+![](../../_images/MAA-Intune_Admin_Center.jpg)
 
 Here is another example of a response when using a delegated authentication flow to make changes to a Win32 app when a MAA access policy has been created.
 
-![Multi Admin Approval prompt](/_images/MAA.png "Multi Admin Approval prompt")
+![Multi Admin Approval prompt](images/MAA.png)
 
 Patch My PC Cloud and Patch My PC Publisher utilises the the **application** authentication flow, not a delegated authentication flow. This is why our products are unaffected by any MAA access policies.

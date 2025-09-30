@@ -5,13 +5,15 @@ taxonomy:
     products:
         - 
     tech-stack:
-        - 
+        - intune
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - scripts
+        - troubleshooting
+        - automation
 ---
 
 This article discusses the "PowerShell script requirement rule is not met" status you get when deploying Intune Updates through the Patch My PC Publisher.
@@ -22,7 +24,7 @@ When you deploy [Intune Updates](https://patchmypc.com/intune-apps-vs-intune-upd
 
 The status details in such cases will state **Powershell script requirement rule is not met**.
 
-![PowerShell script requirement rule is not met.](/_images/Requirements-not-met.png "PowerShell script requirement rule is not met.")
+![PowerShell script requirement rule is not met.](images/Requirements-not-met.png)
 
 ## [Additional information](#additionalinformation)
 

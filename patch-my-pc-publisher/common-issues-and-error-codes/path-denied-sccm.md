@@ -9,7 +9,7 @@ taxonomy:
     solution:
         - 
     post_tag:
-        - 
+        - access-denied
     sub-solutions:
         - common-issues-and-error-codes
         - troubleshooting

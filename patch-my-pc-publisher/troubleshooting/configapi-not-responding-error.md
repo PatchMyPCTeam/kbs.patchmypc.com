@@ -3,15 +3,17 @@ title: "ConfigApi is not responding. An unhandled exception occurred"
 date: 2024-10-10
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
-        - 
+        - configapi
     sub-solutions:
-        - 
+        - troublsheshooting
+        - common-issues-and-error-codes 
+        - connectivity-and-proxy-issues
 ---
 
 In this article we troubleshoot why this error might occur when launching the Patch My PC Publisher UI and how to resolve it.

@@ -9,7 +9,7 @@ taxonomy:
     solution:
         - 
     post_tag:
-        - 
+        - msp
     sub-solutions:
         - custom-apps
         - education

@@ -3,15 +3,17 @@ title: "Troubleshooting Why Third-Party Updates Don't Show in SCCM"
 date: 2019-08-28
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - common-issues-and-error-codes
+        - patching
 ---
 
 In this article, we will review the process to troubleshoot why **third-party software update(s) may not appear in the SCCM** console All Software Updates node.

@@ -3,15 +3,17 @@ title: "Troubleshooting Patch My PC Application Detection"
 date: 1970-01-01
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - application-and-update-publishing
+        - common-issues-and-error-codes
 ---
 
 # Troubleshooting Patch My PC Application Detection

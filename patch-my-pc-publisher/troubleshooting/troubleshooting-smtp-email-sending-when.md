@@ -3,15 +3,17 @@ title: "Troubleshooting SMTP Email Sending When Using Patch My PC"
 date: 2019-10-19
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - connectivity-and-proxy-issues
+        - common-issues-and-error-codes
 ---
 
 This article covers steps you can take to troubleshoot emails failing to send within our publishing service. Our **[automated email reports](/email-alerts-for-newly-published-third-party-products)** can be helpful to keep you informed when third-party products are publishing. These emails contain a lot of useful details like release notes, update classification, severity levels, and CVE IDs, as shown below:

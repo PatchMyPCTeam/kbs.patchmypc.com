@@ -9,7 +9,7 @@ taxonomy:
     solution:
         - 
     post_tag:
-        - 
+        - visual-studio-2022
     sub-solutions:
         - customizations
         - application-and-update-publishing

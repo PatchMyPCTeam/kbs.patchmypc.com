@@ -3,15 +3,17 @@ title: "Troubleshooting License Activation Issues (Invalid License ID.)"
 date: 2019-11-01
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - licensing
+        - security
 ---
 
 This article details common reasons why the **license validation may fail** within our [Publisher](/docs). If you're facing a license activation error similar to below, this will be the guide for you!

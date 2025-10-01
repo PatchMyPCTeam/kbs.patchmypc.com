@@ -3,15 +3,17 @@ title: "Intune Win32 app \"Allow Available Uninstall\""
 date: 2024-05-20
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - deployments
+        - application-and-update-publishing
 ---
 
 In this KB we will cover the expected behavior of the "Available Uninstall" feature for Win32 apps published by Patch My PC. You can configure this feature within the Patch My PC Publisher before publishing an Intune app, or manually from the Intune Admin Centre after publishing an app. We will explore both options in this guide.

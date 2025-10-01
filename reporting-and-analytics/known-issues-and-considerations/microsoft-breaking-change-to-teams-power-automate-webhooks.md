@@ -9,7 +9,7 @@ taxonomy:
     solution:
         - reporting-and-analytics
     post_tag:
-        - 
+        - alerts
     sub-solutions:
         - known-issues-and-considerations
         - best-practices

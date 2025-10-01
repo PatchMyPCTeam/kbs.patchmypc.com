@@ -3,15 +3,18 @@ title: "How to use Process Monitor to help diagnose publishing issues"
 date: 2023-12-29
 taxonomy:
     products:
-        - 
+        - patch-my-pc-publisher
     tech-stack:
-        - 
+        - configmgr
     solution:
         - 
     post_tag:
         - 
     sub-solutions:
-        - 
+        - troubleshooting
+        - log-collection-and-analysis
+        - education
+
 ---
 
 In the following article we will show you how to use Process Monitor (procmon) from Sysinternals to collect file system, registry and process events to assist a Patch My PC support engineer with diagnosing publishing issues in both WSUS and ConfigMgr.

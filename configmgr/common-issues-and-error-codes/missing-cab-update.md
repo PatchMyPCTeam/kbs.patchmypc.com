@@ -9,7 +9,9 @@ taxonomy:
     solution:
         - 
     post_tag:
-        - 
+        - 0x87d20417
+        - error-code-404
+        - missing-content
     sub-solutions:
         - common-issues-and-error-codes
         - troubleshooting

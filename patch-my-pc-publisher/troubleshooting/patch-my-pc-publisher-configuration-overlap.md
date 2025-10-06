@@ -1,4 +1,18 @@
-# Patch My PC Publisher Configuration Overlap
+---
+title: "Patch My PC Publisher Configuration Overlap""
+date: 2024-10-06
+taxonomy:
+    products:
+        - patch-my-pc-publisher
+    tech-stack:
+        - configmgr
+    solution:
+        - 
+    post_tag:
+        - 
+    sub-solutions:
+        - troubleshooting
+---
 
 This article is designed to help customers ensure their Patch My PC Publisher configuration is accurate and aligned with its intended purpose.
 

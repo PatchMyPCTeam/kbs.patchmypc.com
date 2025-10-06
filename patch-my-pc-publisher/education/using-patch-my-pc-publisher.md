@@ -1,26 +1,28 @@
 ---
-title: "Using Patch My PC Publisher with Azure Update Manager"
-date: 2024-12-19
+title: Using Patch My PC Publisher with Azure Update Manager
+date: 2024-12-19T00:00:00.000Z
 taxonomy:
-    products:
-        - patch-my-pc-publisher
-    tech-stack:
-        - 
-    solution:
-        - 
-    post_tag:
-        - 
-    sub-solutions:
-        - education
-        - general-configuration-and-usage
-        - best-practices
+  products:
+    - patch-my-pc-publisher
+  tech-stack:
+    - null
+  solution:
+    - null
+  post_tag:
+    - null
+  sub-solutions:
+    - education
+    - general-configuration-and-usage
+    - best-practices
 ---
+
+# Using Patch My PC Publisher
 
 In this article, we discuss the high-level steps for implementation and key considerations when using Azure Update Manager (AUM) to manage third-party updates.
 
 While Patch My PC does not integrate directly with AUM, this knowledge base article aims to assist customers already using Azure Arc and AUM in incorporating third-party patching into their existing update management workflows.
 
-## What is Azure Update Manager (AUM)
+### What is Azure Update Manager (AUM)
 
 As customers consider the new technologies and management platforms on offer from Microsoft, many will adopt Microsoft Intune to manage their user devices. This can ultimately lead them to reconsider the need for Configuration Manager for their remaining server estate. This "mindset shift to cloud" also raises questions about how to handle server patching. As customers might already be using Azure in some capacity, AUM automatically becomes very topical in these conversations as "something we could adopt".
 
@@ -30,13 +32,13 @@ Most third-party software vendors provide updates in the form of catalogs, speci
 
 The screenshot below shows first-party updates identified as required during a scan of Microsoft Update, and third-party updates identified as required during a scan of a local WSUS instance.
 
-![](/_images/AUM_Configuration2-1.jpg)
+![](../../_images/AUM_Configuration2-1.jpg)
 
-## Scenarios
+### Scenarios
 
 While AUM is an excellent tool for managing Microsoft first-party updates, customers requiring third-party patching must still incorporate WSUS into their update strategy. Below are two common scenarios where AUM and WSUS work together.
 
-### 1\. Using AUM with WSUS for All Updates
+#### 1. Using AUM with WSUS for All Updates
 
 While AUM provides powerful orchestration and compliance capabilities, it does not eliminate the need for WSUS. AUM has no native support for third-party updates outside of WSUS, making WSUS a critical component for any organization requiring comprehensive patch management. Customers should plan accordingly to maintain their WSUS infrastructure and understand its role in supporting both first-party and third-party updates in hybrid or multi-cloud environments.
 
@@ -44,44 +46,36 @@ In this scneario, WSUS is deployed either on-premises or in Azure and serves as 
 
 For customers transitioning from Configuration Manager, it is important to recognize that WSUS updates now require approval, either manually or with automatic approvals, ensuring that both Microsoft and third-party updates are available for deployment.
 
-#### How does it work?
+**How does it work?**
 
 1. **Patch My PC Publisher** publishes third-party updates to WSUS.
+2. **WSUS** Synchronizes first-party updates from Microsoft Update and serves as the distribution point for third-party updates, hosting the necessary metadata and content.
+3. Updates are **approved** for devices (either manually or using automatic approval rules in WSUS).
+4. **AUM** connects to Azure Arc-enabled servers and orchestrates the installation of updates, while WSUS ensures both Microsoft and third-party updates and content are accessible.
 
-3. **WSUS** Synchronizes first-party updates from Microsoft Update and serves as the distribution point for third-party updates, hosting the necessary metadata and content.
-
-5. Updates are **approved** for devices (either manually or using automatic approval rules in WSUS).
-
-7. **AUM** connects to Azure Arc-enabled servers and orchestrates the installation of updates, while WSUS ensures both Microsoft and third-party updates and content are accessible.
-
-#### Who is it for?
+**Who is it for?**
 
 Organizations that want a single WSUS instance to handle all update management and maintain full control over patch approval and distribution.
 
 This option **must** also be used for customers wishing to install third-party updates on servers with an operating system **older than Windows Server 2022**. This is because Scan Source is not supported on older operating systems, meaning the devices cannot scan both Microsoft Update and WSUS simultaneously.
 
-### 2\. Using AUM with Windows Update for First-Party Updates and WSUS for Third-Party Updates
+#### 2. Using AUM with Windows Update for First-Party Updates and WSUS for Third-Party Updates
 
 In this scenario, Patch My PC Publisher manages the publishing of third-party updates to a WSUS instance, while first-party updates are obtained directly from Microsoft Update using the "scan source" configuration. AUM continues to orchestrate the assessment and deployment of updates, leveraging Azure Arc to manage on-premises servers. This approach significantly minimizes reliance on WSUS, as it is configured solely for third-party patching rather than handling the entire breadth of Microsoft first-party updates.
 
 By avoiding the need to configure WSUS for first-party updates, you drastically reduce the number of updates managed within the WSUS database. This optimization addresses some of WSUS's most notorious challenges, including bloated metadata, increased maintenance overhead, and performance degradation that can occur when managing thousands of updates. In this streamlined setup, WSUS is reserved exclusively for third-party updates, allowing it to operate more efficiently while still enabling AUM to handle patch compliance and orchestration for both first-party and third-party updates.
 
-#### How does it work?
+**How does it work?**
 
-1. **Patch My PC Publisher**Â publishes third-party updates to WSUS.
+1. **Patch My PC Publisher**Â publishes third-party updates to WSUS.
+2. **WSUS**Â serves as the distribution point for third-party updates, hosting the necessary metadata and content.
+3. Updates are **approved** for devices (either manually or using automatic approval rules in WSUS).
+4. **Scan Source** configuration allows endpoints to:
+   * Retrieve Microsoft first-party updates directly from Microsoft Update.
+   * Retrieve third-party updates from WSUS which were published by Patch My PC Publisher.
+5. **AUM**Â connects to Azure Arc-enabled servers to orchestrate update compliance and installation for both first-party and third-party updates.
 
-3. **WSUS**Â serves as the distribution point for third-party updates, hosting the necessary metadata and content.
-
-5. Updates are **approved** for devices (either manually or using automatic approval rules in WSUS).
-
-7. **Scan Source** configuration allows endpoints to:
-    - Retrieve Microsoft first-party updates directly from Microsoft Update.
-    
-    - Retrieve third-party updates from WSUS which were published by Patch My PC Publisher.
-
-9. **AUM**Â connects to Azure Arc-enabled servers to orchestrate update compliance and installation for both first-party and third-party updates.
-
-#### Who is it for?
+**Who is it for?**
 
 Customers transitioning to a cloud-first model but still requiring robust third-party patching capabilities. This approach is ideal for those looking to reduce on-premises content storage requirements by shifting first-party update handling to Microsoft Update.
 
@@ -89,182 +83,176 @@ This option can **only** be used for customers wishing to install third-party up
 
 > **Note:** By downloading first-party updates directly from Microsoft Update, organizations can significantly reduce the storage requirements for WSUS, as first-party update content no longer needs to be stored locally. However, since each server downloads its first-party updates directly from the internet, organizations must plan for potential bandwidth impacts. Unlike Configuration Manager, which can efficiently distribute content via on-premises distribution points, this approach may lead to higher network usage for large deployments.
 
-## OS Requirements
+### OS Requirements
 
 The following Windows operating systems are supported for use with AUM:-
 
-- Windows Server 2012 R2 and higher (including Server Core) **\***
+* Windows Server 2012 R2 and higher (including Server Core) **\***
 
 Windows 10 and 11 clients are not supported by AUM. If customers are seeking a cloud only solution for client patch management, Microsoft Intune is recommended to manage and orchestrate update workloads using the Win32 app model.
 
-> _**\* IMPORTANT:** While AUM supports Server 2012 R2 and higher, customers intending to adopt the scan source approach described in [Scenario 2](#scenario2) must use Server 2022 or higher for the servers they wish to manage. This is because 2022 and later versions of Windows Server support the Windows Update client to scan both WSUS and Windows Update simultaneously._
+> _**\* IMPORTANT:** While AUM supports Server 2012 R2 and higher, customers intending to adopt the scan source approach described in_ [_Scenario 2_](using-patch-my-pc-publisher.md#scenario2) _must use Server 2022 or higher for the servers they wish to manage. This is because 2022 and later versions of Windows Server support the Windows Update client to scan both WSUS and Windows Update simultaneously._
 
-## Policy Requirements
+### Policy Requirements
 
 The following policy settings should be reviewed to ensure devices are able to assess and install third-party updates orchestrated by AUM.
 
-### 1\. Configure the WSUS Server Location (Required)
+#### 1. Configure the WSUS Server Location (Required)
 
 The client will need pointing to the WSUS instance for compliance reporting and to know where to get update copntent from. If you are moving from ConfigMgr for patching, these settings may already be configured in the local policy.
 
-#### Using the Registry Editor
+**Using the Registry Editor**
 
-Set the **WUServer** registry value to your **http(s)** **WSUS instance (REG\_SZ)**
+Set the **WUServer** registry value to your **http(s)** **WSUS instance (REG\_SZ)**
 
-`WUServer = https://MyWSUSServer.contoso.com:8531   WUStatusServer = https://MyWSUSServer.contoso.com:8531`
+`WUServer = https://MyWSUSServer.contoso.com:8531 WUStatusServer = https://MyWSUSServer.contoso.com:8531`
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate`
 
 **Note:** The **WUStatusServer** is not strictly required but it will be set if you use GPO or Local Policy Editor to confiure the WUServer location.
 
-#### Using the ADMX Template
+**Using the ADMX Template**
 
-Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
+Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update\
 **Specify intranet Microsoft update service location**
 
-Set the intranet update service for detecting updates = https://MyWSUSServer.contoso.com:8531  
+Set the intranet update service for detecting updates = https://MyWSUSServer.contoso.com:8531\
 Set the intranet statistics server = https://MyWSUSServer.contoso.com:8531
 
-![](/_images/admx_1.jpg)
+![](../../_images/admx_1.jpg)
 
-### 2\. Configure the UseWUServer Policy (Required)
+#### 2. Configure the UseWUServer Policy (Required)
 
-#### Using the Registry Editor
+**Using the Registry Editor**
 
 The **UseWUServer** policy setting specifies whether the device should get its updates from a WSUS server or directly from Microsoft Update.
 
-Set the **UseWUServer**  registry value to **1 (DWORD)**
+Set the **UseWUServer**  registry value to **1 (DWORD)**
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`  
+`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`\
 `UseWUServer = 1` -- -
 
-#### Using the ADMX Template
+**Using the ADMX Template**
 
 When you configure **specify the intranet Microsoft update service location** using the ADMX tempalte, this policy is automatically configured and set to 1.
 
-### 3\. Configure an Automatic Approval Rule in WSUS (Required)
+#### 3. Configure an Automatic Approval Rule in WSUS (Required)
 
 Configure an automatic approval rule in WSUS to ensure that third-party updates, are downloaded and available for deployment by AUM.
 
 This is essential because AUM relies on WSUS to host the necessary update metadata and content for the devices it orchestrates patching for.
 
-![](/_images/AUM_Approval.jpg)
+![](../../_images/AUM_Approval.jpg)
 
-### 4\. Accept Trusted Publisher Certifcates (Required)
+#### 4. Accept Trusted Publisher Certifcates (Required)
 
 The **AcceptTrustedPublisherCerts** policy allows you to specify whether the Windows update client accepts and processes updates signed by entities other than Microsoft, like Patch My PC, when the update is found on an intranet Microsoft update service location.
 
-#### Using the Registry Editor
+**Using the Registry Editor**
 
-Set the **AcceptTrustedPublisherCerts** registry value to **1 (DWORD)**
+Set the **AcceptTrustedPublisherCerts** registry value to **1 (DWORD)**
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate`  
+`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate`\
 `AcceptTrustedPublisherCerts = 1`
 
-#### Using the ADMX Template
+**Using the ADMX Template**
 
-Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
-**Allow signed updates from an intranet Microsoft update service location** \= Enabled
+Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update\
+**Allow signed updates from an intranet Microsoft update service location** = Enabled
 
-![](/_images/admx_2.jpg)
+![](../../_images/admx_2.jpg)
 
 > **Note:** By downloading first-party updates directly from Microsoft Update, organizations can significantly reduce the storage requirements for WSUS, as first-party update content no longer needs to be stored locally. However, since each server downloads its first-party updates directly from the internet, organizations must plan for potential bandwidth impacts. Unlike Configuration Manager, which can efficiently distribute content via on-premises distribution points, this approach may lead to higher network usage for large deployments.
 
-### 5\. Disable Automatic Updates (Optional)
+#### 5. Disable Automatic Updates (Optional)
 
 To ensure that the Windows Update agent does not take independent actions, such as downloading or installing updates outside of AUM's control, configure the system to disable automatic updates. This setting ensures AUM retains full control over the patching process.
 
-#### Using the Registry Editor
+**Using the Registry Editor**
 
-Set the **NoAutoUpdate** registry value to 1 **(DWORD)**
+Set the **NoAutoUpdate** registry value to 1 **(DWORD)**
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`  
+`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`\
 `NoAutoUpdate = 1`
 
-#### Using the ADMX Template
+**Using the ADMX Template**
 
-Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
+Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update\
 **Configure Automatic Updates** = Disabled
 
-![](/_images/admx_3.jpg)
+![](../../_images/admx_3.jpg)
 
-## Scan Source Requirements (for Scenario 2)
+### Scan Source Requirements (for Scenario 2)
 
-If your intent is to use WSUS **only** for third-party updates as detailed in [Scenario 2](#scenario2), you will need to configure Scan Source policy to instruct the Windows Update agent to scan both WSUS and the Windows Update service.
+If your intent is to use WSUS **only** for third-party updates as detailed in [Scenario 2](using-patch-my-pc-publisher.md#scenario2), you will need to configure Scan Source policy to instruct the Windows Update agent to scan both WSUS and the Windows Update service.
 
 **Note:** Utilizing Scan Source to use Windows Update for Business and WSUS together is very well documented at:- [https://learn.microsoft.com/en-us/windows/deployment/update/wufb-wsus](https://learn.microsoft.com/en-us/windows/deployment/update/wufb-wsus)
 
-The following Scan Source settings are documented well at:- 
-[https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update)
+The following Scan Source settings are documented well at:- [https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update](https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-update)
 
 Scan Source controls which update source the Windows Update agent will scan and honor for Feature, Driver, Quality and Other Updates (Note: Other does not mean third-party in this context). If your intent is for all Windows first-party updates to come from Windows Update, and all third-party updates to come from WSUS, configure all Scan Source policies to zero.
 
-#### Using the Registry Editor
+**Using the Registry Editor**
 
-Set the following registry values to **0 (DWORD)**
+Set the following registry values to **0 (DWORD)**
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate`
 
-`SetPolicyDrivenUpdateSourceForFeatureUpdates = 0`  
-`SetPolicyDrivenUpdateSourceForDriverUpdates = 0`  
-`SetPolicyDrivenUpdateSourceForOtherUpdates = 0`  
+`SetPolicyDrivenUpdateSourceForFeatureUpdates = 0`\
+`SetPolicyDrivenUpdateSourceForDriverUpdates = 0`\
+`SetPolicyDrivenUpdateSourceForOtherUpdates = 0`\
 `SetPolicyDrivenUpdateSourceForQualityUpdates = 0`
 
-Additionally, set the UseUpdateClassPolicySource registry key to complete scan source configuration. Set the **UseUpdateClassPolicySource** registry value to **1 (DWORD)**
+Additionally, set the UseUpdateClassPolicySource registry key to complete scan source configuration. Set the **UseUpdateClassPolicySource** registry value to **1 (DWORD)**
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`  
+`HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU`\
 `UseUpdateClassPolicySource = 1`
 
-#### Using the ADMX Template
+**Using the ADMX Template**
 
-Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update  
-**Specify source service for specific classes of Windows Updates** \= Windows Update
+Computer Configuration > Administrative Templates > Windows Components > Windows > Windows Update\
+**Specify source service for specific classes of Windows Updates** = Windows Update
 
-![](/_images/admx_4.jpg)
+![](../../_images/admx_4.jpg)
 
-**Note:  
-**There is no scan source class specifically for third-party updates. "Other Updates" does not mean third-party updates.  
-**Scan source Key to Value:**Windows Update = 0  
+\*\*Note:\
+\*\*There is no scan source class specifically for third-party updates. "Other Updates" does not mean third-party updates.\
+\*\*Scan source Key to Value:\*\*Windows Update = 0\
 WSUS = 1
 
 > **Important:** Scan Source only works for Windows Server 2022 + even though AUM is supported on Windows Server 2012R2 +
 
-## Install on Demand
+### Install on Demand
 
 Currently, AUM's "install on demand" functionality, specifically for third-party updates from the Patch My PC catalog, has certain limitations. AUM relies on update IDs that follow a specific format traditionally used by Microsoft's updates, which differs from the `PMPC-year-month-day` format used in the Patch My PC catalog. This incompatibility can prevent AUM from targeting specific third-party updates for on-demand installation, as the update IDs do not align with the expectations of AUM's mechanisms.
 
-![](/_images/AUM_Configuration2.jpg)
+![](../../_images/AUM_Configuration2.jpg)
 
 Patch My PC is exploring whether it is feasible to adopt a more compatible KB ID format for updates in our catalog to improve targeting capabilities. However, this effort is still in the exploratory phase, and no confirmed timeline is available for implementation. Customers should take this into account when planning third-party update orchestration with AUM, especially if they require precise on-demand installation functionality.
 
-## Maintenance Configuration
+### Maintenance Configuration
 
 A commonly overlooked configuration when using AUM to orchestrate third-party updates is ensuring that the "Updates" classification is included in the maintenance configuration.
 
 Ensure the **Updates** classification is included for **Windows** operating systems in your maintenance configuration.
 
-![](/_images/AUM_Configuration.jpg)
+![](../../_images/AUM_Configuration.jpg)
 
-## Useful Logs
+### Useful Logs
 
 The following logs are useful to understand the assessment and orchestration of updates usin AUM.
 
-- **Windows Update Logs:**
-    - This log provides details about update scans, downloads, and installations. It also allows you to check which update source the device is scanning against.
-    
-    - Location: Use `Get-WindowsUpdateLog` to generate this log file.
+* **Windows Update Logs:**
+  * This log provides details about update scans, downloads, and installations. It also allows you to check which update source the device is scanning against.
+  * Location: Use `Get-WindowsUpdateLog` to generate this log file.
+* **Event Viewer Logs:**
+  * **Path:** `Applications and Services Logs > Microsoft > Windows > WindowsUpdateClient`
+  * This event log is useful for tracking update installation progress and errors
+* **Windows Update Extension Log:**
+  * **Path:** `C:\ProgramData\GuestConfig\extension_logsMicrosoft.SoftwareUpdateManagement.WindowsOsUpdateExtensionWindowsUpdateExtension.log`
+  * This log is specifically used for troubleshooting **update orchestration and management** by the **Azure Update Manager** (AUM) or other Azure-based update mechanisms
 
-- **Event Viewer Logs:**
-    - **Path:** `Applications and Services Logs > Microsoft > Windows > WindowsUpdateClient`
-    
-    - This event log is useful for tracking update installation progress and errors
-
-- **Windows Update Extension Log:**
-    - **Path:** `C:\ProgramData\GuestConfig\extension_logsMicrosoft.SoftwareUpdateManagement.WindowsOsUpdateExtensionWindowsUpdateExtension.log`
-    
-    - This log is specifically used for troubleshooting **update orchestration and management** by the **Azure Update Manager** (AUM) or other Azure-based update mechanisms
-
-## Troubleshooting
+### Troubleshooting
 
 AUM plays a crucial role in the assessment and orchestration of Windows Updates, primarily focusing on determining update applicability and managing the scheduling of patch deployments. However, it relies heavily on the underlying Windows Update Agent to execute the actual update scan, download, and installation processes. As such, most troubleshooting steps for AUM overlap with traditional troubleshooting approaches for WSUS and Windows Update configurations.
 
@@ -282,10 +270,10 @@ Ensure there are no conflicting group policies or local policies affecting the u
 
 **Certificate Issues:**
 
-For third-party updates, confirm that the code-signing certificate is correctly deployed to the target devices.  
+For third-party updates, confirm that the code-signing certificate is correctly deployed to the target devices.\
 Ensure the certificate is placed in the Trusted Publishers store, and if it's self-signed, also in the Trusted Root Certification Authorities store.
 
-See this article for more information on deploying the code-signing certificate used for third-party updates [https://patchmypc.com/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates](https://patchmypc.com/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates) 
+See this article for more information on deploying the code-signing certificate used for third-party updates [https://patchmypc.com/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates](https://patchmypc.com/how-to-deploy-the-wsus-signing-certificate-for-third-party-software-updates)&#x20;
 
 **Network and Connectivity Problems:**
 

@@ -1,40 +1,42 @@
 ---
-title: "How to Remove Already Published Third-Party Software Updates"
-date: 2020-08-19
+title: How to Remove Already Published Third-Party Software Updates
+date: 2020-08-19T00:00:00.000Z
 taxonomy:
-    products:
-        - patch-my-pc-publisher
-    tech-stack:
-        - 
-    solution:
-        - 
-    post_tag:
-        - 
-    sub-solutions:
-        - workarounds
-        - general-configuration-and-usage
-        - best-practices
+  products:
+    - patch-my-pc-publisher
+  tech-stack:
+    - null
+  solution:
+    - null
+  post_tag:
+    - null
+  sub-solutions:
+    - workarounds
+    - general-configuration-and-usage
+    - best-practices
 ---
 
-In some cases, you may want to remove third-party updates that have already been published to WSUS from Patch My PC. To perform this task, you will need to use the [modify published updates wizard](https://patchmypc.com/modify-published-third-party-updates-wizard) in the [Publisher](/publishing-service-setup-documentation).
+# How Remove Already Published Third
 
-## Unchecking a Product doesn't Remove Previously Published Updates
+In some cases, you may want to remove third-party updates that have already been published to WSUS from Patch My PC. To perform this task, you will need to use the [modify published updates wizard](https://patchmypc.com/modify-published-third-party-updates-wizard) in the [Publisher](../../publishing-service-setup-documentation/).
+
+### Unchecking a Product doesn't Remove Previously Published Updates
 
 If you uncheck a product in the **Updates** tab, it will cause no future updates to be published for that specific product, but it will **not cause existing updates** that have been already published to be removed.
 
-![Unchecked Third-Party Update Patch My PC](/_images/UnChecking-Product-PatchMyPC-Updates.gif "Unchecked Third-Party Update Patch My PC")
+![Unchecked Third-Party Update Patch My PC](../../_images/UnChecking-Product-PatchMyPC-Updates.gif)
 
-> **Note:**  If you want to remove already published updates for the product, you will need to **[decline the existing updates](#topic2)**.
+> **Note:**  If you want to remove already published updates for the product, you will need to [**decline the existing updates**](how-remove-already-published-third.md#topic2).
 
-## Show and Decline Only Updates for Not Enabled Products
+### Show and Decline Only Updates for Not Enabled Products
 
 The **All Enabled Status** dropdown allows you to select **Not Enabled** to show any updates published from the **Patch My PC's catalog** that are not currently enabled in the **Updates** tab.
 
-![](/_images/Not-enabled-products.png)
+![](../../_images/Not-enabled-products.png)
 
 > **Note**: The **Not Enabled** dropdown option can be a great option to **decline** or **delete** old updates for products not currently enabled.
 
-## Decline the Third-Party Updates Based on Filters
+### Decline the Third-Party Updates Based on Filters
 
 To remove existing updates already published, you will need to **decline** the updates.
 
@@ -42,28 +44,28 @@ Within the Publisher, go to the "**Updates**" tab, click "**Options**", then cli
 
 Select the updates you would like to remove from WSUS/SCCM and click the "**Decline Selected Updates**".
 
-![Filter and Remove Third-Party Update](/_images/filter-and-decline-update.png "Filter and Remove Third-Party Update")
+![Filter and Remove Third-Party Update](../../_images/filter-and-decline-update.png)
 
-After the updates are declined in the Publisher, you can manually **sync your software update point** in SCCM for the changes to occur immediately.
+After the updates are declined in the Publisher, you can manually **sync your software update point** in SCCM for the changes to occur immediately.
 
-![sync sccm software update point for declined updates](/_images/sync-sccm-software-update-point-for-declined-updates.png "sync sccm software update point for declined updates")
+![sync sccm software update point for declined updates](../../_images/sync-sccm-software-update-point-for-declined-updates.png)
 
-After the software update point sync is complete, you should see the **declined updates show as expired** in SCCM and will no longer be deployed. In the example below, you can see the declined 7-Zip updates show expired.
+After the software update point sync is complete, you should see the **declined updates show as expired** in SCCM and will no longer be deployed. In the example below, you can see the declined 7-Zip updates show expired.
 
-![updates marked as expired in sccm](/_images/updates-marked-as-expired-in-sccm.png "updates marked as expired in sccm")
+![updates marked as expired in sccm](../../_images/updates-marked-as-expired-in-sccm.png)
 
-> **Note:** Expired updates will be automatically purged from the Configuration Manager after **7 days**.
+> **Note:** Expired updates will be automatically purged from the Configuration Manager after **7 days**.
 
-## Removing/Filtering Specific Updates from Automatic Deployment Rules
+### Removing/Filtering Specific Updates from Automatic Deployment Rules
 
 In some scenarios, you may simply want to remove **specific updates** from an automatic deployment rule. You can use the **title filter** to exclude the specific update title from the ADR search criteria.
 
 Here's an example of an ADR that will deploy **all Patch My PC updates** with no filters:
 
-![SCCM ADR with No Filters](/_images/no-adr-title-filter.png "SCCM ADR with No Filters")
+![SCCM ADR with No Filters](../../_images/no-adr-title-filter.png)
 
-Here's how you can add a **title filter** if you wanted to exclude **any 7-Zip update** from your ADR. **Title: -7-Zip**
+Here's how you can add a **title filter** if you wanted to exclude **any 7-Zip update** from your ADR. **Title: -7-Zip**
 
-![ADR Exclude Title Filter SCCM](/_images/ADR-Exclude-Title-Filter-SCCM.png "ADR Exclude Title Filter SCCM")
+![ADR Exclude Title Filter SCCM](../../_images/ADR-Exclude-Title-Filter-SCCM.png)
 
-A full list of update title names for all product can be found at [Excluding Specific Products from ADRs in Microsoft SCCM with Patch My PC](/filtering-specific-third-party-product-from-adrs-in-microsoft-sccm-patch-my-pc-update-catalog#titlenames)
+A full list of update title names for all product can be found at [Excluding Specific Products from ADRs in Microsoft SCCM with Patch My PC](../../filtering-specific-third-party-product-from-adrs-in-microsoft-sccm-patch-my-pc-update-catalog/#titlenames)

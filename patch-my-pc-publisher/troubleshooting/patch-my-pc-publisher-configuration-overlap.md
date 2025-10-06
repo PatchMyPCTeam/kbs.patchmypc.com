@@ -1,5 +1,5 @@
 ---
-title: "Patch My PC Publisher Configuration Overlap""
+title: "Patch My PC Publisher Configuration Overlap"
 date: 2024-10-06
 taxonomy:
     products:

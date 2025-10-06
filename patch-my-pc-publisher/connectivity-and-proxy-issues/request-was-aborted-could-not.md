@@ -34,11 +34,11 @@ The most common cause for this errors us network firewalls or security appliance
 
 If using our [**Publisher**](../../docs/), the [**PatchMyPC.log**](../../collecting-log-files-for-patch-my-pc-support/#publishing-service-app-logs-intune) will show the specific download URL returning the SSL/TLS error. On the machine running with the error, copy the download URL from the log:
 
-![The request was aborted Could not create SSL/TLS secure channel](../../_images/The-request-was-aborted-Could-not-create-SSL-TLS-secure-channel.png)
+![The request was aborted Could not create SSL/TLS secure channel](/_images/The-request-was-aborted-Could-not-create-SSL-TLS-secure-channel.png "The request was aborted Could not create SSL/TLS secure channel")
 
 On the same machine where the Publisher is installed returning the error, browse to the URL in **Internet Explorer running as NT AUTHORITY\SYSTEM**. Check if Internet Explorer returns any errors or warnings from a firewall or security appliance.
 
-![Antivirus or Firewall causing download TLS error](../../_images/anti-virus-alert-blocked-url-example.png)
+![Antivirus or Firewall causing download TLS error](/_images/anti-virus-alert-blocked-url-example.png "Antivirus or Firewall causing download TLS error")
 
 > **Important**: The Patch My PC Publisher uses the same .NET Framework classes as Internet Explorer to download content from the Internet. The default identity of the service is also NT AUTHORITY\SYSTEM.
 >
@@ -50,7 +50,7 @@ If blocked, you will need to work with your networking team to remove any restri
 
 If a proxy is required for internet access within your environment, you will need to configure it in the **Advanced** tab:
 
-![Check Proxy Setup for Patch My PC Publisher](../../_images/Check-Proxy-Setup-for-Patch-My-PC-Publisher.png)
+![Check Proxy Setup for Patch My PC Publisher](/_images/Check-Proxy-Setup-for-Patch-My-PC-Publisher.png "Check Proxy Setup for Patch My PC Publisher")
 
 After configuring the proxy, restart the service **PatchMyPCService** (can also be done in the **About** tab), and close and re-open the Publisher UI.
 
@@ -64,11 +64,11 @@ In this scenario, we have observed the following errors when browsing out to the
 
 On **Server 2019** or **newer**:
 
-![](../../_images/Cant-connect-securely-to-this-page-internet-explorer.png)
+![](/_images/Cant-connect-securely-to-this-page-internet-explorer.png)
 
 On **Server 2016** or **older**:
 
-![](../../_images/Cant-connect-securely-to-this-page-internet-explorer-olderIE.png)
+![](/_images/Cant-connect-securely-to-this-page-internet-explorer-olderIE.png)
 
 > **Important**: The Patch My PC Publisher uses the same .NET Framework classes as Internet Explorer to download content from the Internet. The default identity of the service is also NT AUTHORITY\SYSTEM.
 >
@@ -89,7 +89,7 @@ On the server, check if the following registry value exists:\
 
 If this value exists, **only the SSL/TLS ciphers** in the **Functions REG\_MULTI\_SZ value** will work. If a domain is using a cipher other than ones listed, you will receive the error **The request was aborted: Could not create SSL/TLS secure channel.**
 
-![](../../_images/SOFTWARE-Policies-Microsoft-Cryptography-Configuration-SSL-00010002-Functions.png)
+![](/_images/SOFTWARE-Policies-Microsoft-Cryptography-Configuration-SSL-00010002-Functions.png)
 
 Limiting the [**SSL/TLS ciphers**](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs#managing-the-tlsssl-protocols-and-cipher-suites) is sometimes enabled as a hardening method for security. Limiting the ciphers is not enabled by default.
 
@@ -99,7 +99,7 @@ There is a third-party tool available from [**Qualys SSL Labs**](https://www.ssl
 
 For example, when we used the URL https://1.na.dl.wireshark.org/win32/Wireshark-win32-3.2.2.exe, we are able to see the specific SSL/TLS ciphers being used for that domain.
 
-![](../../_images/ssl-ciphers-tls-internet-explorer.png)
+![](/_images/ssl-ciphers-tls-internet-explorer.png)
 
 These ciphers would need to be added to the **Functions** registry value to resolve the issue if applicable.
 
@@ -126,7 +126,7 @@ To resolve this problem, consider the two options:
 * Plan to upgrade the Operating System of where the Patch My PC Publisher is installed to a newer versions with the newer SSL/TLS ciphers
 * Manually download the installer from a different browser or newer Operating System and save it into your [local content repository](https://patchmypc.com/local-content-repository-for-licensed-applications-that-require-manual-download). Also enable the below highlighted option:
 
-![](../../_images/LocalContentRepository-CheckBeforeInternet.png)
+![](/_images/LocalContentRepository-CheckBeforeInternet.png)
 
 We also have this documented on our [**List of Known Issues and Considerations**](https://patchmypc.com/known-issues-and-considerations-when-using-patch-my-pc#topic4) article for products we are **tracking with these download issues**. At this time, we are aware of the following products that may fail to download on older server operating systems:
 

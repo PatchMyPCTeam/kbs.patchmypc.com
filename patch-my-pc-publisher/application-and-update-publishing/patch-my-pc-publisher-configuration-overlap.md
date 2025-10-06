@@ -32,7 +32,7 @@ In [Publisher version 2.1.37.0](https://docs.patchmypc.com/publisher/publisher-r
 
 You can toggle the filter on or off at any time by using the filter button in the toolbar.
 
-<figure><img src="https://patchmypc.com/app/uploads/2025/10/image-13.png" alt=""><figcaption></figcaption></figure>
+![](/_images/image-13.png)
 
 The configuration overlap could occur in the following sequence when using the filter option in affected versions of Publisher:
 

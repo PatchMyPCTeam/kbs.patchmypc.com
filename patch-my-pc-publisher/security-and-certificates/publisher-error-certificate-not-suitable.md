@@ -39,7 +39,7 @@ To confirm if you are affected by this issue, the following steps may be perform
    * Enhanced Key Usage - Code Signing
    * Key Usage - Digital Signature
 6. Click "Edit Properties..." ensure that Code Signing is listed and enabled under the list of "Certificate purposes"\
-   ![Image of Certificate and Certificate Properties window showing the proper properties for a code signing certificate](../../_images/CodeSigningCertificateProperties.png)
+   ![Image of Certificate and Certificate Properties window showing the proper properties for a code signing certificate](/_images/CodeSigningCertificateProperties.png "Image of Certificate and Certificate Properties window showing the proper properties for a code signing certificate")
 
 &#x20;If any of the properties listed above do not exist or contain the values listed, the certificate cannot be used to sign PowerShell scripts
 
@@ -60,7 +60,7 @@ If recreating the Code Signing Certificate is not possible, the following steps 
 2. Navigate to ConfigMgr Apps tab
 3. Click Options...
 4. Deselect the option to "Code-sign the PowerShell detection method script using the WSUS Signing Certificate" and click "OK"\
-   ![](../../_images/DisableCodeSigningPublisher.png)
+   ![](/_images/DisableCodeSigningPublisher.png)
 5. Click Apply to apply the changes
 
 The Publisher also attempts to code sign any Patch My PC provided scripts by default (custom pre/post scripts are not resigned), any application utilizing a Patch My PC provided script will need to be disabled and optionally converted to a custom pre/post script in order for publishing to complete successfully. The following process can be used on each of the effected apps to perform this conversion.
@@ -68,17 +68,17 @@ The Publisher also attempts to code sign any Patch My PC provided scripts by def
 1. Open the Patch My PC Publisher
 2. Navigate to an application with a Patch My PC defined script (Oracle Java is a popular example)
 3. Right click on the Product and select "Patch My PC defined pre/post scripts"\
-   ![](../../_images/DefinedPatchMyPCScript.png)
+   ![](/_images/DefinedPatchMyPCScript.png)
 4. Select the Option to "Disable the Patch My PC recommended pre/post-update script for this product."\
-   ![](../../_images/DisablePatchMyPCScript.png)
+   ![](/_images/DisablePatchMyPCScript.png)
 5. Click on View Script, this will open the provided script in a web browser
 6. Save the script as a ".ps1" file in a location that the Publisher has read access, close the web browser\
-   ![](../../_images/SaveDefinedScript.png)
+   ![](/_images/SaveDefinedScript.png)
 7. Click OK in the "Patch My PC Defined Script(s)" window
 8. Right click the Product in the Publisher again
 9. Select "Add Custom Pre/Post Scripts"
 10. Select "Browse..." next to the appropraite pre/post script option
 11. Navigate and select the script that was just saved\
-    ![](../../_images/UpdateCustomScript.png)
+    ![](/_images/UpdateCustomScript.png)
 12. Click OK, Click Apply
 13. The Update or Application should successfully publish on the next Publisher Sync

@@ -175,7 +175,7 @@ When troubleshooting **automatic deployment rules failing for third-party update
   * C:\Program Files\Microsoft Configuration Manager\Logs\PatchDownloader\*.log (Possible location)
   * %WinDir%\CCM\Logs (Possible location)
   * If **unable to locate** a current [PatchDownloader.log](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/log-files#BKMK_SU_NAPLog), check HKLM\SOFTWARE\MicrosoftCCMLogging@Global:LogDirectory on the [site server](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles#configuration-manager-site-server)
-    * ![how to locate the patchdownloader.log file](../../_images/locate-the-patchdownloader-log-file.png)
+    * ![how to locate the patchdownloader.log file](/_images/locate-the-patchdownloader-log-file.png "how to locate the patchdownloader.log file")
 
 #### Updates Failing to Download to Deployment Package using ConfigMgr Console
 
@@ -190,7 +190,7 @@ Enabling Debug logging is often helpful for troubleshooting unique issues with p
 1. Open the Publisher
 2. Click on the **General** tab
 3. In the dropdown under **Logging Options** select \*\*Debug\
-   ![Enable Debug Logging in Publisher](../../_images/PatchMyPC-Settings_VB3O5uDPhE.png) \*\*
+   ![Enable Debug Logging in Publisher](/_images/PatchMyPC-Settings_VB3O5uDPhE.png "Enable Debug Logging in Publisher") \*\*
 4. Close the Publisher
 5. Open Services.msc and locate the **PatchMyPCService**
 6. Right-click and Restart the **PatchMyPCService**

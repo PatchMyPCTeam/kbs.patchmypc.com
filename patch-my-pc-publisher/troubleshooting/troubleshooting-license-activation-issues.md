@@ -20,7 +20,7 @@ taxonomy:
 
 This article details common reasons why the **license validation may fail** within our [Publisher](../../docs/). If you're facing a license activation error similar to below, this will be the guide for you!
 
-![](../../_images/license-validation-1-2.png)
+![](/_images/license-validation-1-2.png)
 
 Almost all license validation **issues are related to proxy and web filters**.
 
@@ -28,21 +28,21 @@ Almost all license validation **issues are related to proxy and web filters**.
 
 The first step is to validate you are using the **correct license key.** When you receive your [full-trial](https://patchmypc.com/free-trial) or customer license email, it will contain your 20 character license key. Here's an example of a license key email.&#x20;
 
-![](../../_images/license-validation-2.png)
+![](/_images/license-validation-2.png)
 
 Enter the license key you received in the **License Information** section of the **General** tab and select **Validate**. &#x20;
 
-![](../../_images/license-validation-4.png)
+![](/_images/license-validation-4.png)
 
 If the license validation is successful, it should look like the image below.
 
-![](../../_images/license-validation-6.png)
+![](/_images/license-validation-6.png)
 
 ### Step 2: Are You Using A Proxy?
 
 If a proxy is required for internet access within your environment, you will need to configure it from the **Advanced tab's** and apply the new settings.
 
-![](../../_images/license-validation-7.png)
+![](/_images/license-validation-7.png)
 
 If a proxy is configured, **restart the Publisher** for the changes to take effect.
 
@@ -58,7 +58,7 @@ The most common issue with license activation is web filters such as **firewalls
 
 You can download the Microsoft tool [**PortQryUI**](https://www.microsoft.com/en-us/download/details.aspx?id=24009) to perform a test to verify access to the domains listed above. Once downloaded, run portqueryui.exe. In the screenshot below we entered **patchmypc.com** for the domain, and **443** for the port over **TCP**. The result should show listening if there are no firewalls blocking traffic.
 
-![portqueryui verify port 443 to patchmypc domain](../../_images/portqueryui-verify-port-443-to-patchmypc-domain.png)
+![portqueryui verify port 443 to patchmypc domain](/_images/portqueryui-verify-port-443-to-patchmypc-domain.png "portqueryui verify port 443 to patchmypc domain")
 
 ### Step 4: Verify the patchmypc.com SSL Certificate is Trusted
 
@@ -68,10 +68,10 @@ On the server running the publishing service, open up internet explorer and navi
 
 Click the **lock icon** then click **View certificate**
 
-![SSL View Certificate IE](../../_images/SSL-View-Certificate-IE.png)
+![SSL View Certificate IE](/_images/SSL-View-Certificate-IE.png "SSL View Certificate IE")
 
 Click the Certificate Path and validate the certificate for patchmypc.com is trusted.
 
-![SSL View Certification Path](../../_images/SSL-View-Certification-Path.png)
+![SSL View Certification Path](/_images/SSL-View-Certification-Path.png "SSL View Certification Path")
 
 If the certificate is not trusted, [import the root certificates for DigiCert](https://www.digicert.com/digicert-root-certificates.htm) so the certificate is trusted.

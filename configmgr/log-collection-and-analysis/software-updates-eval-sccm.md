@@ -77,7 +77,7 @@ One method is by using the Control Panel **Configuration Manager** Applet:
 2. Go to **System and Security** **> Configuration Manager**.
 3. In the Actions tab, select **Software Update Deployment Evaluation Cycle** and click **Run Now**.
 
-![](../../_images/SUDE_1.jpg)
+![](/_images/SUDE_1.jpg)
 
 #### 2. Using WMI
 
@@ -94,7 +94,7 @@ The other method of manually invoking the scan cycle from a client is by using P
 2. Locate the device and right-click on it.
 3. In the **Client Notification** section, choose **Download Computer Policy**.
 
-![](../../_images/SUDE_2.jpg)
+![](/_images/SUDE_2.jpg)
 
 ### Relevant logs to monitor on the client side
 

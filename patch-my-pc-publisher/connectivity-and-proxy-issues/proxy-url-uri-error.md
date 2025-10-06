@@ -30,15 +30,15 @@ An error occurred while converting the provided Proxy URL to a URI for use by th
 
 Check if you are on **build 1.8.6.0** and a **proxy is enabled**:
 
-![Check Build 1.8.6](../../_images/Version-1-8-6-Bug-Proxy.png)
+![Check Build 1.8.6](/_images/Version-1-8-6-Bug-Proxy.png "Check Build 1.8.6")
 
-![](../../_images/Proxy-Is-Enabled.png)
+![](/_images/Proxy-Is-Enabled.png)
 
 If you open the Publisher UI, you will **likely see error(s)** similar to the error shown below:
 
-![SupportedProxy Can't Download Because Proxy Bug](../../_images/Network-Error-SupportedProducts.png)
+![SupportedProxy Can't Download Because Proxy Bug](/_images/Network-Error-SupportedProducts.png "SupportedProxy Can't Download Because Proxy Bug")
 
-![Publisher Can't Validate License](../../_images/Publisiher-License-Validation-Fails.png)
+![Publisher Can't Validate License](/_images/Publisiher-License-Validation-Fails.png "Publisher Can't Validate License")
 
 > **Note:** This proxy is used by the publisher for all download operations, including downloading Publisher updates.
 
@@ -48,12 +48,12 @@ Manually update the publisher to a build that is [version 1.8.7.0 or above](http
 
 Once the upgrade is complete, attempt to validate the **License URL** in the Publisher to confirm the fix.
 
-![Validate License after Proxy Bug](../../_images/Validate-License-Proxy-Bug.png)
+![Validate License after Proxy Bug](/_images/Validate-License-Proxy-Bug.png "Validate License after Proxy Bug")
 
 ### Resolving the Issue (Option 2)
 
 Within the Publisher on the affected 1.8.6 build, navigate to the '**Advanced Tab**' and update the Proxy URL field by adding **http://** to the beginning of your URL as shown below.  Once you have changed this you can click **Apply, then close and reopen the publisher**. Once this is complete the error messages will be resolved.&#x20;
 
-![](../../_images/Proxy-No-HTTP.png)
+![](/_images/Proxy-No-HTTP.png)
 
-![](../../_images/Proxy-With-HTTP.png)
+![](/_images/Proxy-With-HTTP.png)

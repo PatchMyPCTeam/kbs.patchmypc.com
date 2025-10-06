@@ -39,9 +39,9 @@ A network-related or instance-specific error occurred while establishing a conne
 
 The first step is to validate the **MSSQLSERVER** service is **running** on the SQL Server hosting the WSUS database. In our example image below, we can see it's in a **stopped** state. If you are using a **WID (Windows Internal Database)** you can perform the same check on your WSUS Server where the WID is installed.&#x20;
 
-![MSSQLSERVER in stopped state on WSUS Server](../../_images/MSSQLSERVER-in-stopped-state-on-WSUS-Server.png)
+![MSSQLSERVER in stopped state on WSUS Server](/_images/MSSQLSERVER-in-stopped-state-on-WSUS-Server.png "MSSQLSERVER in stopped state on WSUS Server")
 
-![](../../_images/WID.png)
+![](/_images/WID.png)
 
 ### Troubleshooting Step 2: Is the SQL Server DNS Name Resolvable?
 
@@ -49,13 +49,13 @@ You can receive the **SQL Server DNS name** from the WSUS server registry with t
 
 In our example below, we can see the WSUS server is **unable to resolve the DNS name of the SQL Server** defined for the database server.
 
-![WSUS SqlerverName not resolvable DNS](../../_images/WSUS-SqlerverName-not-resolvable-DNS.png)
+![WSUS SqlerverName not resolvable DNS](/_images/WSUS-SqlerverName-not-resolvable-DNS.png "WSUS SqlerverName not resolvable DNS")
 
 ### Troubleshooting Step 3: Validate SQL Permissions for WSUS Computer Account
 
 The next step if to connect to SQL Server using **SQL Server Management Studio**. Check the **SUSDB** > **Security** > **Users** and ensure the computer account of the **WSUS server exist** and it's been assigned the **WebService** database role membership.
 
-![Validate WSUS Server has ebService SQL Membership Role](../../_images/Validate-WSUS-Server-has-ebService-SQL-Membership-Role.png)
+![Validate WSUS Server has ebService SQL Membership Role](/_images/Validate-WSUS-Server-has-ebService-SQL-Membership-Role.png "Validate WSUS Server has ebService SQL Membership Role")
 
 ### Troubleshooting Step 4: Check if SQL Ports are Blocked
 
@@ -65,4 +65,4 @@ You can download use the Microsoft tool [**PortQryUI**](https://www.microsoft.co
 
 On the **WSUS server**, open **PortQryUI** and enter the **SQL Server hostname/IP** and add the **SQL server port number** (default is **1433**) and check the result.
 
-![SQL Server Port Filtered from WSUS Server](../../_images/SQL-Server-Port-Filtered-from-WSUS-Server.png)
+![SQL Server Port Filtered from WSUS Server](/_images/SQL-Server-Port-Filtered-from-WSUS-Server.png "SQL Server Port Filtered from WSUS Server")

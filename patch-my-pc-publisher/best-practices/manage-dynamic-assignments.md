@@ -57,7 +57,7 @@ Below is a list of the available search criteria you can use to dynamically sear
 
 For example, you could create an evaluation criteria that only assigns updates with a CVE ID associated with them, of "Critical" severity, and classified as "Critical updates" and "Security updates":
 
-![](../../_images/adr3.png)
+![](/_images/adr3.png)
 
 Search criteria options which allow multiple values (Severity, Title, Update Classification), **multiple values will be joined with an "OR" operator**. However, all search criteria options will be joined by an **"AND"** operator.
 
@@ -83,11 +83,11 @@ In this section we will detail how to leverage the Dynamic Assignments feature.
 
 To configure and manage Dynamic Assignments, in the **Intune Updates** tab, right click on the **All Products** node and select **Manage dynamic assignments:**
 
-![](../../_images/adr1.png)
+![](/_images/adr1.png)
 
 Opening the feature will bring you to a list of existing evaluation rules. To create a new rule, select **Add.**
 
-![](../../_images/adr2.png)
+![](/_images/adr2.png)
 
 We will now build a dynamic assignment rule. Below is an example of a rule that will select only application updates that have:
 
@@ -95,31 +95,31 @@ We will now build a dynamic assignment rule. Below is an example of a rule that 
 * Severity classification of "Critical"
 * Update classification of "Critical Updates" OR "Security Updates"
 
-![](../../_images/adr3.png)
+![](/_images/adr3.png)
 
 To validate what application updates will pass evaluation, we can press **Preview** (bottom left) to run the evaluation rule against the catalog.
 
 In the example below, the evaluation rule has returned only the products that meet the dynamic assignment rule from above.
 
-![](../../_images/adr4.png)
+![](/_images/adr4.png)
 
 Once you are happy that with your new evaluation search criteria, you can associate Intune assignments with the rule by selecting the **Manage** button.
 
-![](../../_images/adr5.png)
+![](/_images/adr5.png)
 
 This will bring up the standard **Manage Assignments** window used for existing "static" assignments. Here you can define either "Required" or "Uninstall" assignments, with the normal options to add Azure Active Directory groups and all the other assignment options, too, including notification options, installation deadline availability and deadline, and restart grace period.
 
 These will be the assignments associated with the **Dynamic Assignment** rule.
 
-![](../../_images/adr6.png)
+![](/_images/adr6.png)
 
 Once assignments are added, we can verify that the assignments have been applied by checking the **Assignments** list on the previous window.
 
-![](../../_images/adr7.png)
+![](/_images/adr7.png)
 
 Once we are happy with our new rule, clicking **OK** will return us to the list of dynamic assignment rules, which should display our newly created rule.
 
-![](../../_images/adr8.png)
+![](/_images/adr8.png)
 
 > **Note:** In the screenshot above, we can verify that the rule has assignments attached to it - this means the rule is "Active" and will perform evaluations when the publishing service runs next.
 

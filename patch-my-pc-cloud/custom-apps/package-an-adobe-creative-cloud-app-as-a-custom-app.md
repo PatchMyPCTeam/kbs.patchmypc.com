@@ -32,11 +32,11 @@ Customers must download the correct CC installer from the Adobe Admin console. T
 
 1.  Navigate the Adobe Admin Console and locate and download the installer package for Adobe Illustrator.
 
-    ![](../../_images/image-13.png)
+    ![](/_images/image-13.png)
 
 The **Build** folder contains the files needed to build the custom application. **Setup.exe** will be used as the primary installer file when creating the Custom App in the Patch My PC Cloud portal. &#x20;
 
-![](../../_images/image-18.png)
+![](/_images/image-18.png)
 
 ### Create the Custom App
 
@@ -44,11 +44,11 @@ We now have the necessary files to create the custom app in Patch My PC Cloud.
 
 1. Navigate to [https://portal.patchmypc.com/app-catalog](https://portal.patchmypc.com/app-catalog/upload)
 2. Click **Add App**\
-   ![](../../_images/image-14.png)
+   ![](/_images/image-14.png)
 3. Add the following files and folders:- **App File:** Setup.exe\
    **Folders:** HD, ASU\_6.7.0\
    **Files:** Illustrator.msi\
-   ![](../../_images/image-15.png)
+   ![](/_images/image-15.png)
 4. Click **Next**.
 5.  On the **General Information** tab, enter the following information:-
 
@@ -63,7 +63,7 @@ We now have the necessary files to create the custom app in Patch My PC Cloud.
 
     _CEPHtmlEngine.exe, Adobe Crash Processor.exe, AIMonitor.exe, AIRobin.exe, AISafeModeLauncher.exe, AISniffer.exe, CRLogTransport.exe, CRWindowsClientService.exe, Illustrator.exe, IllustratorDiagnosys.exe_&#x20;
 
-    ![](../../_images/image-17.png)
+    ![](/_images/image-17.png)
 9. Click **Create**.
 
 > **Important:** You must use the correct **Apps & Features Name** and **Version** for the edition and version of Adobe CC app you are creating as a Custom App. If you do not, the application will fail to be detected after it has installed.

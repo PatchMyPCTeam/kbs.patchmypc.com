@@ -26,7 +26,7 @@ We have been seeing some instances where third-party software updates will fail 
 
 When attempting to download a third-party update from the Configuration Manager console, you receive the following message in the console **Error: The thread is not in background processing mode.**
 
-![SCCM Download Failed The thread is not in background processing mode. 0x80070191](../../_images/The-thread-is-not-in-background-processing-mode.png)
+![SCCM Download Failed The thread is not in background processing mode. 0x80070191](/_images/The-thread-is-not-in-background-processing-mode.png "SCCM Download Failed The thread is not in background processing mode. 0x80070191")
 
 If you open the PatchDownloader.log in the **%temp%** folder, you can also find the following errors.
 
@@ -44,15 +44,15 @@ There is a bug in the WSUS setup process that can remove the leading when using 
 
 To check the **Physical Path** for the Content virtual directory: **Right-click Content** > **Manage Virtual Directory** > **Advanced Settings...**
 
-![WSUS Content Virtual Directory Physical Path](../../_images/WSUS-Content-Virtual-Directory-Physical-Path.png)
+![WSUS Content Virtual Directory Physical Path](/_images/WSUS-Content-Virtual-Directory-Physical-Path.png "WSUS Content Virtual Directory Physical Path")
 
 Here's an example of the WSUS bug where the leading are removed from the virtual directory **Physical Path**. Because the directory is invalid in the Content virtual directory updates will fail to download with error **0x80070194** or **0X87D20417**.
 
-![WSUS Bug Removed Backslashs in UNC Path](../../_images/WSUS-Bug-Removed-Backslashs-in-UNC-Path.png)
+![WSUS Bug Removed Backslashs in UNC Path](/_images/WSUS-Bug-Removed-Backslashs-in-UNC-Path.png "WSUS Bug Removed Backslashs in UNC Path")
 
 If you are affected by this scenario, simply update the path to include the leading as shown below and click **OK**
 
-![Add Leading Backslashs in UNC Path for WSUS Content Directory](../../_images/Add-Leading-Backslashs-in-UNC-Path-for-WSUS-Content-Directory.png)
+![Add Leading Backslashs in UNC Path for WSUS Content Directory](/_images/Add-Leading-Backslashs-in-UNC-Path-for-WSUS-Content-Directory.png "Add Leading Backslashs in UNC Path for WSUS Content Directory")
 
 ### Troubleshooting Step 2: Is WSUSContent a UNC Share with the Default IUSR Authentication
 
@@ -60,17 +60,17 @@ If steps 1 and 2 are correct, we often see customers where a **UNC path** is bei
 
 **Click** the **Content virtual directory** > Double Click **Authentication** in the **IIS Group**
 
-![Click Anonymous Authentication WSUS](../../_images/Click-Anonymous-Authentication-WSUS.png)
+![Click Anonymous Authentication WSUS](/_images/Click-Anonymous-Authentication-WSUS.png "Click Anonymous Authentication WSUS")
 
 **Right-Click** the **Anonymous Authentication** and Click **Edit**
 
-![Check Anonymous Authentication WSUS](../../_images/Check-Anonymous-Authentication-WSUS.png)
+![Check Anonymous Authentication WSUS](/_images/Check-Anonymous-Authentication-WSUS.png "Check Anonymous Authentication WSUS")
 
 &#x20;Here you can review the **Anonymous user identity** used for authenticating to the WSUSContent directory. By default, the authentication is set to use the specific user: **IUSR**. IUSR is a local user-specific to the WSUS server and will not have access to a authenticate to any **remote UNC share**.
 
 In the **Edit Anonymous Authentication Credentials** dialog for the **Anonymous Authentication** ensure it is set to use the **Application pool identity**
 
-![Use Application Pool Identity for Content](../../_images/Use-Application-Pool-Identity-for-Content.png)
+![Use Application Pool Identity for Content](/_images/Use-Application-Pool-Identity-for-Content.png "Use Application Pool Identity for Content")
 
 ### Resolution for DownloadContentFiles() failed with hr=0x80070191 (Video Guide)
 

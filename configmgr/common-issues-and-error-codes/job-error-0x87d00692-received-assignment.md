@@ -40,7 +40,7 @@ Updates will not be made available
 
 If you perform an error lookup using **Control** + **L** in CMTace.exe, you will see the error description for **0x87d00692** = "**Group policy conflict**".
 
-![](../../_images/error-0x87d00692.png)
+![](/_images/error-0x87d00692.png)
 
 Group policy conflict means a **GPO has been configured** to set the WSUS server to a different server than the ConfigMgr software update point.  A GPO will take precedence over the local GPO policy the ConfigMgr client is trying to set.
 
@@ -48,13 +48,13 @@ To determine the GPO setting the WSUS server Open **MMC.exe**, **File** > **Add/
 
 Click **Generate RSoP Data...**
 
-![](../../_images/rsop-generate.png)
+![](/_images/rsop-generate.png)
 
 You can leave the **default options** when clicking through the Generate RSoP data wizard.
 
 Once complete, navigate to **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Windows Update > Specify intranet Microsoft update service location**
 
-![](../../_images/gpo-for-wsus-breaking-configmgr-sup.png)
+![](/_images/gpo-for-wsus-breaking-configmgr-sup.png)
 
 #### How to Fix Error 0x87d00692
 
@@ -70,10 +70,10 @@ _When the software update point is created for a site, clients receive a machine
 
 Once the GPO is no longer applied to devices, you can optionally trigger a **Software Update Deployment Evaluation Cycle**. This cycle will trigger the client to attempt to set the local policy for the WSUS server to the Configuration Manager software update point.
 
-![](../../_images/trigger-sup-scan.png)
+![](/_images/trigger-sup-scan.png)
 
 > **Note:** You may want to limit the number of devices you perform this action on at once to avoid large WSUS scanning traffic.
 
 In the WUAHandler.log, you should see the WUA Manager server can now be set by the ConfigMgr client, and the GPO conflict error will go away.
 
-![](../../_images/local-wsus-gpo-set-by-sccm-client.png)
+![](/_images/local-wsus-gpo-set-by-sccm-client.png)

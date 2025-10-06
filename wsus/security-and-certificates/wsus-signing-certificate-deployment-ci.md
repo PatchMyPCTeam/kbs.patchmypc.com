@@ -36,10 +36,10 @@ The script itself will need to be edited with your specific Thumbprint and Base6
 
 * **Certificate Thumbprint**\*\*:\*\*
   * Within the properties of your Code Signing certificate, go to the Details tab and scroll to down to the thumbnail area. This thumbprint will help us uniquely identify the certificate.
-    * &#x20;![certificate properties, details, thumbprint field](../../_images/cert-details.png)
+    * &#x20;![certificate properties, details, thumbprint field](/_images/cert-details.png "certificate properties, details, thumbprint field")
   * This can also be copied out of the Patch My PC Publisher, as shown below.
-    * ![General Tab, Show Certificate, Thumbprint field](../../_images/publisher-show-certificate.png)
-* **Base64 Encoded Certificate String**\*\*:\*\* This can be acquired a handful of ways, but a simple way is to get a copy of the certificate as a file and run a PowerShell command similar to the below \[System.Convert]:/\_images/ToBase64String((Get-Content-Path-ExportedCert.cer -encoding byte)))
+    * ![General Tab, Show Certificate, Thumbprint field](/_images/publisher-show-certificate.png "General Tab, Show Certificate, Thumbprint field")
+[System.Convert]:/_images/ToBase64String((Get-Content-Path-ExportedCert.cer -encoding byte)))
 
 ## Step 1: Create a New Configuration Item
 

@@ -39,10 +39,10 @@ For more details, refer to [Co-management workloads - Configuration Manager | Mi
 
 To move the Client Apps workload, in the Configuration Manager console:
 
-1. Navigate through **Administration** -> **Cloud Services** -> **Cloud Attach**, right-click **CoMgmtSettingsProd** and click **Properties**. ![](../../_images/clientapps_move1.png)
-2. Go to the **Workloads** and set the slider for C**lient apps** to **Pilot Intune** or **Intune**. With the Client Apps workload moved to Intune or Pilot Intune, the co-managed devices will receive applications deployed from both ConfigMgr and Intune.\_ ![](../../_images/clientapps_move2.png) \_
+1. Navigate through **Administration** -> **Cloud Services** -> **Cloud Attach**, right-click **CoMgmtSettingsProd** and click **Properties**. ![](/_images/clientapps_move1.png)
+2. Go to the **Workloads** and set the slider for C**lient apps** to **Pilot Intune** or **Intune**. With the Client Apps workload moved to Intune or Pilot Intune, the co-managed devices will receive applications deployed from both ConfigMgr and Intune.\_ ![](/_images/clientapps_move2.png) \_
 3. If you moved the workload to the **Pilot Intune** position, you will need to now click on the tab **Staging** and choose a collection of devices. Click **OK** to save and close. Only the devices in this collection will have their Client Apps workload moved to Intune.\
-   ![](../../_images/clientapps_move3.png)
+   ![](/_images/clientapps_move3.png)
 
 ### Reviewing CoManagementHandler.log
 
@@ -51,9 +51,9 @@ Connect to a client to make sure that the Client Apps workload has moved as expe
 You can check this in two places:&#x20;
 
 1. &#x20;“C:\Windows\CCM\Logs”. Open the **CoManagementHandler.log** and search for the string \*\*CoManagementSettings\_Capabilities.\
-   ![](../../_images/clientapps_move4.png) \*\*
+   ![](/_images/clientapps_move4.png) \*\*
 2. Open the **Configuration Manager Properties** Control Panel applet on the client device. On the **General** tab look for the field **Co-Management capabilities**.\
-   ![](../../_images/clientapps_move5.png)
+   ![](/_images/clientapps_move5.png)
 
 The table below contains workload values that indicate the Client Apps workload has been moved for that device.
 
@@ -77,7 +77,7 @@ The following documentation explains how to create the app registration and esta
 
 Once the app registration is in place, you can begin to configure Intune apps and updates. You can manually select the products and customizations, or copy your existing ConfigMgr apps and customizations from the **Updates** tab.
 
-![](../../_images/clientapps_move6.png)
+![](/_images/clientapps_move6.png)
 
 Repeat the process for the Intune Updates tab to bring across the same product selection and customizations for Intune Updates.
 
@@ -89,7 +89,7 @@ Co-managed devices are still able to receive applications and third-party update
 
 If you are now using Windows Update for Business Policies from Intune to control first-party (Microsoft) updates and are also updating devices using the Win32 apps created by Patch My PC, you should consider disabling the "Software Updates" client setting for those co-managed devices. This will prevent the device from reaching out to WSUS to perform compliance scans and from receiving "Software Update Deployments" from ConfigMgr.
 
-![](../../_images/clientapps_move7.png)
+![](/_images/clientapps_move7.png)
 
 Targeting third-party updates from both ConfigMgr and Intune is theoretically possible and will not cause any problems. The device will get updated **but** there is no control over which platform will install the update - leading to confusion when reviewing deployment reports from either ConfigMgr or within the Intune Admin Center.
 

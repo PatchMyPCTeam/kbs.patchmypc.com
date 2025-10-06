@@ -30,7 +30,7 @@ An error occurred while publishing an update to WSUS: failed to create cab; erro
 
 Check if the drive **hosting the WSUSContent** folder has **low disk space:**
 
-![WSUS Drive with Low Disk Space](../../_images/wsus-content-drive-low-disk-space.png)
+![WSUS Drive with Low Disk Space](/_images/wsus-content-drive-low-disk-space.png "WSUS Drive with Low Disk Space")
 
 ### Resolution 1: Extend the disk to have more free space
 

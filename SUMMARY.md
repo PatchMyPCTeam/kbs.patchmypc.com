@@ -244,6 +244,7 @@
     * [Troubleshooting Patch My PC Application Detection](patch-my-pc-publisher/troubleshooting/pmpc-app-detection-troubleshooting.md)
     * [Troubleshooting Smtp Email Sending When](patch-my-pc-publisher/troubleshooting/troubleshooting-smtp-email-sending-when.md)
     * [Troubleshooting Why Third Party Updates](patch-my-pc-publisher/troubleshooting/troubleshooting-why-third-party-updates.md)
+    * [Patch My PC Publisher Configuration Overlap](patch-my-pc-publisher/troubleshooting/patch-my-pc-publisher-configuration-overlap.md)
   * [Workarounds](patch-my-pc-publisher/workarounds/README.md)
     * [How Clean Up Third Party](patch-my-pc-publisher/workarounds/how-clean-up-third-party.md)
     * [How Remove Already Published Third](patch-my-pc-publisher/workarounds/how-remove-already-published-third.md)

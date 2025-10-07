@@ -17,7 +17,7 @@ taxonomy:
     - education
     - best-practices
 custom_fields:
-    github_author: Ben Reader
+    github_author: Ben Whitmore
 ---
 
 # Power BI Reports Microsoft Intune

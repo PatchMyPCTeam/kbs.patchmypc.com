@@ -17,7 +17,7 @@ taxonomy:
     - education
     - best-practices
 custom_fields:
-    github_author: Allen Anderson
+    github_author: Bryan Dam
 ---
 
 # Power BI Reports Microsoft Intune

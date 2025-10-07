@@ -16,6 +16,8 @@ taxonomy:
     - reporting-and-insights
     - education
     - best-practices
+custom_fields:
+    field_67c98134e9a18: 131595
 ---
 
 # Power BI Reports Microsoft Intune

@@ -22,7 +22,7 @@ custom_fields:
 
 # Power BI Reports Microsoft Intune
 
-Our Power BI dashboards can be used to monitor the compliance and deployment of [**third-party updates**](../../third-party-patch-management-for-microsoft-intune/) and [**applications**](../../automatically-create-and-deploy-applications-in-microsoft-intune/) in Microsoft Intune.
+1Our Power BI dashboards can be used to monitor the compliance and deployment of [**third-party updates**](../../third-party-patch-management-for-microsoft-intune/) and [**applications**](../../automatically-create-and-deploy-applications-in-microsoft-intune/) in Microsoft Intune.
 
 * [**Step 1: Download the Latest Power BI Template File**](power-bi-reports-microsoft-intune.md#topic1)
 * [**Step 2: Save the Latest Assignment Statistics via the Publisher**](power-bi-reports-microsoft-intune.md#topic2)

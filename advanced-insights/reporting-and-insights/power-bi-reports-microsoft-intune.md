@@ -17,7 +17,7 @@ taxonomy:
     - education
     - best-practices
 custom_fields:
-    post_authors: Adam Cook
+    github_author: Adam Cook
 ---
 
 # Power BI Reports Microsoft Intune

@@ -1,5 +1,7 @@
 ---
 title: "Microsoft Breaking Change to Teams / Power Automate Webhooks"
+wpseo_title: Microsoft Breaking Change to 
+wpseo_metadesc: "test" 
 date: 2025-09-04
 taxonomy:
     products:
@@ -14,6 +16,8 @@ taxonomy:
         - known-issues-and-considerations
         - best-practices
         - connectivity-and-proxy-issues
+
+    
 ---
 
 Microsoft has announced a breaking change to the way HTTP or Teams Webhook trigger flows work in Power Automate. This change may affect customers using Patch My PC alerts configured with a Teams webhook URL.
